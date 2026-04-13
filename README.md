@@ -1,250 +1,262 @@
-# Hybrid Quantum-Classical CVaR Portfolio Optimization
+# Quantum-Hybrid CVaR Portfolio Optimisation
 
-**TFM — Master's Thesis in Quantum Computing**  
-**Author:** Ignacio Lopez Leis  
-**Institution:** Universidad Autónoma de Madrid (UAM)  
-**Version:** 4.0 (March 2026)
+**Master's Thesis (TFM) — Quantum Computing**
+**Ignacio Lopez Leis · Universidad Autónoma de Madrid (UAM) · 2026**
+**Supervisor: Luis de Pedro Sánchez**
+
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
+[![Qiskit](https://img.shields.io/badge/qiskit-1.x-purple.svg)](https://qiskit.org/)
+[![D-Wave](https://img.shields.io/badge/D--Wave-Leap-009ac7.svg)](https://cloud.dwavesys.com/)
+[![IQM](https://img.shields.io/badge/IQM-Garnet%20%7C%20Emerald-ff6600.svg)](https://www.iqm-quantum.com/)
+[![License: Academic](https://img.shields.io/badge/license-Academic-lightgrey.svg)](#license)
 
 ---
 
 ## Overview
 
-This repository implements a complete hybrid quantum-classical pipeline for
-portfolio optimization using Conditional Value at Risk (CVaR) as the risk
-measure. The pipeline combines:
+This repository implements a complete **hybrid quantum-classical pipeline** for
+Conditional Value-at-Risk (CVaR) portfolio optimisation, validated across
+**46 systematic experiments** on real S&P 500 data (2020–2025) and real IQM
+superconducting quantum hardware.
 
-- **Phase 0** — Universe selection via TMFG correlation network + QUBO (D-Wave)
-- **Phase 1** — Classical CVaR computation, QUBO formulation, noise models
-- **Phase 2** — Quantum Amplitude Estimation (IQAE), hybrid subgradient optimizer, ZNE
-- **Phase 3** — Classical benchmarks (SLSQP, subgradient, Markowitz, Risk Parity), bootstrap CI
-- **Phase 4** — Out-of-sample validation (parametric, Monte Carlo, quantum triple comparison)
+The pipeline combines three stages:
+
+| Stage | Technology | Role |
+|---|---|---|
+| **Universe selection** | D-Wave hybrid QUBO | Select N peripheral assets from 374 S&P 500 tickers via correlation network MST |
+| **Gradient estimation** | IQM IQAE (4 qubits) | Estimate CVaR subgradient via Iterative Quantum Amplitude Estimation |
+| **Optimisation** | Classical Adam | Projected gradient descent to convergence |
 
 ---
 
-## Quick Start — Full Pipeline
+## Key Results
 
-Run the six steps in order. Each step is independent and can be re-run separately.
+| Metric | Value |
+|---|---|
+| In-sample CVaR reduction (N=10) | **25.6 %** |
+| In-sample CVaR reduction (N=100) | **37.9 %** |
+| Circuit width (fixed for all N) | **4 qubits** |
+| OOS CVaR: quantum vs SLSQP | 0.01839 vs 0.01887 (p=0.043) |
+| IQM Garnet point error at m=1 | **2.97 %** |
+| Aliasing threshold | m=3, depth 22 (Emerald + Garnet) |
+| Euler additivity checks | 414 / 414 passed (max error 6e-16) |
+| Basel IV Acerbi-Szekely ES test | **PASS** at all alpha levels |
+
+> **Paper:** submitted to IOP *Quantum Science and Technology*, April 2026.
+
+---
+
+## Architecture
+
+```
+S&P 500 (374 assets, 2020-2025)
+        |
+        v
++-----------------------------------+
+|  Stage 1 - D-Wave Hybrid QUBO     |
+|  Peripherality-maximising         |
+|  universe selection on MST        |
+|  --> N assets (PA / PB / PC)      |
++---------------+-------------------+
+                |  selected tickers
+                v
++-----------------------------------+
+|  Stage 2 - IQM IQAE (4 qubits)   |
+|  Quantum CVaR subgradient         |
+|  depth(m) = 4 + 6m                |
+|  --> gradient vector              |
++---------------+-------------------+
+                |  gradient vector
+                v
++-----------------------------------+
+|  Stage 3 - Adam Optimiser         |
+|  Projected gradient descent       |
+|  simplex constraint               |
+|  --> w* (optimal weights)         |
++-----------------------------------+
+                |
+                v
+   OOS validation + Basel IV backtesting
+   Euler CVaR decomposition (414 configs)
+```
+
+---
+
+## Installation
 
 ```bash
-# 0. Install dependencies
-pip install -r requirements.txt
+git clone https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez
+cd QuantumCVaRPortfolioOptimization-TFMIgnacioLopez
 
-# 1. Download S&P 500 data (2018-2025, ~374 tickers)
-bash scripts/01_download_data.sh
+python -m venv eTFM
+# Windows:  eTFM\Scripts\activate
+# Unix/Mac: source eTFM/bin/activate
+
+pip install -r requirements.txt
+```
+
+**Python 3.11+ required.**
+
+---
+
+## Quick Start
+
+```bash
+# 1. Download S&P 500 data (374 tickers, 2020-2025)
+python scripts/download_sp500_full.py
 
 # 2. Select portfolio universes via QUBO
-bash scripts/02_run_universe_selection.sh              # SimAnneal (local, no token)
-# bash scripts/02_run_universe_selection.sh --dwave   # D-Wave Leap (needs token in .env)
+bash scripts/02_run_universe_selection.sh
 
-# 3. Run all 34 experiments
+# 3. Run all 46 experiments (~6 h CPU)
 bash scripts/03_run_experiments.sh
 
-# 4. Compute bootstrap confidence intervals
-bash scripts/04_run_bootstrap.sh
+# 4. Compute Euler decompositions
+python scripts/compute_euler_decomposition.py
 
-# 5. Validate on real quantum hardware (optional)
-python scripts/05_run_real_hardware.py --provider ibm --token YOUR_IBM_TOKEN
-# python scripts/05_run_real_hardware.py --provider iqm --token YOUR_IQM_TOKEN
-
-# 6. Generate network analysis report
-bash scripts/06_run_network_analysis.sh
+# 5. Generate paper figures
+python scripts/generate_paper_figures.py
+python scripts/generate_visual_figures.py
 ```
 
----
-
-## Step-by-Step Details
-
-### Step 1 — Data Download
-
-Downloads daily adjusted log-returns for all S&P 500 constituents from
-Yahoo Finance. Tickers with more than 5% missing data are dropped.
-Period: **2018-01-01 to 2025-12-31** (~1,900 trading days per ticker).
-
-```
-Output: data/returns_sp500_full.csv   (~374 tickers)
-        data/returns_sp500_100.csv    (top-100 by Sharpe)
-```
-
-### Step 2 — Universe Selection (D-Wave)
-
-Constructs the TMFG correlation network and solves the QUBO cardinality
-selection problem to generate four universes:
-
-| Universe | K | Selection method |
-|---|---|---|
-| PA | 10 | Peripheral (low centrality) via QUBO |
-| PB | 10 | Central (high centrality, greedy) |
-| PC | 10 | Predefined tickers (embedded in config) |
-| PA_100 | 100 | Peripheral via QUBO |
-
-For D-Wave (recommended), add your token to `.env`:
-```
-DWAVE_API_TOKEN=your_token_here
-```
-
-Penalty calibration: `P_card = 500` for K=10, `P_card = 100000` for K=100.
-
-### Step 3 — Experiments
-
-Runs `notebooks/main.ipynb` via papermill for each of **34 experiment configs**:
-
-| Group | Description | Configs |
-|---|---|---|
-| A1 | Noiseless, n=4, eps=0.005 | PA, PB, PC |
-| A1_n3/n5/n6 | Noiseless, varying n | PA, PB, PC × 3 |
-| A3 | Noiseless, n=4, eps=0.002 | PA, PB, PC |
-| B2 | Low noise | PA, PB, PC |
-| B2_n3/n6 | Low noise, n=3/6 (P1-002) | PA |
-| C2 | Medium noise | PA, PB, PC |
-| D1 | High noise | PA, PB, PC |
-| D1_n3/n6 | High noise, n=3/6 (P1-002) | PA |
-| D2 | High noise, eps=0.005 | PA, PB, PC |
-| S1 | Scalability K=100 | PA_100, PB_100, PC_100 |
-
-Select specific experiments:
-```bash
-bash scripts/03_run_experiments.sh A1_PA A1_PB A1_PC
-bash scripts/03_run_experiments.sh --resume-from D1
-```
-
-### Step 4 — Bootstrap Confidence Intervals
-
-Computes block-bootstrap 95% CIs and one-sided p-values for all
-Quantum vs Classical comparisons. Uses circular block bootstrap with
-`block_size=21` (monthly) to preserve temporal autocorrelation.
-
-Metrics covered: CVaR, Sharpe ratio, Max Drawdown, Cumulative Return.
-
-### Step 5 — Real Hardware Validation
-
-Runs the minimal IQAE experiment (n=3, PA portfolio) on real hardware.
-
-**IBM Quantum (ibm_kingston, Heron r2, 156 qubits):**
-```bash
-python scripts/05_run_real_hardware.py --provider ibm --token YOUR_IBM_TOKEN
-```
-- Free tier: 10 min/month at quantum.cloud.ibm.com
-- Circuit execution time: ~3 min + ~3 min queue = ~6 min
-
-**IQM Academy (IQM Garnet, 20 qubits):**
-```bash
-python scripts/05_run_real_hardware.py --provider iqm --token YOUR_IQM_TOKEN
-```
-- Academic access: https://www.iqm-quantum.com/iqm-academy
-- Advantage: shorter queue than IBM
-
-**Dry run** (validate circuit without submitting):
-```bash
-python scripts/05_run_real_hardware.py --provider ibm --token dummy --dry-run
-```
-
-### Step 6 — Network Analysis Report
-
-Generates topological analysis of the TMFG graph and fat-tail statistics.
-Output is a self-contained HTML report at `results/network_analysis/`.
-
----
-
-## Classical Baselines
-
-Fix [P0-001]: the benchmark now always runs. Six classical methods are compared
-against the quantum optimizer:
-
-| Method | Role |
-|---|---|
-| SLSQP-CVaR | Primary baseline — same objective, classical solver |
-| Classical subgradient | Apples-to-apples — isolates quantum vs classical subgradient |
-| COBYLA | Derivative-free alternative |
-| Markowitz min-variance | Canonical reference (1952) |
-| Risk Parity | Modern industry standard |
-| Monte Carlo | Random search baseline |
-
----
-
-## Configuration
-
-All parameters are in `config/config.yaml`. Per-experiment overrides are in
-`config/config_<EXP_ID>.yaml`.
-
-Key parameters updated in v4.0:
-```yaml
-phase0.data.start_date:                  "2018-01-01"   # T-007
-phase3.out_of_sample.optimization_end_date: "2024-01-01"  # T-007
-phase3.benchmarking.enabled:             true            # P0-001
-phase3.benchmarking.methods:             [slsqp, cobyla, subgradient,
-                                          monte_carlo, markowitz, risk_parity]
-phase2.qae.circuit_export.export_qasm:   true            # T-003
-phase2.qae.circuit_export.export_png:    false           # T-003
-```
+For full details on each step, see **CodeManual.txt**.
 
 ---
 
 ## Project Structure
 
 ```
-├── config/
-│   ├── config.yaml              # Main config
-│   └── config_<EXP>.yaml        # Per-experiment configs (34 total)
+.
+├── config/                     YAML experiment configs (50 files)
+│   ├── config.yaml             Active configuration
+│   ├── config_A1_PA.yaml       Noiseless, eps=0.005, portfolio PA
+│   └── config_S1_PA_100.yaml   Scalability N=100
+│
 ├── data/
-│   ├── returns_sp500_full.csv   # Full universe (generated by step 1)
-│   └── returns_sp500_100.csv    # SP100 subset
-├── notebooks/
-│   └── main.ipynb               # Main experiment notebook
-├── results/
-│   ├── network_selection/       # Universe selection outputs
-│   ├── exp_<ID>/                # Per-experiment results + bootstrap CIs
-│   ├── batch_runs/              # Papermill outputs and logs
-│   ├── hardware_validation/     # Real hardware results (step 5)
-│   └── network_analysis/        # Network topology report (step 6)
+│   ├── returns_sp500_full.csv  374 tickers, 2020-01-02 to 2025-12-31
+│   └── returns_sp500_100.csv   Top-100 subset
+│
+├── src/
+│   ├── phase_1/
+│   │   ├── cvar_computation.py     CVaR/VaR (Rockafellar-Uryasev)
+│   │   └── metricscomputation.py   Portfolio performance metrics
+│   ├── phase_2/
+│   │   ├── qae_circuits.py         IQAE state prep + Grover oracle
+│   │   ├── quantumsubgradient.py   CVaR subgradient via IQAE
+│   │   ├── hybridoptimizer.py      Adam + simplex projection
+│   │   ├── quantumbackends.py      Aer / statevector backend
+│   │   ├── noisemodels.py          Depolarising noise models
+│   │   ├── evar_estimation.py      Entropic VaR (EVaR)
+│   │   ├── errorpropagation.py     Amplitude error -> CVaR error budget
+│   │   └── risk_contributions.py   Euler CVaR decomposition
+│   ├── phase_3/
+│   │   ├── classical_benchmark.py  SLSQP, COBYLA, subgradient, MC, Markowitz, RP
+│   │   ├── bootstrap_ci.py         Circular block bootstrap CIs
+│   │   ├── method_comparison.py    IQAE vs classical accuracy
+│   │   └── qae_validation.py       Circuit correctness tests
+│   └── utils/
+│       ├── config_loader.py        YAML config reader
+│       ├── data_loader.py          CSV loader + preprocessor
+│       └── logger.py               File-based logger (overwrite mode)
+│
 ├── scripts/
 │   ├── 01_download_data.sh
 │   ├── 02_run_universe_selection.sh
-│   ├── 03_run_experiments.sh
-│   ├── 04_run_bootstrap.sh
-│   ├── 05_run_real_hardware.py
-│   ├── 06_run_network_analysis.sh
-│   └── run_all_experiments.py   # Core batch runner (called by step 3)
-├── src/
-│   ├── phase_0/                 # Network, QUBO, universe selection
-│   ├── phase_1/                 # CVaR computation, QUBO, noise models
-│   ├── phase_2/                 # QAE circuits, hybrid optimizer, ZNE
-│   ├── phase_3/                 # Benchmarks, bootstrap CI, QAE validation
-│   ├── phase_4/                 # OOS comparison (parametric, MC, quantum)
-│   └── utils/                   # Config loader, logger, data loader
-├── archive/                     # Legacy code (not used in production)
-└── requirements.txt
+│   ├── 03_run_experiments.sh       Batch runner (46 configs)
+│   ├── 04_run_bootstrap.sh         Bootstrap CIs
+│   ├── 05_run_real_hardware.py     IQM / IBM hardware jobs
+│   ├── compute_euler_decomposition.py
+│   ├── generate_paper_figures.py   Figures 3-13
+│   └── generate_visual_figures.py  Figures 1-2
+│
+├── notebooks/
+│   └── main.ipynb                  Interactive single-run pipeline
+│
+├── results/
+│   ├── network_selection/          QUBO outputs and universe metrics
+│   ├── exp_A1_PA/                  Per-experiment results (46 folders)
+│   ├── hardware_validation/        IQM raw results + job IDs
+│   ├── euler_decomposition/        414-row Euler CSV
+│   └── paper_figures/              13 PNGs at 300 dpi
+│
+├── paper/                          LaTeX source (IOP QST format)
+│   ├── main.tex
+│   └── sections/
+│
+├── requirements.txt
+├── CodeManual.txt                  Full usage guide
+└── README.md                       This file
 ```
 
 ---
 
-## Requirements
+## Experiment Taxonomy (46 Runs)
 
+| Family | N | Noise p_2q | ZNE | eps | Portfolios |
+|---|---|---|---|---|---|
+| A1 | 10 | 0 | no | 0.005 | PA, PB, PC x n_q in {3,4,5,6} |
+| A3 | 10 | 0 | no | 0.002 | PA, PB, PC |
+| B2 | 10 | moderate | [1,1.5,2] | 0.005 | PA, PB, PC |
+| C2 | 10 | high | [1,2,3] | 0.005 | PA, PB, PC |
+| D1/D2 | 10 | high | [1,3,5] | 0.01 | PA, PB, PC |
+| E1/E2/E3 | 10 | 1e-3/5e-3/1e-2 | [1,3,5] | 0.005 | PA, PB, PC |
+| S1 | 10/30/100 | 0 | no | 0.005 | PA, PB, PC |
+
+---
+
+## Hardware Access
+
+### D-Wave (Universe Selection)
+
+Free academic access at [cloud.dwavesys.com/leap](https://cloud.dwavesys.com/leap).
+Add your token to `.env`:
 ```
-pip install -r requirements.txt
+DWAVE_API_TOKEN=your_token_here
 ```
 
-Key dependencies: `qiskit>=1.0`, `qiskit-aer`, `numpy`, `scipy`, `pandas`,
-`yfinance`, `papermill`, `networkx`, `python-louvain`, `dwave-ocean-sdk` (optional),
-`qiskit-ibm-runtime` (step 5 IBM), `qiskit-iqm` (step 5 IQM), `arch` (step 4).
+### IQM (IQAE Validation)
+
+Via Amazon Braket. Add to `.env`:
+```
+AWS_REGION=eu-north-1
+AWS_ACCESS_KEY_ID=your_key
+AWS_SECRET_ACCESS_KEY=your_secret
+IQM_DEVICE_ARN=arn:aws:braket:eu-north-1::device/qpu/iqm/Garnet
+```
+
+Academic access: [iqm-quantum.com/iqm-academy](https://www.iqm-quantum.com/iqm-academy).
+All hardware job IDs are in `results/hardware_validation/` and Appendix D of the paper.
+
+---
+
+## Citation
+
+```bibtex
+@article{lopezleis2026qst,
+  author  = {Lopez Leis, Ignacio and de Pedro S{\'a}nchez, Luis},
+  title   = {Quantum-Hybrid {CVaR} Portfolio Optimisation with
+             Network-Driven Universe Selection: Hardware Validation
+             on {IQM} Superconducting Processors},
+  journal = {Quantum Science and Technology},
+  year    = {2026},
+  note    = {Submitted April 2026},
+  url     = {https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez}
+}
+```
 
 ---
 
 ## Acknowledgements
 
-The authors acknowledge:
-
-- **D-Wave Systems** for providing access to the Leap quantum cloud service
-  (LeapHybridBQMSampler) under the academic research programme, used for the
-  quantum annealing-based universe selection experiments in this work.
-
-- **IBM Quantum** for providing access to the IBM Quantum Open Plan
-  (ibm_kingston backend, Heron r2) used for real hardware circuit validation.
-
-- **IQM Quantum Computers** for offering the IQM Academy programme, providing
-  academic access to IQM Garnet hardware for circuit validation.
+- **D-Wave Systems** — Leap hybrid solver access (academic programme)
+- **IQM Quantum Computers** — IQM Academy access to Garnet and Emerald via Amazon Braket
+- **UAM HPCN Group** — Computational resources and support
+- **Luis de Pedro Sanchez** (supervisor) — ORCID 0000-0002-4595-7370
 
 ---
 
 ## License
 
-Academic use only — TFM Project, Universidad Autónoma de Madrid.
+Academic use only. This repository accompanies the Master's thesis submitted
+to the Escuela Politecnica Superior, Universidad Autonoma de Madrid, 2026.
+For any other use, contact the authors.
