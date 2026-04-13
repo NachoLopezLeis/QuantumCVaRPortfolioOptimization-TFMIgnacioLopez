@@ -1,0 +1,448 @@
+{
+  "timestamp": "20260408_155618",
+  "started": "2026-04-08T15:56:20.077989",
+  "total_planned": 46,
+  "total_completed": 32,
+  "total_ok": 28,
+  "total_failed": 4,
+  "total_elapsed": "1 day, 20:19:33",
+  "status": "RUNNING",
+  "experiments": [
+    {
+      "experiment": "A1_PA",
+      "config": "config_A1_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:38:54",
+      "elapsed_s": 2334,
+      "description": "noiseless eps=0.005 n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_163354.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_PB",
+      "config": "config_A1_PB.yaml",
+      "status": "OK",
+      "elapsed": "0:36:00",
+      "elapsed_s": 2160,
+      "description": "noiseless eps=0.005 n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_171000.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_PC",
+      "config": "config_A1_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:27:20",
+      "elapsed_s": 1640,
+      "description": "noiseless eps=0.005 n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_173725.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n3_PA",
+      "config": "config_A1_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:08:29",
+      "elapsed_s": 509,
+      "description": "noiseless eps=0.005 n=3 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_174652.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n3_PB",
+      "config": "config_A1_n3_PB.yaml",
+      "status": "OK",
+      "elapsed": "0:07:56",
+      "elapsed_s": 476,
+      "description": "noiseless eps=0.005 n=3 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_175454.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n3_PC",
+      "config": "config_A1_n3_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:06:00",
+      "elapsed_s": 360,
+      "description": "noiseless eps=0.005 n=3 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_180100.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n5_PA",
+      "config": "config_A1_n5_PA.yaml",
+      "status": "OK",
+      "elapsed": "2:14:33",
+      "elapsed_s": 8073,
+      "description": "noiseless eps=0.005 n=5 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_201150.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n5_PB",
+      "config": "config_A1_n5_PB.yaml",
+      "status": "OK",
+      "elapsed": "2:05:14",
+      "elapsed_s": 7514,
+      "description": "noiseless eps=0.005 n=5 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_221714.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n5_PC",
+      "config": "config_A1_n5_PC.yaml",
+      "status": "OK",
+      "elapsed": "1:36:28",
+      "elapsed_s": 5788,
+      "description": "noiseless eps=0.005 n=5 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260408_235345.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A1_n6_PA",
+      "config": "config_A1_n6_PA.yaml",
+      "status": "TIMEOUT (4h limit)",
+      "elapsed": "4:00:00",
+      "elapsed_s": 14400,
+      "description": "noiseless eps=0.005 n=6 | PA peripheral K=10",
+      "return_code": -1,
+      "output_json_found": false,
+      "output_json_files": []
+    },
+    {
+      "experiment": "A1_n6_PB",
+      "config": "config_A1_n6_PB.yaml",
+      "status": "TIMEOUT (4h limit)",
+      "elapsed": "4:00:00",
+      "elapsed_s": 14400,
+      "description": "noiseless eps=0.005 n=6 | PB central K=10",
+      "return_code": -1,
+      "output_json_found": false,
+      "output_json_files": []
+    },
+    {
+      "experiment": "A1_n6_PC",
+      "config": "config_A1_n6_PC.yaml",
+      "status": "TIMEOUT (4h limit)",
+      "elapsed": "4:00:00",
+      "elapsed_s": 14400,
+      "description": "noiseless eps=0.005 n=6 | PC predefined K=10",
+      "return_code": -1,
+      "output_json_found": false,
+      "output_json_files": []
+    },
+    {
+      "experiment": "A3_PA",
+      "config": "config_A3_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:17:55",
+      "elapsed_s": 4675,
+      "description": "noiseless eps=0.002 n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_131410.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A3_PB",
+      "config": "config_A3_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:19:50",
+      "elapsed_s": 4790,
+      "description": "noiseless eps=0.002 n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_143406.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "A3_PC",
+      "config": "config_A3_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:56:51",
+      "elapsed_s": 3411,
+      "description": "noiseless eps=0.002 n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_153100.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D1_PA",
+      "config": "config_D1_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:11:07",
+      "elapsed_s": 4267,
+      "description": "high noise eps=0.01  n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_164159.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D1_PB",
+      "config": "config_D1_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:24:20",
+      "elapsed_s": 5060,
+      "description": "high noise eps=0.01  n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_180624.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D1_PC",
+      "config": "config_D1_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:49:03",
+      "elapsed_s": 2943,
+      "description": "high noise eps=0.01  n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_185530.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D1_n3_PA",
+      "config": "config_D1_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:24:32",
+      "elapsed_s": 5072,
+      "description": "high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_202008.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D1_n6_PA",
+      "config": "config_D1_n6_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:12:48",
+      "elapsed_s": 4368,
+      "description": "high noise eps=0.01  n=6 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_213256.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D2_PA",
+      "config": "config_D2_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:12:00",
+      "elapsed_s": 4320,
+      "description": "high noise eps=0.005 n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260409_224502.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D2_PB",
+      "config": "config_D2_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:41:07",
+      "elapsed_s": 6067,
+      "description": "high noise eps=0.005 n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_002613.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "D2_PC",
+      "config": "config_D2_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:50:18",
+      "elapsed_s": 3018,
+      "description": "high noise eps=0.005 n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_011636.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_PA",
+      "config": "config_B2_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:39:00",
+      "elapsed_s": 2340,
+      "description": "low noise  eps=0.005 n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_015549.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_PB",
+      "config": "config_B2_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:36:35",
+      "elapsed_s": 5795,
+      "description": "low noise  eps=0.005 n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_033227.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_PC",
+      "config": "config_B2_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:47:20",
+      "elapsed_s": 2840,
+      "description": "low noise  eps=0.005 n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_041954.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_n3_PA",
+      "config": "config_B2_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:39:08",
+      "elapsed_s": 2348,
+      "description": "low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_045907.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_n6_PA",
+      "config": "config_B2_n6_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:38:59",
+      "elapsed_s": 2339,
+      "description": "low noise  eps=0.005 n=6 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_053805.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "C2_PA",
+      "config": "config_C2_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:14:38",
+      "elapsed_s": 4478,
+      "description": "med noise  eps=0.005 n=4 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_065244.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "C2_PB",
+      "config": "config_C2_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:08:57",
+      "elapsed_s": 4137,
+      "description": "med noise  eps=0.005 n=4 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_080147.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "C2_PC",
+      "config": "config_C2_PC.yaml",
+      "status": "OK",
+      "elapsed": "0:12:02",
+      "elapsed_s": 722,
+      "description": "med noise  eps=0.005 n=4 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260410_081355.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PA_100",
+      "config": "config_S1_PA_100.yaml",
+      "status": "TIMEOUT (4h limit)",
+      "elapsed": "4:00:00",
+      "elapsed_s": 14400,
+      "description": "noiseless eps=0.005 n=4 | PA_100 peripheral K=100",
+      "return_code": -1,
+      "output_json_found": false,
+      "output_json_files": []
+    }
+  ]
+}

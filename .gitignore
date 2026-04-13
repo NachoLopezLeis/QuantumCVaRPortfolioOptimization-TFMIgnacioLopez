@@ -1,0 +1,61 @@
+# ==============================================================================
+# .gitignore — Quantum Portfolio Optimization TFM
+# ==============================================================================
+
+# --- Secrets & credentials (CRITICAL) ---
+.env
+.env.*
+*.env
+dwave.conf
+secrets.yaml
+*_secret*
+*_token*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Virtual environments ---
+venv/
+venv_*/
+.venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# --- Logs (regenerated each run) ---
+logs/
+scripts/logs/
+
+# --- Results (large, regenerated) ---
+results/batch_runs/
+results/cache/
+results/passports/
+results/network_selection/
+
+# --- Data (large CSVs, downloaded locally) ---
+data/returns_sp500_full.csv
+data/oos/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- OS ---
+*.tmp
+*.bak
+*.orig

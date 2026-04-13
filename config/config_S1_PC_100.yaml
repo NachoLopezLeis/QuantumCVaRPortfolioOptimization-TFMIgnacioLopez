@@ -1,0 +1,363 @@
+advanced:
+  caching:
+    cache_cluster_trees: false
+    cache_directory: results/cache
+    enabled: true
+  ensure_deterministic: true
+  epsilon_numerical: 1e-10
+  float_precision: float64
+  validation_level: 2
+export:
+  add_timestamp: true
+  base_directory: results
+  clustering:
+    export_cluster_mapping: false
+    export_tree_structure: false
+  files:
+    circuit_images: false
+    clustering_report: false
+    convergence_history: true
+    final_metrics: true
+    optimal_weights: true
+    per_level_weights: false
+    recursive_tree: false
+  formats:
+    csv: true
+    excel: false
+    json: true
+  run_subdirectory: exp_S1_PC_100
+global:
+  alpha: 0.05
+  author: Ignacio Lopez Leis
+  constraints:
+    long_only: true
+    max_weight: 0.3
+    min_weight: 0.0
+    sum_to_one: true
+  debug_mode: false
+  institution: Universidad Autonoma de Madrid
+  project_name: Quantum Portfolio Optimization with CVaR
+  project_version: '5.2'
+  random_seed: 42
+  verbose: true
+phase0:
+  clustering:
+    algorithm: hierarchical
+    auto_enable_threshold: 999
+    cluster_return_method: tail_weighted
+    enabled: false
+    linkage_method: ward
+    max_clusters: 10
+    method: tail_dependence
+    min_cluster_size: 2
+    min_clusters: 2
+    n_clusters: null
+  data:
+    csv_path: data/returns_sp500_full.csv
+    end_date: '2025-12-31'
+    frequency: daily
+    handle_missing: ffill
+    min_observations: 250
+    portfolio_name: exp_S1_PC_100
+    source: yahoo_finance
+    start_date: '2018-01-01'
+    tickers:
+    - AAPL
+    - MSFT
+    - GOOGL
+    - AMZN
+    - META
+    - NVDA
+    - TSLA
+    - AVGO
+    - ADBE
+    - CRM
+    - CSCO
+    - ORCL
+    - ACN
+    - INTC
+    - AMD
+    - QCOM
+    - TXN
+    - AMAT
+    - NOW
+    - INTU
+    - V
+    - MA
+    - BAC
+    - WFC
+    - GS
+    - MS
+    - BLK
+    - SCHW
+    - C
+    - AXP
+    - CB
+    - A
+    - PGR
+    - ICE
+    - UNH
+    - PFE
+    - ABBV
+    - MRK
+    - LLY
+    - TMO
+    - ABT
+    - DHR
+    - BMY
+    - AMGN
+    - GILD
+    - ISRG
+    - MDT
+    - SYK
+    - HD
+    - MCD
+    - AAL
+    - AAP
+    - LOW
+    - TJX
+    - BKNG
+    - CMG
+    - ORLY
+    - ROST
+    - PG
+    - KO
+    - PEP
+    - COST
+    - PM
+    - CL
+    - MDLZ
+    - MO
+    - KHC
+    - HON
+    - UPS
+    - BA
+    - CAT
+    - GE
+    - RTX
+    - LMT
+    - DE
+    - MMM
+    - FDX
+    - XOM
+    - ADI
+    - SLB
+    - EOG
+    - NEE
+    - DUK
+    - SO
+    - D
+    - AEP
+    - PLD
+    - AMT
+    - EQIX
+    - SPG
+    - PSA
+    - LIN
+    - APD
+    - SHW
+    - T
+    - VZ
+    use_custom_tickers: true
+  logging:
+    log_directory: logs
+    log_file: main_notebook.txt
+    log_level: INFO
+    overwrite_on_run: true
+  passport:
+    enabled: true
+    export_directory: results/passports
+    format: json
+  recursive_clustering:
+    aggregation_method: variance_weight
+    auto_enable_threshold: 999
+    clustering_method: correlation
+    enabled: false
+    export_tree_structure: false
+    linkage_method: ward
+    max_cluster_size: 4
+    min_cluster_size: 2
+    parallel_optimization: false
+    use_sector_constraints: false
+phase1:
+  cvar:
+    compute_confidence_interval: true
+    method: historical
+  initial_weights:
+    method: equal
+  noise_models:
+    readout_error: 0.0
+    reference_backend: ideal_simulator
+    single_qubit_gate_error: 0.0
+    two_qubit_gate_error: 0.0
+phase2:
+  backend:
+    default_shots: 4096
+    noise_model:
+      enabled: false
+      readout_error: 0.0
+      single_qubit_gate_error: 0.0
+      two_qubit_gate_error: 0.0
+    optimization_level: 1
+    shots: 4096
+    simulator: aer_simulator
+    type: aer_simulator
+    use_noise: false
+  backend_type: aer_simulator
+  error_mitigation:
+    readout_mitigation: false
+    zne_outer_cvar: false
+    zne_outer_extrapolation: linear
+    zne_outer_scales:
+    - 1.0
+    - 1.5
+    - 2.0
+    zne_state_prep: false
+  execution:
+    shots: 4096
+  optimizer:
+    bounds:
+      max_weight: 0.3
+      min_weight: 0.0
+    convergence:
+      threshold: 1e-5
+    early_stopping:
+      patience: 20
+    learning_rate: 0.05
+    learning_rate_decay: 0.995
+    max_iterations: 50
+    type: adam
+  qae:
+    allow_classical_fallback: false
+    apply_zne: false
+    circuit_export:
+      directory: results/circuits
+      enabled: false
+      export_png: false
+      export_qasm: false
+    compare_methods: true
+    epsilon: 0.005
+    max_total_qubits: 16
+    methods:
+      iqae:
+        confidence_level: 0.95
+        enabled: true
+        max_rounds: 5
+      qsp:
+        enabled: false
+      woerner:
+        enabled: true
+        max_eval_qubits: 10
+        max_retries: 2
+        num_eval_qubits: 8
+        retry_error_threshold: 0.15
+        safety_factor: 2.0
+    num_distribution_qubits: 4
+    shots: 4096
+    timeout_seconds: 300
+  recursive_optimizer:
+    auto_enable_threshold: 999
+    classical_fallback: false
+    enabled: false
+    error_budget:
+      allocation: equal
+      total_epsilon: 0.1
+    node_optimization:
+      convergence_threshold: 1e-5
+      learning_rate: 0.05
+      max_iterations: 20
+      patience: 8
+    node_qae:
+      epsilon: 0.08
+      max_eval_qubits: 4
+      num_qubits: 4
+      use_iqae: true
+      use_qsp: false
+      use_woerner: false
+      use_zne: false
+    node_timeout_seconds: 60
+    total_timeout_seconds: 600
+  shots: 4096
+  subgradient:
+    use_woerner: false
+    use_zne: false
+  use_noise: false
+  zne:
+    enabled: false
+    extrapolation_method: polynomial
+    folding_method: global
+    num_trials_per_scale: 1
+    scale_factors: []
+phase3:
+  benchmarking:
+    enabled: true
+    methods:
+    - slsqp
+    - cobyla
+    - subgradient
+    - monte_carlo
+    - markowitz
+    - risk_parity
+    monte_carlo_samples: 10000
+    timeout_per_method_seconds: 60
+  disaggregation:
+    method: tail_weighted
+    normalize_final_weights: true
+  method_comparison:
+    best_method_criterion: error_per_query
+    enabled: true
+  metrics:
+    optimization:
+    - total_iterations
+    - cvar_improvement_percent
+    - converged
+    portfolio:
+    - cvar
+    - var
+    - expected_return
+    - volatility
+    - sharpe_ratio
+    - sortino_ratio
+    - max_drawdown
+    quantum:
+    - total_queries_iqae
+    - total_queries_woerner
+    - best_method
+    - zne_improvement_avg
+    recursive:
+    - tree_depth
+    - total_nodes
+    - per_level_cvar
+    - total_recursive_time
+  oos_triple_comparison:
+    enabled: true
+    n_plot_points: 500
+    n_scenarios_mc: 100000
+    risk_free_rate: 0.02
+  out_of_sample:
+    enabled: true
+    optimization_end_date: '2024-01-01'
+  qae_validation:
+    enabled: true
+    max_relative_error: 0.15
+    min_zne_improvement: 0.05
+  risk_analysis:
+    compute_by_cluster: false
+    compute_component_contributions: true
+    compute_marginal_contributions: true
+streamlit:
+  enabled: true
+  layout: wide
+  page_title: Quantum Portfolio Optimizer
+  recursive_settings:
+    show_per_node_progress: false
+    show_tree_visualization: false
+    sunburst_chart: false
+  sections:
+    per_level_metrics: false
+    phase0: true
+    phase1: true
+    phase2: true
+    phase3: true
+    recursive_tree_view: false
+  theme: light

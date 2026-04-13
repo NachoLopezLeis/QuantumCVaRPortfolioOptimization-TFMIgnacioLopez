@@ -1,0 +1,623 @@
+================================================================================
+BATCH EXPERIMENT RUNNER LOG
+Started: 2026-04-08T15:56:18.421264
+Timestamp ID: 20260408_155618
+Python: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+PID: 1484
+================================================================================
+
+======================================================================
+BATCH EXPERIMENT RUNNER v2.0 — 20260408_155618
+======================================================================
+[2026-04-08 15:56:18] [INFO   ] Project root: C:\Users\nacho\Desktop\v2_final\v2_final
+[2026-04-08 15:56:18] [INFO   ] Config dir:   C:\Users\nacho\Desktop\v2_final\v2_final\config
+[2026-04-08 15:56:18] [INFO   ] Notebook:     C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb
+[2026-04-08 15:56:18] [INFO   ] Results dir:  C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs
+[2026-04-08 15:56:18] [INFO   ] Log file:     C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_runner_20260408_155618.log
+[2026-04-08 15:56:18] [INFO   ] Running ALL 46 experiments
+[2026-04-08 15:56:20] [INFO   ] Executor detected: papermill 2.6.0 from C:\Users\nacho\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\papermill\cli.py (3.13.12)
+
+======================================================================
+EXECUTION PLAN — 46 experiments
+======================================================================
+[2026-04-08 15:56:20] [INFO   ]    1. [A1_PA] config_A1_PA.yaml      OK       noiseless eps=0.005 n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]    2. [A1_PB] config_A1_PB.yaml      OK       noiseless eps=0.005 n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]    3. [A1_PC] config_A1_PC.yaml      OK       noiseless eps=0.005 n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]    4. [A1_n3_PA] config_A1_n3_PA.yaml   OK       noiseless eps=0.005 n=3 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]    5. [A1_n3_PB] config_A1_n3_PB.yaml   OK       noiseless eps=0.005 n=3 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]    6. [A1_n3_PC] config_A1_n3_PC.yaml   OK       noiseless eps=0.005 n=3 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]    7. [A1_n5_PA] config_A1_n5_PA.yaml   OK       noiseless eps=0.005 n=5 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]    8. [A1_n5_PB] config_A1_n5_PB.yaml   OK       noiseless eps=0.005 n=5 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]    9. [A1_n5_PC] config_A1_n5_PC.yaml   OK       noiseless eps=0.005 n=5 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   10. [A1_n6_PA] config_A1_n6_PA.yaml   OK       noiseless eps=0.005 n=6 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   11. [A1_n6_PB] config_A1_n6_PB.yaml   OK       noiseless eps=0.005 n=6 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   12. [A1_n6_PC] config_A1_n6_PC.yaml   OK       noiseless eps=0.005 n=6 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   13. [A3_PA] config_A3_PA.yaml      OK       noiseless eps=0.002 n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   14. [A3_PB] config_A3_PB.yaml      OK       noiseless eps=0.002 n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   15. [A3_PC] config_A3_PC.yaml      OK       noiseless eps=0.002 n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   16. [D1_PA] config_D1_PA.yaml      OK       high noise eps=0.01  n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   17. [D1_PB] config_D1_PB.yaml      OK       high noise eps=0.01  n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   18. [D1_PC] config_D1_PC.yaml      OK       high noise eps=0.01  n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   19. [D1_n3_PA] config_D1_n3_PA.yaml   OK       high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+[2026-04-08 15:56:20] [INFO   ]   20. [D1_n6_PA] config_D1_n6_PA.yaml   OK       high noise eps=0.01  n=6 | PA peripheral K=10 [P1-002]
+[2026-04-08 15:56:20] [INFO   ]   21. [D2_PA] config_D2_PA.yaml      OK       high noise eps=0.005 n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   22. [D2_PB] config_D2_PB.yaml      OK       high noise eps=0.005 n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   23. [D2_PC] config_D2_PC.yaml      OK       high noise eps=0.005 n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   24. [B2_PA] config_B2_PA.yaml      OK       low noise  eps=0.005 n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   25. [B2_PB] config_B2_PB.yaml      OK       low noise  eps=0.005 n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   26. [B2_PC] config_B2_PC.yaml      OK       low noise  eps=0.005 n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   27. [B2_n3_PA] config_B2_n3_PA.yaml   OK       low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+[2026-04-08 15:56:20] [INFO   ]   28. [B2_n6_PA] config_B2_n6_PA.yaml   OK       low noise  eps=0.005 n=6 | PA peripheral K=10 [P1-002]
+[2026-04-08 15:56:20] [INFO   ]   29. [C2_PA] config_C2_PA.yaml      OK       med noise  eps=0.005 n=4 | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   30. [C2_PB] config_C2_PB.yaml      OK       med noise  eps=0.005 n=4 | PB central K=10
+[2026-04-08 15:56:20] [INFO   ]   31. [C2_PC] config_C2_PC.yaml      OK       med noise  eps=0.005 n=4 | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   32. [S1_PA_100] config_S1_PA_100.yaml  OK       noiseless eps=0.005 n=4 | PA_100 peripheral K=100
+[2026-04-08 15:56:20] [INFO   ]   33. [S1_PB_100] config_S1_PB_100.yaml  OK       noiseless eps=0.005 n=4 | PB_100 central K=100
+[2026-04-08 15:56:20] [INFO   ]   34. [S1_PC_100] config_S1_PC_100.yaml  OK       noiseless eps=0.005 n=4 | PC_100 SP100 K=100
+[2026-04-08 15:56:20] [INFO   ]   35. [S1_PA_30] config_S1_PA_30.yaml   OK       noiseless eps=0.005 n=4 | PA_30  peripheral K=30
+[2026-04-08 15:56:20] [INFO   ]   36. [S1_PB_30] config_S1_PB_30.yaml   OK       noiseless eps=0.005 n=4 | PB_30  central    K=30
+[2026-04-08 15:56:20] [INFO   ]   37. [S1_PC_30] config_S1_PC_30.yaml   OK       noiseless eps=0.005 n=4 | PC_30  predefined K=30
+[2026-04-08 15:56:20] [INFO   ]   38. [E1_PA] config_E1_PA.yaml      OK       noise-in-opt p2q=0.001 ZNE | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   39. [E1_PB] config_E1_PB.yaml      OK       noise-in-opt p2q=0.001 ZNE | PB central    K=10
+[2026-04-08 15:56:20] [INFO   ]   40. [E1_PC] config_E1_PC.yaml      OK       noise-in-opt p2q=0.001 ZNE | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   41. [E2_PA] config_E2_PA.yaml      OK       noise-in-opt p2q=0.005 ZNE | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   42. [E2_PB] config_E2_PB.yaml      OK       noise-in-opt p2q=0.005 ZNE | PB central    K=10
+[2026-04-08 15:56:20] [INFO   ]   43. [E2_PC] config_E2_PC.yaml      OK       noise-in-opt p2q=0.005 ZNE | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ]   44. [E3_PA] config_E3_PA.yaml      OK       noise-in-opt p2q=0.010 ZNE | PA peripheral K=10
+[2026-04-08 15:56:20] [INFO   ]   45. [E3_PB] config_E3_PB.yaml      OK       noise-in-opt p2q=0.010 ZNE | PB central    K=10
+[2026-04-08 15:56:20] [INFO   ]   46. [E3_PC] config_E3_PC.yaml      OK       noise-in-opt p2q=0.010 ZNE | PC predefined K=10
+[2026-04-08 15:56:20] [INFO   ] All config files validated OK
+[2026-04-08 15:56:20] [INFO   ] Copied: config.yaml -> config_backup_before_batch.yaml
+[2026-04-08 15:56:20] [INFO   ] Backed up config.yaml -> config_backup_before_batch.yaml
+[2026-04-08 15:56:20] [INFO   ] Incremental summary: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_summary_20260408_155618.json
+
+──────────────────────────────────────────────────────────────────────
+  [1/46] STARTING: A1_PA — noiseless eps=0.005 n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 15:56:20] [INFO   ] Config file:  config_A1_PA.yaml
+[2026-04-08 15:56:20] [INFO   ] Notebook log: run_A1_PA_20260408_155618.log
+[2026-04-08 15:56:20] [INFO   ] Output nb:    main_A1_PA_20260408_155618.ipynb
+[2026-04-08 15:56:20] [INFO   ] Copied: config_A1_PA.yaml -> config.yaml
+[2026-04-08 15:56:20] [INFO   ] Executing notebook with papermill...
+[2026-04-08 15:56:20] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 15:56:20] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 16:35:14] [INFO   ] Papermill exit code: 0
+[2026-04-08 16:35:14] [INFO   ] Output check [A1_PA]: found 2 recent metrics JSON(s)
+[2026-04-08 16:35:14] [INFO   ] [OK] A1_PA completed in 0:38:54 — OK
+[2026-04-08 16:35:14] [INFO   ] Generating AI report for A1_PA...
+[2026-04-08 16:35:18] [INFO   ] AI report saved: results/exp_A1_PA/report_ai.md
+[2026-04-08 16:35:18] [INFO   ] Progress: 1/46 done, 45 remaining, ETA: ~1 day, 5:13:52
+
+──────────────────────────────────────────────────────────────────────
+  [2/46] STARTING: A1_PB — noiseless eps=0.005 n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 16:35:18] [INFO   ] Config file:  config_A1_PB.yaml
+[2026-04-08 16:35:18] [INFO   ] Notebook log: run_A1_PB_20260408_155618.log
+[2026-04-08 16:35:18] [INFO   ] Output nb:    main_A1_PB_20260408_155618.ipynb
+[2026-04-08 16:35:18] [INFO   ] Copied: config_A1_PB.yaml -> config.yaml
+[2026-04-08 16:35:18] [INFO   ] Executing notebook with papermill...
+[2026-04-08 16:35:18] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 16:35:18] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 17:11:18] [INFO   ] Papermill exit code: 0
+[2026-04-08 17:11:18] [INFO   ] Output check [A1_PB]: found 2 recent metrics JSON(s)
+[2026-04-08 17:11:18] [INFO   ] [OK] A1_PB completed in 0:36:00 — OK
+[2026-04-08 17:11:18] [INFO   ] Generating AI report for A1_PB...
+[2026-04-08 17:11:23] [INFO   ] AI report saved: results/exp_A1_PB/report_ai.md
+[2026-04-08 17:11:23] [INFO   ] Progress: 2/46 done, 44 remaining, ETA: ~1 day, 3:31:07
+
+──────────────────────────────────────────────────────────────────────
+  [3/46] STARTING: A1_PC — noiseless eps=0.005 n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 17:11:23] [INFO   ] Config file:  config_A1_PC.yaml
+[2026-04-08 17:11:23] [INFO   ] Notebook log: run_A1_PC_20260408_155618.log
+[2026-04-08 17:11:23] [INFO   ] Output nb:    main_A1_PC_20260408_155618.ipynb
+[2026-04-08 17:11:23] [INFO   ] Copied: config_A1_PC.yaml -> config.yaml
+[2026-04-08 17:11:23] [INFO   ] Executing notebook with papermill...
+[2026-04-08 17:11:23] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 17:11:23] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 17:38:43] [INFO   ] Papermill exit code: 0
+[2026-04-08 17:38:43] [INFO   ] Output check [A1_PC]: found 2 recent metrics JSON(s)
+[2026-04-08 17:38:43] [INFO   ] [OK] A1_PC completed in 0:27:20 — OK
+[2026-04-08 17:38:43] [INFO   ] Generating AI report for A1_PC...
+[2026-04-08 17:38:47] [INFO   ] AI report saved: results/exp_A1_PC/report_ai.md
+[2026-04-08 17:38:47] [INFO   ] Progress: 3/46 done, 43 remaining, ETA: ~1 day, 0:28:36
+
+──────────────────────────────────────────────────────────────────────
+  [4/46] STARTING: A1_n3_PA — noiseless eps=0.005 n=3 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 17:38:47] [INFO   ] Config file:  config_A1_n3_PA.yaml
+[2026-04-08 17:38:47] [INFO   ] Notebook log: run_A1_n3_PA_20260408_155618.log
+[2026-04-08 17:38:47] [INFO   ] Output nb:    main_A1_n3_PA_20260408_155618.ipynb
+[2026-04-08 17:38:47] [INFO   ] Copied: config_A1_n3_PA.yaml -> config.yaml
+[2026-04-08 17:38:47] [INFO   ] Executing notebook with papermill...
+[2026-04-08 17:38:47] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n3_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 17:38:47] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 17:47:17] [INFO   ] Papermill exit code: 0
+[2026-04-08 17:47:17] [INFO   ] Output check [A1_n3_PA]: found 2 recent metrics JSON(s)
+[2026-04-08 17:47:17] [INFO   ] [OK] A1_n3_PA completed in 0:08:29 — OK
+[2026-04-08 17:47:17] [INFO   ] Generating AI report for A1_n3_PA...
+[2026-04-08 17:47:21] [INFO   ] AI report saved: results/exp_A1_n3_PA/report_ai.md
+[2026-04-08 17:47:21] [INFO   ] Progress: 4/46 done, 42 remaining, ETA: ~19:25:46
+
+──────────────────────────────────────────────────────────────────────
+  [5/46] STARTING: A1_n3_PB — noiseless eps=0.005 n=3 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 17:47:21] [INFO   ] Config file:  config_A1_n3_PB.yaml
+[2026-04-08 17:47:21] [INFO   ] Notebook log: run_A1_n3_PB_20260408_155618.log
+[2026-04-08 17:47:21] [INFO   ] Output nb:    main_A1_n3_PB_20260408_155618.ipynb
+[2026-04-08 17:47:21] [INFO   ] Copied: config_A1_n3_PB.yaml -> config.yaml
+[2026-04-08 17:47:21] [INFO   ] Executing notebook with papermill...
+[2026-04-08 17:47:21] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n3_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 17:47:21] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 17:55:18] [INFO   ] Papermill exit code: 0
+[2026-04-08 17:55:18] [INFO   ] Output check [A1_n3_PB]: found 2 recent metrics JSON(s)
+[2026-04-08 17:55:18] [INFO   ] [OK] A1_n3_PB completed in 0:07:56 — OK
+[2026-04-08 17:55:18] [INFO   ] Generating AI report for A1_n3_PB...
+[2026-04-08 17:55:22] [INFO   ] AI report saved: results/exp_A1_n3_PB/report_ai.md
+[2026-04-08 17:55:22] [INFO   ] Progress: 5/46 done, 41 remaining, ETA: ~16:16:08
+
+──────────────────────────────────────────────────────────────────────
+  [6/46] STARTING: A1_n3_PC — noiseless eps=0.005 n=3 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 17:55:22] [INFO   ] Config file:  config_A1_n3_PC.yaml
+[2026-04-08 17:55:22] [INFO   ] Notebook log: run_A1_n3_PC_20260408_155618.log
+[2026-04-08 17:55:22] [INFO   ] Output nb:    main_A1_n3_PC_20260408_155618.ipynb
+[2026-04-08 17:55:22] [INFO   ] Copied: config_A1_n3_PC.yaml -> config.yaml
+[2026-04-08 17:55:22] [INFO   ] Executing notebook with papermill...
+[2026-04-08 17:55:22] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n3_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 17:55:22] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 18:01:23] [INFO   ] Papermill exit code: 0
+[2026-04-08 18:01:23] [INFO   ] Output check [A1_n3_PC]: found 2 recent metrics JSON(s)
+[2026-04-08 18:01:23] [INFO   ] [OK] A1_n3_PC completed in 0:06:00 — OK
+[2026-04-08 18:01:23] [INFO   ] Generating AI report for A1_n3_PC...
+[2026-04-08 18:01:27] [INFO   ] AI report saved: results/exp_A1_n3_PC/report_ai.md
+[2026-04-08 18:01:27] [INFO   ] Progress: 6/46 done, 40 remaining, ETA: ~13:54:11
+
+──────────────────────────────────────────────────────────────────────
+  [7/46] STARTING: A1_n5_PA — noiseless eps=0.005 n=5 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 18:01:27] [INFO   ] Config file:  config_A1_n5_PA.yaml
+[2026-04-08 18:01:27] [INFO   ] Notebook log: run_A1_n5_PA_20260408_155618.log
+[2026-04-08 18:01:27] [INFO   ] Output nb:    main_A1_n5_PA_20260408_155618.ipynb
+[2026-04-08 18:01:27] [INFO   ] Copied: config_A1_n5_PA.yaml -> config.yaml
+[2026-04-08 18:01:27] [INFO   ] Executing notebook with papermill...
+[2026-04-08 18:01:27] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n5_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 18:01:27] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 20:16:01] [INFO   ] Papermill exit code: 0
+[2026-04-08 20:16:01] [INFO   ] Output check [A1_n5_PA]: found 2 recent metrics JSON(s)
+[2026-04-08 20:16:01] [INFO   ] [OK] A1_n5_PA completed in 2:14:33 — OK
+[2026-04-08 20:16:01] [INFO   ] Generating AI report for A1_n5_PA...
+[2026-04-08 20:16:06] [INFO   ] AI report saved: results/exp_A1_n5_PA/report_ai.md
+[2026-04-08 20:16:06] [INFO   ] Progress: 7/46 done, 39 remaining, ETA: ~1 day, 0:07:20
+
+──────────────────────────────────────────────────────────────────────
+  [8/46] STARTING: A1_n5_PB — noiseless eps=0.005 n=5 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 20:16:06] [INFO   ] Config file:  config_A1_n5_PB.yaml
+[2026-04-08 20:16:06] [INFO   ] Notebook log: run_A1_n5_PB_20260408_155618.log
+[2026-04-08 20:16:06] [INFO   ] Output nb:    main_A1_n5_PB_20260408_155618.ipynb
+[2026-04-08 20:16:06] [INFO   ] Copied: config_A1_n5_PB.yaml -> config.yaml
+[2026-04-08 20:16:06] [INFO   ] Executing notebook with papermill...
+[2026-04-08 20:16:06] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n5_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 20:16:06] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 22:21:21] [INFO   ] Papermill exit code: 0
+[2026-04-08 22:21:21] [INFO   ] Output check [A1_n5_PB]: found 2 recent metrics JSON(s)
+[2026-04-08 22:21:21] [INFO   ] [OK] A1_n5_PB completed in 2:05:14 — OK
+[2026-04-08 22:21:21] [INFO   ] Generating AI report for A1_n5_PB...
+[2026-04-08 22:21:25] [INFO   ] AI report saved: results/exp_A1_n5_PB/report_ai.md
+[2026-04-08 22:21:25] [INFO   ] Progress: 8/46 done, 38 remaining, ETA: ~1 day, 6:29:11
+
+──────────────────────────────────────────────────────────────────────
+  [9/46] STARTING: A1_n5_PC — noiseless eps=0.005 n=5 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 22:21:25] [INFO   ] Config file:  config_A1_n5_PC.yaml
+[2026-04-08 22:21:25] [INFO   ] Notebook log: run_A1_n5_PC_20260408_155618.log
+[2026-04-08 22:21:25] [INFO   ] Output nb:    main_A1_n5_PC_20260408_155618.ipynb
+[2026-04-08 22:21:25] [INFO   ] Copied: config_A1_n5_PC.yaml -> config.yaml
+[2026-04-08 22:21:25] [INFO   ] Executing notebook with papermill...
+[2026-04-08 22:21:25] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n5_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 22:21:25] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-08 23:57:53] [INFO   ] Papermill exit code: 0
+[2026-04-08 23:57:53] [INFO   ] Output check [A1_n5_PC]: found 2 recent metrics JSON(s)
+[2026-04-08 23:57:53] [INFO   ] [OK] A1_n5_PC completed in 1:36:28 — OK
+[2026-04-08 23:57:53] [INFO   ] Generating AI report for A1_n5_PC...
+[2026-04-08 23:57:58] [INFO   ] AI report saved: results/exp_A1_n5_PC/report_ai.md
+[2026-04-08 23:57:58] [INFO   ] Progress: 9/46 done, 37 remaining, ETA: ~1 day, 9:00:03
+
+──────────────────────────────────────────────────────────────────────
+  [10/46] STARTING: A1_n6_PA — noiseless eps=0.005 n=6 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-08 23:57:58] [INFO   ] Config file:  config_A1_n6_PA.yaml
+[2026-04-08 23:57:58] [INFO   ] Notebook log: run_A1_n6_PA_20260408_155618.log
+[2026-04-08 23:57:58] [INFO   ] Output nb:    main_A1_n6_PA_20260408_155618.ipynb
+[2026-04-08 23:57:58] [INFO   ] Copied: config_A1_n6_PA.yaml -> config.yaml
+[2026-04-08 23:57:58] [INFO   ] Executing notebook with papermill...
+[2026-04-08 23:57:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-08 23:57:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 03:57:58] [ERROR  ] A1_n6_PA TIMED OUT after 4.0h
+[2026-04-09 03:57:58] [WARNING] Output check [A1_n6_PA]: no recent metrics JSON found in results/
+[2026-04-09 03:57:58] [INFO   ] [FAIL] A1_n6_PA completed in 4:00:00 — TIMEOUT (4h limit)
+[2026-04-09 03:57:58] [INFO   ] Progress: 10/46 done, 36 remaining, ETA: ~1 day, 19:17:54
+
+──────────────────────────────────────────────────────────────────────
+  [11/46] STARTING: A1_n6_PB — noiseless eps=0.005 n=6 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 03:57:58] [INFO   ] Config file:  config_A1_n6_PB.yaml
+[2026-04-09 03:57:58] [INFO   ] Notebook log: run_A1_n6_PB_20260408_155618.log
+[2026-04-09 03:57:58] [INFO   ] Output nb:    main_A1_n6_PB_20260408_155618.ipynb
+[2026-04-09 03:57:58] [INFO   ] Copied: config_A1_n6_PB.yaml -> config.yaml
+[2026-04-09 03:57:58] [INFO   ] Executing notebook with papermill...
+[2026-04-09 03:57:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 03:57:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 07:57:58] [ERROR  ] A1_n6_PB TIMED OUT after 4.0h
+[2026-04-09 07:57:58] [WARNING] Output check [A1_n6_PB]: no recent metrics JSON found in results/
+[2026-04-09 07:57:58] [INFO   ] [FAIL] A1_n6_PB completed in 4:00:00 — TIMEOUT (4h limit)
+[2026-04-09 07:57:58] [INFO   ] Progress: 11/46 done, 35 remaining, ETA: ~2 days, 2:59:46
+
+──────────────────────────────────────────────────────────────────────
+  [12/46] STARTING: A1_n6_PC — noiseless eps=0.005 n=6 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 07:57:58] [INFO   ] Config file:  config_A1_n6_PC.yaml
+[2026-04-09 07:57:58] [INFO   ] Notebook log: run_A1_n6_PC_20260408_155618.log
+[2026-04-09 07:57:58] [INFO   ] Output nb:    main_A1_n6_PC_20260408_155618.ipynb
+[2026-04-09 07:57:58] [INFO   ] Copied: config_A1_n6_PC.yaml -> config.yaml
+[2026-04-09 07:57:58] [INFO   ] Executing notebook with papermill...
+[2026-04-09 07:57:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 07:57:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 11:57:58] [ERROR  ] A1_n6_PC TIMED OUT after 4.0h
+[2026-04-09 11:57:58] [WARNING] Output check [A1_n6_PC]: no recent metrics JSON found in results/
+[2026-04-09 11:57:58] [INFO   ] [FAIL] A1_n6_PC completed in 4:00:00 — TIMEOUT (4h limit)
+[2026-04-09 11:57:58] [INFO   ] Progress: 12/46 done, 34 remaining, ETA: ~2 days, 8:44:39
+
+──────────────────────────────────────────────────────────────────────
+  [13/46] STARTING: A3_PA — noiseless eps=0.002 n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 11:57:58] [INFO   ] Config file:  config_A3_PA.yaml
+[2026-04-09 11:57:58] [INFO   ] Notebook log: run_A3_PA_20260408_155618.log
+[2026-04-09 11:57:58] [INFO   ] Output nb:    main_A3_PA_20260408_155618.ipynb
+[2026-04-09 11:57:58] [INFO   ] Copied: config_A3_PA.yaml -> config.yaml
+[2026-04-09 11:57:58] [INFO   ] Executing notebook with papermill...
+[2026-04-09 11:57:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A3_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 11:57:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 13:15:54] [INFO   ] Papermill exit code: 0
+[2026-04-09 13:15:54] [INFO   ] Output check [A3_PA]: found 2 recent metrics JSON(s)
+[2026-04-09 13:15:54] [INFO   ] [OK] A3_PA completed in 1:17:55 — OK
+[2026-04-09 13:15:54] [INFO   ] Generating AI report for A3_PA...
+[2026-04-09 13:15:58] [INFO   ] AI report saved: results/exp_A3_PA/report_ai.md
+[2026-04-09 13:15:58] [INFO   ] Progress: 13/46 done, 33 remaining, ETA: ~2 days, 6:08:20
+
+──────────────────────────────────────────────────────────────────────
+  [14/46] STARTING: A3_PB — noiseless eps=0.002 n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 13:15:58] [INFO   ] Config file:  config_A3_PB.yaml
+[2026-04-09 13:15:58] [INFO   ] Notebook log: run_A3_PB_20260408_155618.log
+[2026-04-09 13:15:58] [INFO   ] Output nb:    main_A3_PB_20260408_155618.ipynb
+[2026-04-09 13:15:58] [INFO   ] Copied: config_A3_PB.yaml -> config.yaml
+[2026-04-09 13:15:58] [INFO   ] Executing notebook with papermill...
+[2026-04-09 13:15:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A3_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 13:15:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 14:35:49] [INFO   ] Papermill exit code: 0
+[2026-04-09 14:35:49] [INFO   ] Output check [A3_PB]: found 2 recent metrics JSON(s)
+[2026-04-09 14:35:49] [INFO   ] [OK] A3_PB completed in 1:19:50 — OK
+[2026-04-09 14:35:49] [INFO   ] Generating AI report for A3_PB...
+[2026-04-09 14:35:53] [INFO   ] AI report saved: results/exp_A3_PB/report_ai.md
+[2026-04-09 14:35:53] [INFO   ] Progress: 14/46 done, 32 remaining, ETA: ~2 days, 3:47:33
+
+──────────────────────────────────────────────────────────────────────
+  [15/46] STARTING: A3_PC — noiseless eps=0.002 n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 14:35:53] [INFO   ] Config file:  config_A3_PC.yaml
+[2026-04-09 14:35:53] [INFO   ] Notebook log: run_A3_PC_20260408_155618.log
+[2026-04-09 14:35:53] [INFO   ] Output nb:    main_A3_PC_20260408_155618.ipynb
+[2026-04-09 14:35:53] [INFO   ] Copied: config_A3_PC.yaml -> config.yaml
+[2026-04-09 14:35:53] [INFO   ] Executing notebook with papermill...
+[2026-04-09 14:35:53] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A3_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 14:35:53] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 15:32:44] [INFO   ] Papermill exit code: 0
+[2026-04-09 15:32:44] [INFO   ] Output check [A3_PC]: found 2 recent metrics JSON(s)
+[2026-04-09 15:32:44] [INFO   ] [OK] A3_PC completed in 0:56:51 — OK
+[2026-04-09 15:32:44] [INFO   ] Generating AI report for A3_PC...
+[2026-04-09 15:32:49] [INFO   ] AI report saved: results/exp_A3_PC/report_ai.md
+[2026-04-09 15:32:49] [INFO   ] Progress: 15/46 done, 31 remaining, ETA: ~2 days, 0:47:23
+
+──────────────────────────────────────────────────────────────────────
+  [16/46] STARTING: D1_PA — high noise eps=0.01  n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 15:32:49] [INFO   ] Config file:  config_D1_PA.yaml
+[2026-04-09 15:32:49] [INFO   ] Notebook log: run_D1_PA_20260408_155618.log
+[2026-04-09 15:32:49] [INFO   ] Output nb:    main_D1_PA_20260408_155618.ipynb
+[2026-04-09 15:32:49] [INFO   ] Copied: config_D1_PA.yaml -> config.yaml
+[2026-04-09 15:32:49] [INFO   ] Executing notebook with papermill...
+[2026-04-09 15:32:49] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 15:32:49] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 16:43:56] [INFO   ] Papermill exit code: 0
+[2026-04-09 16:43:56] [INFO   ] Output check [D1_PA]: found 2 recent metrics JSON(s)
+[2026-04-09 16:43:56] [INFO   ] [OK] D1_PA completed in 1:11:07 — OK
+[2026-04-09 16:43:56] [INFO   ] Generating AI report for D1_PA...
+[2026-04-09 16:44:00] [INFO   ] AI report saved: results/exp_D1_PA/report_ai.md
+[2026-04-09 16:44:01] [INFO   ] Progress: 16/46 done, 30 remaining, ETA: ~1 day, 22:29:24
+
+──────────────────────────────────────────────────────────────────────
+  [17/46] STARTING: D1_PB — high noise eps=0.01  n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 16:44:01] [INFO   ] Config file:  config_D1_PB.yaml
+[2026-04-09 16:44:01] [INFO   ] Notebook log: run_D1_PB_20260408_155618.log
+[2026-04-09 16:44:01] [INFO   ] Output nb:    main_D1_PB_20260408_155618.ipynb
+[2026-04-09 16:44:01] [INFO   ] Copied: config_D1_PB.yaml -> config.yaml
+[2026-04-09 16:44:01] [INFO   ] Executing notebook with papermill...
+[2026-04-09 16:44:01] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 16:44:01] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 18:08:21] [INFO   ] Papermill exit code: 0
+[2026-04-09 18:08:21] [INFO   ] Output check [D1_PB]: found 2 recent metrics JSON(s)
+[2026-04-09 18:08:21] [INFO   ] [OK] D1_PB completed in 1:24:20 — OK
+[2026-04-09 18:08:21] [INFO   ] Generating AI report for D1_PB...
+[2026-04-09 18:08:25] [INFO   ] AI report saved: results/exp_D1_PB/report_ai.md
+[2026-04-09 18:08:25] [INFO   ] Progress: 17/46 done, 29 remaining, ETA: ~1 day, 20:41:47
+
+──────────────────────────────────────────────────────────────────────
+  [18/46] STARTING: D1_PC — high noise eps=0.01  n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 18:08:25] [INFO   ] Config file:  config_D1_PC.yaml
+[2026-04-09 18:08:25] [INFO   ] Notebook log: run_D1_PC_20260408_155618.log
+[2026-04-09 18:08:25] [INFO   ] Output nb:    main_D1_PC_20260408_155618.ipynb
+[2026-04-09 18:08:25] [INFO   ] Copied: config_D1_PC.yaml -> config.yaml
+[2026-04-09 18:08:25] [INFO   ] Executing notebook with papermill...
+[2026-04-09 18:08:25] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 18:08:25] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 18:57:29] [INFO   ] Papermill exit code: 0
+[2026-04-09 18:57:29] [INFO   ] Output check [D1_PC]: found 2 recent metrics JSON(s)
+[2026-04-09 18:57:29] [INFO   ] [OK] D1_PC completed in 0:49:03 — OK
+[2026-04-09 18:57:29] [INFO   ] Generating AI report for D1_PC...
+[2026-04-09 18:57:33] [INFO   ] AI report saved: results/exp_D1_PC/report_ai.md
+[2026-04-09 18:57:33] [INFO   ] Progress: 18/46 done, 28 remaining, ETA: ~1 day, 18:01:54
+
+──────────────────────────────────────────────────────────────────────
+  [19/46] STARTING: D1_n3_PA — high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 18:57:33] [INFO   ] Config file:  config_D1_n3_PA.yaml
+[2026-04-09 18:57:33] [INFO   ] Notebook log: run_D1_n3_PA_20260408_155618.log
+[2026-04-09 18:57:33] [INFO   ] Output nb:    main_D1_n3_PA_20260408_155618.ipynb
+[2026-04-09 18:57:33] [INFO   ] Copied: config_D1_n3_PA.yaml -> config.yaml
+[2026-04-09 18:57:33] [INFO   ] Executing notebook with papermill...
+[2026-04-09 18:57:33] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_n3_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 18:57:33] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 20:22:06] [INFO   ] Papermill exit code: 0
+[2026-04-09 20:22:06] [INFO   ] Output check [D1_n3_PA]: found 2 recent metrics JSON(s)
+[2026-04-09 20:22:06] [INFO   ] [OK] D1_n3_PA completed in 1:24:32 — OK
+[2026-04-09 20:22:06] [INFO   ] Generating AI report for D1_n3_PA...
+[2026-04-09 20:22:06] [WARNING] AI report failed (non-critical): Not found: C:\Users\nacho\Desktop\v2_final\v2_final\results\exp_D1_n3_PA
+
+[2026-04-09 20:22:06] [INFO   ] Progress: 19/46 done, 27 remaining, ETA: ~1 day, 16:24:00
+
+──────────────────────────────────────────────────────────────────────
+  [20/46] STARTING: D1_n6_PA — high noise eps=0.01  n=6 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 20:22:06] [INFO   ] Config file:  config_D1_n6_PA.yaml
+[2026-04-09 20:22:06] [INFO   ] Notebook log: run_D1_n6_PA_20260408_155618.log
+[2026-04-09 20:22:06] [INFO   ] Output nb:    main_D1_n6_PA_20260408_155618.ipynb
+[2026-04-09 20:22:06] [INFO   ] Copied: config_D1_n6_PA.yaml -> config.yaml
+[2026-04-09 20:22:06] [INFO   ] Executing notebook with papermill...
+[2026-04-09 20:22:06] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_n6_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 20:22:06] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 21:34:55] [INFO   ] Papermill exit code: 0
+[2026-04-09 21:34:55] [INFO   ] Output check [D1_n6_PA]: found 2 recent metrics JSON(s)
+[2026-04-09 21:34:55] [INFO   ] [OK] D1_n6_PA completed in 1:12:48 — OK
+[2026-04-09 21:34:55] [INFO   ] Generating AI report for D1_n6_PA...
+[2026-04-09 21:34:59] [INFO   ] AI report saved: results/exp_D1_n6_PA/report_ai.md
+[2026-04-09 21:34:59] [INFO   ] Progress: 20/46 done, 26 remaining, ETA: ~1 day, 14:32:15
+
+──────────────────────────────────────────────────────────────────────
+  [21/46] STARTING: D2_PA — high noise eps=0.005 n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 21:34:59] [INFO   ] Config file:  config_D2_PA.yaml
+[2026-04-09 21:34:59] [INFO   ] Notebook log: run_D2_PA_20260408_155618.log
+[2026-04-09 21:34:59] [INFO   ] Output nb:    main_D2_PA_20260408_155618.ipynb
+[2026-04-09 21:34:59] [INFO   ] Copied: config_D2_PA.yaml -> config.yaml
+[2026-04-09 21:34:59] [INFO   ] Executing notebook with papermill...
+[2026-04-09 21:34:59] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D2_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 21:34:59] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-09 22:47:00] [INFO   ] Papermill exit code: 0
+[2026-04-09 22:47:00] [INFO   ] Output check [D2_PA]: found 2 recent metrics JSON(s)
+[2026-04-09 22:47:00] [INFO   ] [OK] D2_PA completed in 1:12:00 — OK
+[2026-04-09 22:47:00] [INFO   ] Generating AI report for D2_PA...
+[2026-04-09 22:47:04] [INFO   ] AI report saved: results/exp_D2_PA/report_ai.md
+[2026-04-09 22:47:05] [INFO   ] Progress: 21/46 done, 25 remaining, ETA: ~1 day, 12:43:16
+
+──────────────────────────────────────────────────────────────────────
+  [22/46] STARTING: D2_PB — high noise eps=0.005 n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-09 22:47:05] [INFO   ] Config file:  config_D2_PB.yaml
+[2026-04-09 22:47:05] [INFO   ] Notebook log: run_D2_PB_20260408_155618.log
+[2026-04-09 22:47:05] [INFO   ] Output nb:    main_D2_PB_20260408_155618.ipynb
+[2026-04-09 22:47:05] [INFO   ] Copied: config_D2_PB.yaml -> config.yaml
+[2026-04-09 22:47:05] [INFO   ] Executing notebook with papermill...
+[2026-04-09 22:47:05] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D2_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-09 22:47:05] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 00:28:12] [INFO   ] Papermill exit code: 0
+[2026-04-10 00:28:12] [INFO   ] Output check [D2_PB]: found 2 recent metrics JSON(s)
+[2026-04-10 00:28:12] [INFO   ] [OK] D2_PB completed in 1:41:07 — OK
+[2026-04-10 00:28:12] [INFO   ] Generating AI report for D2_PB...
+[2026-04-10 00:28:16] [INFO   ] AI report saved: results/exp_D2_PB/report_ai.md
+[2026-04-10 00:28:16] [INFO   ] Progress: 22/46 done, 24 remaining, ETA: ~1 day, 11:29:23
+
+──────────────────────────────────────────────────────────────────────
+  [23/46] STARTING: D2_PC — high noise eps=0.005 n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 00:28:16] [INFO   ] Config file:  config_D2_PC.yaml
+[2026-04-10 00:28:16] [INFO   ] Notebook log: run_D2_PC_20260408_155618.log
+[2026-04-10 00:28:16] [INFO   ] Output nb:    main_D2_PC_20260408_155618.ipynb
+[2026-04-10 00:28:16] [INFO   ] Copied: config_D2_PC.yaml -> config.yaml
+[2026-04-10 00:28:16] [INFO   ] Executing notebook with papermill...
+[2026-04-10 00:28:16] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D2_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 00:28:16] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 01:18:35] [INFO   ] Papermill exit code: 0
+[2026-04-10 01:18:35] [INFO   ] Output check [D2_PC]: found 2 recent metrics JSON(s)
+[2026-04-10 01:18:35] [INFO   ] [OK] D2_PC completed in 0:50:18 — OK
+[2026-04-10 01:18:35] [INFO   ] Generating AI report for D2_PC...
+[2026-04-10 01:18:39] [INFO   ] AI report saved: results/exp_D2_PC/report_ai.md
+[2026-04-10 01:18:39] [INFO   ] Progress: 23/46 done, 23 remaining, ETA: ~1 day, 9:22:19
+
+──────────────────────────────────────────────────────────────────────
+  [24/46] STARTING: B2_PA — low noise  eps=0.005 n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 01:18:39] [INFO   ] Config file:  config_B2_PA.yaml
+[2026-04-10 01:18:39] [INFO   ] Notebook log: run_B2_PA_20260408_155618.log
+[2026-04-10 01:18:39] [INFO   ] Output nb:    main_B2_PA_20260408_155618.ipynb
+[2026-04-10 01:18:39] [INFO   ] Copied: config_B2_PA.yaml -> config.yaml
+[2026-04-10 01:18:39] [INFO   ] Executing notebook with papermill...
+[2026-04-10 01:18:39] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 01:18:39] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 01:57:40] [INFO   ] Papermill exit code: 0
+[2026-04-10 01:57:40] [INFO   ] Output check [B2_PA]: found 2 recent metrics JSON(s)
+[2026-04-10 01:57:40] [INFO   ] [OK] B2_PA completed in 0:39:00 — OK
+[2026-04-10 01:57:40] [INFO   ] Generating AI report for B2_PA...
+[2026-04-10 01:57:44] [INFO   ] AI report saved: results/exp_B2_PA/report_ai.md
+[2026-04-10 01:57:44] [INFO   ] Progress: 24/46 done, 22 remaining, ETA: ~1 day, 7:11:17
+
+──────────────────────────────────────────────────────────────────────
+  [25/46] STARTING: B2_PB — low noise  eps=0.005 n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 01:57:44] [INFO   ] Config file:  config_B2_PB.yaml
+[2026-04-10 01:57:44] [INFO   ] Notebook log: run_B2_PB_20260408_155618.log
+[2026-04-10 01:57:44] [INFO   ] Output nb:    main_B2_PB_20260408_155618.ipynb
+[2026-04-10 01:57:44] [INFO   ] Copied: config_B2_PB.yaml -> config.yaml
+[2026-04-10 01:57:44] [INFO   ] Executing notebook with papermill...
+[2026-04-10 01:57:44] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 01:57:44] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 03:34:20] [INFO   ] Papermill exit code: 0
+[2026-04-10 03:34:20] [INFO   ] Output check [B2_PB]: found 2 recent metrics JSON(s)
+[2026-04-10 03:34:20] [INFO   ] [OK] B2_PB completed in 1:36:35 — OK
+[2026-04-10 03:34:20] [INFO   ] Generating AI report for B2_PB...
+[2026-04-10 03:34:24] [INFO   ] AI report saved: results/exp_B2_PB/report_ai.md
+[2026-04-10 03:34:24] [INFO   ] Progress: 25/46 done, 21 remaining, ETA: ~1 day, 5:55:59
+
+──────────────────────────────────────────────────────────────────────
+  [26/46] STARTING: B2_PC — low noise  eps=0.005 n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 03:34:24] [INFO   ] Config file:  config_B2_PC.yaml
+[2026-04-10 03:34:24] [INFO   ] Notebook log: run_B2_PC_20260408_155618.log
+[2026-04-10 03:34:24] [INFO   ] Output nb:    main_B2_PC_20260408_155618.ipynb
+[2026-04-10 03:34:24] [INFO   ] Copied: config_B2_PC.yaml -> config.yaml
+[2026-04-10 03:34:24] [INFO   ] Executing notebook with papermill...
+[2026-04-10 03:34:24] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 03:34:24] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 04:21:45] [INFO   ] Papermill exit code: 0
+[2026-04-10 04:21:45] [INFO   ] Output check [B2_PC]: found 2 recent metrics JSON(s)
+[2026-04-10 04:21:45] [INFO   ] [OK] B2_PC completed in 0:47:20 — OK
+[2026-04-10 04:21:45] [INFO   ] Generating AI report for B2_PC...
+[2026-04-10 04:21:49] [INFO   ] AI report saved: results/exp_B2_PC/report_ai.md
+[2026-04-10 04:21:49] [INFO   ] Progress: 26/46 done, 20 remaining, ETA: ~1 day, 4:01:08
+
+──────────────────────────────────────────────────────────────────────
+  [27/46] STARTING: B2_n3_PA — low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 04:21:49] [INFO   ] Config file:  config_B2_n3_PA.yaml
+[2026-04-10 04:21:49] [INFO   ] Notebook log: run_B2_n3_PA_20260408_155618.log
+[2026-04-10 04:21:49] [INFO   ] Output nb:    main_B2_n3_PA_20260408_155618.ipynb
+[2026-04-10 04:21:49] [INFO   ] Copied: config_B2_n3_PA.yaml -> config.yaml
+[2026-04-10 04:21:49] [INFO   ] Executing notebook with papermill...
+[2026-04-10 04:21:49] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_n3_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 04:21:49] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 05:00:58] [INFO   ] Papermill exit code: 0
+[2026-04-10 05:00:58] [INFO   ] Output check [B2_n3_PA]: found 2 recent metrics JSON(s)
+[2026-04-10 05:00:58] [INFO   ] [OK] B2_n3_PA completed in 0:39:08 — OK
+[2026-04-10 05:00:58] [INFO   ] Generating AI report for B2_n3_PA...
+[2026-04-10 05:00:58] [WARNING] AI report failed (non-critical): Not found: C:\Users\nacho\Desktop\v2_final\v2_final\results\exp_B2_n3_PA
+
+[2026-04-10 05:00:58] [INFO   ] Progress: 27/46 done, 19 remaining, ETA: ~1 day, 2:05:29
+
+──────────────────────────────────────────────────────────────────────
+  [28/46] STARTING: B2_n6_PA — low noise  eps=0.005 n=6 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 05:00:58] [INFO   ] Config file:  config_B2_n6_PA.yaml
+[2026-04-10 05:00:58] [INFO   ] Notebook log: run_B2_n6_PA_20260408_155618.log
+[2026-04-10 05:00:58] [INFO   ] Output nb:    main_B2_n6_PA_20260408_155618.ipynb
+[2026-04-10 05:00:58] [INFO   ] Copied: config_B2_n6_PA.yaml -> config.yaml
+[2026-04-10 05:00:58] [INFO   ] Executing notebook with papermill...
+[2026-04-10 05:00:58] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_n6_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 05:00:58] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 05:39:57] [INFO   ] Papermill exit code: 0
+[2026-04-10 05:39:57] [INFO   ] Output check [B2_n6_PA]: found 2 recent metrics JSON(s)
+[2026-04-10 05:39:57] [INFO   ] [OK] B2_n6_PA completed in 0:38:59 — OK
+[2026-04-10 05:39:57] [INFO   ] Generating AI report for B2_n6_PA...
+[2026-04-10 05:40:01] [INFO   ] AI report saved: results/exp_B2_n6_PA/report_ai.md
+[2026-04-10 05:40:01] [INFO   ] Progress: 28/46 done, 18 remaining, ETA: ~1 day, 0:15:13
+
+──────────────────────────────────────────────────────────────────────
+  [29/46] STARTING: C2_PA — med noise  eps=0.005 n=4 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 05:40:01] [INFO   ] Config file:  config_C2_PA.yaml
+[2026-04-10 05:40:01] [INFO   ] Notebook log: run_C2_PA_20260408_155618.log
+[2026-04-10 05:40:01] [INFO   ] Output nb:    main_C2_PA_20260408_155618.ipynb
+[2026-04-10 05:40:01] [INFO   ] Copied: config_C2_PA.yaml -> config.yaml
+[2026-04-10 05:40:01] [INFO   ] Executing notebook with papermill...
+[2026-04-10 05:40:01] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_C2_PA_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 05:40:01] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 06:54:40] [INFO   ] Papermill exit code: 0
+[2026-04-10 06:54:40] [INFO   ] Output check [C2_PA]: found 2 recent metrics JSON(s)
+[2026-04-10 06:54:40] [INFO   ] [OK] C2_PA completed in 1:14:38 — OK
+[2026-04-10 06:54:40] [INFO   ] Generating AI report for C2_PA...
+[2026-04-10 06:54:44] [INFO   ] AI report saved: results/exp_C2_PA/report_ai.md
+[2026-04-10 06:54:44] [INFO   ] Progress: 29/46 done, 17 remaining, ETA: ~22:50:47
+
+──────────────────────────────────────────────────────────────────────
+  [30/46] STARTING: C2_PB — med noise  eps=0.005 n=4 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 06:54:44] [INFO   ] Config file:  config_C2_PB.yaml
+[2026-04-10 06:54:44] [INFO   ] Notebook log: run_C2_PB_20260408_155618.log
+[2026-04-10 06:54:44] [INFO   ] Output nb:    main_C2_PB_20260408_155618.ipynb
+[2026-04-10 06:54:44] [INFO   ] Copied: config_C2_PB.yaml -> config.yaml
+[2026-04-10 06:54:44] [INFO   ] Executing notebook with papermill...
+[2026-04-10 06:54:44] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_C2_PB_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 06:54:44] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 08:03:42] [INFO   ] Papermill exit code: 0
+[2026-04-10 08:03:42] [INFO   ] Output check [C2_PB]: found 2 recent metrics JSON(s)
+[2026-04-10 08:03:42] [INFO   ] [OK] C2_PB completed in 1:08:57 — OK
+[2026-04-10 08:03:42] [INFO   ] Generating AI report for C2_PB...
+[2026-04-10 08:03:46] [INFO   ] AI report saved: results/exp_C2_PB/report_ai.md
+[2026-04-10 08:03:46] [INFO   ] Progress: 30/46 done, 16 remaining, ETA: ~21:23:58
+
+──────────────────────────────────────────────────────────────────────
+  [31/46] STARTING: C2_PC — med noise  eps=0.005 n=4 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 08:03:46] [INFO   ] Config file:  config_C2_PC.yaml
+[2026-04-10 08:03:46] [INFO   ] Notebook log: run_C2_PC_20260408_155618.log
+[2026-04-10 08:03:46] [INFO   ] Output nb:    main_C2_PC_20260408_155618.ipynb
+[2026-04-10 08:03:46] [INFO   ] Copied: config_C2_PC.yaml -> config.yaml
+[2026-04-10 08:03:46] [INFO   ] Executing notebook with papermill...
+[2026-04-10 08:03:46] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_C2_PC_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 08:03:46] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 08:15:48] [INFO   ] Papermill exit code: 0
+[2026-04-10 08:15:48] [INFO   ] Output check [C2_PC]: found 2 recent metrics JSON(s)
+[2026-04-10 08:15:48] [INFO   ] [OK] C2_PC completed in 0:12:02 — OK
+[2026-04-10 08:15:48] [INFO   ] Generating AI report for C2_PC...
+[2026-04-10 08:15:53] [INFO   ] AI report saved: results/exp_C2_PC/report_ai.md
+[2026-04-10 08:15:53] [INFO   ] Progress: 31/46 done, 15 remaining, ETA: ~19:30:45
+
+──────────────────────────────────────────────────────────────────────
+  [32/46] STARTING: S1_PA_100 — noiseless eps=0.005 n=4 | PA_100 peripheral K=100
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 08:15:53] [INFO   ] Config file:  config_S1_PA_100.yaml
+[2026-04-10 08:15:53] [INFO   ] Notebook log: run_S1_PA_100_20260408_155618.log
+[2026-04-10 08:15:53] [INFO   ] Output nb:    main_S1_PA_100_20260408_155618.ipynb
+[2026-04-10 08:15:53] [INFO   ] Copied: config_S1_PA_100.yaml -> config.yaml
+[2026-04-10 08:15:53] [INFO   ] Executing notebook with papermill...
+[2026-04-10 08:15:53] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_S1_PA_100_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 08:15:53] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 12:15:53] [ERROR  ] S1_PA_100 TIMED OUT after 4.0h
+[2026-04-10 12:15:53] [WARNING] Output check [S1_PA_100]: no recent metrics JSON found in results/
+[2026-04-10 12:15:53] [INFO   ] [FAIL] S1_PA_100 completed in 4:00:00 — TIMEOUT (4h limit)
+[2026-04-10 12:15:53] [INFO   ] Progress: 32/46 done, 14 remaining, ETA: ~19:23:33
+
+──────────────────────────────────────────────────────────────────────
+  [33/46] STARTING: S1_PB_100 — noiseless eps=0.005 n=4 | PB_100 central K=100
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 12:15:53] [INFO   ] Config file:  config_S1_PB_100.yaml
+[2026-04-10 12:15:53] [INFO   ] Notebook log: run_S1_PB_100_20260408_155618.log
+[2026-04-10 12:15:53] [INFO   ] Output nb:    main_S1_PB_100_20260408_155618.ipynb
+[2026-04-10 12:15:53] [INFO   ] Copied: config_S1_PB_100.yaml -> config.yaml
+[2026-04-10 12:15:53] [INFO   ] Executing notebook with papermill...
+[2026-04-10 12:15:53] [INFO   ] Papermill command: C:\Users\nacho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_S1_PB_100_20260408_155618.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 12:15:53] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 13:04:02] [INFO   ] Papermill exit code: 3221225786
+[2026-04-10 13:04:02] [ERROR  ] S1_PB_100 failed with return code 3221225786. Check log: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\run_S1_PB_100_20260408_155618.log

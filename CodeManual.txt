@@ -1,0 +1,491 @@
+================================================================================
+CODE EXECUTION MANUAL — TFM Quantum Portfolio Optimization
+================================================================================
+
+Author:  Ignacio Lopez Leis
+Version: v7.19
+Last update: February 2026
+
+================================================================================
+1. PREREQUISITES
+================================================================================
+
+Software:
+    - Python 3.11+ (tested with CPython 3.13)
+    - Git (recommended for version control)
+
+Python packages (core):
+
+All dependencies are listed in requirements.txt at the project root.
+
+
+================================================================================
+2. VIRTUAL ENVIRONMENT SETUP
+================================================================================
+
+Creating the environment (first time only):
+
+    cd C:\Users\nacho\Desktop\codigo
+    python -m venv eTFM
+
+Activation (PowerShell):
+
+    eTFM\Scripts\Activate.ps1
+
+Activation (cmd):
+
+    eTFM\Scripts\activate.bat
+
+Activation (Linux / macOS):
+
+    cd /path/to/codigo
+    source eTFM/bin/activate
+
+Verify the prompt shows (eTFM) at the beginning of the line.
+
+Installing dependencies:
+
+    pip install -r requirements.txt
+
+When using Jupyter Notebook or JupyterLab, select the "eTFM" kernel
+before running any cell. If the kernel is not visible, register it:
+
+    pip install ipykernel
+    python -m ipykernel install --user --name eTFM --display-name "eTFM"
+
+================================================================================
+3. SINGLE EXECUTION (NOTEBOOK)
+================================================================================
+
+File:  notebooks\main.ipynb
+
+Procedure:
+    1. Open the notebook in Jupyter / VS Code.
+    2. Select the eTFM kernel.
+    3. Run all cells (Run All).
+
+Configuration:
+    The notebook reads from:  config\config.yaml
+    Predefined configurations are stored in config\.
+    To switch configuration, copy the desired file and rename it
+    to config.yaml (the notebook only reads this filename).
+
+    Available configurations and their purpose:
+
+    config_A1.yaml    SP10 Portfolio A, eps=0.005, noiseless
+    config_A1P.yaml   SP10 Portfolio A, eps=0.005, noise=0.001, ZNE
+    config_A2p.yaml   SP10 Portfolio A, eps=0.002, noiseless
+    config_A3.yaml    SP10 Portfolio A, eps=0.005, noise=0.0001, ZNE
+    config_A3p.yaml   SP10 Portfolio A, eps=0.005, noise=0.0005, ZNE
+    config_B2.yaml    SP10 Portfolio B, eps=0.005, noiseless
+    config_B2p.yaml   SP10 Portfolio B, eps=0.005, noise=0.001, ZNE
+    config_C2.yaml    SP10 Portfolio B, eps=0.002, noiseless
+    config_C2p.yaml   SP10 Portfolio B, eps=0.01, noise=0.001, ZNE
+    config_D1.yaml    SP10 Portfolio A, eps=0.01, noise=0.001, ZNE
+    config_D1p.yaml   SP10 Portfolio B, eps=0.005, noise=0.0005, ZNE
+    config_D2.yaml    SP10 Portfolio A, eps=0.005, noise=0.001, ZNE
+    config_D2p.yaml   SP10 Portfolio B, eps=0.005, noise=0.0001, ZNE
+    config_S1.yaml    SP100, eps=0.005, noiseless (large universe)
+
+    config_backup_before_batch.yaml   Safety backup of config.yaml
+                                      before batch runs.
+
+Results:
+    Each execution saves output to:
+        notebooks\results\         JSON metrics, CSV weights, convergence
+        notebooks\results\circuits\  Exported QAE circuit diagrams (PNG + metadata)
+        notebooks\logs\            Per-module log files (.txt)
+
+================================================================================
+4. BATCH EXECUTION (ALL CONFIGURATIONS)
+================================================================================
+
+To reproduce all TFM experiments (14 configurations):
+
+    cd C:\Users\nacho\Desktop\codigo\scripts
+    python run_all_experiments.py
+
+Estimated time: ~6 hours (hardware-dependent; mainly driven by IQAE
+oracle query count and Woerner amplitude estimation).
+
+The batch script:
+    1. Iterates over all config_*.yaml files in config\.
+    2. Copies each to config\config.yaml.
+    3. Executes the full pipeline (Phase 0 -> Phase 3).
+    4. Saves per-run JSON metrics to data\.
+    5. Restores the original config.yaml from backup.
+
+Results:
+    - Per configuration:  data\tfm_comprehensive_metrics_YYYYMMDD_HHMMSS.json
+    - 14 JSON files total (one per experiment).
+
+================================================================================
+5. FRONTEND (STREAMLIT DASHBOARD)
+================================================================================
+
+To launch the interactive web dashboard:
+
+    cd C:\Users\nacho\Desktop\codigo\frontend
+    streamlit run app.py
+
+The dashboard reads JSON metrics from frontend\data\.
+Configuration file frontend\config.toml forces light theme.
+
+Features:
+    - Experiment selector (sidebar) with all 14 configurations.
+    - Risk Analysis: CVaR/VaR/EVaR comparison table, convergence
+      curves, Euler risk decomposition with Herfindahl index.
+    - Portfolio Weights: initial vs optimized allocation, delta table.
+    - Benchmarks: quantum vs classical solvers (SLSQP, COBYLA,
+      subgradient, Monte Carlo).
+    - Quantum Metrics: QAE accuracy, oracle queries, subgradient
+      quality (cosine similarity), method comparison (IQAE vs Woerner).
+    - Out-of-Sample: 4-portfolio comparison (Equal Weight, Quantum,
+      Classical, Inverse Volatility) with Sharpe, CVaR, max drawdown.
+
+================================================================================
+6. VISUALIZATION SCRIPTS
+================================================================================
+
+To generate all publication-quality figures for the thesis:
+
+    cd C:\Users\nacho\Desktop\codigo
+    python data\tfm_visualization_notebook.py
+
+Output: data\figures\ (25 PNG files)
+
+Generated figures:
+    01  Convergence curves (CVaR loss per iteration)
+    02  Gradient norms across iterations
+    03  Weight comparison (Portfolio A and B)
+    04  CVaR comparison across methods (A and B)
+    05  Risk contributions (10-asset and 100-asset)
+    06  QAE method comparison (IQAE vs Woerner)
+    07  Noise impact analysis
+    08  ZNE improvement quantification
+    09  Out-of-sample CVaR comparison
+    10  Out-of-sample Sharpe ratios
+    11  Radar charts (Portfolio A and B)
+    12  Prediction error analysis
+    13  Execution times (A and B)
+    14  Risk measures comparison (A and B)
+    15  Subgradient quality (cosine similarity, L2 error)
+    16  Error budget decomposition
+    17  Stability analysis across runs
+    18  Convergence: clean vs noisy environments
+    19  Oracle query distribution
+    20  100-asset portfolio weights
+    21  Summary table (all experiments)
+    22  CVaR improvement across all runs
+    23  Out-of-sample maximum drawdown
+    24  Benchmark iterations (A and B)
+    25  EVaR analysis
+
+To export QAE circuit diagrams (PNG + JSON metadata):
+
+    cd C:\Users\nacho\Desktop\codigo
+    python scripts\export_tfm_circuits.py
+
+Output: notebooks\results\circuits\png\ and circuits\metadata\
+
+================================================================================
+7. PROJECT STRUCTURE
+================================================================================
+
+C:\Users\nacho\Desktop\codigo\
+|
+|-- requirements.txt            Python dependencies
+|-- ManualCodigo.txt            This manual
+|
+|-- config\                     YAML configuration files
+|   |-- config.yaml             Active configuration (read by notebook)
+|   |-- config_A1.yaml          Predefined experiment configurations
+|   |-- config_A1P.yaml
+|   |-- config_A2p.yaml
+|   |-- config_A3.yaml
+|   |-- config_A3p.yaml
+|   |-- config_B2.yaml
+|   |-- config_B2p.yaml
+|   |-- config_C2.yaml
+|   |-- config_C2p.yaml
+|   |-- config_D1.yaml
+|   |-- config_D1p.yaml
+|   |-- config_D2.yaml
+|   |-- config_D2p.yaml
+|   |-- config_S1.yaml
+|   \-- config_backup_before_batch.yaml
+|
+|-- src\                        Source code (pipeline modules)
+|   |-- phase_0\                Phase 0: setup (empty, paths resolved at runtime)
+|   |-- phase_1\                Phase 1: classical formulation
+|   |   |-- cvar_computation.py       CVaR/VaR computation (Rockafellar-Uryasev)
+|   |   |-- metricscomputation.py     Portfolio performance metrics
+|   |   \-- noisemodels.py            NISQ noise model manager (Phase 1 variant)
+|   |-- phase_2\                Phase 2: quantum-hybrid optimization
+|   |   |-- qae_circuits.py           QAE circuits (IQAE + Woerner)
+|   |   |-- quantumsubgradient.py     Quantum subgradient estimator
+|   |   |-- hybridoptimizer.py        Hybrid Adam optimizer loop
+|   |   |-- quantumbackends.py        Backend abstraction (Aer, statevector)
+|   |   |-- noisemodels.py            NISQ noise models (depolarizing, T1/T2, IBM)
+|   |   |-- evar_estimation.py        Entropic Value at Risk (EVaR) estimator
+|   |   |-- errorpropagation.py       Error budget analysis
+|   |   \-- risk_contributions.py     Euler risk decomposition
+|   |-- phase_3\                Phase 3: validation and benchmarking
+|   |   |-- classical_benchmark.py    SLSQP / COBYLA / subgradient / MC baselines
+|   |   |-- method_comparison.py      IQAE vs Woerner accuracy comparison
+|   |   |-- qae_validation.py         QAE circuit correctness tests
+|   |   \-- risk_contributions.py     Risk contribution validation
+|   \-- utils\                  Shared utilities
+|       |-- config_loader.py          Centralized YAML config reader
+|       |-- config_validator.py       Config schema validation
+|       |-- data_loader.py            CSV data loader and preprocessor
+|       |-- logger.py                 Centralized file logger (overwrite mode)
+|       |-- passport_orchestrator.py  Data lineage and audit trail
+|       |-- passport_types.py         Passport dataclass definitions
+|       |-- passport_utils.py         Passport helper functions
+|       |-- circuit_logger.py         QAE circuit export utility
+|       |-- validation_helpers.py     Numerical validation functions
+|       \-- metricscomputation.py     Metrics aggregation utility
+|
+|-- notebooks\                  Execution notebooks
+|   |-- main.ipynb              Main pipeline notebook (Phase 0 -> 3)
+|   |-- download_sp500_100.ipynb  Data download utility
+|   |-- results\                Per-run outputs
+|   |   |-- convergence.csv           Iteration-by-iteration CVaR + gradient norms
+|   |   |-- optimal_weights.csv       Final portfolio weights
+|   |   |-- phase2_results.json       Phase 2 intermediate results
+|   |   |-- tfm_comprehensive_metrics_latest.json   Most recent full output
+|   |   \-- circuits\                 Exported QAE circuits
+|   |       |-- png\                  Circuit diagram images
+|   |       \-- metadata\             Circuit metadata (JSON)
+|   \-- logs\                   Per-module log files
+|       |-- main_notebook.txt
+|       |-- cvar_computation.txt
+|       |-- hybrid_optimizer.txt
+|       |-- qae_circuits.txt
+|       |-- quantum_subgradient.txt
+|       |-- noise_models.txt
+|       |-- error_propagation.txt
+|       |-- evar_estimation.txt
+|       |-- passport_orchestrator.txt
+|       \-- src.utils.config_loader.txt
+|
+|-- scripts\                    Automation scripts
+|   |-- run_all_experiments.py        Batch runner (14 configurations)
+|   |-- export_tfm_circuits.py        Circuit export script
+|   \-- export_tfm_circuitsEng.py     Circuit export (English labels)
+|
+|-- frontend\                   Streamlit dashboard
+|   |-- app.py                  Dashboard entry point
+|   |-- config.toml             Streamlit theme configuration
+|   \-- data\                   JSON metrics (copied from data\)
+|       \-- tfm_comprehensive_metrics_*.json (14 files)
+|
+|-- data\                       Market data and experiment results
+|   |-- returns_sp500_100.csv         Daily returns (100 SP500 assets, 2024-2025)
+|   |-- tfm_comprehensive_metrics_*.json (14 experiment result files)
+|   |-- tfm_visualization_notebook.py  Figure generation script
+|   \-- figures\                Publication-quality figures (25 PNGs)
+|
+\-- results\                    Global outputs
+    \-- phase_1\
+        \-- metricscomputation.txt
+
+================================================================================
+8. PIPELINE PHASES
+================================================================================
+
+The notebook (main.ipynb) executes the following phases in order:
+
+Phase 0 — Setup
+    - Load config.yaml via config_loader.
+    - Validate configuration schema (config_validator).
+    - Load and preprocess market data (data_loader).
+    - Initialize logger (overwrite mode, one .txt per module).
+    - Initialize passport orchestrator (data lineage tracking).
+
+Phase 1 — Classical Formulation
+    - Compute initial CVaR and VaR for equal-weight portfolio.
+    - Compute portfolio metrics (Sharpe, Sortino, max drawdown).
+    - Build noise model if noise simulation is enabled.
+    - Prepare data structures for quantum estimation.
+
+Phase 2 — Quantum-Hybrid Optimization
+    - Construct QAE circuits (tail probability, conditional expectation).
+    - Estimate CVaR via Quantum Amplitude Estimation (IQAE and/or Woerner).
+    - Run hybrid optimizer: Adam-based subgradient descent using
+      quantum-estimated gradients.
+    - Apply ZNE error mitigation if enabled.
+    - Compute EVaR (Entropic Value at Risk).
+    - Perform error propagation analysis.
+    - Compute Euler risk contributions.
+
+Phase 3 — Validation and Benchmarking
+    - Run classical benchmarks (SLSQP, COBYLA, classical subgradient).
+    - Compare QAE methods (IQAE vs Woerner accuracy and efficiency).
+    - Out-of-sample validation (train/test split at oos_split_date).
+    - Aggregate all metrics into comprehensive JSON output.
+    - Export convergence CSV and optimal weights CSV.
+
+================================================================================
+9. CONFIGURATION REFERENCE
+================================================================================
+
+Key parameters in config.yaml and their effects:
+
+Global:
+    alpha                   CVaR confidence level (default: 0.05)
+    random_seed             Reproducibility seed (default: 42)
+    constraints.max_weight  Maximum weight per asset (default: 0.30)
+    constraints.long_only   Long-only constraint (default: true)
+
+Data:
+    tickers                 List of ticker symbols
+    start_date / end_date   Date range for market data
+    oos_split_date          Train/test split date for OOS validation
+    oos_enabled             Enable out-of-sample validation
+
+Phase 2 — QAE:
+    qae.epsilon             QAE precision (lower = more queries, higher
+                            accuracy). 0.005 is standard, 0.002 is high
+                            precision, 0.01 is fast/coarse.
+    qae.num_distribution_qubits   Qubits for return distribution encoding
+                                  (4 = 16 bins, 3 = 8 bins fast mode).
+    qae.use_iqae            Enable IQAE estimator (default: true).
+    qae.use_woerner         Enable Woerner direct QAE (slower but exact).
+
+Phase 2 — Optimizer:
+    optimizer.type          Optimizer type (default: adam).
+    optimizer.max_iterations  Maximum iterations (default: 30).
+    optimizer.learning_rate   Initial learning rate (default: 0.05).
+    optimizer.convergence_threshold  Stopping criterion (default: 1e-5).
+    optimizer.patience        Early stopping patience (default: 12).
+
+Phase 2 — Noise and ZNE:
+    backend.use_noise       Enable hardware noise simulation.
+    noise_params.single_qubit_gate_error   1Q gate error rate.
+    noise_params.two_qubit_gate_error      2Q gate error rate.
+    zne.enabled             Enable Zero Noise Extrapolation.
+    zne.scale_factors       Noise amplification factors (e.g., [1,3,5]).
+    zne.extrapolation       Extrapolation method (e.g., polynomial).
+
+Phase 2 — Backend:
+    backend.type            Simulator type (aer_simulator).
+    backend.shots           Number of measurement shots (default: 1024).
+    backend.optimization_level  Transpiler optimization (0=none, 1=light).
+
+================================================================================
+10. LOGGING SYSTEM
+================================================================================
+
+The project uses centralized file-based logging:
+
+    - Each module writes to its own .txt file in notebooks\logs\.
+    - Log files are OVERWRITTEN on each run (no accumulating history).
+    - Log levels: INFO, WARNING, ERROR.
+    - No print statements are used in production code;
+      all output goes through the logger.
+
+Log files and their corresponding modules:
+
+    main_notebook.txt           Notebook orchestration
+    cvar_computation.txt        CVaR/VaR calculations
+    hybrid_optimizer.txt        Optimization loop
+    qae_circuits.txt            QAE circuit construction and estimation
+    quantum_subgradient.txt     Subgradient estimation
+    noise_models.txt            Noise model creation
+    error_propagation.txt       Error budget analysis
+    evar_estimation.txt         EVaR computation
+    passport_orchestrator.txt   Data lineage audit
+    src.utils.config_loader.txt Configuration loading
+
+================================================================================
+11. OUTPUT FILES
+================================================================================
+
+After a successful pipeline run, the following files are produced:
+
+notebooks\results\tfm_comprehensive_metrics_latest.json
+    Complete JSON with all metrics, weights, convergence history,
+    benchmarks, OOS validation, quantum metrics, error analysis,
+    and full configuration snapshot.
+
+notebooks\results\convergence.csv
+    Columns: iteration, cvar_loss, gradient_norm.
+
+notebooks\results\optimal_weights.csv
+    Columns: ticker, initial_weight, optimal_weight, delta.
+
+notebooks\results\phase2_results.json
+    Intermediate Phase 2 output (QAE estimates, subgradient info).
+
+notebooks\results\circuits\png\
+    QAE circuit diagrams as PNG images.
+
+notebooks\results\circuits\metadata\
+    Per-circuit JSON metadata (depth, gates, qubits, parameters).
+
+================================================================================
+12. TROUBLESHOOTING
+================================================================================
+
+Error: "No module named qiskit"
+    -> Verify the eTFM environment is activated and the correct
+       Jupyter kernel is selected.
+
+Error: "AlgorithmError" in Woerner QAE
+    -> Woerner requires StatevectorSampler (ideal, no noise).
+       Ensure noise_model_config is None or use_woerner is disabled
+       when noise simulation is active.
+       See qae_circuits.py docstring (lines 14-19).
+
+Error: "The job was not completed successfully" in IQAE
+    -> IQAE with noise requires TranspilingAerSamplerV2 (a wrapper
+       that transpiles circuits to basic gates before sending to Aer).
+       Verify qiskit-aer is installed.
+       See qae_circuits.py, class TranspilingAerSamplerV2.
+
+Error: "PassportOrchestrator has no attribute 'compute_hash'"
+    -> The noisemodels.py file has not been updated to the cleaned
+       version. Replace src\phase_2\noisemodels.py with the latest
+       cleaned module (480 lines, not the 1204-line original).
+
+Error: CSV file not found during data loading
+    -> The notebook resolves paths relative to its own directory.
+       Ensure returns_sp500_100.csv exists at data\returns_sp500_100.csv.
+       The notebook includes a fallback that resolves from project root.
+
+Slow execution (>1h per configuration)
+    -> Reduce epsilon to 0.01 (fewer IQAE queries).
+    -> Reduce num_distribution_qubits to 3 (8 bins instead of 16).
+    -> Reduce shots to 1024.
+    -> Disable Woerner (use_woerner: false) if only IQAE is needed.
+    -> Disable out-of-sample validation (oos_enabled: false).
+    -> Disable benchmarking in the notebook configuration.
+
+Frontend not loading data
+    -> Ensure JSON files are in frontend\data\ (not frontend\).
+    -> The app searches for tfm_comprehensive_metrics_*.json in data\.
+
+================================================================================
+13. REPRODUCIBILITY CHECKLIST
+================================================================================
+
+To fully reproduce the TFM results:
+
+    [ ] 1. Clone or copy the project to the target machine.
+    [ ] 2. Create and activate the eTFM virtual environment (Section 2).
+    [ ] 3. Install dependencies: pip install -r requirements.txt
+    [ ] 4. Verify data\returns_sp500_100.csv exists.
+    [ ] 5. Run the batch script (Section 4) to execute all 14 configs.
+    [ ] 6. Verify 14 JSON files in data\ after batch completes.
+    [ ] 7. Run the visualization script (Section 6) to generate figures.
+    [ ] 8. Run the circuit export script (Section 6) for diagrams.
+    [ ] 9. Copy JSON files to frontend\data\ and launch the dashboard.
+    [ ] 10. Compare JSON metrics with the reference values in the thesis.
+
+All experiments use random_seed: 42 for deterministic behavior.
+Results should be numerically identical on the same hardware and
+Python/Qiskit versions.
+
+================================================================================

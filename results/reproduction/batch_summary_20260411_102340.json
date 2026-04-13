@@ -1,0 +1,262 @@
+{
+  "timestamp": "20260411_102340",
+  "started": "2026-04-11T10:23:44.499323",
+  "total_planned": 18,
+  "total_completed": 18,
+  "total_ok": 17,
+  "total_failed": 1,
+  "total_elapsed": "1 day, 12:18:10",
+  "status": "COMPLETED",
+  "experiments": [
+    {
+      "experiment": "A1_n6_PC",
+      "config": "config_A1_n6_PC.yaml",
+      "status": "OK",
+      "elapsed": "5:37:43",
+      "elapsed_s": 20263,
+      "description": "noiseless eps=0.005 n=6 | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": false,
+      "output_json_files": []
+    },
+    {
+      "experiment": "D1_n3_PA",
+      "config": "config_D1_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:20:06",
+      "elapsed_s": 4806,
+      "description": "high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260411_171942.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_n3_PA",
+      "config": "config_B2_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:38:02",
+      "elapsed_s": 2282,
+      "description": "low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260411_175754.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PA_100",
+      "config": "config_S1_PA_100.yaml",
+      "status": "OK",
+      "elapsed": "5:08:52",
+      "elapsed_s": 18532,
+      "description": "noiseless eps=0.005 n=4 | PA_100 peripheral K=100",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260411_230711.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PB_100",
+      "config": "config_S1_PB_100.yaml",
+      "status": "OK",
+      "elapsed": "5:12:26",
+      "elapsed_s": 18746,
+      "description": "noiseless eps=0.005 n=4 | PB_100 central K=100",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_041943.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PC_100",
+      "config": "config_S1_PC_100.yaml",
+      "status": "FAIL (rc=1)",
+      "elapsed": "0:00:05",
+      "elapsed_s": 5,
+      "description": "noiseless eps=0.005 n=4 | PC_100 SP100 K=100",
+      "return_code": 1,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_041943.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PA_30",
+      "config": "config_S1_PA_30.yaml",
+      "status": "OK",
+      "elapsed": "1:29:26",
+      "elapsed_s": 5366,
+      "description": "noiseless eps=0.005 n=4 | PA_30  peripheral K=30",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_054924.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PB_30",
+      "config": "config_S1_PB_30.yaml",
+      "status": "OK",
+      "elapsed": "1:39:04",
+      "elapsed_s": 5944,
+      "description": "noiseless eps=0.005 n=4 | PB_30  central    K=30",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_072831.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PC_30",
+      "config": "config_S1_PC_30.yaml",
+      "status": "OK",
+      "elapsed": "1:43:08",
+      "elapsed_s": 6188,
+      "description": "noiseless eps=0.005 n=4 | PC_30  predefined K=30",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_091114.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E1_PA",
+      "config": "config_E1_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:52:32",
+      "elapsed_s": 6752,
+      "description": "noise-in-opt p2q=0.001 ZNE | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_110346.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E1_PB",
+      "config": "config_E1_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:34:16",
+      "elapsed_s": 5656,
+      "description": "noise-in-opt p2q=0.001 ZNE | PB central    K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_123806.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E1_PC",
+      "config": "config_E1_PC.yaml",
+      "status": "OK",
+      "elapsed": "1:07:03",
+      "elapsed_s": 4023,
+      "description": "noise-in-opt p2q=0.001 ZNE | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_134514.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E2_PA",
+      "config": "config_E2_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:29:58",
+      "elapsed_s": 5398,
+      "description": "noise-in-opt p2q=0.005 ZNE | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_151515.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E2_PB",
+      "config": "config_E2_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:40:05",
+      "elapsed_s": 6005,
+      "description": "noise-in-opt p2q=0.005 ZNE | PB central    K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_165525.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E2_PC",
+      "config": "config_E2_PC.yaml",
+      "status": "OK",
+      "elapsed": "1:09:40",
+      "elapsed_s": 4180,
+      "description": "noise-in-opt p2q=0.005 ZNE | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_180511.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E3_PA",
+      "config": "config_E3_PA.yaml",
+      "status": "OK",
+      "elapsed": "1:34:57",
+      "elapsed_s": 5697,
+      "description": "noise-in-opt p2q=0.010 ZNE | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_194009.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E3_PB",
+      "config": "config_E3_PB.yaml",
+      "status": "OK",
+      "elapsed": "1:53:23",
+      "elapsed_s": 6803,
+      "description": "noise-in-opt p2q=0.010 ZNE | PB central    K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_213336.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "E3_PC",
+      "config": "config_E3_PC.yaml",
+      "status": "OK",
+      "elapsed": "1:06:06",
+      "elapsed_s": 3966,
+      "description": "noise-in-opt p2q=0.010 ZNE | PC predefined K=10",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260412_223949.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    }
+  ],
+  "finished": "2026-04-12T22:41:54.791151"
+}

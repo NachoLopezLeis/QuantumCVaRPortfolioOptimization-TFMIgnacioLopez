@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "device_primary": "IQM Emerald (Crystal 54)",
+    "device_secondary": "IQM Garnet (Star 20)",
+    "version": "v2 \u2014 budget-aware",
+    "a_ideal": 0.050442,
+    "theta": 0.22652530994158068,
+    "ts": "2026-04-13T01:41:07.793077"
+  },
+  "block_E_extended": {
+    "m4": {
+      "job_id": "019d8411-3723-7080-84a0-455e670792f4",
+      "shots": 4096,
+      "p_hw": 0.922607421875,
+      "p_theory": 0.7965619482108306,
+      "error": 0.1260454736641694,
+      "depth_iqm": 28,
+      "aliased": true
+    },
+    "m5": {
+      "job_id": "019d8411-53aa-76f1-8c4a-b48d2f1b8e56",
+      "shots": 4096,
+      "p_hw": 0.698974609375,
+      "p_theory": 0.36607160843157144,
+      "error": 0.33290300094342856,
+      "depth_iqm": 34,
+      "aliased": true
+    },
+    "m6": {
+      "job_id": "019d8411-6d7f-70c0-9325-4a4215e75188",
+      "shots": 4096,
+      "p_hw": 0.3486328125,
+      "p_theory": 0.0382188550343922,
+      "error": 0.3104139574656078,
+      "depth_iqm": 40,
+      "aliased": true
+    }
+  },
+  "block_D_shot_study": {
+    "m": 1,
+    "p_theory": 0.39496602151921417,
+    "results": [
+      {
+        "shots": 1024,
+        "p_hw": 0.326171875,
+        "shot_noise_1sigma": 0.014650344724472636,
+        "job_id": "019d8411-86d3-7901-aded-d04b156ef608"
+      },
+      {
+        "shots": 4096,
+        "p_hw": 0.343017578125,
+        "shot_noise_1sigma": 0.00741745788331467,
+        "job_id": "019d8411-9f5e-7852-adaf-189367cc7f83"
+      },
+      {
+        "shots": 8192,
+        "p_hw": 0.3282470703125,
+        "shot_noise_1sigma": 0.0051881227405738825,
+        "job_id": "019d8411-b8bd-7173-ae0c-026cb482d058"
+      }
+    ]
+  },
+  "block_G_comparison": {
+    "emerald_from_phase1": {
+      "m0": {
+        "p_hw": 0.0537109375,
+        "p_theory": 0.050442,
+        "error": 0.0032689374999999993,
+        "source": "phase1_direct"
+      },
+      "m1": {
+        "p_hw": 0.32958984375,
+        "p_theory": 0.39496602151921417,
+        "error": 0.06537617776921417,
+        "source": "phase1_direct"
+      }
+    },
+    "garnet_new": {
+      "m0": {
+        "job_id": "019d8411-d65b-7fc0-8a72-bcfa85c9b242",
+        "shots": 4096,
+        "p_hw": 0.08984375,
+        "p_theory": 0.050442,
+        "error": 0.03940175,
+        "depth_iqm": 4
+      },
+      "m1": {
+        "job_id": "019d8411-f2e1-78c3-9b62-8414e316ce39",
+        "shots": 4096,
+        "p_hw": 0.397705078125,
+        "p_theory": 0.39496602151921417,
+        "error": 0.002739056605785828,
+        "depth_iqm": 10
+      }
+    }
+  }
+}

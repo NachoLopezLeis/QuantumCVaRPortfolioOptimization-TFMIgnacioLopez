@@ -1,0 +1,63 @@
+[01:35:36] ===== ============ OLEADA 2 v2 — REPEATS + ZNE m=0 ============
+[01:35:36] INFO  Budget-aware: 5 repeats + ZNE m=0 only (scales 1,3)
+[01:35:36] OK    IQM_TOKEN found.
+[01:35:36] OK    a_ideal=0.050442  theta=0.226525
+[01:35:36] INFO  Existing m=1 measurements loaded: 3
+[01:35:36] INFO    phase1_direct_results_latest.json: 32.96%
+[01:35:36] INFO    wave1_results_latest.json_zne_s1: 32.81%
+[01:35:36] INFO    wave1_v2_results_latest.json_zne_s1: 33.98%
+[01:35:41] ===== ============ AER CHECK ============
+[01:35:41] INFO  m=0: 5.05%  theory=5.04%
+[01:35:41] INFO  m=1: 39.92%  theory=39.50%
+[01:35:42] OK    Connected: IQMBackend  54q
+[01:35:42] ===== ============ BLOCK F — 5 repetitions of m=1 (shots=2048) ============
+[01:35:42] INFO    [Rep_01_m1] depth=10 CZ=4 shots=2048 opt=1
+[01:35:43] INFO    [Rep_01_m1] job_id=019d840d-12c6-7740-b803-eacdb98a898e
+[01:35:48] INFO    [Rep_01_m1] P_hw=35.107%
+[01:35:48] INFO    [Rep_02_m1] depth=10 CZ=4 shots=2048 opt=1
+[01:35:49] INFO    [Rep_02_m1] job_id=019d840d-2b92-7ce2-9c0e-4c32a4d893d2
+[01:35:54] INFO    [Rep_02_m1] P_hw=33.887%
+[01:35:54] INFO    [Rep_03_m1] depth=10 CZ=4 shots=2048 opt=1
+[01:35:54] INFO    [Rep_03_m1] job_id=019d840d-4050-7291-b72a-2311b2a248c1
+[01:36:00] INFO    [Rep_03_m1] P_hw=32.764%
+[01:36:00] INFO    [Rep_04_m1] depth=10 CZ=4 shots=2048 opt=1
+[01:36:01] INFO    [Rep_04_m1] job_id=019d840d-5877-7861-a007-828e79937f1d
+[01:36:06] INFO    [Rep_04_m1] P_hw=32.910%
+[01:36:06] INFO    [Rep_05_m1] depth=10 CZ=4 shots=2048 opt=1
+[01:36:07] INFO    [Rep_05_m1] job_id=019d840d-71ec-7413-907b-a2d903b8ef4a
+[01:36:12] INFO    [Rep_05_m1] P_hw=33.496%
+[01:36:12] ===== ============ BLOCK F RESULTS ============
+[01:36:12] INFO  Total m=1 measurements: 8 (3 existing + 5 new)
+[01:36:12] INFO  P_theory(m=1) = 39.497%
+[01:36:12] INFO  P_mean        = 33.490%  ± 0.287% SEM
+[01:36:12] INFO  P_std         = 0.813%
+[01:36:12] INFO  95% CI        = [32.927%, 34.053%]
+[01:36:12] INFO  z-score       = -20.91  (|z|<2 consistent with depolarizing noise)
+[01:36:12] INFO    New run  1: 35.11%
+[01:36:12] INFO    New run  2: 33.89%
+[01:36:12] INFO    New run  3: 32.76%
+[01:36:12] INFO    New run  4: 32.91%
+[01:36:12] INFO    New run  5: 33.50%
+[01:36:12] OK    Block F saved. Proceeding to Block B (ZNE m=0 only)...
+[01:36:12] ===== ============ BLOCK B — ZNE on m=0 (scales 1,3 — scale=5 skipped) ============
+[01:36:12] INFO  Rationale: scale=3 on m=1 already reached decoherence floor (50%)
+[01:36:12] INFO  m=0 has shallower base circuit — more likely to show ZNE signal
+[01:36:12] INFO    [ZNE_m0_s1.0] depth=4 CZ=1 shots=4096 opt=1
+[01:36:12] INFO    [ZNE_m0_s1.0] job_id=019d840d-8631-7c52-ae22-a941bf769dcc
+[01:36:18] INFO    [ZNE_m0_s1.0] P_hw=5.029%
+[01:36:18] INFO    [ZNE_m0_s3.0] depth=16 CZ=3 shots=4096 opt=0
+[01:36:19] INFO    [ZNE_m0_s3.0] job_id=019d840d-a068-7502-a28b-3ff76ec9f74c
+[01:36:26] INFO    [ZNE_m0_s3.0] P_hw=6.226%
+[01:36:26] INFO  Depth progression: 4 -> 16  [OK]
+[01:36:26] ===== ============ BLOCK B RESULTS ============
+[01:36:26] INFO  P_theory(m=0)       = 5.044%
+[01:36:26] INFO  P_raw  (scale=1.0)  = 5.029%  err=0.015%
+[01:36:26] INFO  P_lin  (scale=3.0)  = 6.226%
+[01:36:26] INFO  P_zne  (2-pt)       = 4.431%  err=0.613%
+[01:36:26] INFO  ZNE improvement     = -4013.6%  [MARGINAL]
+[01:36:26] INFO  ZNE marginal — noise may not be purely depolarizing
+[01:36:26] ===== ============ WAVE 2 v2 SUMMARY ============
+[01:36:26] INFO  m=1 pooled mean  : 33.49% ± 0.29% SEM  (8 measurements)
+[01:36:26] INFO  ZNE m=0 raw      : 5.03%  (theory 5.04%)
+[01:36:26] INFO  ZNE m=0 extrap   : 4.43%  improvement=-4013.6%
+[01:36:26] OK    Results: C:\Users\nacho\Desktop\v2_final\v2_final\results\hardware_validation\wave2_v2_results_latest.json

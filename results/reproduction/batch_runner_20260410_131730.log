@@ -1,0 +1,91 @@
+================================================================================
+BATCH EXPERIMENT RUNNER LOG
+Started: 2026-04-10T13:17:30.951269
+Timestamp ID: 20260410_131730
+Python: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe
+PID: 5364
+================================================================================
+
+======================================================================
+BATCH EXPERIMENT RUNNER v2.0 — 20260410_131730
+======================================================================
+[2026-04-10 13:17:30] [INFO   ] Project root: C:\Users\nacho\Desktop\v2_final\v2_final
+[2026-04-10 13:17:30] [INFO   ] Config dir:   C:\Users\nacho\Desktop\v2_final\v2_final\config
+[2026-04-10 13:17:30] [INFO   ] Notebook:     C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb
+[2026-04-10 13:17:30] [INFO   ] Results dir:  C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs
+[2026-04-10 13:17:30] [INFO   ] Log file:     C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_runner_20260410_131730.log
+[2026-04-10 13:17:30] [INFO   ] Selected experiments: ['A1_n6_PA', 'A1_n6_PB', 'A1_n6_PC', 'D1_n3_PA', 'B2_n3_PA', 'S1_PA_100', 'S1_PB_100', 'S1_PC_100', 'S1_PA_30', 'S1_PB_30', 'S1_PC_30', 'E1_PA', 'E1_PB', 'E1_PC', 'E2_PA', 'E2_PB', 'E2_PC', 'E3_PA', 'E3_PB', 'E3_PC']
+[2026-04-10 13:17:34] [INFO   ] Executor detected: papermill 2.6.0 from C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Lib\site-packages\papermill\cli.py (3.13.12)
+
+======================================================================
+EXECUTION PLAN — 20 experiments
+======================================================================
+[2026-04-10 13:17:34] [INFO   ]    1. [A1_n6_PA] config_A1_n6_PA.yaml   OK       noiseless eps=0.005 n=6 | PA peripheral K=10
+[2026-04-10 13:17:34] [INFO   ]    2. [A1_n6_PB] config_A1_n6_PB.yaml   OK       noiseless eps=0.005 n=6 | PB central K=10
+[2026-04-10 13:17:34] [INFO   ]    3. [A1_n6_PC] config_A1_n6_PC.yaml   OK       noiseless eps=0.005 n=6 | PC predefined K=10
+[2026-04-10 13:17:34] [INFO   ]    4. [D1_n3_PA] config_D1_n3_PA.yaml   OK       high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+[2026-04-10 13:17:34] [INFO   ]    5. [B2_n3_PA] config_B2_n3_PA.yaml   OK       low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+[2026-04-10 13:17:34] [INFO   ]    6. [S1_PA_100] config_S1_PA_100.yaml  OK       noiseless eps=0.005 n=4 | PA_100 peripheral K=100
+[2026-04-10 13:17:34] [INFO   ]    7. [S1_PB_100] config_S1_PB_100.yaml  OK       noiseless eps=0.005 n=4 | PB_100 central K=100
+[2026-04-10 13:17:34] [INFO   ]    8. [S1_PC_100] config_S1_PC_100.yaml  OK       noiseless eps=0.005 n=4 | PC_100 SP100 K=100
+[2026-04-10 13:17:34] [INFO   ]    9. [S1_PA_30] config_S1_PA_30.yaml   OK       noiseless eps=0.005 n=4 | PA_30  peripheral K=30
+[2026-04-10 13:17:34] [INFO   ]   10. [S1_PB_30] config_S1_PB_30.yaml   OK       noiseless eps=0.005 n=4 | PB_30  central    K=30
+[2026-04-10 13:17:34] [INFO   ]   11. [S1_PC_30] config_S1_PC_30.yaml   OK       noiseless eps=0.005 n=4 | PC_30  predefined K=30
+[2026-04-10 13:17:34] [INFO   ]   12. [E1_PA] config_E1_PA.yaml      OK       noise-in-opt p2q=0.001 ZNE | PA peripheral K=10
+[2026-04-10 13:17:34] [INFO   ]   13. [E1_PB] config_E1_PB.yaml      OK       noise-in-opt p2q=0.001 ZNE | PB central    K=10
+[2026-04-10 13:17:34] [INFO   ]   14. [E1_PC] config_E1_PC.yaml      OK       noise-in-opt p2q=0.001 ZNE | PC predefined K=10
+[2026-04-10 13:17:34] [INFO   ]   15. [E2_PA] config_E2_PA.yaml      OK       noise-in-opt p2q=0.005 ZNE | PA peripheral K=10
+[2026-04-10 13:17:34] [INFO   ]   16. [E2_PB] config_E2_PB.yaml      OK       noise-in-opt p2q=0.005 ZNE | PB central    K=10
+[2026-04-10 13:17:34] [INFO   ]   17. [E2_PC] config_E2_PC.yaml      OK       noise-in-opt p2q=0.005 ZNE | PC predefined K=10
+[2026-04-10 13:17:34] [INFO   ]   18. [E3_PA] config_E3_PA.yaml      OK       noise-in-opt p2q=0.010 ZNE | PA peripheral K=10
+[2026-04-10 13:17:34] [INFO   ]   19. [E3_PB] config_E3_PB.yaml      OK       noise-in-opt p2q=0.010 ZNE | PB central    K=10
+[2026-04-10 13:17:34] [INFO   ]   20. [E3_PC] config_E3_PC.yaml      OK       noise-in-opt p2q=0.010 ZNE | PC predefined K=10
+[2026-04-10 13:17:34] [INFO   ] All config files validated OK
+[2026-04-10 13:17:34] [INFO   ] Copied: config.yaml -> config_backup_before_batch.yaml
+[2026-04-10 13:17:34] [INFO   ] Backed up config.yaml -> config_backup_before_batch.yaml
+[2026-04-10 13:17:34] [INFO   ] Incremental summary: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_summary_20260410_131730.json
+
+──────────────────────────────────────────────────────────────────────
+  [1/20] STARTING: A1_n6_PA — noiseless eps=0.005 n=6 | PA peripheral K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 13:17:34] [INFO   ] Config file:  config_A1_n6_PA.yaml
+[2026-04-10 13:17:34] [INFO   ] Notebook log: run_A1_n6_PA_20260410_131730.log
+[2026-04-10 13:17:34] [INFO   ] Output nb:    main_A1_n6_PA_20260410_131730.ipynb
+[2026-04-10 13:17:34] [INFO   ] Copied: config_A1_n6_PA.yaml -> config.yaml
+[2026-04-10 13:17:34] [INFO   ] Executing notebook with papermill...
+[2026-04-10 13:17:34] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PA_20260410_131730.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 13:17:34] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-10 21:31:01] [INFO   ] Papermill exit code: 0
+[2026-04-10 21:31:01] [WARNING] Output check [A1_n6_PA]: no recent metrics JSON found in results/
+[2026-04-10 21:31:01] [INFO   ] [OK] A1_n6_PA completed in 8:13:26 — OK
+[2026-04-10 21:31:01] [INFO   ] Generating AI report for A1_n6_PA...
+[2026-04-10 21:31:05] [INFO   ] AI report saved: results/exp_A1_n6_PA/report_ai.md
+[2026-04-10 21:31:05] [INFO   ] Progress: 1/20 done, 19 remaining, ETA: ~6 days, 12:16:58
+
+──────────────────────────────────────────────────────────────────────
+  [2/20] STARTING: A1_n6_PB — noiseless eps=0.005 n=6 | PB central K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-10 21:31:05] [INFO   ] Config file:  config_A1_n6_PB.yaml
+[2026-04-10 21:31:05] [INFO   ] Notebook log: run_A1_n6_PB_20260410_131730.log
+[2026-04-10 21:31:05] [INFO   ] Output nb:    main_A1_n6_PB_20260410_131730.ipynb
+[2026-04-10 21:31:05] [INFO   ] Copied: config_A1_n6_PB.yaml -> config.yaml
+[2026-04-10 21:31:05] [INFO   ] Executing notebook with papermill...
+[2026-04-10 21:31:05] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PB_20260410_131730.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-10 21:31:05] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-11 05:33:28] [INFO   ] Papermill exit code: 0
+[2026-04-11 05:33:28] [WARNING] Output check [A1_n6_PB]: no recent metrics JSON found in results/
+[2026-04-11 05:33:28] [INFO   ] [OK] A1_n6_PB completed in 8:02:22 — OK
+[2026-04-11 05:33:28] [INFO   ] Generating AI report for A1_n6_PB...
+[2026-04-11 05:33:34] [INFO   ] AI report saved: results/exp_A1_n6_PB/report_ai.md
+[2026-04-11 05:33:34] [INFO   ] Progress: 2/20 done, 18 remaining, ETA: ~6 days, 2:23:59
+
+──────────────────────────────────────────────────────────────────────
+  [3/20] STARTING: A1_n6_PC — noiseless eps=0.005 n=6 | PC predefined K=10
+──────────────────────────────────────────────────────────────────────
+[2026-04-11 05:33:34] [INFO   ] Config file:  config_A1_n6_PC.yaml
+[2026-04-11 05:33:34] [INFO   ] Notebook log: run_A1_n6_PC_20260410_131730.log
+[2026-04-11 05:33:34] [INFO   ] Output nb:    main_A1_n6_PC_20260410_131730.ipynb
+[2026-04-11 05:33:34] [INFO   ] Copied: config_A1_n6_PC.yaml -> config.yaml
+[2026-04-11 05:33:34] [INFO   ] Executing notebook with papermill...
+[2026-04-11 05:33:34] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_A1_n6_PC_20260410_131730.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-11 05:33:34] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks

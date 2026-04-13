@@ -1,0 +1,72 @@
+{
+  "block_F": {
+    "n_new_repeats": 5,
+    "n_existing": 3,
+    "n_total": 8,
+    "shots_per_run": 2048,
+    "new_runs": [
+      {
+        "run": 1,
+        "p_hw": 0.35107421875,
+        "job_id": "019d840d-12c6-7740-b803-eacdb98a898e",
+        "shots": 2048,
+        "source": "wave2_v2"
+      },
+      {
+        "run": 2,
+        "p_hw": 0.3388671875,
+        "job_id": "019d840d-2b92-7ce2-9c0e-4c32a4d893d2",
+        "shots": 2048,
+        "source": "wave2_v2"
+      },
+      {
+        "run": 3,
+        "p_hw": 0.32763671875,
+        "job_id": "019d840d-4050-7291-b72a-2311b2a248c1",
+        "shots": 2048,
+        "source": "wave2_v2"
+      },
+      {
+        "run": 4,
+        "p_hw": 0.3291015625,
+        "job_id": "019d840d-5877-7861-a007-828e79937f1d",
+        "shots": 2048,
+        "source": "wave2_v2"
+      },
+      {
+        "run": 5,
+        "p_hw": 0.3349609375,
+        "job_id": "019d840d-71ec-7413-907b-a2d903b8ef4a",
+        "shots": 2048,
+        "source": "wave2_v2"
+      }
+    ],
+    "existing_runs": [
+      {
+        "p_hw": 0.32958984375,
+        "source": "phase1_direct_results_latest.json",
+        "shots": 2048
+      },
+      {
+        "p_hw": 0.328125,
+        "source": "wave1_results_latest.json_zne_s1",
+        "shots": 4096
+      },
+      {
+        "p_hw": 0.33984375,
+        "source": "wave1_v2_results_latest.json_zne_s1",
+        "shots": 4096
+      }
+    ],
+    "pooled_stats": {
+      "p_mean": 0.33489990234375,
+      "p_std": 0.00812635766727665,
+      "p_sem": 0.002873101306439306,
+      "ci_95_lo": 0.32926862378312893,
+      "ci_95_hi": 0.34053118090437107,
+      "z_score": -20.90637007502717,
+      "p_theory": 0.39496602151921417
+    }
+  },
+  "ts": "2026-04-13T01:36:12.208290"
+}

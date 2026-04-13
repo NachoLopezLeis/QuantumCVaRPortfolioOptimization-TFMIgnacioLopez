@@ -1,0 +1,101 @@
+================================================================================
+BATCH EXPERIMENT RUNNER LOG
+Started: 2026-04-13T01:54:14.202023
+Timestamp ID: 20260413_015414
+Python: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe
+PID: 2556
+================================================================================
+
+======================================================================
+BATCH EXPERIMENT RUNNER v2.0 — 20260413_015414
+======================================================================
+[2026-04-13 01:54:14] [INFO   ] Project root: C:\Users\nacho\Desktop\v2_final\v2_final
+[2026-04-13 01:54:14] [INFO   ] Config dir:   C:\Users\nacho\Desktop\v2_final\v2_final\config
+[2026-04-13 01:54:14] [INFO   ] Notebook:     C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb
+[2026-04-13 01:54:14] [INFO   ] Results dir:  C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs
+[2026-04-13 01:54:14] [INFO   ] Log file:     C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_runner_20260413_015414.log
+[2026-04-13 01:54:14] [INFO   ] Selected experiments: ['D1_n3_PA', 'B2_n3_PA', 'S1_PC_100']
+[2026-04-13 01:54:15] [INFO   ] Executor detected: papermill 2.6.0 from C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Lib\site-packages\papermill\cli.py (3.13.12)
+
+======================================================================
+EXECUTION PLAN — 3 experiments
+======================================================================
+[2026-04-13 01:54:15] [INFO   ]    1. [D1_n3_PA] config_D1_n3_PA.yaml   OK       high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+[2026-04-13 01:54:15] [INFO   ]    2. [B2_n3_PA] config_B2_n3_PA.yaml   OK       low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+[2026-04-13 01:54:15] [INFO   ]    3. [S1_PC_100] config_S1_PC_100.yaml  OK       noiseless eps=0.005 n=4 | PC_100 SP100 K=100
+[2026-04-13 01:54:15] [INFO   ] All config files validated OK
+[2026-04-13 01:54:15] [INFO   ] Copied: config.yaml -> config_backup_before_batch.yaml
+[2026-04-13 01:54:15] [INFO   ] Backed up config.yaml -> config_backup_before_batch.yaml
+[2026-04-13 01:54:15] [INFO   ] Incremental summary: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_summary_20260413_015414.json
+
+──────────────────────────────────────────────────────────────────────
+  [1/3] STARTING: D1_n3_PA — high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-13 01:54:15] [INFO   ] Config file:  config_D1_n3_PA.yaml
+[2026-04-13 01:54:15] [INFO   ] Notebook log: run_D1_n3_PA_20260413_015414.log
+[2026-04-13 01:54:15] [INFO   ] Output nb:    main_D1_n3_PA_20260413_015414.ipynb
+[2026-04-13 01:54:15] [INFO   ] Copied: config_D1_n3_PA.yaml -> config.yaml
+[2026-04-13 01:54:15] [INFO   ] Executing notebook with papermill...
+[2026-04-13 01:54:15] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_D1_n3_PA_20260413_015414.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-13 01:54:15] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-13 02:09:49] [INFO   ] Papermill exit code: 0
+[2026-04-13 02:09:49] [INFO   ] Output check [D1_n3_PA]: found 2 recent metrics JSON(s)
+[2026-04-13 02:09:49] [INFO   ] [OK] D1_n3_PA completed in 0:15:34 — OK
+[2026-04-13 02:09:49] [INFO   ] Generating AI report for D1_n3_PA...
+[2026-04-13 02:09:53] [INFO   ] AI report saved: results/exp_D1_n3_PA/report_ai.md
+[2026-04-13 02:09:53] [INFO   ] Progress: 1/3 done, 2 remaining, ETA: ~0:31:16
+
+──────────────────────────────────────────────────────────────────────
+  [2/3] STARTING: B2_n3_PA — low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+──────────────────────────────────────────────────────────────────────
+[2026-04-13 02:09:53] [INFO   ] Config file:  config_B2_n3_PA.yaml
+[2026-04-13 02:09:53] [INFO   ] Notebook log: run_B2_n3_PA_20260413_015414.log
+[2026-04-13 02:09:53] [INFO   ] Output nb:    main_B2_n3_PA_20260413_015414.ipynb
+[2026-04-13 02:09:53] [INFO   ] Copied: config_B2_n3_PA.yaml -> config.yaml
+[2026-04-13 02:09:53] [INFO   ] Executing notebook with papermill...
+[2026-04-13 02:09:53] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_B2_n3_PA_20260413_015414.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-13 02:09:53] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-13 02:22:20] [INFO   ] Papermill exit code: 0
+[2026-04-13 02:22:20] [INFO   ] Output check [B2_n3_PA]: found 2 recent metrics JSON(s)
+[2026-04-13 02:22:20] [INFO   ] [OK] B2_n3_PA completed in 0:12:26 — OK
+[2026-04-13 02:22:20] [INFO   ] Generating AI report for B2_n3_PA...
+[2026-04-13 02:22:24] [INFO   ] AI report saved: results/exp_B2_n3_PA/report_ai.md
+[2026-04-13 02:22:24] [INFO   ] Progress: 2/3 done, 1 remaining, ETA: ~0:14:04
+
+──────────────────────────────────────────────────────────────────────
+  [3/3] STARTING: S1_PC_100 — noiseless eps=0.005 n=4 | PC_100 SP100 K=100
+──────────────────────────────────────────────────────────────────────
+[2026-04-13 02:22:24] [INFO   ] Config file:  config_S1_PC_100.yaml
+[2026-04-13 02:22:24] [INFO   ] Notebook log: run_S1_PC_100_20260413_015414.log
+[2026-04-13 02:22:24] [INFO   ] Output nb:    main_S1_PC_100_20260413_015414.ipynb
+[2026-04-13 02:22:24] [INFO   ] Copied: config_S1_PC_100.yaml -> config.yaml
+[2026-04-13 02:22:24] [INFO   ] Executing notebook with papermill...
+[2026-04-13 02:22:24] [INFO   ] Papermill command: C:\Users\nacho\Desktop\v2_final\v2_final\venv_net\Scripts\python.exe -m papermill C:\Users\nacho\Desktop\v2_final\v2_final\notebooks\main.ipynb C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\main_S1_PC_100_20260413_015414.ipynb --no-progress-bar --log-output --log-level WARNING
+[2026-04-13 02:22:24] [INFO   ] Papermill cwd: C:\Users\nacho\Desktop\v2_final\v2_final\notebooks
+[2026-04-13 05:20:04] [INFO   ] Papermill exit code: 0
+[2026-04-13 05:20:04] [INFO   ] Output check [S1_PC_100]: found 2 recent metrics JSON(s)
+[2026-04-13 05:20:04] [INFO   ] [OK] S1_PC_100 completed in 2:57:39 — OK
+[2026-04-13 05:20:04] [INFO   ] Generating AI report for S1_PC_100...
+[2026-04-13 05:20:08] [INFO   ] AI report saved: results/exp_S1_PC_100/report_ai.md
+[2026-04-13 05:20:08] [INFO   ] Copied: config_backup_before_batch.yaml -> config.yaml
+[2026-04-13 05:20:08] [INFO   ] Restored original config.yaml from backup
+
+======================================================================
+BATCH COMPLETE — 3 experiments in 3:25:53
+======================================================================
+[2026-04-13 05:20:08] [INFO   ] Exp    Status                     Time  Description
+[2026-04-13 05:20:08] [INFO   ] ──────────────────────────────────────────────────────────────────────
+[2026-04-13 05:20:08] [INFO   ]   + D1_n3_PA OK                      0:15:34  high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]
+[2026-04-13 05:20:08] [INFO   ]   + B2_n3_PA OK                      0:12:26  low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]
+[2026-04-13 05:20:08] [INFO   ]   + S1_PC_100 OK                      2:57:39  noiseless eps=0.005 n=4 | PC_100 SP100 K=100
+[2026-04-13 05:20:08] [INFO   ] ──────────────────────────────────────────────────────────────────────
+[2026-04-13 05:20:08] [INFO   ]   3/3 succeeded, 0 failed
+[2026-04-13 05:20:08] [INFO   ]   Summary JSON: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_summary_20260413_015414.json
+[2026-04-13 05:20:08] [INFO   ]   Full log:     C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_runner_20260413_015414.log
+[2026-04-13 05:20:08] [INFO   ] Generating batch process report...
+[2026-04-13 05:20:12] [INFO   ] Batch report saved: results/batch_report.pdf
+
+======================================================================
+DONE
+======================================================================
+[2026-04-13 05:20:12] [INFO   ] Log closed: C:\Users\nacho\Desktop\v2_final\v2_final\results\batch_runs\batch_runner_20260413_015414.log

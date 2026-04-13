@@ -1,0 +1,55 @@
+{
+  "timestamp": "20260413_015414",
+  "started": "2026-04-13T01:54:15.147601",
+  "total_planned": 3,
+  "total_completed": 3,
+  "total_ok": 3,
+  "total_failed": 0,
+  "total_elapsed": "3:25:53",
+  "status": "COMPLETED",
+  "experiments": [
+    {
+      "experiment": "D1_n3_PA",
+      "config": "config_D1_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:15:34",
+      "elapsed_s": 934,
+      "description": "high noise eps=0.01  n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260413_020915.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "B2_n3_PA",
+      "config": "config_B2_n3_PA.yaml",
+      "status": "OK",
+      "elapsed": "0:12:26",
+      "elapsed_s": 746,
+      "description": "low noise  eps=0.005 n=3 | PA peripheral K=10 [P1-002]",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260413_022146.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    },
+    {
+      "experiment": "S1_PC_100",
+      "config": "config_S1_PC_100.yaml",
+      "status": "OK",
+      "elapsed": "2:57:39",
+      "elapsed_s": 10659,
+      "description": "noiseless eps=0.005 n=4 | PC_100 SP100 K=100",
+      "return_code": 0,
+      "output_json_found": true,
+      "output_json_files": [
+        "tfm_comprehensive_metrics_20260413_051846.json",
+        "tfm_comprehensive_metrics_latest.json"
+      ]
+    }
+  ],
+  "finished": "2026-04-13T05:20:08.741024"
+}
