@@ -127,65 +127,221 @@ For full details on each step, see **CodeManual.txt**.
 
 ```
 .
-├── config/                     YAML experiment configs (50 files)
-│   ├── config.yaml             Active configuration
-│   ├── config_A1_PA.yaml       Noiseless, eps=0.005, portfolio PA
-│   └── config_S1_PA_100.yaml   Scalability N=100
+├── .env                            Cloud API credentials (not committed)
+├── .env.example                    Credentials template
+├── .gitignore
+├── requirements.txt
+├── README.md
+├── CodeManual.txt
+│
+├── config/                         YAML experiment configs (50 files)
+│   ├── config.yaml                 Active config (read by every run)
+│   ├── config_A1_PA.yaml           Noiseless, eps=0.005, portfolio PA
+│   ├── config_A1_PB.yaml
+│   ├── config_A1_PC.yaml
+│   ├── config_A1_n3_PA.yaml  …     (n_qubits variants: n3, n5, n6)
+│   ├── config_A3_PA.yaml  …        (eps=0.002 family)
+│   ├── config_B2_PA.yaml  …        (moderate noise + ZNE)
+│   ├── config_C2_PA.yaml  …        (high noise + ZNE)
+│   ├── config_D1_PA.yaml  …        (high noise, eps=0.010)
+│   ├── config_D2_PA.yaml  …
+│   ├── config_E1_PA.yaml  …        (p2q=1e-3)
+│   ├── config_E2_PA.yaml  …        (p2q=5e-3)
+│   ├── config_E3_PA.yaml  …        (p2q=1e-2)
+│   ├── config_S1_PA_30.yaml        Scalability N=30
+│   ├── config_S1_PA_100.yaml       Scalability N=100
+│   ├── config_S1_PB_30.yaml  …
+│   ├── config_S1_PC_30.yaml  …
+│   └── config_backup_*.yaml        (3 backup snapshots)
 │
 ├── data/
-│   ├── returns_sp500_full.csv  374 tickers, 2020-01-02 to 2025-12-31
-│   └── returns_sp500_100.csv   Top-100 subset
+│   └── returns_sp500_full.csv      374 tickers, 2020-01-02 to 2025-12-31
 │
-├── src/
-│   ├── phase_1/
-│   │   ├── cvar_computation.py     CVaR/VaR (Rockafellar-Uryasev)
-│   │   └── metricscomputation.py   Portfolio performance metrics
-│   ├── phase_2/
-│   │   ├── qae_circuits.py         IQAE state prep + Grover oracle
-│   │   ├── quantumsubgradient.py   CVaR subgradient via IQAE
-│   │   ├── hybridoptimizer.py      Adam + simplex projection
-│   │   ├── quantumbackends.py      Aer / statevector backend
-│   │   ├── noisemodels.py          Depolarising noise models
-│   │   ├── evar_estimation.py      Entropic VaR (EVaR)
-│   │   ├── errorpropagation.py     Amplitude error -> CVaR error budget
-│   │   └── risk_contributions.py   Euler CVaR decomposition
-│   ├── phase_3/
-│   │   ├── classical_benchmark.py  SLSQP, COBYLA, subgradient, MC, Markowitz, RP
-│   │   ├── bootstrap_ci.py         Circular block bootstrap CIs
-│   │   ├── method_comparison.py    IQAE vs classical accuracy
-│   │   └── qae_validation.py       Circuit correctness tests
-│   └── utils/
-│       ├── config_loader.py        YAML config reader
-│       ├── data_loader.py          CSV loader + preprocessor
-│       └── logger.py               File-based logger (overwrite mode)
+├── docs/
+│   └── AI_Context_Document_TFM.docx
 │
-├── scripts/
-│   ├── 01_download_data.sh
-│   ├── 02_run_universe_selection.sh
-│   ├── 03_run_experiments.sh       Batch runner (46 configs)
-│   ├── 04_run_bootstrap.sh         Bootstrap CIs
-│   ├── 05_run_real_hardware.py     IQM / IBM hardware jobs
-│   ├── compute_euler_decomposition.py
-│   ├── generate_paper_figures.py   Figures 3-13
-│   └── generate_visual_figures.py  Figures 1-2
+├── logs/                           Root-level logs (last run)
+│   ├── hybrid_optimizer.txt
+│   ├── qae_circuits.txt
+│   ├── quantum_subgradient.txt
+│   ├── risk_contributions.txt
+│   ├── src.phase_1.cvar_computation.txt
+│   ├── src.phase_3.bootstrap_ci.txt
+│   ├── src.utils.config_loader.txt
+│   └── src.utils.passport_orchestrator.txt
 │
 ├── notebooks/
-│   └── main.ipynb                  Interactive single-run pipeline
-│
-├── results/
-│   ├── network_selection/          QUBO outputs and universe metrics
-│   ├── exp_A1_PA/                  Per-experiment results (46 folders)
-│   ├── hardware_validation/        IQM raw results + job IDs
-│   ├── euler_decomposition/        414-row Euler CSV
-│   └── paper_figures/              13 PNGs at 300 dpi
+│   ├── main.ipynb                  Interactive single-run pipeline
+│   └── logs/                       Per-module logs from notebook runs (17 files)
+│       ├── main_notebook.txt
+│       ├── cvar_computation.txt
+│       ├── hybrid_optimizer.txt
+│       ├── qae_circuits.txt
+│       ├── quantum_subgradient.txt
+│       ├── classical_benchmark.txt
+│       ├── method_comparison.txt
+│       ├── noise_models.txt
+│       ├── error_propagation.txt
+│       ├── evar_estimation.txt
+│       ├── oos_comparison.txt
+│       ├── oos_monte_carlo.txt
+│       ├── oos_parametric.txt
+│       ├── oos_quantum.txt
+│       ├── qae_validation.txt
+│       ├── risk_contributions.txt
+│       └── metricscomputation.txt
 │
 ├── paper/                          LaTeX source (IOP QST format)
 │   ├── main.tex
-│   └── sections/
+│   ├── references.bib
+│   └── figures/                    13 PNGs at 300 dpi (mirror of results/paper_figures/)
+│       ├── fig01_pipeline.png
+│       ├── fig02_qubo_network.png
+│       ├── fig02_sp500_network.png
+│       ├── fig03_correlation_matrices.png
+│       ├── fig04_circuit_depth.png
+│       ├── fig05_convergence.png
+│       ├── fig06_cosine_hhi.png
+│       ├── fig07_aliasing_hardware.png
+│       ├── fig08_zne_depth.png
+│       ├── fig09_euler_decomposition.png
+│       ├── fig10_oos_returns.png
+│       ├── fig11_backtest_regulatory.png
+│       └── fig12_scalability.png
 │
-├── requirements.txt
-├── CodeManual.txt                  Full usage guide
-└── README.md                       This file
+├── results/
+│   ├── exp_A1_PA/                  One folder per experiment (46 total)
+│   │   ├── tfm_comprehensive_metrics_latest.json
+│   │   ├── tfm_comprehensive_metrics_<timestamp>.json
+│   │   ├── oos_backtest_report_A1_PA.json
+│   │   ├── oos_triple_comparison_A1_PA.json
+│   │   ├── oos_triple_distribution_A1_PA.png
+│   │   └── oos_var_breach_chart_A1_PA.png
+│   ├── exp_A1_PB/  …  exp_S1_PC_30/   (remaining 45 experiment folders)
+│   │
+│   ├── euler_decomposition/        One JSON per experiment + summary
+│   │   ├── A1_PA_euler.json  …  S1_PC_30_euler.json   (46 files)
+│   │   ├── summary.csv
+│   │   └── euler_decomposition.log
+│   │
+│   ├── hardware_validation/        IQM raw results + logs
+│   │   ├── iqae_garnet_results_latest.json
+│   │   ├── iqae_garnet_latest.log
+│   │   ├── phase1_direct_results_latest.json
+│   │   ├── wave1_v2_results_latest.json
+│   │   ├── wave1_v2_blockA_latest.json
+│   │   ├── wave1_v2_latest.log
+│   │   ├── wave2_v2_results_latest.json
+│   │   ├── wave2_v2_blockF_latest.json
+│   │   ├── wave2_v2_latest.log
+│   │   ├── wave3_v2_results_latest.json
+│   │   ├── wave3_v2_blockD_latest.json
+│   │   ├── wave3_v2_blockE_latest.json
+│   │   └── wave3_v2_latest.log
+│   │
+│   ├── network_selection/          QUBO universe outputs
+│   │   ├── selection_PA.json
+│   │   ├── selection_PA_100.json
+│   │   ├── selection_PB.json
+│   │   ├── selection_PB_100.json
+│   │   └── selection_report_<timestamp>.json
+│   │
+│   ├── paper_figures/              Publication figures (300 dpi)
+│   │   └── fig01_pipeline.png  …  fig12_scalability.png   (13 files)
+│   │
+│   ├── passports/
+│   │   └── pipeline_chain.json
+│   │
+│   ├── reproduction/               Papermill-executed notebooks + batch logs
+│   │   ├── main_A1_PA_<timestamp>.ipynb  …  main_S1_PC_30_<timestamp>.ipynb
+│   │   ├── batch_runner_<timestamp>.log   (4 batch run logs)
+│   │   └── batch_summary_<timestamp>.json (4 batch summaries)
+│   │
+│   ├── anomaly_report.json
+│   ├── anomaly_report.txt
+│   ├── convergence.csv
+│   ├── oos_validation.json
+│   ├── optimal_weights.csv
+│   └── phase2_results.json
+│
+├── scripts/
+│   ├── 00_setup_and_smoketest.py       Installation check
+│   ├── 01_download_data.sh             (legacy, use download_sp500_full.py)
+│   ├── 02_run_universe_selection.sh    QUBO universe selection
+│   ├── 03_run_experiments.sh           Batch runner (all 46 configs)
+│   ├── 04_run_bootstrap.sh             Bootstrap CIs
+│   ├── 05_run_real_hardware.py         IQM/IBM hardware submission
+│   ├── 06_run_network_analysis.sh      Network topology report
+│   ├── 07_analyse_qae_error_t001.py    IQAE error analysis
+│   ├── 08_batch_report.py              Batch results report
+│   ├── 08_smoke_report.py              Quick smoke test report
+│   ├── 08_ai_run_report.py             AI-assisted report generation
+│   ├── 09_anomaly_detector.py          Detect outlier experiment results
+│   ├── 10_pareto_frontier.py           CVaR vs Sharpe Pareto analysis
+│   ├── 11_export_paper_figures.py      Export figures to paper/figures/
+│   ├── 12_sensitivity_analysis.py      Rolling-window OOS sensitivity
+│   ├── compute_euler_decomposition.py  Euler risk decompositions (all 46)
+│   ├── download_sp500_full.py          Download S&P 500 data
+│   ├── generate_paper_figures.py       Figures 3–12 (results figures)
+│   ├── generate_visual_figures.py      Figures 1–2 (pipeline + MST network)
+│   ├── generate_enhanced_figures.py    Enhanced figure variants
+│   ├── hw_iqae_garnet.py               IQM Garnet IQAE circuit job
+│   ├── hw_phase1_direct.py             Phase 1 direct hardware validation
+│   ├── hw_phase1_emerald.py            IQM Emerald phase 1 job
+│   ├── hw_wave1_zne_iqae_v2.py         Wave 1: state prep + m=0..3 on Emerald
+│   ├── hw_wave2_repeats_noise_v2.py    Wave 2: 8 repeats at m=1 on Emerald
+│   ├── hw_wave3_extended_v2.py         Wave 3: m=0..6 Emerald + Garnet cross
+│   ├── run_all_experiments.py          Core Python batch runner
+│   ├── run_single_experiment.py        Run one experiment by ID
+│   └── run_universe_selection.py       Python entry point for QUBO
+│
+├── src/
+│   ├── phase_0/                    Network analysis and universe selection
+│   │   ├── network_analysis_report.py
+│   │   ├── network_portfolio_selector.py
+│   │   ├── portfolio_comparison.py
+│   │   └── portfolio_generator.py
+│   ├── phase_1/                    Classical CVaR computation
+│   │   ├── cvar_computation.py         CVaR/VaR (Rockafellar-Uryasev)
+│   │   └── metricscomputation.py       Sharpe, Sortino, drawdown
+│   ├── phase_2/                    Quantum-hybrid optimisation
+│   │   ├── qae_circuits.py             IQAE state prep + Grover oracle
+│   │   ├── quantumsubgradient.py       CVaR subgradient via IQAE
+│   │   ├── hybridoptimizer.py          Adam + simplex projection loop
+│   │   ├── quantumbackends.py          Aer / statevector backend abstraction
+│   │   ├── noisemodels.py              Depolarising noise models
+│   │   ├── evar_estimation.py          Entropic VaR (EVaR)
+│   │   ├── errorpropagation.py         Amplitude error -> CVaR error budget
+│   │   └── risk_contributions.py       Euler CVaR decomposition
+│   ├── phase_3/                    Validation and benchmarking
+│   │   ├── classical_benchmark.py      SLSQP, COBYLA, subgradient, MC, Markowitz, RP
+│   │   ├── bootstrap_ci.py             Circular block bootstrap CIs
+│   │   ├── method_comparison.py        IQAE vs classical accuracy
+│   │   ├── qae_validation.py           Circuit correctness tests
+│   │   └── risk_contributions.py       Risk contribution validation
+│   ├── phase_4/                    Out-of-sample validation
+│   │   ├── oos_comparison.py           Quantum vs classical OOS comparison
+│   │   ├── oos_monte_carlo.py          Monte Carlo OOS
+│   │   ├── oos_parametric.py           Parametric OOS
+│   │   ├── oos_quantum.py              Quantum OOS pipeline
+│   │   └── oos_types.py                OOS dataclass definitions
+│   └── utils/                      Shared utilities
+│       ├── config_loader.py            YAML config reader + validation
+│       ├── config_validator.py         Config schema validation
+│       ├── data_loader.py              CSV loader and preprocessor
+│       ├── logger.py                   File-based logger (overwrite mode)
+│       ├── metricscomputation.py       Metrics aggregation
+│       ├── circuit_logger.py           QAE circuit export utility
+│       ├── passport_orchestrator.py    Data lineage and audit trail
+│       ├── passport_pipeline_viewer.py Passport visualiser
+│       ├── passport_types.py           Passport dataclass definitions
+│       ├── passport_utils.py           Passport helper functions
+│       └── validation_helpers.py       Numerical validation functions
+│
+├── tests/
+│   └── test_benchmarking_integration.py
+│
+└── tree.txt                        Static filesystem snapshot
 ```
 
 ---
