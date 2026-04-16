@@ -238,7 +238,7 @@ footer a:hover { color: var(--teal-l); }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border-radius:8px; overflow:hidden; }
 
-@media(max-width:900px){
+@media(max-width:768px){
   .nav-links { display: none; }
   .grid-2,.grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr 1fr; }
@@ -301,7 +301,7 @@ footer a:hover { color: var(--teal-l); }
 .pl-back:hover { color:var(--white); }
 .pl-level { animation:fadeIn 0.22s ease; }
 
-@media(max-width:900px){
+@media(max-width:768px){
   .pl-stage-grid { grid-template-columns:1fr; }
   .pl-detail { grid-template-columns:1fr; }
 }
