@@ -51,17 +51,36 @@
         <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;font-family:var(--font-m);font-size:.67rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;padding-bottom:.6rem;border-bottom:1px solid var(--border);margin-bottom:.75rem">
           <div>Config &middot; Noise</div><div>Cosine Similarity</div><div>CVaR Error</div><div>HHI</div>
         </div>
-        ${[['A1 &middot; ideal','0','0.999915','10.7%','0.2102','99.99'],
-           ['E1 &middot; 10&sup;&minus;&sup3;','10^-3','0.999963','14.9%','0.1858','99.99'],
-           ['E2 &middot; 5&middot;10&sup;&minus;&sup3;','5e-3','0.999954','109.8%','0.1638','99.99'],
-           ['E3 &middot; 10&sup;&minus;&sup2;','1e-2','0.999940','232.6%','0.1643','99.99'],
-           ['D1 &middot; ZNE','1e-2','0.999871','233.5%','0.1656','99.98']].map(r=>`
         <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(59,130,246,.06)">
-          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">${r[0]}</div>
-          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:${r[5]}%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
-          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">${r[2]}</div>
-          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">${r[4]}</div>
-        </div>`).join('')}
+          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">A1 &middot; ideal</div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:99.99%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
+          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">0.999915</div>
+          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">0.2102</div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(59,130,246,.06)">
+          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">E1 &middot; 10<sup>-3</sup></div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:99.99%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
+          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">0.999963</div>
+          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">0.1858</div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(59,130,246,.06)">
+          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">E2 &middot; 5&middot;10<sup>-3</sup></div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:99.99%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
+          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">0.999954</div>
+          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">0.1638</div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(59,130,246,.06)">
+          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">E3 &middot; 10<sup>-2</sup></div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:99.99%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
+          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">0.999940</div>
+          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">0.1643</div>
+        </div>
+        <div style="display:grid;grid-template-columns:130px 1fr 110px 90px;gap:.75rem;align-items:center;padding:.5rem 0;border-bottom:1px solid rgba(59,130,246,.06)">
+          <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white)">D1 &middot; ZNE</div>
+          <div style="height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden"><div style="width:99.98%;height:100%;background:var(--teal-l);border-radius:4px"></div></div>
+          <div style="font-family:var(--font-m);font-size:.8rem;color:var(--teal-l);text-align:right">0.999871</div>
+          <div style="font-family:var(--font-m);font-size:.78rem;color:var(--grey-l);text-align:right">0.1656</div>
+        </div>
       </div>
       <div class="fig-wrap"><img src="figures/fig06_cosine_hhi.png" loading="lazy"><div class="fig-cap">Fig. 6 &mdash; Gradient direction stability (cosine similarity, left axis) and risk concentration (HHI, right axis) as hardware noise increases. Direction is noise-invariant; gradient magnitude contrast (and therefore HHI) degrades monotonically.</div></div>
     </div>
@@ -70,23 +89,76 @@
     <div id="t-euler" class="tab-panel">
       <div class="callout"><strong>414/414 Euler additivity checks pass</strong> (&vert;&Sigma;RC_i &minus; CVaR&vert;/CVaR &lt; 10&sup;&minus;&sup1;&sup4;). Quantum and SLSQP independently converge to the same risk structure: CLX + CBOE + CHRW absorb 74% of CVaR.</div>
       <p style="font-family:var(--font-m);font-size:.82rem;color:var(--grey);margin-bottom:1rem">Portfolio PA &middot; Quantum Hybrid (A1_PA) &middot; CVaR&sub0;.&sub0;&sub5; = 0.02768 &middot; HHI = 0.2102 &middot; eff N = 4.76</p>
-      ${[['CLX','0.279','0.0302','30.52','var(--teal-l)'],
-         ['CBOE','0.290','0.0264','27.62','var(--teal-l)'],
-         ['CHRW','0.178','0.0260','16.73','var(--blue-l)'],
-         ['NEM','0.108','0.0234','9.09','var(--blue)'],
-         ['DXCM','0.040','0.0263','3.80','var(--grey)'],
-         ['FMC','0.033','0.0266','3.18','var(--grey)'],
-         ['OXY','0.016','0.0464','2.62','var(--grey)'],
-         ['AAL','0.019','0.0342','2.34','var(--grey)'],
-         ['NFLX','0.019','0.0305','2.10','var(--grey)'],
-         ['AAP','0.018','0.0304','1.98','var(--grey)']].map(r=>`
       <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
-        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">${r[0]}</div>
-        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:${r[3]}%;height:100%;background:${r[4]};border-radius:5px"></div></div>
-        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">${r[3]}%</div>
-        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=${r[1]}</div>
-        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=${r[2]}</div>
-      </div>`).join('')}
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">CLX</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:30.52%;height:100%;background:var(--teal-l);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">30.52%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.279</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0302</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">CBOE</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:27.62%;height:100%;background:var(--teal-l);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">27.62%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.290</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0264</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">CHRW</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:16.73%;height:100%;background:var(--blue-l);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">16.73%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.178</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0260</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">NEM</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:9.09%;height:100%;background:var(--blue);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">9.09%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.108</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0234</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">DXCM</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:3.80%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">3.80%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.040</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0263</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">FMC</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:3.18%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">3.18%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.033</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0266</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">OXY</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:2.62%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">2.62%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.016</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0464</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">AAL</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:2.34%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">2.34%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.019</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0342</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">NFLX</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:2.10%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">2.10%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.019</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0305</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.55rem">
+        <div style="font-family:var(--font-m);font-size:.8rem;font-weight:700;color:var(--white);min-width:48px">AAP</div>
+        <div style="flex:1;height:10px;background:rgba(255,255,255,.05);border-radius:5px;overflow:hidden"><div style="width:1.98%;height:100%;background:var(--grey);border-radius:5px"></div></div>
+        <div style="font-family:var(--font-m);font-size:.76rem;color:var(--grey-l);min-width:44px;text-align:right">1.98%</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:52px">w=0.018</div>
+        <div style="font-family:var(--font-m);font-size:.72rem;color:var(--grey);min-width:64px">mCVaR=0.0304</div>
+      </div>
       <div class="fig-wrap" style="margin-top:1.5rem"><img src="figures/fig09_euler_decomposition.png" loading="lazy"><div class="fig-cap">Fig. 9 &mdash; Euler CVaR decomposition for portfolio PA. Left: per-asset risk contributions for four methods. Right: HHI and total CVaR by method. Quantum hybrid and SLSQP converge to HHI&asymp;0.21 and the same top-3 assets.</div></div>
     </div>
 
@@ -106,18 +178,36 @@
     <div id="t-scalability" class="tab-panel">
       <div class="callout"><strong>Fixed 4-qubit circuit for N=10, 30, and 100 assets.</strong> Wall-clock time scales as O(N&sup0;&middot;&sup9;&sup3;) &mdash; near-linear. CVaR improvement and OOS Sharpe ratio both <em>increase</em> with N.</div>
       <div class="grid-3" style="margin-bottom:1.5rem">
-        ${[['N=10','PA &middot; 4 qubits','25.6%','0.01839','0.681','0.210','2,157 s','4.4M'],
-           ['N=30','PA&#8323;&#8320; &middot; 4 qubits','35.5%','0.01927','0.979','0.118','5,173 s','24.1M'],
-           ['N=100','PA&#8321;&#8320;&#8320; &middot; 4 qubits','37.9%','0.01795','1.099','0.091','18,215 s','125.1M']].map(r=>`
         <div class="card">
-          <div style="font-family:var(--font-m);font-size:2.2rem;font-weight:700;color:var(--blue-l);margin-bottom:.2rem">${r[0]}</div>
-          <div style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);text-transform:uppercase;margin-bottom:1rem">${r[1]}</div>
-          ${[['IS CVaR Reduction',r[2]],['OOS CVaR',r[3]],['OOS Sharpe',r[4]],['HHI',r[5]],['Wall time',r[6]],['Oracle queries',r[7]]].map(([k,v])=>`
-          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem;font-size:.82rem">
-            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">${k}</span>
-            <span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">${v}</span>
-          </div>`).join('')}
-        </div>`).join('')}
+          <div style="font-family:var(--font-m);font-size:2.2rem;font-weight:700;color:var(--blue-l);margin-bottom:.2rem">N=10</div>
+          <div style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);text-transform:uppercase;margin-bottom:1rem">PA &middot; 4 qubits</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">IS CVaR Reduction</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">25.6%</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS CVaR</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.01839</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS Sharpe</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.681</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">HHI</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.210</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Wall time</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">2,157 s</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Oracle queries</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">4.4M</span></div>
+        </div>
+        <div class="card">
+          <div style="font-family:var(--font-m);font-size:2.2rem;font-weight:700;color:var(--blue-l);margin-bottom:.2rem">N=30</div>
+          <div style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);text-transform:uppercase;margin-bottom:1rem">PA&#8323;&#8320; &middot; 4 qubits</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">IS CVaR Reduction</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">35.5%</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS CVaR</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.01927</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS Sharpe</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.979</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">HHI</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.118</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Wall time</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">5,173 s</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Oracle queries</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">24.1M</span></div>
+        </div>
+        <div class="card">
+          <div style="font-family:var(--font-m);font-size:2.2rem;font-weight:700;color:var(--blue-l);margin-bottom:.2rem">N=100</div>
+          <div style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);text-transform:uppercase;margin-bottom:1rem">PA&#8321;&#8320;&#8320; &middot; 4 qubits</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">IS CVaR Reduction</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">37.9%</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS CVaR</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.01795</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">OOS Sharpe</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">1.099</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">HHI</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">0.091</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Wall time</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">18,215 s</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.4rem"><span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Oracle queries</span><span style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l);font-weight:700">125.1M</span></div>
+        </div>
       </div>
       <div class="fig-wrap"><img src="figures/fig12_scalability.png" loading="lazy"><div class="fig-cap">Fig. 12 &mdash; Scalability results for portfolio PA with N&isin;{10,30,100} assets at fixed 4-qubit circuit width. Left: CVaR improvement and OOS Sharpe vs N. Centre: wall-clock time on log-log scale, empirical slope O(N&sup0;&middot;&sup9;&sup3;). Right: qubit count is independent of N.</div></div>
     </div>
