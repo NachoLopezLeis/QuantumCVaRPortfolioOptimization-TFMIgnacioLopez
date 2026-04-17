@@ -74,7 +74,7 @@
         </div>
       </div>
 
-      <div class="fig-wrap reveal"><img src="figures/fig07_aliasing_hardware.png" loading="lazy"><div class="fig-cap">Fig. 7 &mdash; IQAE measured probability p_hw vs Grover round m on IQM Emerald (circles) and Garnet (triangles), compared to the theoretical prediction (black line, &theta;=0.2265). Green zone: usable range (m&le;2, depth&le;16). Red zone: aliased range (m&ge;3, depth&ge;22). Garnet achieves 2.97% error at m=1; Emerald 16.55%.</div></div>
+      <div class="fig-wrap reveal"><img src="figures/fig07_aliasing_hardware.png" loading="lazy"><div class="fig-cap">Fig. 7 &mdash; IQAE measured probability p_hw vs Grover round m on IQM Emerald (circles) and Garnet (triangles), compared to the theoretical prediction (black line, &theta;=0.2265). Green zone: usable range (m&le;2, depth&le;16). Red zone: aliased range (m&ge;3, depth&ge;22). Garnet achieves 2.97% error at m=1; Emerald 16.55%. Right panel uses IQM-quoted 2Q fidelities (Garnet 99.51%, Emerald 99.50%) to project circuit fidelity F<sup>d</sup> &mdash; both devices fall below the usable threshold simultaneously at m=3 due to compounded gate errors at depth 22.</div></div>
     </div>
 
     <div class="divider" style="margin:2rem 0"></div>
@@ -90,17 +90,51 @@
           <div class="callout">Both devices have nominally identical 2Q gate fidelity (99.5% and 99.51%). The 5.6&times; performance gap at m=1 is entirely attributable to connectivity topology, not quoted fidelity.</div>
         </div>
         <div>
-          ${[['m=0  depth 4','Garnet',66,'33.1%','#f87171'],['m=0  depth 4','Emerald',13,'6.5%','#fbbf24'],
-             ['m=1  depth 10','Garnet',6,'2.97%','var(--teal-l)'],['m=1  depth 10','Emerald',33,'16.6%','#f87171'],
-             ['m=3  depth 22','Garnet',100,'>100% ALIASED','#f87171'],['m=3  depth 22','Emerald',100,'>100% ALIASED','#f87171']].map((r,i)=>`
-          ${i%2===0?`<div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:${i>0?'1.25rem':0} 0 .5rem">${r[0]}</div>`:''}
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:0 0 .5rem">m=0  depth 4</div>
           <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
-            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">${r[1]}</span>
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
             <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
-              <div style="width:${r[2]}%;height:100%;background:${r[4]};border-radius:4px"></div>
+              <div style="width:66%;height:100%;background:#f87171;border-radius:4px"></div>
             </div>
-            <span style="font-family:var(--font-m);font-size:.75rem;color:${r[4]};min-width:100px;text-align:right">${r[3]}</span>
-          </div>`).join('')}
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">33.1%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:13%;height:100%;background:#fbbf24;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#fbbf24;min-width:100px;text-align:right">6.5%</span>
+          </div>
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem">m=1  depth 10</div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:6%;height:100%;background:var(--teal-l);border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:var(--teal-l);min-width:100px;text-align:right">2.97%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">16.6%</span>
+          </div>
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem">m=3  depth 22</div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">>100% ALIASED</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">>100% ALIASED</span>
+          </div>
         </div>
       </div>
     </div>
@@ -119,22 +153,45 @@
           <p style="font-size:.88rem;color:var(--grey-l);margin-top:1rem;line-height:1.6">Folding-free ZNE methods (Patil et&nbsp;al. 2023) and circuit-level noise insertion at opt_level=1 remain promising alternatives and are left as explicit future-work directions.</p>
         </div>
         <div>
-          ${[['1&times; (base)','Expected: 10','Actual: 10',4,4,'var(--teal-l)'],
-             ['3&times;','Expected: 30','Actual: 136',12,54,'#f87171'],
-             ['5&times;','Expected: 50','Actual: 226',20,100,'#f87171']].map(r=>`
           <div style="margin-bottom:1.25rem">
-            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor ${r[0]}</div>
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 1&times; (base)</div>
             <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
               <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
-              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:${r[3]}%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
-              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">${r[1]}</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:4%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 10</span>
             </div>
             <div style="display:flex;gap:.75rem;align-items:center">
               <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
-              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:${r[4]}%;height:100%;background:${r[5]};border-radius:3px"></div></div>
-              <span style="font-family:var(--font-m);font-size:.7rem;color:${r[5]}">${r[2]}</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:4%;height:100%;background:var(--teal-l);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--teal-l)">Actual: 10</span>
             </div>
-          </div>`).join('')}
+          </div>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 3&times;</div>
+            <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:12%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 30</span>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:54%;height:100%;background:#f87171;border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:#f87171">Actual: 136</span>
+            </div>
+          </div>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 5&times;</div>
+            <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:20%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 50</span>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:#f87171;border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:#f87171">Actual: 226</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="fig-wrap reveal"><img src="figures/fig08_zne_depth.png" loading="lazy"><div class="fig-cap">Fig. 8 &mdash; Left: expected vs actual post-transpile depth for ZNE scale factors &lambda;&isin;{1,3,5} with global circuit folding at opt_level=0. Right: p_hw vs scale factor on IQM Emerald; the extrapolated ZNE estimate (0.1236) diverges from theory (0.3950), giving 27.1% error vs the unmitigated 5.5%.</div></div>
@@ -148,13 +205,30 @@
       <h2 class="title reveal" style="font-size:1.8rem">Basel IV &mdash; ES Specification Test</h2>
       <p style="font-size:.95rem;color:var(--grey-l);max-width:640px;line-height:1.7;margin-bottom:2rem" class="reveal">The Acerbi-Székely Z&sub1; test directly verifies whether the predicted Expected Shortfall is correctly specified. Passing at all four Basel&nbsp;IV confidence levels is the primary regulatory result of this work.</p>
       <div class="grid-4 reveal" style="margin-bottom:1.5rem">
-        ${[['1%','&minus;0.41','0.53'],['2.5%','&minus;0.48','0.51'],['5%','&minus;0.528','0.47'],['10%','&minus;0.61','0.44']].map(r=>`
         <div class="metric-cell">
-          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = ${r[0]}</span>
-          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = ${r[1]}</span>
-          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = ${r[2]}</span>
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 1%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.41</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.53</span>
           <span class="badge badge-green">PASS</span>
-        </div>`).join('')}
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 2.5%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.48</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.51</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 5%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.528</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.47</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 10%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.61</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.44</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
       </div>
       <div class="fig-wrap reveal"><img src="figures/fig11_backtest_regulatory.png" loading="lazy"><div class="fig-cap">Fig. 11 &mdash; Basel&nbsp;IV regulatory backtesting for quantum portfolio PA (501 OOS days). (A) VaR breach chart at &alpha;=5%: 16 exceedances (3.19%, below nominal 5% &mdash; conservative model). (B) Predicted vs realised ES by &alpha;. (C) Regulatory test summary &mdash; Acerbi-Székely column passes at all levels. (D) Z&sub1; statistic at all four confidence levels.</div></div>
     </div>
