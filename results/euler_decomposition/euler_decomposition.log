@@ -1,0 +1,1030 @@
+[11:53:32] [INFO    ] ======================================================================
+[11:53:32] [INFO    ] EULER CVaR DECOMPOSITION — TFM Batch Runner
+[11:53:32] [INFO    ] Started: 2026-04-13T11:53:32.739018
+[11:53:32] [INFO    ] Alpha: 0.05
+[11:53:32] [INFO    ] Output: C:\Users\nacho\Desktop\v2_final\TFMFinalv1\results\euler_decomposition
+[11:53:32] [INFO    ] ======================================================================
+[11:53:32] [INFO    ] Loading returns from C:\Users\nacho\Desktop\v2_final\TFMFinalv1\data\returns_sp500_full.csv ...
+[11:53:32] [INFO    ] Returns loaded: 1506 days × 374 assets.
+[11:53:32] [INFO    ] Discovered 46 experiment files.
+[11:53:32] [INFO    ] Processing experiment: A1_n3_PA
+[11:53:32] [DEBUG   ] [A1_n3_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02768, VaR=0.01607, n_tail=51, HHI=0.2106, eff_N=4.75, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PA][quantum_optimal] OK — CVaR=0.02768, HHI=0.2106, eff_N=4.75, top=CLX 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n3_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [A1_n3_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n3_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01838, VaR=0.01443, n_tail=26, HHI=0.2163, eff_N=4.62, additivity_err=1.89e-16
+[11:53:32] [DEBUG   ] [A1_n3_PA][oos_quantum_cvar] OK — CVaR=0.01838, HHI=0.2163, eff_N=4.62, top=CLX 35.3%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [A1_n3_PA] Saved → A1_n3_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n3_PB
+[11:53:32] [DEBUG   ] [A1_n3_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03834, VaR=0.02201, n_tail=51, HHI=0.2048, eff_N=4.88, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PB][quantum_optimal] OK — CVaR=0.03834, HHI=0.2048, eff_N=4.88, top=ITW 30.6%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02358, VaR=0.01457, n_tail=26, HHI=0.2074, eff_N=4.82, additivity_err=1.47e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][oos_quantum_cvar] OK — CVaR=0.02358, HHI=0.2074, eff_N=4.82, top=ITW 28.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [A1_n3_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [A1_n3_PB] Saved → A1_n3_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n3_PC
+[11:53:32] [DEBUG   ] [A1_n3_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03106, VaR=0.01862, n_tail=51, HHI=0.1741, eff_N=5.74, additivity_err=1.12e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][quantum_optimal] OK — CVaR=0.03106, HHI=0.1741, eff_N=5.74, top=PG 25.2%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01783, VaR=0.01144, n_tail=26, HHI=0.2359, eff_N=4.24, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PC][oos_quantum_cvar] OK — CVaR=0.01783, HHI=0.2359, eff_N=4.24, top=NEE 32.0%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n3_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [A1_n3_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [A1_n3_PC] Saved → A1_n3_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n5_PA
+[11:53:32] [DEBUG   ] [A1_n5_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02769, VaR=0.01612, n_tail=51, HHI=0.2111, eff_N=4.74, additivity_err=1.25e-16
+[11:53:32] [DEBUG   ] [A1_n5_PA][quantum_optimal] OK — CVaR=0.02769, HHI=0.2111, eff_N=4.74, top=CLX 30.7%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n5_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [A1_n5_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n5_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01839, VaR=0.01444, n_tail=26, HHI=0.2175, eff_N=4.60, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PA][oos_quantum_cvar] OK — CVaR=0.01839, HHI=0.2175, eff_N=4.60, top=CLX 35.6%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [A1_n5_PA] Saved → A1_n5_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n5_PB
+[11:53:32] [DEBUG   ] [A1_n5_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03835, VaR=0.02200, n_tail=51, HHI=0.2049, eff_N=4.88, additivity_err=1.81e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][quantum_optimal] OK — CVaR=0.03835, HHI=0.2049, eff_N=4.88, top=ITW 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02359, VaR=0.01457, n_tail=26, HHI=0.2077, eff_N=4.81, additivity_err=1.47e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][oos_quantum_cvar] OK — CVaR=0.02359, HHI=0.2077, eff_N=4.81, top=ITW 28.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [A1_n5_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [A1_n5_PB] Saved → A1_n5_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n5_PC
+[11:53:32] [DEBUG   ] [A1_n5_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03105, VaR=0.01844, n_tail=51, HHI=0.1718, eff_N=5.82, additivity_err=1.12e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][quantum_optimal] OK — CVaR=0.03105, HHI=0.1718, eff_N=5.82, top=PG 25.3%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01777, VaR=0.01132, n_tail=26, HHI=0.2346, eff_N=4.26, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PC][oos_quantum_cvar] OK — CVaR=0.01777, HHI=0.2346, eff_N=4.26, top=NEE 31.8%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n5_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [A1_n5_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [A1_n5_PC] Saved → A1_n5_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n6_PA
+[11:53:32] [DEBUG   ] [A1_n6_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02770, VaR=0.01607, n_tail=51, HHI=0.2120, eff_N=4.72, additivity_err=2.51e-16
+[11:53:32] [DEBUG   ] [A1_n6_PA][quantum_optimal] OK — CVaR=0.02770, HHI=0.2120, eff_N=4.72, top=CLX 30.7%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n6_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [A1_n6_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_n6_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01835, VaR=0.01437, n_tail=26, HHI=0.2187, eff_N=4.57, additivity_err=1.89e-16
+[11:53:32] [DEBUG   ] [A1_n6_PA][oos_quantum_cvar] OK — CVaR=0.01835, HHI=0.2187, eff_N=4.57, top=CLX 35.6%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [A1_n6_PA] Saved → A1_n6_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n6_PB
+[11:53:32] [DEBUG   ] [A1_n6_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [A1_n6_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03836, VaR=0.02201, n_tail=51, HHI=0.2044, eff_N=4.89, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PB][quantum_optimal] OK — CVaR=0.03836, HHI=0.2044, eff_N=4.89, top=ITW 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n6_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [A1_n6_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [A1_n6_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02358, VaR=0.01457, n_tail=26, HHI=0.2071, eff_N=4.83, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PB][oos_quantum_cvar] OK — CVaR=0.02358, HHI=0.2071, eff_N=4.83, top=ITW 28.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [A1_n6_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [A1_n6_PB] Saved → A1_n6_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_n6_PC
+[11:53:32] [DEBUG   ] [A1_n6_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03104, VaR=0.01831, n_tail=51, HHI=0.1698, eff_N=5.89, additivity_err=1.12e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][quantum_optimal] OK — CVaR=0.03104, HHI=0.1698, eff_N=5.89, top=PG 25.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01771, VaR=0.01115, n_tail=26, HHI=0.2346, eff_N=4.26, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PC][oos_quantum_cvar] OK — CVaR=0.01771, HHI=0.2346, eff_N=4.26, top=NEE 31.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_n6_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [A1_n6_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [A1_n6_PC] Saved → A1_n6_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_PA
+[11:53:32] [DEBUG   ] [A1_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02768, VaR=0.01614, n_tail=51, HHI=0.2102, eff_N=4.76, additivity_err=1.25e-16
+[11:53:32] [DEBUG   ] [A1_PA][quantum_optimal] OK — CVaR=0.02768, HHI=0.2102, eff_N=4.76, top=CLX 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [A1_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A1_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01839, VaR=0.01441, n_tail=26, HHI=0.2160, eff_N=4.63, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PA][oos_quantum_cvar] OK — CVaR=0.01839, HHI=0.2160, eff_N=4.63, top=CLX 35.4%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [A1_PA] Saved → A1_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_PB
+[11:53:32] [DEBUG   ] [A1_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [A1_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03834, VaR=0.02200, n_tail=51, HHI=0.2046, eff_N=4.89, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PB][quantum_optimal] OK — CVaR=0.03834, HHI=0.2046, eff_N=4.89, top=ITW 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [A1_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [A1_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02357, VaR=0.01455, n_tail=26, HHI=0.2073, eff_N=4.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PB][oos_quantum_cvar] OK — CVaR=0.02357, HHI=0.2073, eff_N=4.82, top=ITW 28.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [A1_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [A1_PB] Saved → A1_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: A1_PC
+[11:53:32] [DEBUG   ] [A1_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03105, VaR=0.01847, n_tail=51, HHI=0.1724, eff_N=5.80, additivity_err=1.12e-16
+[11:53:32] [DEBUG   ] [A1_PC][quantum_optimal] OK — CVaR=0.03105, HHI=0.1724, eff_N=5.80, top=PG 25.2%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [A1_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A1_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [A1_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A1_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01779, VaR=0.01134, n_tail=26, HHI=0.2349, eff_N=4.26, additivity_err=1.95e-16
+[11:53:32] [DEBUG   ] [A1_PC][oos_quantum_cvar] OK — CVaR=0.01779, HHI=0.2349, eff_N=4.26, top=NEE 32.0%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A1_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [A1_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [A1_PC] Saved → A1_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: A3_PA
+[11:53:32] [DEBUG   ] [A3_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02768, VaR=0.01610, n_tail=51, HHI=0.2112, eff_N=4.74, additivity_err=1.25e-16
+[11:53:32] [DEBUG   ] [A3_PA][quantum_optimal] OK — CVaR=0.02768, HHI=0.2112, eff_N=4.74, top=CLX 30.6%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A3_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [A3_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [A3_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01837, VaR=0.01442, n_tail=26, HHI=0.2173, eff_N=4.60, additivity_err=1.89e-16
+[11:53:32] [DEBUG   ] [A3_PA][oos_quantum_cvar] OK — CVaR=0.01837, HHI=0.2173, eff_N=4.60, top=CLX 35.5%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [A3_PA] Saved → A3_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: A3_PB
+[11:53:32] [DEBUG   ] [A3_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [A3_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03834, VaR=0.02200, n_tail=51, HHI=0.2049, eff_N=4.88, additivity_err=1.81e-16
+[11:53:32] [DEBUG   ] [A3_PB][quantum_optimal] OK — CVaR=0.03834, HHI=0.2049, eff_N=4.88, top=ITW 30.5%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A3_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [A3_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [A3_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02358, VaR=0.01457, n_tail=26, HHI=0.2077, eff_N=4.82, additivity_err=1.47e-16
+[11:53:32] [DEBUG   ] [A3_PB][oos_quantum_cvar] OK — CVaR=0.02358, HHI=0.2077, eff_N=4.82, top=ITW 28.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [A3_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [A3_PB] Saved → A3_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: A3_PC
+[11:53:32] [DEBUG   ] [A3_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A3_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03106, VaR=0.01856, n_tail=51, HHI=0.1734, eff_N=5.77, additivity_err=1.12e-16
+[11:53:32] [DEBUG   ] [A3_PC][quantum_optimal] OK — CVaR=0.03106, HHI=0.1734, eff_N=5.77, top=PG 25.2%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [A3_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [A3_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [A3_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [A3_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01782, VaR=0.01141, n_tail=26, HHI=0.2354, eff_N=4.25, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PC][oos_quantum_cvar] OK — CVaR=0.01782, HHI=0.2354, eff_N=4.25, top=NEE 32.0%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [A3_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [A3_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [A3_PC] Saved → A3_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: B2_n3_PA
+[11:53:32] [DEBUG   ] [B2_n3_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n3_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03317, VaR=0.01959, n_tail=51, HHI=0.1137, eff_N=8.79, additivity_err=2.09e-16
+[11:53:32] [DEBUG   ] [B2_n3_PA][quantum_optimal] OK — CVaR=0.03317, HHI=0.1137, eff_N=8.79, top=NFLX 16.7%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_n3_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [B2_n3_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n3_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_n3_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02202, VaR=0.01432, n_tail=26, HHI=0.1512, eff_N=6.61, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n3_PA][oos_quantum_cvar] OK — CVaR=0.02202, HHI=0.1512, eff_N=6.61, top=FMC 25.3%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n3_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n3_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [B2_n3_PA] Saved → B2_n3_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: B2_n6_PA
+[11:53:32] [DEBUG   ] [B2_n6_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n6_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n6_PA][quantum_optimal] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_n6_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [B2_n6_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n6_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_n6_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_n6_PA][oos_quantum_cvar] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n6_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_n6_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [B2_n6_PA] Saved → B2_n6_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: B2_PA
+[11:53:32] [DEBUG   ] [B2_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PA][quantum_optimal] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [B2_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [B2_PA][oos_quantum_cvar] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [B2_PA] Saved → B2_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: B2_PB
+[11:53:32] [DEBUG   ] [B2_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [B2_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.04155, VaR=0.02450, n_tail=51, HHI=0.1938, eff_N=5.16, additivity_err=1.67e-16
+[11:53:32] [DEBUG   ] [B2_PB][quantum_optimal] OK — CVaR=0.04155, HHI=0.1938, eff_N=5.16, top=AMP 29.0%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [B2_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [B2_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [B2_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02464, VaR=0.01569, n_tail=26, HHI=0.1907, eff_N=5.24, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PB][oos_quantum_cvar] OK — CVaR=0.02464, HHI=0.1907, eff_N=5.24, top=AMP 26.6%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [B2_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [B2_PB] Saved → B2_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: B2_PC
+[11:53:32] [DEBUG   ] [B2_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [B2_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03255, VaR=0.01801, n_tail=51, HHI=0.1762, eff_N=5.67, additivity_err=4.26e-16
+[11:53:32] [DEBUG   ] [B2_PC][quantum_optimal] OK — CVaR=0.03255, HHI=0.1762, eff_N=5.67, top=UNH 33.3%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [B2_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [B2_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [B2_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [B2_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02356, VaR=0.01351, n_tail=26, HHI=0.5243, eff_N=1.91, additivity_err=2.95e-16
+[11:53:32] [DEBUG   ] [B2_PC][oos_quantum_cvar] OK — CVaR=0.02356, HHI=0.5243, eff_N=1.91, top=UNH 71.3%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [B2_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [B2_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [B2_PC] Saved → B2_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: C2_PA
+[11:53:32] [DEBUG   ] [C2_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03022, VaR=0.01834, n_tail=51, HHI=0.1416, eff_N=7.06, additivity_err=1.15e-16
+[11:53:32] [DEBUG   ] [C2_PA][quantum_optimal] OK — CVaR=0.03022, HHI=0.1416, eff_N=7.06, top=FMC 21.9%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [C2_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [C2_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [C2_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02761, VaR=0.01595, n_tail=26, HHI=0.3103, eff_N=3.22, additivity_err=1.26e-16
+[11:53:32] [DEBUG   ] [C2_PA][oos_quantum_cvar] OK — CVaR=0.02761, HHI=0.3103, eff_N=3.22, top=FMC 51.5%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:32] [INFO    ] [C2_PA] Saved → C2_PA_euler.json
+[11:53:32] [INFO    ] Processing experiment: C2_PB
+[11:53:32] [DEBUG   ] [C2_PB] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:32] [DEBUG   ] [C2_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.04041, VaR=0.02446, n_tail=51, HHI=0.1973, eff_N=5.07, additivity_err=1.72e-16
+[11:53:32] [DEBUG   ] [C2_PB][quantum_optimal] OK — CVaR=0.04041, HHI=0.1973, eff_N=5.07, top=ITW 28.0%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [C2_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:32] [DEBUG   ] [C2_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:32] [DEBUG   ] [C2_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02373, VaR=0.01598, n_tail=26, HHI=0.2019, eff_N=4.95, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PB][oos_quantum_cvar] OK — CVaR=0.02373, HHI=0.2019, eff_N=4.95, top=ITW 27.9%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:32] [DEBUG   ] [C2_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:32] [INFO    ] [C2_PB] Saved → C2_PB_euler.json
+[11:53:32] [INFO    ] Processing experiment: C2_PC
+[11:53:32] [DEBUG   ] [C2_PC] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [C2_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.03509, VaR=0.01921, n_tail=51, HHI=0.1049, eff_N=9.54, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [C2_PC][quantum_optimal] OK — CVaR=0.03509, HHI=0.1049, eff_N=9.54, top=JPM 13.0%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:32] [DEBUG   ] [C2_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:32] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:32] [DEBUG   ] [C2_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:32] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:32] [DEBUG   ] [C2_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:32] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:32] [DEBUG   ] [C2_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:32] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01938, VaR=0.01299, n_tail=26, HHI=0.1180, eff_N=8.48, additivity_err=1.79e-16
+[11:53:32] [DEBUG   ] [C2_PC][oos_quantum_cvar] OK — CVaR=0.01938, HHI=0.1180, eff_N=8.48, top=CAT 16.0%
+[11:53:32] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [C2_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:32] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:32] [DEBUG   ] [C2_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:32] [INFO    ] [C2_PC] Saved → C2_PC_euler.json
+[11:53:32] [INFO    ] Processing experiment: D1_n3_PA
+[11:53:32] [DEBUG   ] [D1_n3_PA] Tickers=10, Train=1005, OOS=501
+[11:53:32] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:32] [DEBUG   ] [D1_n3_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:32] [DEBUG   ] [quantum_optimal_train] CVaR=0.02805, VaR=0.01615, n_tail=51, HHI=0.2240, eff_N=4.46, additivity_err=1.24e-16
+[11:53:32] [DEBUG   ] [D1_n3_PA][quantum_optimal] OK — CVaR=0.02805, HHI=0.2240, eff_N=4.46, top=CBOE 29.0%
+[11:53:32] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:32] [DEBUG   ] [D1_n3_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [D1_n3_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n3_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D1_n3_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01821, VaR=0.01406, n_tail=26, HHI=0.2542, eff_N=3.93, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n3_PA][oos_quantum_cvar] OK — CVaR=0.01821, HHI=0.2542, eff_N=3.93, top=CLX 38.1%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n3_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n3_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [D1_n3_PA] Saved → D1_n3_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: D1_n6_PA
+[11:53:33] [DEBUG   ] [D1_n6_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n6_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02950, VaR=0.01739, n_tail=51, HHI=0.1656, eff_N=6.04, additivity_err=3.53e-16
+[11:53:33] [DEBUG   ] [D1_n6_PA][quantum_optimal] OK — CVaR=0.02950, HHI=0.1656, eff_N=6.04, top=DXCM 22.4%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D1_n6_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [D1_n6_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n6_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D1_n6_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02251, VaR=0.01423, n_tail=26, HHI=0.2570, eff_N=3.89, additivity_err=1.54e-16
+[11:53:33] [DEBUG   ] [D1_n6_PA][oos_quantum_cvar] OK — CVaR=0.02251, HHI=0.2570, eff_N=3.89, top=DXCM 38.5%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n6_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_n6_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [D1_n6_PA] Saved → D1_n6_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: D1_PA
+[11:53:33] [DEBUG   ] [D1_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02950, VaR=0.01739, n_tail=51, HHI=0.1656, eff_N=6.04, additivity_err=3.53e-16
+[11:53:33] [DEBUG   ] [D1_PA][quantum_optimal] OK — CVaR=0.02950, HHI=0.1656, eff_N=6.04, top=DXCM 22.4%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D1_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [D1_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D1_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02251, VaR=0.01423, n_tail=26, HHI=0.2570, eff_N=3.89, additivity_err=1.54e-16
+[11:53:33] [DEBUG   ] [D1_PA][oos_quantum_cvar] OK — CVaR=0.02251, HHI=0.2570, eff_N=3.89, top=DXCM 38.5%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [D1_PA] Saved → D1_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: D1_PB
+[11:53:33] [DEBUG   ] [D1_PB] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:33] [DEBUG   ] [D1_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03844, VaR=0.02233, n_tail=51, HHI=0.2252, eff_N=4.44, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PB][quantum_optimal] OK — CVaR=0.03844, HHI=0.2252, eff_N=4.44, top=ITW 30.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [D1_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [D1_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:33] [DEBUG   ] [D1_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02404, VaR=0.01558, n_tail=26, HHI=0.2235, eff_N=4.47, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PB][oos_quantum_cvar] OK — CVaR=0.02404, HHI=0.2235, eff_N=4.47, top=ITW 28.3%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:33] [DEBUG   ] [D1_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:33] [INFO    ] [D1_PB] Saved → D1_PB_euler.json
+[11:53:33] [INFO    ] Processing experiment: D1_PC
+[11:53:33] [DEBUG   ] [D1_PC] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [D1_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03172, VaR=0.01853, n_tail=51, HHI=0.1648, eff_N=6.07, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PC][quantum_optimal] OK — CVaR=0.03172, HHI=0.1648, eff_N=6.07, top=LIN 27.8%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:33] [DEBUG   ] [D1_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [D1_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:33] [DEBUG   ] [D1_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [D1_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01668, VaR=0.01034, n_tail=26, HHI=0.1885, eff_N=5.30, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PC][oos_quantum_cvar] OK — CVaR=0.01668, HHI=0.1885, eff_N=5.30, top=PG 29.2%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D1_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:33] [DEBUG   ] [D1_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:33] [INFO    ] [D1_PC] Saved → D1_PC_euler.json
+[11:53:33] [INFO    ] Processing experiment: D2_PA
+[11:53:33] [DEBUG   ] [D2_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02952, VaR=0.01743, n_tail=51, HHI=0.1657, eff_N=6.04, additivity_err=1.18e-16
+[11:53:33] [DEBUG   ] [D2_PA][quantum_optimal] OK — CVaR=0.02952, HHI=0.1657, eff_N=6.04, top=DXCM 22.5%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D2_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [D2_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [D2_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02255, VaR=0.01424, n_tail=26, HHI=0.2575, eff_N=3.88, additivity_err=3.08e-16
+[11:53:33] [DEBUG   ] [D2_PA][oos_quantum_cvar] OK — CVaR=0.02255, HHI=0.2575, eff_N=3.88, top=DXCM 38.7%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [D2_PA] Saved → D2_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: D2_PB
+[11:53:33] [DEBUG   ] [D2_PB] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:33] [DEBUG   ] [D2_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03844, VaR=0.02233, n_tail=51, HHI=0.2252, eff_N=4.44, additivity_err=1.81e-16
+[11:53:33] [DEBUG   ] [D2_PB][quantum_optimal] OK — CVaR=0.03844, HHI=0.2252, eff_N=4.44, top=ITW 30.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [D2_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [D2_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:33] [DEBUG   ] [D2_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02404, VaR=0.01558, n_tail=26, HHI=0.2235, eff_N=4.47, additivity_err=1.44e-16
+[11:53:33] [DEBUG   ] [D2_PB][oos_quantum_cvar] OK — CVaR=0.02404, HHI=0.2235, eff_N=4.47, top=ITW 28.3%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:33] [DEBUG   ] [D2_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:33] [INFO    ] [D2_PB] Saved → D2_PB_euler.json
+[11:53:33] [INFO    ] Processing experiment: D2_PC
+[11:53:33] [DEBUG   ] [D2_PC] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [D2_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03173, VaR=0.01853, n_tail=51, HHI=0.1649, eff_N=6.06, additivity_err=2.19e-16
+[11:53:33] [DEBUG   ] [D2_PC][quantum_optimal] OK — CVaR=0.03173, HHI=0.1649, eff_N=6.06, top=LIN 27.8%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:33] [DEBUG   ] [D2_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [D2_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:33] [DEBUG   ] [D2_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [D2_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01668, VaR=0.01034, n_tail=26, HHI=0.1886, eff_N=5.30, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PC][oos_quantum_cvar] OK — CVaR=0.01668, HHI=0.1886, eff_N=5.30, top=PG 29.2%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [D2_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:33] [DEBUG   ] [D2_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:33] [INFO    ] [D2_PC] Saved → D2_PC_euler.json
+[11:53:33] [INFO    ] Processing experiment: E1_PA
+[11:53:33] [DEBUG   ] [E1_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02776, VaR=0.01654, n_tail=51, HHI=0.1858, eff_N=5.38, additivity_err=1.25e-16
+[11:53:33] [DEBUG   ] [E1_PA][quantum_optimal] OK — CVaR=0.02776, HHI=0.1858, eff_N=5.38, top=CBOE 26.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E1_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [E1_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E1_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01912, VaR=0.01419, n_tail=26, HHI=0.1960, eff_N=5.10, additivity_err=1.82e-16
+[11:53:33] [DEBUG   ] [E1_PA][oos_quantum_cvar] OK — CVaR=0.01912, HHI=0.1960, eff_N=5.10, top=CLX 29.7%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [E1_PA] Saved → E1_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: E1_PB
+[11:53:33] [DEBUG   ] [E1_PB] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:33] [DEBUG   ] [E1_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03841, VaR=0.02207, n_tail=51, HHI=0.2054, eff_N=4.87, additivity_err=3.61e-16
+[11:53:33] [DEBUG   ] [E1_PB][quantum_optimal] OK — CVaR=0.03841, HHI=0.2054, eff_N=4.87, top=ITW 30.4%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E1_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [E1_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:33] [DEBUG   ] [E1_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02371, VaR=0.01468, n_tail=26, HHI=0.2083, eff_N=4.80, additivity_err=2.93e-16
+[11:53:33] [DEBUG   ] [E1_PB][oos_quantum_cvar] OK — CVaR=0.02371, HHI=0.2083, eff_N=4.80, top=ITW 28.7%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:33] [DEBUG   ] [E1_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:33] [INFO    ] [E1_PB] Saved → E1_PB_euler.json
+[11:53:33] [INFO    ] Processing experiment: E1_PC
+[11:53:33] [DEBUG   ] [E1_PC] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E1_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03119, VaR=0.01806, n_tail=51, HHI=0.1440, eff_N=6.94, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PC][quantum_optimal] OK — CVaR=0.03119, HHI=0.1440, eff_N=6.94, top=PG 25.0%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:33] [DEBUG   ] [E1_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E1_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:33] [DEBUG   ] [E1_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E1_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01696, VaR=0.01098, n_tail=26, HHI=0.1885, eff_N=5.30, additivity_err=2.05e-16
+[11:53:33] [DEBUG   ] [E1_PC][oos_quantum_cvar] OK — CVaR=0.01696, HHI=0.1885, eff_N=5.30, top=PG 30.6%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E1_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:33] [DEBUG   ] [E1_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:33] [INFO    ] [E1_PC] Saved → E1_PC_euler.json
+[11:53:33] [INFO    ] Processing experiment: E2_PA
+[11:53:33] [DEBUG   ] [E2_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02927, VaR=0.01677, n_tail=51, HHI=0.1638, eff_N=6.10, additivity_err=4.74e-16
+[11:53:33] [DEBUG   ] [E2_PA][quantum_optimal] OK — CVaR=0.02927, HHI=0.1638, eff_N=6.10, top=CHRW 23.7%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E2_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [E2_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E2_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02227, VaR=0.01479, n_tail=26, HHI=0.2245, eff_N=4.45, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PA][oos_quantum_cvar] OK — CVaR=0.02227, HHI=0.2245, eff_N=4.45, top=DXCM 31.2%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [E2_PA] Saved → E2_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: E2_PB
+[11:53:33] [DEBUG   ] [E2_PB] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:33] [DEBUG   ] [E2_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03876, VaR=0.02241, n_tail=51, HHI=0.1897, eff_N=5.27, additivity_err=1.79e-16
+[11:53:33] [DEBUG   ] [E2_PB][quantum_optimal] OK — CVaR=0.03876, HHI=0.1897, eff_N=5.27, top=ITW 30.9%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E2_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [E2_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:33] [DEBUG   ] [E2_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02360, VaR=0.01476, n_tail=26, HHI=0.1789, eff_N=5.59, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PB][oos_quantum_cvar] OK — CVaR=0.02360, HHI=0.1789, eff_N=5.59, top=ITW 28.1%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:33] [DEBUG   ] [E2_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:33] [INFO    ] [E2_PB] Saved → E2_PB_euler.json
+[11:53:33] [INFO    ] Processing experiment: E2_PC
+[11:53:33] [DEBUG   ] [E2_PC] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E2_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03127, VaR=0.01889, n_tail=51, HHI=0.1881, eff_N=5.32, additivity_err=2.22e-16
+[11:53:33] [DEBUG   ] [E2_PC][quantum_optimal] OK — CVaR=0.03127, HHI=0.1881, eff_N=5.32, top=LIN 32.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:33] [DEBUG   ] [E2_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E2_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:33] [DEBUG   ] [E2_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E2_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01702, VaR=0.01108, n_tail=26, HHI=0.2085, eff_N=4.80, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PC][oos_quantum_cvar] OK — CVaR=0.01702, HHI=0.2085, eff_N=4.80, top=LIN 30.0%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E2_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:33] [DEBUG   ] [E2_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:33] [INFO    ] [E2_PC] Saved → E2_PC_euler.json
+[11:53:33] [INFO    ] Processing experiment: E3_PA
+[11:53:33] [DEBUG   ] [E3_PA] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03723, VaR=0.02205, n_tail=51, HHI=0.1192, eff_N=8.39, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PA][initial_equal_weight] OK — CVaR=0.03723, HHI=0.1192, eff_N=8.39, top=OXY 17.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02955, VaR=0.01748, n_tail=51, HHI=0.1643, eff_N=6.09, additivity_err=2.35e-16
+[11:53:33] [DEBUG   ] [E3_PA][quantum_optimal] OK — CVaR=0.02955, HHI=0.1643, eff_N=6.09, top=DXCM 22.3%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02717, VaR=0.01598, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E3_PA][classical_slsqp] OK — CVaR=0.02717, HHI=0.2231, eff_N=4.48, top=CBOE 28.6%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02790, VaR=0.01644, n_tail=51, HHI=0.2010, eff_N=4.97, additivity_err=1.24e-16
+[11:53:33] [DEBUG   ] [E3_PA][classical_markowitz] OK — CVaR=0.02790, HHI=0.2010, eff_N=4.97, top=CLX 30.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03276, VaR=0.01931, n_tail=51, HHI=0.1018, eff_N=9.82, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PA][classical_risk_parity] OK — CVaR=0.03276, HHI=0.1018, eff_N=9.82, top=NFLX 13.4%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02703, VaR=0.01718, n_tail=26, HHI=0.1731, eff_N=5.78, additivity_err=1.28e-16
+[11:53:33] [DEBUG   ] [E3_PA][oos_equal_weight] OK — CVaR=0.02703, HHI=0.1731, eff_N=5.78, top=FMC 27.3%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02261, VaR=0.01427, n_tail=26, HHI=0.2547, eff_N=3.93, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [E3_PA][oos_quantum_cvar] OK — CVaR=0.02261, HHI=0.2547, eff_N=3.93, top=DXCM 38.4%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01887, VaR=0.01453, n_tail=26, HHI=0.2033, eff_N=4.92, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PA][oos_classical_cvar] OK — CVaR=0.01887, HHI=0.2033, eff_N=4.92, top=CLX 31.3%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02467, VaR=0.01572, n_tail=26, HHI=0.1824, eff_N=5.48, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PA][oos_inverse_vol] OK — CVaR=0.02467, HHI=0.1824, eff_N=5.48, top=FMC 32.2%
+[11:53:33] [INFO    ] [E3_PA] Saved → E3_PA_euler.json
+[11:53:33] [INFO    ] Processing experiment: E3_PB
+[11:53:33] [DEBUG   ] [E3_PB] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04765, VaR=0.02876, n_tail=51, HHI=0.1054, eff_N=9.49, additivity_err=2.91e-16
+[11:53:33] [DEBUG   ] [E3_PB][initial_equal_weight] OK — CVaR=0.04765, HHI=0.1054, eff_N=9.49, top=IVZ 13.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03842, VaR=0.02225, n_tail=51, HHI=0.2231, eff_N=4.48, additivity_err=1.81e-16
+[11:53:33] [DEBUG   ] [E3_PB][quantum_optimal] OK — CVaR=0.03842, HHI=0.2231, eff_N=4.48, top=ITW 30.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03748, VaR=0.02180, n_tail=51, HHI=0.2714, eff_N=3.68, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PB][classical_slsqp] OK — CVaR=0.03748, HHI=0.2714, eff_N=3.68, top=MCO 34.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03849, VaR=0.02237, n_tail=51, HHI=0.1873, eff_N=5.34, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E3_PB][classical_markowitz] OK — CVaR=0.03849, HHI=0.1873, eff_N=5.34, top=BRK-B 22.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04525, VaR=0.02681, n_tail=51, HHI=0.1001, eff_N=9.99, additivity_err=1.53e-16
+[11:53:33] [DEBUG   ] [E3_PB][classical_risk_parity] OK — CVaR=0.04525, HHI=0.1001, eff_N=9.99, top=AIG 10.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02843, VaR=0.01687, n_tail=26, HHI=0.1092, eff_N=9.16, additivity_err=1.22e-16
+[11:53:33] [DEBUG   ] [E3_PB][oos_equal_weight] OK — CVaR=0.02843, HHI=0.1092, eff_N=9.16, top=IVZ 15.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.02402, VaR=0.01559, n_tail=26, HHI=0.2212, eff_N=4.52, additivity_err=1.44e-16
+[11:53:33] [DEBUG   ] [E3_PB][oos_quantum_cvar] OK — CVaR=0.02402, HHI=0.2212, eff_N=4.52, top=ITW 28.3%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02382, VaR=0.01409, n_tail=26, HHI=0.3055, eff_N=3.27, additivity_err=1.46e-16
+[11:53:33] [DEBUG   ] [E3_PB][oos_classical_cvar] OK — CVaR=0.02382, HHI=0.3055, eff_N=3.27, top=MCO 42.7%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02694, VaR=0.01572, n_tail=26, HHI=0.1027, eff_N=9.74, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PB][oos_inverse_vol] OK — CVaR=0.02694, HHI=0.1027, eff_N=9.74, top=IVZ 11.8%
+[11:53:33] [INFO    ] [E3_PB] Saved → E3_PB_euler.json
+[11:53:33] [INFO    ] Processing experiment: E3_PC
+[11:53:33] [DEBUG   ] [E3_PC] Tickers=10, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E3_PC][initial_equal_weight] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03169, VaR=0.01855, n_tail=51, HHI=0.1675, eff_N=5.97, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PC][quantum_optimal] OK — CVaR=0.03169, HHI=0.1675, eff_N=5.97, top=LIN 28.6%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03082, VaR=0.01819, n_tail=51, HHI=0.1871, eff_N=5.34, additivity_err=2.25e-16
+[11:53:33] [DEBUG   ] [E3_PC][classical_slsqp] OK — CVaR=0.03082, HHI=0.1871, eff_N=5.34, top=LIN 25.3%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03513, VaR=0.01942, n_tail=51, HHI=0.1029, eff_N=9.72, additivity_err=1.98e-16
+[11:53:33] [DEBUG   ] [E3_PC][classical_markowitz] OK — CVaR=0.03513, HHI=0.1029, eff_N=9.72, top=AAPL 11.7%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03421, VaR=0.01874, n_tail=51, HHI=0.1004, eff_N=9.96, additivity_err=2.03e-16
+[11:53:33] [DEBUG   ] [E3_PC][classical_risk_parity] OK — CVaR=0.03421, HHI=0.1004, eff_N=9.96, top=XOM 11.0%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01931, VaR=0.01349, n_tail=26, HHI=0.1131, eff_N=8.84, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [E3_PC][oos_equal_weight] OK — CVaR=0.01931, HHI=0.1131, eff_N=8.84, top=AAPL 14.2%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01670, VaR=0.01038, n_tail=26, HHI=0.1855, eff_N=5.39, additivity_err=2.08e-16
+[11:53:33] [DEBUG   ] [E3_PC][oos_quantum_cvar] OK — CVaR=0.01670, HHI=0.1855, eff_N=5.39, top=PG 28.3%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01730, VaR=0.01157, n_tail=26, HHI=0.2404, eff_N=4.16, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [E3_PC][oos_classical_cvar] OK — CVaR=0.01730, HHI=0.2404, eff_N=4.16, top=PG 41.2%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01867, VaR=0.01343, n_tail=26, HHI=0.1082, eff_N=9.25, additivity_err=1.86e-16
+[11:53:33] [DEBUG   ] [E3_PC][oos_inverse_vol] OK — CVaR=0.01867, HHI=0.1082, eff_N=9.25, top=UNH 14.3%
+[11:53:33] [INFO    ] [E3_PC] Saved → E3_PC_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PA_100
+[11:53:33] [DEBUG   ] [S1_PA_100] Tickers=100, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03860, VaR=0.02241, n_tail=51, HHI=0.0111, eff_N=90.20, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [S1_PA_100][initial_equal_weight] OK — CVaR=0.03860, HHI=0.0111, eff_N=90.20, top=APA 2.0%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02395, VaR=0.01465, n_tail=51, HHI=0.0914, eff_N=10.95, additivity_err=1.45e-16
+[11:53:33] [DEBUG   ] [S1_PA_100][quantum_optimal] OK — CVaR=0.02395, HHI=0.0914, eff_N=10.95, top=WMT 20.8%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02313, VaR=0.01548, n_tail=51, HHI=0.1239, eff_N=8.07, additivity_err=1.50e-16
+[11:53:33] [DEBUG   ] [S1_PA_100][classical_slsqp] OK — CVaR=0.02313, HHI=0.1239, eff_N=8.07, top=WMT 19.7%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02451, VaR=0.01432, n_tail=51, HHI=0.0523, eff_N=19.13, additivity_err=1.42e-16
+[11:53:33] [DEBUG   ] [S1_PA_100][classical_markowitz] OK — CVaR=0.02451, HHI=0.0523, eff_N=19.13, top=GIS 9.4%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03466, VaR=0.01972, n_tail=51, HHI=0.0100, eff_N=99.53, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_100][classical_risk_parity] OK — CVaR=0.03466, HHI=0.0100, eff_N=99.53, top=GEN 1.2%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02143, VaR=0.01200, n_tail=26, HHI=0.0124, eff_N=80.61, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_100][oos_equal_weight] OK — CVaR=0.02143, HHI=0.0124, eff_N=80.61, top=SEDG 2.8%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01795, VaR=0.01227, n_tail=26, HHI=0.1108, eff_N=9.03, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_100][oos_quantum_cvar] OK — CVaR=0.01795, HHI=0.1108, eff_N=9.03, top=REGN 22.8%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01880, VaR=0.01322, n_tail=26, HHI=0.1386, eff_N=7.22, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_100][oos_classical_cvar] OK — CVaR=0.01880, HHI=0.1386, eff_N=7.22, top=GILD 22.6%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01971, VaR=0.01105, n_tail=26, HHI=0.0112, eff_N=89.38, additivity_err=1.76e-16
+[11:53:33] [DEBUG   ] [S1_PA_100][oos_inverse_vol] OK — CVaR=0.01971, HHI=0.0112, eff_N=89.38, top=INTC 2.1%
+[11:53:33] [INFO    ] [S1_PA_100] Saved → S1_PA_100_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PA_30
+[11:53:33] [DEBUG   ] [S1_PA_30] Tickers=30, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03831, VaR=0.02041, n_tail=51, HHI=0.0398, eff_N=25.13, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_30][initial_equal_weight] OK — CVaR=0.03831, HHI=0.0398, eff_N=25.13, top=APA 7.4%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02470, VaR=0.01488, n_tail=51, HHI=0.1179, eff_N=8.48, additivity_err=2.81e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][quantum_optimal] OK — CVaR=0.02470, HHI=0.1179, eff_N=8.48, top=WMT 21.0%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02388, VaR=0.01491, n_tail=51, HHI=0.1630, eff_N=6.13, additivity_err=1.45e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][classical_slsqp] OK — CVaR=0.02388, HHI=0.1630, eff_N=6.13, top=GIS 22.2%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02457, VaR=0.01468, n_tail=51, HHI=0.1081, eff_N=9.25, additivity_err=1.41e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][classical_markowitz] OK — CVaR=0.02457, HHI=0.1081, eff_N=9.25, top=GIS 17.4%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03281, VaR=0.01751, n_tail=51, HHI=0.0335, eff_N=29.88, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_30][classical_risk_parity] OK — CVaR=0.03281, HHI=0.0335, eff_N=29.88, top=GIS 3.7%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02332, VaR=0.01391, n_tail=26, HHI=0.0424, eff_N=23.58, additivity_err=1.49e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][oos_equal_weight] OK — CVaR=0.02332, HHI=0.0424, eff_N=23.58, top=INTC 7.7%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01927, VaR=0.01291, n_tail=26, HHI=0.1412, eff_N=7.08, additivity_err=1.80e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][oos_quantum_cvar] OK — CVaR=0.01927, HHI=0.1412, eff_N=7.08, top=REGN 23.2%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.02096, VaR=0.01408, n_tail=26, HHI=0.1782, eff_N=5.61, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PA_30][oos_classical_cvar] OK — CVaR=0.02096, HHI=0.1782, eff_N=5.61, top=REGN 21.6%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02105, VaR=0.01276, n_tail=26, HHI=0.0381, eff_N=26.23, additivity_err=1.65e-16
+[11:53:33] [DEBUG   ] [S1_PA_30][oos_inverse_vol] OK — CVaR=0.02105, HHI=0.0381, eff_N=26.23, top=INTC 7.2%
+[11:53:33] [INFO    ] [S1_PA_30] Saved → S1_PA_30_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PB_100
+[11:53:33] [DEBUG   ] [S1_PB_100] Tickers=100, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04529, VaR=0.02634, n_tail=51, HHI=0.0105, eff_N=95.02, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_100][initial_equal_weight] OK — CVaR=0.04529, HHI=0.0105, eff_N=95.02, top=CCL 2.0%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03313, VaR=0.02026, n_tail=51, HHI=0.1283, eff_N=7.79, additivity_err=2.09e-16
+[11:53:33] [DEBUG   ] [S1_PB_100][quantum_optimal] OK — CVaR=0.03313, HHI=0.1283, eff_N=7.79, top=BRK-B 26.5%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03240, VaR=0.02004, n_tail=51, HHI=0.1799, eff_N=5.56, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_100][classical_slsqp] OK — CVaR=0.03240, HHI=0.1799, eff_N=5.56, top=BRK-B 27.9%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03390, VaR=0.01945, n_tail=51, HHI=0.1035, eff_N=9.67, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_100][classical_markowitz] OK — CVaR=0.03390, HHI=0.1035, eff_N=9.67, top=BRK-B 15.3%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04334, VaR=0.02517, n_tail=51, HHI=0.0100, eff_N=99.65, additivity_err=1.60e-16
+[11:53:33] [DEBUG   ] [S1_PB_100][classical_risk_parity] OK — CVaR=0.04334, HHI=0.0100, eff_N=99.65, top=MSI 1.2%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02534, VaR=0.01639, n_tail=26, HHI=0.0114, eff_N=87.95, additivity_err=2.74e-16
+[11:53:33] [DEBUG   ] [S1_PB_100][oos_equal_weight] OK — CVaR=0.02534, HHI=0.0114, eff_N=87.95, top=VFC 2.0%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01967, VaR=0.01295, n_tail=26, HHI=0.1377, eff_N=7.26, additivity_err=1.76e-16
+[11:53:33] [DEBUG   ] [S1_PB_100][oos_quantum_cvar] OK — CVaR=0.01967, HHI=0.1377, eff_N=7.26, top=BRK-B 26.2%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01996, VaR=0.01255, n_tail=26, HHI=0.1763, eff_N=5.67, additivity_err=1.74e-16
+[11:53:33] [DEBUG   ] [S1_PB_100][oos_classical_cvar] OK — CVaR=0.01996, HHI=0.1763, eff_N=5.67, top=BRK-B 26.9%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02431, VaR=0.01594, n_tail=26, HHI=0.0108, eff_N=92.20, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_100][oos_inverse_vol] OK — CVaR=0.02431, HHI=0.0108, eff_N=92.20, top=VFC 1.7%
+[11:53:33] [INFO    ] [S1_PB_100] Saved → S1_PB_100_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PB_30
+[11:53:33] [DEBUG   ] [S1_PB_30] Tickers=30, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04282, VaR=0.02424, n_tail=51, HHI=0.0346, eff_N=28.94, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_30][initial_equal_weight] OK — CVaR=0.04282, HHI=0.0346, eff_N=28.94, top=COF 4.8%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03545, VaR=0.02125, n_tail=51, HHI=0.1474, eff_N=6.79, additivity_err=1.96e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][quantum_optimal] OK — CVaR=0.03545, HHI=0.1474, eff_N=6.79, top=GD 26.2%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03477, VaR=0.02100, n_tail=51, HHI=0.2162, eff_N=4.62, additivity_err=2.00e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][classical_slsqp] OK — CVaR=0.03477, HHI=0.2162, eff_N=4.62, top=LIN 30.2%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03656, VaR=0.02161, n_tail=51, HHI=0.0728, eff_N=13.73, additivity_err=1.90e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][classical_markowitz] OK — CVaR=0.03656, HHI=0.0728, eff_N=13.73, top=GD 11.2%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04147, VaR=0.02370, n_tail=51, HHI=0.0334, eff_N=29.92, additivity_err=1.67e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][classical_risk_parity] OK — CVaR=0.04147, HHI=0.0334, eff_N=29.92, top=CPRT 3.8%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02391, VaR=0.01458, n_tail=26, HHI=0.0366, eff_N=27.34, additivity_err=1.45e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][oos_equal_weight] OK — CVaR=0.02391, HHI=0.0366, eff_N=27.34, top=COF 5.0%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01856, VaR=0.01191, n_tail=26, HHI=0.1648, eff_N=6.07, additivity_err=1.87e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][oos_quantum_cvar] OK — CVaR=0.01856, HHI=0.1648, eff_N=6.07, top=GD 30.6%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01888, VaR=0.01254, n_tail=26, HHI=0.2378, eff_N=4.21, additivity_err=3.67e-16
+[11:53:33] [DEBUG   ] [S1_PB_30][oos_classical_cvar] OK — CVaR=0.01888, HHI=0.2378, eff_N=4.21, top=GD 34.0%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02307, VaR=0.01436, n_tail=26, HHI=0.0355, eff_N=28.18, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PB_30][oos_inverse_vol] OK — CVaR=0.02307, HHI=0.0355, eff_N=28.18, top=MS 4.8%
+[11:53:33] [INFO    ] [S1_PB_30] Saved → S1_PB_30_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PC_100
+[11:53:33] [DEBUG   ] [S1_PC_100] Tickers=96, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.03508, VaR=0.01968, n_tail=51, HHI=0.0113, eff_N=88.51, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_100][initial_equal_weight] OK — CVaR=0.03508, HHI=0.0113, eff_N=88.51, top=BA 1.7%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.02562, VaR=0.01430, n_tail=51, HHI=0.0291, eff_N=34.38, additivity_err=1.35e-16
+[11:53:33] [DEBUG   ] [S1_PC_100][quantum_optimal] OK — CVaR=0.02562, HHI=0.0291, eff_N=34.38, top=MRK 5.0%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.02315, VaR=0.01414, n_tail=51, HHI=0.1360, eff_N=7.35, additivity_err=3.00e-16
+[11:53:33] [DEBUG   ] [S1_PC_100][classical_slsqp] OK — CVaR=0.02315, HHI=0.1360, eff_N=7.35, top=VZ 21.9%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.02506, VaR=0.01416, n_tail=51, HHI=0.0348, eff_N=28.73, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_100][classical_markowitz] OK — CVaR=0.02506, HHI=0.0348, eff_N=28.73, top=BMY 5.5%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.03262, VaR=0.01800, n_tail=51, HHI=0.0105, eff_N=95.41, additivity_err=4.25e-16
+[11:53:33] [DEBUG   ] [S1_PC_100][classical_risk_parity] OK — CVaR=0.03262, HHI=0.0105, eff_N=95.41, top=TSLA 1.3%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.01943, VaR=0.01230, n_tail=26, HHI=0.0132, eff_N=76.02, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_100][oos_equal_weight] OK — CVaR=0.01943, HHI=0.0132, eff_N=76.02, top=INTC 2.7%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01721, VaR=0.01200, n_tail=26, HHI=0.0439, eff_N=22.77, additivity_err=2.02e-16
+[11:53:33] [DEBUG   ] [S1_PC_100][oos_quantum_cvar] OK — CVaR=0.01721, HHI=0.0439, eff_N=22.77, top=LLY 8.6%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01914, VaR=0.01365, n_tail=26, HHI=0.1789, eff_N=5.59, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_100][oos_classical_cvar] OK — CVaR=0.01914, HHI=0.1789, eff_N=5.59, top=BMY 28.4%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.01785, VaR=0.01109, n_tail=26, HHI=0.0118, eff_N=84.91, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_100][oos_inverse_vol] OK — CVaR=0.01785, HHI=0.0118, eff_N=84.91, top=INTC 2.2%
+[11:53:33] [INFO    ] [S1_PC_100] Saved → S1_PC_100_euler.json
+[11:53:33] [INFO    ] Processing experiment: S1_PC_30
+[11:53:33] [DEBUG   ] [S1_PC_30] Tickers=30, Train=1005, OOS=501
+[11:53:33] [DEBUG   ] [initial_equal_weight_train] CVaR=0.04302, VaR=0.02441, n_tail=51, HHI=0.0343, eff_N=29.12, additivity_err=1.61e-16
+[11:53:33] [DEBUG   ] [S1_PC_30][initial_equal_weight] OK — CVaR=0.04302, HHI=0.0343, eff_N=29.12, top=SLB 4.5%
+[11:53:33] [DEBUG   ] [quantum_optimal_train] CVaR=0.03534, VaR=0.02084, n_tail=51, HHI=0.1564, eff_N=6.40, additivity_err=1.96e-16
+[11:53:33] [DEBUG   ] [S1_PC_30][quantum_optimal] OK — CVaR=0.03534, HHI=0.1564, eff_N=6.40, top=GD 25.8%
+[11:53:33] [DEBUG   ] [classical_slsqp_train] CVaR=0.03474, VaR=0.02079, n_tail=51, HHI=0.2160, eff_N=4.63, additivity_err=4.00e-16
+[11:53:33] [DEBUG   ] [S1_PC_30][classical_slsqp] OK — CVaR=0.03474, HHI=0.2160, eff_N=4.63, top=GD 30.2%
+[11:53:33] [DEBUG   ] [classical_markowitz_train] CVaR=0.03595, VaR=0.02085, n_tail=51, HHI=0.0918, eff_N=10.89, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_30][classical_markowitz] OK — CVaR=0.03595, HHI=0.0918, eff_N=10.89, top=GD 14.9%
+[11:53:33] [DEBUG   ] [classical_risk_parity_train] CVaR=0.04182, VaR=0.02420, n_tail=51, HHI=0.0334, eff_N=29.94, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_30][classical_risk_parity] OK — CVaR=0.04182, HHI=0.0334, eff_N=29.94, top=MA 3.6%
+[11:53:33] [DEBUG   ] [oos_equal_weight_oos] CVaR=0.02554, VaR=0.01528, n_tail=26, HHI=0.0368, eff_N=27.18, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_30][oos_equal_weight] OK — CVaR=0.02554, HHI=0.0368, eff_N=27.18, top=ADI 5.0%
+[11:53:33] [DEBUG   ] [oos_quantum_cvar_oos] CVaR=0.01892, VaR=0.01205, n_tail=26, HHI=0.1786, eff_N=5.60, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_30][oos_quantum_cvar] OK — CVaR=0.01892, HHI=0.1786, eff_N=5.60, top=GD 30.4%
+[11:53:33] [DEBUG   ] [oos_classical_cvar_oos] CVaR=0.01923, VaR=0.01235, n_tail=26, HHI=0.2364, eff_N=4.23, additivity_err=0.00e+00
+[11:53:33] [DEBUG   ] [S1_PC_30][oos_classical_cvar] OK — CVaR=0.01923, HHI=0.2364, eff_N=4.23, top=GD 34.0%
+[11:53:33] [DEBUG   ] [oos_inverse_vol_oos] CVaR=0.02466, VaR=0.01457, n_tail=26, HHI=0.0357, eff_N=27.99, additivity_err=1.41e-16
+[11:53:33] [DEBUG   ] [S1_PC_30][oos_inverse_vol] OK — CVaR=0.02466, HHI=0.0357, eff_N=27.99, top=ADI 5.0%
+[11:53:33] [INFO    ] [S1_PC_30] Saved → S1_PC_30_euler.json
+[11:53:33] [INFO    ] Summary CSV saved → C:\Users\nacho\Desktop\v2_final\TFMFinalv1\results\euler_decomposition\summary.csv (414 rows)
+[11:53:33] [INFO    ] 
+[11:53:33] [INFO    ] === QUICK SUMMARY: QUANTUM OPTIMAL WEIGHTS (train period) ===
+[11:53:33] [INFO    ]   S1_PA_100            CVaR=0.02395  HHI=0.0914  eff_N=10.95  top1=WMT 20.8%  top2=GILD 11.7%
+[11:53:33] [INFO    ]   S1_PA_30             CVaR=0.02470  HHI=0.1179  eff_N=8.48  top1=WMT 21.0%  top2=GIS 14.5%
+[11:53:33] [INFO    ]   S1_PC_100            CVaR=0.02562  HHI=0.0291  eff_N=34.38  top1=MRK 5.0%  top2=LLY 4.8%
+[11:53:33] [INFO    ]   A1_n3_PA             CVaR=0.02768  HHI=0.2106  eff_N=4.75  top1=CLX 30.5%  top2=CBOE 27.8%
+[11:53:33] [INFO    ]   A1_PA                CVaR=0.02768  HHI=0.2102  eff_N=4.76  top1=CLX 30.5%  top2=CBOE 27.6%
+[11:53:33] [INFO    ]   A3_PA                CVaR=0.02768  HHI=0.2112  eff_N=4.74  top1=CLX 30.6%  top2=CBOE 27.9%
+[11:53:33] [INFO    ]   A1_n5_PA             CVaR=0.02769  HHI=0.2111  eff_N=4.74  top1=CLX 30.7%  top2=CBOE 27.8%
+[11:53:33] [INFO    ]   A1_n6_PA             CVaR=0.02770  HHI=0.2120  eff_N=4.72  top1=CLX 30.7%  top2=CBOE 28.0%
+[11:53:33] [INFO    ]   E1_PA                CVaR=0.02776  HHI=0.1858  eff_N=5.38  top1=CBOE 26.2%  top2=CLX 24.4%
+[11:53:33] [INFO    ]   D1_n3_PA             CVaR=0.02805  HHI=0.2240  eff_N=4.46  top1=CBOE 29.0%  top2=CLX 26.7%
+[11:53:33] [INFO    ]   E2_PA                CVaR=0.02927  HHI=0.1638  eff_N=6.10  top1=CHRW 23.7%  top2=NEM 20.4%
+[11:53:33] [INFO    ]   D1_n6_PA             CVaR=0.02950  HHI=0.1656  eff_N=6.04  top1=DXCM 22.4%  top2=NEM 20.3%
+[11:53:33] [INFO    ]   D1_PA                CVaR=0.02950  HHI=0.1656  eff_N=6.04  top1=DXCM 22.4%  top2=NEM 20.3%
+[11:53:33] [INFO    ]   D2_PA                CVaR=0.02952  HHI=0.1657  eff_N=6.04  top1=DXCM 22.5%  top2=NEM 20.2%
+[11:53:33] [INFO    ]   E3_PA                CVaR=0.02955  HHI=0.1643  eff_N=6.09  top1=DXCM 22.3%  top2=NEM 20.4%
+[11:53:33] [INFO    ]   C2_PA                CVaR=0.03022  HHI=0.1416  eff_N=7.06  top1=FMC 21.9%  top2=CHRW 17.9%
+[11:53:33] [INFO    ]   A1_n6_PC             CVaR=0.03104  HHI=0.1698  eff_N=5.89  top1=PG 25.5%  top2=LIN 21.9%
+[11:53:33] [INFO    ]   A1_n5_PC             CVaR=0.03105  HHI=0.1718  eff_N=5.82  top1=PG 25.3%  top2=LIN 22.6%
+[11:53:33] [INFO    ]   A1_PC                CVaR=0.03105  HHI=0.1724  eff_N=5.80  top1=PG 25.2%  top2=LIN 21.9%
+[11:53:33] [INFO    ]   A3_PC                CVaR=0.03106  HHI=0.1734  eff_N=5.77  top1=PG 25.2%  top2=LIN 22.2%
+[11:53:33] [INFO    ]   A1_n3_PC             CVaR=0.03106  HHI=0.1741  eff_N=5.74  top1=PG 25.2%  top2=LIN 22.3%
+[11:53:33] [INFO    ]   E1_PC                CVaR=0.03119  HHI=0.1440  eff_N=6.94  top1=PG 25.0%  top2=LIN 17.6%
+[11:53:33] [INFO    ]   E2_PC                CVaR=0.03127  HHI=0.1881  eff_N=5.32  top1=LIN 32.2%  top2=PG 23.3%
+[11:53:33] [INFO    ]   E3_PC                CVaR=0.03169  HHI=0.1675  eff_N=5.97  top1=LIN 28.6%  top2=PG 22.2%
+[11:53:33] [INFO    ]   D1_PC                CVaR=0.03172  HHI=0.1648  eff_N=6.07  top1=LIN 27.8%  top2=PG 22.1%
+[11:53:33] [INFO    ]   D2_PC                CVaR=0.03173  HHI=0.1649  eff_N=6.06  top1=LIN 27.8%  top2=PG 22.1%
+[11:53:33] [INFO    ]   B2_PC                CVaR=0.03255  HHI=0.1762  eff_N=5.67  top1=UNH 33.3%  top2=PG 14.8%
+[11:53:33] [INFO    ]   S1_PB_100            CVaR=0.03313  HHI=0.1283  eff_N=7.79  top1=BRK-B 26.5%  top2=GD 13.1%
+[11:53:33] [INFO    ]   B2_n3_PA             CVaR=0.03317  HHI=0.1137  eff_N=8.79  top1=NFLX 16.7%  top2=OXY 15.1%
+[11:53:33] [INFO    ]   C2_PC                CVaR=0.03509  HHI=0.1049  eff_N=9.54  top1=JPM 13.0%  top2=MSFT 11.9%
+[11:53:33] [INFO    ]   S1_PC_30             CVaR=0.03534  HHI=0.1564  eff_N=6.40  top1=GD 25.8%  top2=LIN 23.9%
+[11:53:33] [INFO    ]   S1_PB_30             CVaR=0.03545  HHI=0.1474  eff_N=6.79  top1=GD 26.2%  top2=LIN 22.0%
+[11:53:33] [INFO    ]   B2_PA                CVaR=0.03723  HHI=0.1192  eff_N=8.39  top1=OXY 17.4%  top2=AAL 15.5%
+[11:53:33] [INFO    ]   B2_n6_PA             CVaR=0.03723  HHI=0.1192  eff_N=8.39  top1=OXY 17.4%  top2=AAL 15.5%
+[11:53:33] [INFO    ]   A1_PB                CVaR=0.03834  HHI=0.2046  eff_N=4.89  top1=ITW 30.5%  top2=BRK-B 25.2%
+[11:53:33] [INFO    ]   A1_n3_PB             CVaR=0.03834  HHI=0.2048  eff_N=4.88  top1=ITW 30.6%  top2=BRK-B 25.2%
+[11:53:33] [INFO    ]   A3_PB                CVaR=0.03834  HHI=0.2049  eff_N=4.88  top1=ITW 30.5%  top2=BRK-B 25.2%
+[11:53:33] [INFO    ]   A1_n5_PB             CVaR=0.03835  HHI=0.2049  eff_N=4.88  top1=ITW 30.5%  top2=BRK-B 25.2%
+[11:53:33] [INFO    ]   A1_n6_PB             CVaR=0.03836  HHI=0.2044  eff_N=4.89  top1=ITW 30.5%  top2=BRK-B 25.1%
+[11:53:33] [INFO    ]   E1_PB                CVaR=0.03841  HHI=0.2054  eff_N=4.87  top1=ITW 30.4%  top2=BRK-B 25.0%
+[11:53:33] [INFO    ]   E3_PB                CVaR=0.03842  HHI=0.2231  eff_N=4.48  top1=ITW 30.2%  top2=BRK-B 24.3%
+[11:53:33] [INFO    ]   D1_PB                CVaR=0.03844  HHI=0.2252  eff_N=4.44  top1=ITW 30.2%  top2=TROW 24.6%
+[11:53:33] [INFO    ]   D2_PB                CVaR=0.03844  HHI=0.2252  eff_N=4.44  top1=ITW 30.2%  top2=TROW 24.6%
+[11:53:33] [INFO    ]   E2_PB                CVaR=0.03876  HHI=0.1897  eff_N=5.27  top1=ITW 30.9%  top2=BRK-B 24.9%
+[11:53:33] [INFO    ]   C2_PB                CVaR=0.04041  HHI=0.1973  eff_N=5.07  top1=ITW 28.0%  top2=BRK-B 24.0%
+[11:53:33] [INFO    ]   B2_PB                CVaR=0.04155  HHI=0.1938  eff_N=5.16  top1=AMP 29.0%  top2=BRK-B 22.1%
+[11:53:33] [INFO    ] 
+[11:53:33] [INFO    ] ======================================================================
+[11:53:33] [INFO    ] DONE: 46 experiments OK, 0 failed.
+[11:53:33] [INFO    ] Output directory: C:\Users\nacho\Desktop\v2_final\TFMFinalv1\results\euler_decomposition
+[11:53:33] [INFO    ] Finished: 2026-04-13T11:53:33.170773
+[11:53:33] [INFO    ] ======================================================================

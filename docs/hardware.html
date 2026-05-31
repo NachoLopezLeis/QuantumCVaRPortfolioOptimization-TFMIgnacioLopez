@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware | Quantum CVaR Portfolio Optimisation &middot; UAM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page"><nav>
+  <a class="nav-logo" href="index.html">QCV&alpha;R &middot; UAM 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Overview</a></li>
+    <li><a href="pipeline.html" id="nav-pipeline">Pipeline</a></li>
+    <li><a href="results.html" id="nav-results">Results</a></li>
+    <li><a href="hardware.html" id="nav-hardware">Hardware</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="literature.html" id="nav-lit">Literature</a></li>
+  </ul>
+  <a class="nav-cta" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+</nav>
+<script>
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const map = {'index.html':'nav-home','pipeline.html':'nav-pipeline','results.html':'nav-results','hardware.html':'nav-hardware','about.html':'nav-about','literature.html':'nav-lit'};
+  if(map[page]) document.getElementById(map[page])?.classList.add('active');
+</script><section class="section">
+  <div class="container">
+    <span class="label reveal">IQM Superconducting Processors</span>
+    <h1 class="title reveal">Hardware Validation</h1>
+    <p class="subtitle reveal">Three experimental waves on IQM Garnet (20-qubit star) and IQM Emerald (54-qubit crystal) via Amazon Braket. 4,096 shots per circuit. First empirical characterisation of the IQAE aliasing threshold on IQM devices.</p>
+
+    <!-- KPIs -->
+    <div class="metric-grid reveal" style="grid-template-columns:repeat(4,1fr);margin-bottom:3rem">
+      <div class="metric-cell"><span class="metric-val">2.97%</span><span class="metric-label">Garnet error m=1</span><div class="metric-sub">5.6&times; better than Emerald</div></div>
+      <div class="metric-cell"><span class="metric-val blue">m=3</span><span class="metric-label">Aliasing threshold</span><div class="metric-sub">depth 22, both devices</div></div>
+      <div class="metric-cell"><span class="metric-val">4+6m</span><span class="metric-label">Depth formula</span><div class="metric-sub">empirical, IQM native gates</div></div>
+      <div class="metric-cell"><span class="metric-val orange">4.5&times;</span><span class="metric-label">ZNE overhead</span><div class="metric-sub">counterproductive</div></div>
+    </div>
+
+    <!-- Depth formula -->
+    <div class="section-sm">
+      <span class="label reveal">Circuit depth characterisation</span>
+      <h2 class="title reveal" style="font-size:1.8rem">Empirical Depth Formula</h2>
+      <div class="grid-2 reveal" style="align-items:start">
+        <div>
+          <div class="card" style="margin-bottom:1.5rem;text-align:center">
+            <div style="font-family:var(--font-m);font-size:2.2rem;color:var(--white);margin-bottom:1rem">depth(m) = 4 + <span class="accent">6m</span></div>
+            <p style="font-size:.88rem;color:var(--grey-l);margin-bottom:1.5rem">Confirmed across m=0&hellip;6 on both IQM devices, post-transpile with opt_level=1 (CZ native gate basis).</p>
+            <div style="display:flex;align-items:center;gap:1rem;justify-content:center">
+              <span style="font-family:var(--font-m);font-size:.8rem;color:var(--grey)">m =</span>
+              <input type="range" min="0" max="6" value="1" id="ms" oninput="upd(this.value)" style="accent-color:var(--teal-l);width:180px">
+              <span id="dr" style="font-family:var(--font-m);font-size:.9rem;color:var(--grey-l)">depth = <strong style="color:var(--teal-l)">10</strong></span>
+            </div>
+            <div id="aw" style="font-family:var(--font-m);font-size:.8rem;color:#f87171;margin-top:.75rem;visibility:hidden">Aliasing threshold reached &mdash; measurements unreliable at this depth</div>
+          </div>
+          <div class="callout">The coefficient 6 corresponds to one IQAE round: two CZ gates (2 native layers each) + two single-qubit rotation layers + two barrier layers in the native compiler output.</div>
+        </div>
+        <div>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Device</th><th>m</th><th>Depth</th><th>p_hw</th><th>p_th</th><th>Error</th><th>Aliased</th></tr></thead>
+              <tbody>
+                <tr><td>IQM Emerald</td><td>0</td><td>4</td><td>0.0537</td><td>0.0504</td><td>6.5%</td><td><span class="badge badge-green">No</span></td></tr>
+                <tr><td>IQM Emerald</td><td>1</td><td>10</td><td>0.3296</td><td>0.3950</td><td>16.6%</td><td><span class="badge badge-green">No</span></td></tr>
+                <tr><td>IQM Emerald</td><td>3</td><td>22</td><td>0.61</td><td>0.9998</td><td class="bad">&gg;100%</td><td><span class="badge badge-red">Yes</span></td></tr>
+                <tr><td class="white">IQM Garnet</td><td>0</td><td>4</td><td>0.0671</td><td>0.0504</td><td>33.1%</td><td><span class="badge badge-green">No</span></td></tr>
+                <tr><td class="white">IQM Garnet</td><td>1</td><td>10</td><td class="hi">0.4067</td><td>0.3950</td><td class="hi">2.97%</td><td><span class="badge badge-green">No</span></td></tr>
+                <tr><td class="white">IQM Garnet</td><td>3</td><td>22</td><td>0.9205</td><td>0.9998</td><td class="bad">&gg;100%</td><td><span class="badge badge-red">Yes</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout blue" style="margin-top:1rem;font-size:.85rem">Wave 2 repeatability (8 runs, Emerald m=1): p&#772;_hw=0.335, 95% CI=[0.329, 0.341], z-score=&minus;20.9 vs theory. The narrow CI confirms the error is <strong>systematic</strong>, not shot noise (shot-noise half-width &asymp;0.007, bias 8.6&times; larger).</div>
+        </div>
+      </div>
+
+      <div class="fig-wrap reveal"><img src="figures/fig07_aliasing_hardware.png" loading="lazy"><div class="fig-cap">Fig. 7 &mdash; IQAE measured probability p_hw vs Grover round m on IQM Emerald (circles) and Garnet (triangles), compared to the theoretical prediction (black line, &theta;=0.2265). Green zone: usable range (m&le;2, depth&le;16). Red zone: aliased range (m&ge;3, depth&ge;22). Garnet achieves 2.97% error at m=1; Emerald 16.55%. Right panel uses IQM-quoted 2Q fidelities (Garnet 99.51%, Emerald 99.50%) to project circuit fidelity F<sup>d</sup> &mdash; both devices fall below the usable threshold simultaneously at m=3 due to compounded gate errors at depth 22.</div></div>
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <!-- Garnet vs Emerald -->
+    <div class="section-sm">
+      <span class="label reveal">Cross-device comparison</span>
+      <h2 class="title reveal" style="font-size:1.8rem">Garnet vs Emerald</h2>
+      <div class="grid-2 reveal">
+        <div>
+          <p style="font-size:.92rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">At m=0, Garnet shows <em>higher</em> absolute error than Emerald (33.1% vs 6.5%). At m=1 the situation reverses: Garnet achieves 2.97% vs Emerald&rsquo;s 16.55% &mdash; a 5.6&times; improvement.</p>
+          <p style="font-size:.92rem;color:var(--grey-l);line-height:1.7;margin-bottom:1.5rem">The explanation is topological: Garnet&rsquo;s star architecture minimises SWAP routing overhead for 4-qubit circuits. Emerald&rsquo;s crystal topology introduces systematic cross-qubit routing errors specifically at depth 10 (m=1). This demonstrates that <strong>device topology matters as much as quoted gate fidelity</strong>.</p>
+          <div class="callout">Both devices have nominally identical 2Q gate fidelity (99.5% and 99.51%). The 5.6&times; performance gap at m=1 is entirely attributable to connectivity topology, not quoted fidelity.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:0 0 .5rem">m=0  depth 4</div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:66%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">33.1%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:13%;height:100%;background:#fbbf24;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#fbbf24;min-width:100px;text-align:right">6.5%</span>
+          </div>
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem">m=1  depth 10</div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:6%;height:100%;background:var(--teal-l);border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:var(--teal-l);min-width:100px;text-align:right">2.97%</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">16.6%</span>
+          </div>
+          <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin:1.25rem 0 .5rem">m=3  depth 22</div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Garnet</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">>100% ALIASED</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem">
+            <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);min-width:58px">Emerald</span>
+            <div style="flex:1;height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f87171;border-radius:4px"></div>
+            </div>
+            <span style="font-family:var(--font-m);font-size:.75rem;color:#f87171;min-width:100px;text-align:right">>100% ALIASED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <!-- ZNE -->
+    <div class="section-sm">
+      <span class="label reveal">Error mitigation</span>
+      <h2 class="title reveal" style="font-size:1.8rem">ZNE &mdash; Counterproductive on Current NISQ Hardware</h2>
+      <div class="grid-2 reveal" style="align-items:start">
+        <div>
+          <p style="font-size:.92rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">Zero-Noise Extrapolation (ZNE) via global circuit folding was applied to the m=1 IQAE circuit (base depth 10) with scale factors &lambda;&isin;{1,3,5}. Expected post-transpile depths: {10,30,50}. Actual depths at opt_level=0: <strong>{10, 136, 226}</strong>.</p>
+          <p style="font-size:.92rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem"><strong>Root cause:</strong> global folding inserts U&sup;&minus;&sup;1 after U for each fold. With opt_level=0, no gate cancellation occurs, so the folded circuit has depth &asymp;4.5&middot;&lambda;&middot;depth&sub0; rather than &lambda;&middot;depth&sub0;.</p>
+          <div class="callout orange">Raw error at &lambda;=1: 5.5%. Post-ZNE error: 27.1%. ZNE worsens rather than improves precision at &lambda;=3 (depth 136, estimated fidelity F&asymp;0.51 &mdash; essentially random).</div>
+          <p style="font-size:.88rem;color:var(--grey-l);margin-top:1rem;line-height:1.6">Folding-free ZNE methods (Patil et&nbsp;al. 2023) and circuit-level noise insertion at opt_level=1 remain promising alternatives and are left as explicit future-work directions.</p>
+        </div>
+        <div>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 1&times; (base)</div>
+            <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:4%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 10</span>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:4%;height:100%;background:var(--teal-l);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--teal-l)">Actual: 10</span>
+            </div>
+          </div>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 3&times;</div>
+            <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:12%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 30</span>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:54%;height:100%;background:#f87171;border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:#f87171">Actual: 136</span>
+            </div>
+          </div>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-family:var(--font-m);font-size:.72rem;color:var(--white);margin-bottom:.5rem">Scale factor 5&times;</div>
+            <div style="display:flex;gap:.75rem;margin-bottom:.35rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Expected</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:20%;height:100%;background:rgba(37,99,235,.5);border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey-l)">Expected: 50</span>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center">
+              <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);min-width:70px">Actual</span>
+              <div style="flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden"><div style="width:100%;height:100%;background:#f87171;border-radius:3px"></div></div>
+              <span style="font-family:var(--font-m);font-size:.7rem;color:#f87171">Actual: 226</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fig-wrap reveal"><img src="figures/fig08_zne_depth.png" loading="lazy"><div class="fig-cap">Fig. 8 &mdash; Left: expected vs actual post-transpile depth for ZNE scale factors &lambda;&isin;{1,3,5} with global circuit folding at opt_level=0. Right: p_hw vs scale factor on IQM Emerald; the extrapolated ZNE estimate (0.1236) diverges from theory (0.3950), giving 27.1% error vs the unmitigated 5.5%.</div></div>
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <!-- Basel IV -->
+    <div class="section-sm">
+      <span class="label reveal">Regulatory validation</span>
+      <h2 class="title reveal" style="font-size:1.8rem">Basel IV &mdash; ES Specification Test</h2>
+      <p style="font-size:.95rem;color:var(--grey-l);max-width:640px;line-height:1.7;margin-bottom:2rem" class="reveal">The Acerbi-Székely Z&sub1; test directly verifies whether the predicted Expected Shortfall is correctly specified. Passing at all four Basel&nbsp;IV confidence levels is the primary regulatory result of this work.</p>
+      <div class="grid-4 reveal" style="margin-bottom:1.5rem">
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 1%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.41</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.53</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 2.5%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.48</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.51</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 5%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.528</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.47</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+        <div class="metric-cell">
+          <span style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:.4rem">&alpha; = 10%</span>
+          <span style="font-family:var(--font-m);font-size:1.4rem;font-weight:700;color:var(--white);display:block;margin-bottom:.15rem">Z&sub1; = &minus;0.61</span>
+          <span style="font-family:var(--font-m);font-size:.78rem;color:var(--grey);display:block;margin-bottom:.75rem">p = 0.44</span>
+          <span class="badge badge-green">PASS</span>
+        </div>
+      </div>
+      <div class="fig-wrap reveal"><img src="figures/fig11_backtest_regulatory.png" loading="lazy"><div class="fig-cap">Fig. 11 &mdash; Basel&nbsp;IV regulatory backtesting for quantum portfolio PA (501 OOS days). (A) VaR breach chart at &alpha;=5%: 16 exceedances (3.19%, below nominal 5% &mdash; conservative model). (B) Predicted vs realised ES by &alpha;. (C) Regulatory test summary &mdash; Acerbi-Székely column passes at all levels. (D) Z&sub1; statistic at all four confidence levels.</div></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function upd(m){
+  const d=4+6*+m;
+  document.getElementById('dr').innerHTML='depth = <strong style="color:var(--teal-l)">'+d+'</strong>';
+  document.getElementById('aw').style.visibility=+m>=3?'visible':'hidden';
+}
+</script>
+<footer>
+  <p>Ignacio Lopez Leis &middot; Luis de Pedro S&aacute;nchez &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026
+  &nbsp;&middot;&nbsp; <a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub</a>
+  
+  &nbsp;&middot;&nbsp; <a href="https://orcid.org/0009-0007-2993-8333" target="_blank">ORCID</a></p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

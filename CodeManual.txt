@@ -1,0 +1,639 @@
+================================================================================
+CODE MANUAL — Quantum-Hybrid CVaR Portfolio Optimisation
+================================================================================
+
+Author:    Ignacio Lopez Leis
+Supervisor: Luis de Pedro Sanchez
+Version:   2.0 (April 2026)
+Python:    3.11+ (tested 3.11 and 3.13)
+Paper:     IOP Quantum Science and Technology (submitted April 2026)
+Repo:      https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez
+
+This manual explains how to install, configure, and run the full pipeline
+from data download to paper figures. Read it top to bottom on first use.
+
+================================================================================
+1. PREREQUISITES
+================================================================================
+
+Hardware:
+    - Any modern CPU machine (16 GB RAM recommended for N=100 experiments).
+    - GPU is not required; all quantum simulation runs on CPU via Qiskit Aer.
+
+Software:
+    - Python 3.11 or 3.13 (3.12 also works).
+    - Git (for cloning the repository).
+
+Cloud APIs (optional but recommended for full reproduction):
+    - D-Wave Leap account (free academic tier): cloud.dwavesys.com/leap
+    - Amazon Braket + IQM device access (for hardware experiments).
+
+================================================================================
+2. INSTALLATION
+================================================================================
+
+Step 1 — Clone the repository:
+
+    git clone https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez
+    cd QuantumCVaRPortfolioOptimization-TFMIgnacioLopez
+
+Step 2 — Create and activate a virtual environment:
+
+    python -m venv eTFM
+
+    Windows (PowerShell):     eTFM\Scripts\Activate.ps1
+    Windows (cmd):            eTFM\Scripts\activate.bat
+    Linux / macOS:            source eTFM/bin/activate
+
+    Verify: the prompt should show "(eTFM) $".
+
+Step 3 — Install all dependencies:
+
+    pip install -r requirements.txt
+
+    This installs qiskit, qiskit-aer, numpy, scipy, pandas, networkx,
+    dwave-ocean-sdk, yfinance, papermill, and all other required packages.
+
+Step 4 — Set up cloud credentials (optional):
+
+    Create a file named ".env" at the project root with your tokens:
+
+        DWAVE_API_TOKEN=your_dwave_token_here
+
+        AWS_REGION=eu-north-1
+        AWS_ACCESS_KEY_ID=your_aws_key
+        AWS_SECRET_ACCESS_KEY=your_aws_secret
+        IQM_DEVICE_ARN=arn:aws:braket:eu-north-1::device/qpu/iqm/Garnet
+
+    If you do not have these tokens, the pipeline runs in fully local mode
+    (D-Wave replaced by simulated annealing, no hardware IQAE experiments).
+
+Step 5 — Verify installation:
+
+    python scripts/00_setup_and_smoketest.py
+
+    All checks should print OK. If any fail, re-read the error message
+    and check the dependency versions in requirements.txt.
+
+================================================================================
+3. QUICK REFERENCE — FULL PIPELINE IN ORDER
+================================================================================
+
+Run the following steps in order. Each step is independent and idempotent
+(safe to re-run). Estimated times assume a standard laptop CPU.
+
+    Step  Script                              Time      Output
+    ----  ----------------------------------  --------  -----------------------
+    1     python scripts/download_sp500_full.py   5 min  data/returns_sp500_full.csv
+    2     bash scripts/02_run_universe_selection.sh  1 min  results/network_selection/
+    3     bash scripts/03_run_experiments.sh    ~6 h   results/exp_*/
+    4     python scripts/compute_euler_decomposition.py  5 min  results/euler_decomposition/
+    5     bash scripts/04_run_bootstrap.sh       20 min  results/exp_*/bootstrap_ci.json
+    6     python scripts/generate_paper_figures.py  3 min  results/paper_figures/fig03-13
+    7     python scripts/generate_visual_figures.py  1 min  results/paper_figures/fig01-02
+
+Step 5 and 6 are independent; they can be run in any order.
+Hardware experiments (optional) are described separately in Section 7.
+
+================================================================================
+4. STEP-BY-STEP DETAILS
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 1 — Download S&P 500 market data
+────────────────────────────────────────────────────────────────────────────────
+
+    python scripts/download_sp500_full.py
+
+Downloads daily adjusted closing prices from Yahoo Finance for all
+S&P 500 constituents, 2020-01-02 to 2025-12-31. Assets with more than
+5% missing values are dropped. Result: 374 tickers, 1,506 trading days.
+
+Output files:
+    data/returns_sp500_full.csv    374 tickers (used for all experiments)
+    data/returns_sp500_100.csv     Top-100 by Sharpe (legacy subset)
+
+If Yahoo Finance is unreachable, a cached version is included in the
+repository for reproducibility purposes.
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 2 — Universe selection (QUBO)
+────────────────────────────────────────────────────────────────────────────────
+
+    # Local (simulated annealing, no token required):
+    bash scripts/02_run_universe_selection.sh
+
+    # D-Wave cloud (requires DWAVE_API_TOKEN in .env):
+    bash scripts/02_run_universe_selection.sh --dwave
+
+This step:
+    1. Computes the 374×374 Pearson correlation matrix.
+    2. Builds the Minimum Spanning Tree (MST) using correlation distance
+       d_ij = sqrt(2*(1 - rho_ij)).
+    3. Detects 11 communities via greedy modularity maximisation.
+    4. Computes Pozzi et al. peripherality scores.
+    5. Solves the peripherality-maximising QUBO (cardinality K, lambda=500).
+    6. Produces three universes: PA (peripheral), PB (central), PC (manual).
+
+Output:
+    results/network_selection/selection_report_<timestamp>.json
+    results/network_selection/universe_PA.json   (10 tickers)
+    results/network_selection/universe_PB.json   (10 tickers)
+    results/network_selection/universe_PC.json   (10 tickers)
+
+Universe PA (QUBO peripheral):
+    Tickers: AAL, AAP, CBOE, CHRW, CLX, DXCM, FMC, NEM, NFLX, OXY
+    Avg peripherality: 0.980 | Communities: 10/11 | QUBO energy: -54,998
+
+Universe PB (central baseline):
+    Tickers: AIG, AMP, BAC, BRK-B, ITW, IVZ, L, MCO, PRU, TROW
+    Avg peripherality: 0.474 | Communities: 4/11
+
+Universe PC (manual mega-cap):
+    Tickers: AAPL, MSFT, GOOGL, JPM, UNH, PG, XOM, CAT, NEE, LIN
+    Avg peripherality: 0.720 | Communities: 8/11
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 3 — Run experiments
+────────────────────────────────────────────────────────────────────────────────
+
+    # Run all 46 experiments:
+    bash scripts/03_run_experiments.sh
+
+    # Run a single experiment:
+    bash scripts/03_run_experiments.sh A1_PA
+
+    # Run a group:
+    bash scripts/03_run_experiments.sh A1_PA A1_PB A1_PC
+
+    # Resume from a specific experiment:
+    bash scripts/03_run_experiments.sh --resume-from E1_PA
+
+Each experiment:
+    1. Loads its config from config/config_<ID>.yaml.
+    2. Runs the full Phase 1 -> Phase 2 -> Phase 3 pipeline via papermill
+       on notebooks/main.ipynb.
+    3. Saves results to results/exp_<ID>/.
+
+Per-experiment output:
+    results/exp_<ID>/
+        tfm_comprehensive_metrics_latest.json   Complete metrics (all phases)
+        convergence.csv                         Iteration-by-iteration CVaR + grad norm
+        optimal_weights.csv                     Final portfolio weights
+        phase2_results.json                     IQAE estimates, subgradient info
+        logs/                                   Per-module log files
+
+Estimated wall-clock time per experiment:
+    A1 (ideal, N=10):          ~6 min
+    E-series (noise+ZNE):      ~12 min
+    S1_PA_100 (N=100):         ~5 h
+
+Total for all 46: approximately 6 hours on a modern laptop.
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 4 — Euler CVaR decompositions
+────────────────────────────────────────────────────────────────────────────────
+
+    python scripts/compute_euler_decomposition.py
+
+Reads all 46 experiment results and computes the Euler risk decomposition
+(RC_i = w_i * dCVaR/dw_i) for every weight set across every method,
+producing 414 decomposition rows.
+
+Output:
+    results/euler_decomposition/euler_decompositions_full.csv   (414 rows)
+    results/euler_decomposition/summary.csv                     (per-experiment summary)
+    results/euler_decomposition/euler_log.txt                   (audit: all 414 pass)
+
+Euler additivity check: all 414 rows satisfy |sum(RC_i) - CVaR| < 1e-14.
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 5 — Bootstrap confidence intervals
+────────────────────────────────────────────────────────────────────────────────
+
+    bash scripts/04_run_bootstrap.sh
+
+Computes circular block bootstrap CIs (B=5,000, block size=21 days)
+for Quantum vs Classical CVaR differences across all experiments.
+
+Output:
+    results/exp_<ID>/bootstrap_ci.json    (95% CI + p-value per experiment)
+
+Key result for A1_PA:
+    Quantum vs Classical: diff=-0.00134, CI=[-0.00266, +0.00024], p=0.043
+
+────────────────────────────────────────────────────────────────────────────────
+STEP 6 & 7 — Generate paper figures
+────────────────────────────────────────────────────────────────────────────────
+
+    # Figures 3-13 (results figures):
+    python scripts/generate_paper_figures.py
+
+    # Figures 1-2 (pipeline illustration + S&P 500 network):
+    python scripts/generate_visual_figures.py
+
+All figures saved to results/paper_figures/ at 300 dpi.
+
+Figure inventory:
+    fig01_pipeline.png          4-block pipeline illustration
+    fig02_sp500_network.png     374-node MST, Kamada-Kawai layout
+    fig03_correlation_matrices.png   PA / PB / PC heatmaps
+    fig04_circuit_depth.png     IQAE depth formula + qubit count
+    fig05_convergence.png       CVaR curves (A1/E1/E2/E3 per portfolio)
+    fig06_cosine_hhi.png        Cosine similarity vs HHI across noise levels
+    fig07_aliasing_hardware.png p_hw vs m, aliasing at m=3, Garnet vs Emerald
+    fig08_zne_depth.png         ZNE folding overhead + extrapolation failure
+    fig09_euler_decomposition.png   Per-asset risk contributions + HHI
+    fig10_oos_returns.png       OOS wealth, drawdown, rolling Sharpe (6 panels)
+    fig11_backtest_regulatory.png   Breach chart, ES test, Acerbi-Szekely Z1
+    fig12_scalability.png       N vs CVaR improvement, timing O(N^0.93)
+
+Note: generate_visual_figures.py runs the Kamada-Kawai layout computation
+for the 374-node network, which takes ~30 seconds.
+
+================================================================================
+5. CONFIGURATION SYSTEM
+================================================================================
+
+All parameters live in YAML files under config/.
+
+Active config:
+    config/config.yaml          Read by every experiment run.
+
+Per-experiment configs:
+    config/config_<ID>.yaml     Overrides config.yaml for experiment <ID>.
+
+To run a single experiment with a specific config, copy the desired file:
+    cp config/config_A1_PA.yaml config/config.yaml
+    Then run the notebook manually or via papermill.
+
+The batch runner (scripts/03_run_experiments.sh) handles config switching
+automatically using the per-experiment files.
+
+────────────────────────────────────────────────────────────────────────────────
+KEY PARAMETERS (config.yaml)
+────────────────────────────────────────────────────────────────────────────────
+
+GLOBAL:
+    alpha               CVaR confidence level.         Default: 0.05
+    random_seed         Reproducibility seed.           Default: 42
+    constraints.max_weight  Max weight per asset.      Default: 0.35
+    constraints.long_only   Long-only portfolio.       Default: true
+
+DATA:
+    tickers             List of ticker symbols (from universe selection).
+    start_date          Training start.                Default: 2020-01-02
+    oos_split_date      Train/test split.              Default: 2024-01-01
+    oos_enabled         Enable OOS validation.         Default: true
+
+PHASE 2 — IQAE:
+    qae.epsilon         Precision target.
+                        0.005 = standard (used in paper)
+                        0.002 = high precision (more queries)
+                        0.010 = fast/coarse
+    qae.num_distribution_qubits
+                        Qubits encoding the loss distribution.
+                        4 = 16 bins (standard, used in paper)
+                        3 = 8 bins (fast mode)
+    qae.use_iqae        Enable IQAE estimator.         Default: true
+
+PHASE 2 — OPTIMIZER:
+    optimizer.type              Optimizer type.         Default: adam
+    optimizer.learning_rate     Step size.              Default: 0.01
+    optimizer.beta1             Adam beta_1.            Default: 0.9
+    optimizer.beta2             Adam beta_2.            Default: 0.999
+    optimizer.max_iterations    Hard limit.             Default: 500
+    optimizer.convergence_threshold  Stop when ||w_t - w_{t-1}|| < threshold.
+                                Default: 1e-4
+    optimizer.patience          Consecutive steps below threshold.
+                                Default: 3
+
+PHASE 2 — NOISE AND ZNE:
+    backend.use_noise           Enable noise simulation.  Default: false
+    noise_params.two_qubit_gate_error   2Q gate error.
+                                A-series: 0 (noiseless)
+                                E1: 1e-3, E2: 5e-3, E3: 1e-2
+    zne.enabled                 Enable ZNE.               Default: false
+    zne.scale_factors           Noise scale factors.
+                                B-series: [1, 1.5, 2]
+                                D-series: [1, 3, 5]
+
+PHASE 2 — BACKEND:
+    backend.type                Simulator.               Default: aer_simulator
+    backend.shots               Measurement shots.       Default: 4096
+    backend.optimization_level  Transpiler level.        Default: 1
+
+================================================================================
+6. RUNNING THE NOTEBOOK INTERACTIVELY
+================================================================================
+
+For a single run with full visualization:
+
+    1. Activate the eTFM environment.
+    2. Open notebooks/main.ipynb in Jupyter or VS Code.
+    3. Select the "eTFM" kernel.
+       If not visible, register it:
+           pip install ipykernel
+           python -m ipykernel install --user --name eTFM --display-name "eTFM"
+    4. Copy the desired config:
+           cp config/config_A1_PA.yaml config/config.yaml
+    5. Run All Cells.
+
+The notebook executes phases in order:
+    Phase 0 — Load config, validate, load data, initialise logger.
+    Phase 1 — Compute initial CVaR/VaR, build noise model (if enabled).
+    Phase 2 — Construct IQAE circuits, estimate subgradient,
+               run Adam optimiser, apply ZNE (if enabled),
+               compute EVaR and Euler risk decompositions.
+    Phase 3 — Run classical baselines (SLSQP, COBYLA, subgradient,
+               Monte Carlo, Markowitz, Risk Parity),
+               run OOS validation, aggregate all metrics to JSON.
+
+================================================================================
+7. REAL HARDWARE EXPERIMENTS (OPTIONAL)
+================================================================================
+
+Hardware experiments are entirely optional. The 46 main experiments use
+CPU simulation only. Hardware runs validate the IQAE circuit on real devices.
+
+────────────────────────────────────────────────────────────────────────────────
+IQM GARNET via Amazon Braket
+────────────────────────────────────────────────────────────────────────────────
+
+    python scripts/05_run_real_hardware.py --provider iqm-garnet
+
+Prerequisites:
+    - Amazon Braket access with IQM Garnet enabled.
+    - Credentials in .env (see Section 2, Step 4).
+    - Expected cost: ~$10 USD per wave (4,096 shots x 3 m-values).
+
+The script runs the 4-qubit IQAE state preparation circuit for
+m in {0, 1, 3} (depths 4, 10, 22) and records p_hw.
+
+Output:
+    results/hardware_validation/iqae_garnet_results_latest.json
+
+Key results from the paper (Wave 3, Garnet):
+    m=0: p_hw=0.0671  (theory: 0.0504)  error=33.1%  aliased=No
+    m=1: p_hw=0.4067  (theory: 0.3950)  error=2.97%  aliased=No
+    m=3: p_hw=0.9205  (theory=0.9998)   aliased=Yes
+
+────────────────────────────────────────────────────────────────────────────────
+IQM EMERALD via Amazon Braket
+────────────────────────────────────────────────────────────────────────────────
+
+    python scripts/05_run_real_hardware.py --provider iqm-emerald
+
+Same circuit, larger device (54-qubit crystal topology).
+
+Key results from the paper (Wave 1+2, Emerald):
+    m=1: p_hw=0.3296  (theory: 0.3950)  error=16.55%  aliased=No
+    m=3: p_hw=0.61    (theory=0.9998)   aliased=Yes
+
+────────────────────────────────────────────────────────────────────────────────
+Dry run (validate circuit without submitting)
+────────────────────────────────────────────────────────────────────────────────
+
+    python scripts/05_run_real_hardware.py --provider iqm-garnet --dry-run
+
+Validates the circuit definition without using cloud credits.
+Prints the transpiled circuit, depth, and gate count.
+
+================================================================================
+8. OUTPUT FILES REFERENCE
+================================================================================
+
+After a complete run, the following files are produced:
+
+results/exp_<ID>/
+    tfm_comprehensive_metrics_latest.json
+        Complete JSON with all metrics, weights, convergence history,
+        OOS validation, classical benchmarks, quantum metrics (cosine
+        similarity, CVaR error, HHI), and full config snapshot.
+        This is the primary output used for paper tables and figures.
+
+    convergence.csv
+        Columns: iteration, cvar_loss, gradient_norm, step_norm.
+        One row per optimizer iteration.
+
+    optimal_weights.csv
+        Columns: ticker, initial_weight, optimal_weight, delta.
+        Final portfolio weights after convergence.
+
+    phase2_results.json
+        IQAE amplitude estimates, subgradient components, circuit info.
+
+    logs/
+        Per-module log files (overwritten on each run, not cumulative):
+            main_notebook.txt
+            cvar_computation.txt
+            hybrid_optimizer.txt
+            qae_circuits.txt
+            quantum_subgradient.txt
+            noise_models.txt
+            error_propagation.txt
+            evar_estimation.txt
+
+results/euler_decomposition/
+    euler_decompositions_full.csv
+        414 rows: one per (experiment, weight_set) combination.
+        Columns: experiment, method, weight_set, RC_CLX, RC_CBOE, ...,
+                 HHI, eff_N, euler_check_pass, additivity_error.
+
+    summary.csv
+        Per-experiment HHI, eff_N, top-3 asset share, method.
+
+results/hardware_validation/
+    iqae_garnet_results_latest.json
+    iqae_emerald_results_latest.json
+    wave1_results_latest.json
+    wave2_v2_results_latest.json
+    wave3_v2_results_latest.json
+        Raw hardware measurement results with job IDs.
+
+results/network_selection/
+    selection_report_<timestamp>.json
+        Full universe selection report with QUBO energy, peripherality
+        scores, community assignment, correlation stats.
+
+================================================================================
+9. LOGGING SYSTEM
+================================================================================
+
+The pipeline uses centralized file-based logging:
+
+    - Each module writes to its own .txt file in results/exp_<ID>/logs/.
+    - Log files are OVERWRITTEN on each run (no accumulating history).
+    - Log levels: INFO, WARNING, ERROR.
+    - No print() statements in production code.
+    - The logger is configured in src/utils/logger.py.
+
+To add logging in a new module:
+
+    from src.utils.logger import get_logger
+    logger = get_logger(__name__)
+    logger.info("Message here")
+    logger.warning("Something unexpected")
+    logger.error("Something failed")
+
+================================================================================
+10. UNDERSTANDING THE PIPELINE PHYSICS
+================================================================================
+
+This section explains what each component computes, for users who want to
+extend or modify the code.
+
+────────────────────────────────────────────────────────────────────────────────
+CVaR and its subgradient (src/phase_1/cvar_computation.py)
+────────────────────────────────────────────────────────────────────────────────
+
+CVaR at confidence alpha is:
+    CVaR_alpha(w) = E[L(w) | L(w) >= VaR_alpha(w)]
+
+where L(w) = -w^T r is the portfolio loss.
+
+The subgradient with respect to w_i is:
+    dCVaR/dw_i = -E[r_i | L(w) >= VaR_alpha(w)]
+
+This is what the IQAE circuit estimates.
+
+────────────────────────────────────────────────────────────────────────────────
+IQAE circuit (src/phase_2/qae_circuits.py)
+────────────────────────────────────────────────────────────────────────────────
+
+The circuit has 4 qubits (n_qubits=4 by default, giving 16 loss levels).
+
+State preparation A loads the empirical loss distribution:
+    A|0> = sum_{l=0}^{15} sqrt(p_l) |l>
+
+Grover oracle O_tau marks states where loss > VaR threshold.
+
+IQAE runs Q^m circuits (where Q is the Grover operator) for m=0,1,2,...
+and estimates the tail probability a = P(L > VaR) via Clopper-Pearson CIs.
+
+Hardware depth on IQM: depth(m) = 4 + 6*m.
+Aliasing occurs at m=3 (depth=22) on both IQM devices.
+
+────────────────────────────────────────────────────────────────────────────────
+Adam optimizer (src/phase_2/hybridoptimizer.py)
+────────────────────────────────────────────────────────────────────────────────
+
+Standard Adam with simplex projection at each step:
+
+    g_t = IQAE_subgradient(w_t)
+    m_t = beta1*m_{t-1} + (1-beta1)*g_t
+    v_t = beta2*v_{t-1} + (1-beta2)*g_t^2
+    w_{t+1} = Pi_W(w_t - eta * m_hat_t / (sqrt(v_hat_t) + eps))
+
+Pi_W is Euclidean projection onto the simplex {w>=0, sum(w)=1, w_i<=0.35}.
+
+Key property: Adam's second-moment normalization absorbs noise-induced
+amplitude inflation, preserving gradient direction even under high noise.
+This is why cosine similarity > 0.9999 for all 46 experiments.
+
+────────────────────────────────────────────────────────────────────────────────
+Euler risk decomposition (src/phase_2/risk_contributions.py)
+────────────────────────────────────────────────────────────────────────────────
+
+For each portfolio weight vector w, the Euler decomposition is:
+    RC_i = w_i * dCVaR/dw_i
+    sum_i RC_i = CVaR  (exact identity, error < 1e-14 in all 414 cases)
+
+The Herfindahl-Hirschman Index of risk contributions:
+    HHI = sum_i (RC_i / CVaR)^2
+
+eff_N = 1/HHI is the effective number of risk contributors.
+
+================================================================================
+11. EXTENDING THE CODE
+================================================================================
+
+To add a new classical baseline:
+
+    Edit src/phase_3/classical_benchmark.py.
+    Add your optimizer in the run_all_baselines() function.
+    Return a dict with keys: cvar_loss, weights, iterations, time_seconds.
+
+To add a new noise model:
+
+    Edit src/phase_2/noisemodels.py.
+    Implement a function returning a qiskit_aer.noise.NoiseModel.
+    Register it in config.yaml under noise_model_config.type.
+
+To use a different quantum backend:
+
+    Edit src/phase_2/quantumbackends.py.
+    Implement the QuantumBackend protocol (execute_circuit method).
+    Pass it to HybridOptimizer via the backend argument.
+
+================================================================================
+12. TROUBLESHOOTING
+================================================================================
+
+"No module named qiskit"
+    -> Verify (eTFM) is active and the correct Jupyter kernel is selected.
+
+"AlgorithmError in Woerner QAE"
+    -> Woerner estimator requires StatevectorSampler (no noise).
+       Disable use_woerner when noise simulation is active.
+
+"The job was not completed successfully" in IQAE
+    -> IQAE + noise requires TranspilingAerSamplerV2.
+       Check qiskit-aer is installed and version >= 0.14.
+
+"CSV not found during data loading"
+    -> Run scripts/download_sp500_full.py first.
+       The notebook resolves paths from its own directory.
+
+"Experiment takes > 8 hours"
+    -> Reduce epsilon to 0.01 in config.yaml.
+    -> Reduce num_distribution_qubits to 3.
+    -> Disable ZNE (zne.enabled: false).
+    -> Disable OOS validation (oos_enabled: false).
+
+"D-Wave returns suboptimal universe"
+    -> Increase lambda_2 (cardinality penalty) in the QUBO config.
+       Default: 1000. Try 5000 for stricter cardinality enforcement.
+
+"IQM hardware job times out"
+    -> Check Amazon Braket device availability (Garnet maintenance windows).
+    -> IQM Garnet typical queue: 5-30 min during EU business hours.
+
+"Figures look wrong after re-running"
+    -> The SP500 network figure (fig02) uses Kamada-Kawai layout which
+       is deterministic given the same data. If the layout changes,
+       the underlying correlation data has changed. Re-run step 1.
+
+================================================================================
+13. REPRODUCIBILITY CHECKLIST
+================================================================================
+
+To reproduce all paper results from scratch:
+
+    [ ] 1.  Clone repository and install dependencies (Section 2).
+    [ ] 2.  Run download_sp500_full.py and verify 374 tickers in data/.
+    [ ] 3.  Run universe selection with --dwave flag (or use the cached
+            results already in results/network_selection/).
+    [ ] 4.  Run all 46 experiments via scripts/03_run_experiments.sh.
+            Expected: 46 JSON files in results/exp_*/.
+    [ ] 5.  Run compute_euler_decomposition.py.
+            Expected: 414 rows in results/euler_decomposition/, all pass.
+    [ ] 6.  Run bootstrap CIs via scripts/04_run_bootstrap.sh.
+    [ ] 7.  Run both figure generation scripts.
+            Expected: 13 PNG files in results/paper_figures/.
+    [ ] 8.  Compare key metrics against reference values:
+            A1_PA quantum OOS CVaR: 0.01839
+            S1_PA_100 OOS Sharpe: 1.099
+            Euler A1_PA HHI: 0.2102
+            Bootstrap p-value: 0.043
+
+All experiments use random_seed: 42. Results are deterministic on the
+same Python and Qiskit versions (3.11 / 1.x).
+
+Paper-reported hardware results are archived in:
+    results/hardware_validation/wave3_v2_results_latest.json
+    (IQM Garnet m=1: p_hw=0.4067, error=2.97%)
+
+================================================================================
+END OF MANUAL
+================================================================================

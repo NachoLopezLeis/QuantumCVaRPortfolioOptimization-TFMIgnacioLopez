@@ -1,0 +1,21 @@
+{
+  "circuit_id": "f4c7dbb7_0023",
+  "name": "comp_tail_prob",
+  "category": "tail_probability",
+  "num_qubits": 5,
+  "depth": 44,
+  "num_gates": 75,
+  "png_path": "results\\circuits\\png\\tail_probability_comp_tail_prob_f4c7dbb7_0023.png",
+  "timestamp": "2026-05-30T14:21:10.247915",
+  "context": {
+    "threshold": 0.01767446955960006,
+    "threshold_level": 1,
+    "num_levels": 16,
+    "l_min": -0.04681085311288268,
+    "l_max": 0.049288766688593916,
+    "classical_tail_prob": 0.05,
+    "quantum_expected_prob": 0.05000000000000001,
+    "discretization_error": 6.938893903907228e-18,
+    "threshold_on_edge": true
+  }
+}

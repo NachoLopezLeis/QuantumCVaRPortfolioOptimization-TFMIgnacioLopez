@@ -1,0 +1,18 @@
+{
+  "circuit_id": "9e27e098_0017",
+  "name": "cond_exp_asset6",
+  "category": "conditional_expectation",
+  "num_qubits": 5,
+  "depth": 47,
+  "num_gates": 84,
+  "png_path": "results\\circuits\\png\\conditional_expectation_cond_exp_asset6_9e27e098_0017.png",
+  "timestamp": "2026-05-30T11:59:26.338676",
+  "context": {
+    "asset_idx": 6,
+    "threshold": 0.020362391156446582,
+    "r_min": -0.215083992151614,
+    "r_max": 0.0139750782676364,
+    "tail_count": 76,
+    "classical_exp": -0.033014339954338556
+  }
+}

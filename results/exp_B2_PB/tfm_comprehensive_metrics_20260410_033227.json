@@ -1,0 +1,641 @@
+{
+  "metadata": {
+    "run_id": "d7787a7f-5bf5-44ad-bc0e-3dee7d169063",
+    "timestamp": "2026-04-10T03:32:27.941874",
+    "project_name": "Quantum Portfolio Optimization with CVaR",
+    "author": "Ignacio Lopez Leis",
+    "institution": "Universidad Autonoma de Madrid",
+    "configuration": {
+      "global": {
+        "alpha": 0.05,
+        "random_seed": 42,
+        "max_weight": 0.3,
+        "min_weight": 0.0
+      },
+      "data": {
+        "tickers": [
+          "AIG",
+          "AMP",
+          "BAC",
+          "BRK-B",
+          "ITW",
+          "IVZ",
+          "L",
+          "MCO",
+          "PRU",
+          "TROW"
+        ],
+        "n_assets": 10,
+        "n_effective": 10,
+        "n_periods": 1005,
+        "start_date": "2018-01-01",
+        "end_date": "2025-12-31",
+        "oos_enabled": true,
+        "oos_split_date": "2024-01-01"
+      },
+      "network_selection": {
+        "enabled": false,
+        "portfolio_id": null,
+        "method": null,
+        "n_universe": null,
+        "n_selected": null,
+        "energy": null,
+        "feasible": null,
+        "avg_peripherality": null,
+        "avg_centrality": null,
+        "n_communities_represented": null,
+        "dwave_backend": null,
+        "dwave_num_reads": null,
+        "timing_ms": null
+      },
+      "phase2": {
+        "num_qubits": 4,
+        "epsilon": 0.005,
+        "optimizer_type": "adam",
+        "max_iterations": 50,
+        "learning_rate": 0.05,
+        "use_zne": true,
+        "recursive_enabled": false,
+        "use_recursive": false
+      }
+    }
+  },
+  "qae_diagnostics_t001": {
+    "shots_per_round_est": null,
+    "n_rounds_est": null,
+    "k_max_est": null,
+    "sampler_shots": null,
+    "var_threshold_bin_index": null,
+    "var_threshold_quantization_error": null,
+    "bin_width": null,
+    "n_qubits_used": null
+  },
+  "convergence_fingerprint": {},
+  "metrics": {
+    "risk": {
+      "initial": {
+        "var_return": -0.02876418229521975,
+        "cvar_return": -0.047654276217407164,
+        "var_loss": 0.02876418229521975,
+        "cvar_loss": 0.047654276217407164,
+        "tail_probability": 0.050746268656716415,
+        "tail_size": 51
+      },
+      "optimized": {
+        "var_loss": 0.02453358716926463,
+        "cvar_loss": 0.041518966245775,
+        "var_return": -0.02453358716926463,
+        "cvar_return": -0.041518966245775
+      },
+      "evar": {
+        "evar": 0.08374684895062526,
+        "cvar": 0.04154976367121799,
+        "evar_cvar_ratio": 2.0155794293635823,
+        "mathematical_validity": true,
+        "improvement_pct": 12.435482048509424
+      }
+    },
+    "optimization": {
+      "method": "hybrid",
+      "cvar_improvement_pct": 12.874626284620927,
+      "cvar_reduction_absolute": 0.006135309971632162,
+      "converged": false,
+      "num_iterations": 50,
+      "early_stopped": false,
+      "final_gradient_norm": 0.10670659379129853,
+      "recursive": {
+        "used": false,
+        "tree_depth": 0,
+        "total_nodes": 0,
+        "total_leaves": 0,
+        "per_level_cvar": []
+      }
+    },
+    "quantum": {
+      "qae": {
+        "quantum_cvar": 0.03429860128443872,
+        "quantum_tail_prob": 0.11774290158767432,
+        "classical_cvar": 0.047654276217407164,
+        "cvar_error": 0.2802618357277637,
+        "tail_prob_error": 1.3202277665806412,
+        "total_queries_iqae": 879616,
+        "total_queries_woerner": 128,
+        "total_circuits": 22,
+        "zne_applied": true,
+        "zne_improvement": 0.08797216314137858,
+        "noise_enabled": true,
+        "execution_time_ms": 98238.45481872559
+      },
+      "subgradient": {
+        "norm": 0.1551736548213801,
+        "method": "iqae",
+        "cosine_similarity": 0.9999912282360612,
+        "l2_error": 0.0007991933654132932
+      },
+      "total_oracle_queries": {
+        "iqae": 29749248,
+        "woerner": 3200,
+        "total": 29752448,
+        "quantum_success_rate": 1.0
+      }
+    },
+    "risk_contributions": {
+      "computed": false,
+      "total_cvar": 0.0,
+      "herfindahl_index": 0.0,
+      "effective_n_assets": 0.0,
+      "euler_check_error": 0.0,
+      "max_contribution_pct": 0.0,
+      "component_contributions": [],
+      "percentage_contributions": []
+    },
+    "benchmarks": {
+      "computed": true,
+      "quantum_cvar": 0.041518966245775,
+      "best_classical_method": "cobyla",
+      "best_classical_cvar": 0.03747701332843467,
+      "cvar_improvement_vs_best": 0.0,
+      "speedup_factor": 5.960899586266711e-05,
+      "classical_results": {
+        "slsqp": {
+          "optimal_cvar": 0.037477020815738026,
+          "optimal_var": 0.021803113174012616,
+          "optimal_weights": [
+            1.706331687694602e-17,
+            2.3717678838233007e-18,
+            3.5544795479748586e-16,
+            0.30000000000000004,
+            0.3,
+            1.0849749539991005e-17,
+            0.06444298943121536,
+            0.29999999999999993,
+            2.6019585255416456e-17,
+            0.03555701056878446
+          ],
+          "execution_time_s": 0.027257204055786133,
+          "iterations": 21,
+          "converged": true,
+          "success": true,
+          "message": "Optimization terminated successfully"
+        },
+        "cobyla": {
+          "optimal_cvar": 0.03747701332843467,
+          "optimal_var": 0.021802361288614843,
+          "optimal_weights": [
+            1.255227185101836e-21,
+            1.1850115363010291e-21,
+            0.0,
+            0.300000003,
+            0.300000003,
+            4.213344567234416e-21,
+            0.06448293321501994,
+            0.300000003,
+            0.0,
+            0.03551705778497999
+          ],
+          "execution_time_s": 0.33182764053344727,
+          "iterations": 94,
+          "converged": true,
+          "success": true,
+          "message": "Return from COBYLA because the trust region radius reaches its lower bound."
+        },
+        "subgradient": {
+          "optimal_cvar": 0.045658468145246024,
+          "optimal_var": 0.027025304424959797,
+          "optimal_weights": [
+            0.07982843970840403,
+            0.08176932096691505,
+            0.09916913298349365,
+            0.13167655360317396,
+            0.12216401690422035,
+            0.07273677745758736,
+            0.10115327336101033,
+            0.11653498004157516,
+            0.08678209066363003,
+            0.10818541430999001
+          ],
+          "execution_time_s": 0.03044605255126953,
+          "iterations": 200,
+          "converged": true,
+          "success": true,
+          "message": "Classical subgradient descent completed"
+        },
+        "monte_carlo": {
+          "optimal_cvar": 0.037569938673561946,
+          "optimal_var": 0.022039786272728675,
+          "optimal_weights": [
+            0.00548622560364897,
+            0.045931434548248995,
+            0.057224316218407255,
+            0.36353703057612285,
+            0.36353703057612285,
+            0.0076229500435953945,
+            0.02771914554813745,
+            0.0849374207650149,
+            0.0020236518783831067,
+            0.04198079424231823
+          ],
+          "execution_time_s": 0.8433258533477783,
+          "iterations": 10000,
+          "converged": true,
+          "success": true,
+          "message": "Sampled 10000 portfolios"
+        },
+        "markowitz": {
+          "optimal_cvar": 0.03849497978524345,
+          "optimal_var": 0.022373328497629547,
+          "optimal_weights": [
+            0.0,
+            6.7220534694101275e-18,
+            0.05909116504380491,
+            0.27862613290735583,
+            0.23226483277217302,
+            0.0,
+            0.11612340898667409,
+            0.19911414265616664,
+            6.776263578034403e-19,
+            0.11478031763382558
+          ],
+          "execution_time_s": 0.0059740543365478516,
+          "iterations": 15,
+          "converged": true,
+          "success": true,
+          "message": "Optimization terminated successfully"
+        },
+        "risk_parity": {
+          "optimal_cvar": 0.04524799415641071,
+          "optimal_var": 0.026811143996422374,
+          "optimal_weights": [
+            0.08172827666314736,
+            0.07711826037405801,
+            0.09072649115750735,
+            0.14705634534448392,
+            0.1295505712039775,
+            0.07295359878114895,
+            0.10032704675766274,
+            0.1192782820626972,
+            0.08135580563484995,
+            0.09990532202046705
+          ],
+          "execution_time_s": 0.0034704208374023438,
+          "iterations": 7,
+          "converged": true,
+          "success": true,
+          "message": "Optimization terminated successfully"
+        }
+      }
+    },
+    "method_comparison": {
+      "computed": true,
+      "best_method": "woerner",
+      "methods": {
+        "iqae": {
+          "method_name": "iqae",
+          "enabled": true,
+          "amplitude": 0.11774290158767432,
+          "amplitude_classical": 0.050746268656716415,
+          "absolute_error": 0.06699663293095791,
+          "relative_error": 1.3202277665806412,
+          "oracle_queries": 106496,
+          "circuit_depth": 0,
+          "execution_time_ms": 0.0,
+          "converged": true,
+          "zne_applied": true,
+          "zne_improvement": 0.5680450462374104,
+          "queries_per_epsilon": 532.48,
+          "accuracy_per_query": -0.0030069464259750715
+        },
+        "woerner": {
+          "method_name": "woerner",
+          "enabled": true,
+          "amplitude": 0.0590394,
+          "amplitude_classical": 0.050746268656716415,
+          "absolute_error": 0.008293131343283584,
+          "relative_error": 0.16342347058823534,
+          "oracle_queries": 128,
+          "circuit_depth": 0,
+          "execution_time_ms": 0.0,
+          "converged": true,
+          "zne_applied": true,
+          "zne_improvement": 0.0,
+          "queries_per_epsilon": 0.64,
+          "accuracy_per_query": 6.535754136029412
+        },
+        "qsp": {
+          "method_name": "qsp",
+          "enabled": false,
+          "amplitude": 0.0,
+          "amplitude_classical": 0.050746268656716415,
+          "absolute_error": 0.0,
+          "relative_error": 0.0,
+          "oracle_queries": 0,
+          "circuit_depth": 0,
+          "execution_time_ms": 0.0,
+          "converged": false,
+          "zne_applied": false,
+          "zne_improvement": 0.0,
+          "queries_per_epsilon": 0.0,
+          "accuracy_per_query": 0.0
+        }
+      }
+    },
+    "oos_validation": {
+      "computed": true,
+      "split_date": "2024-01-01",
+      "n_train": 1005,
+      "n_test": 501,
+      "quantum_oos_cvar": 0.02464220008524644,
+      "quantum_cvar_rank": 2,
+      "prediction_error_pct": 40.72580496069882,
+      "beats_equal_weight": true,
+      "beats_classical": false,
+      "rankings": {
+        "by_cvar": [
+          "Classical CVaR",
+          "Quantum CVaR",
+          "Inverse Vol",
+          "Equal Weight"
+        ],
+        "by_sharpe": [
+          "Inverse Vol",
+          "Equal Weight",
+          "Quantum CVaR",
+          "Classical CVaR"
+        ]
+      },
+      "portfolios": {
+        "Equal Weight": {
+          "weights": [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ],
+          "oos_metrics": {
+            "cvar_loss": 0.028428089465468317,
+            "var_loss": 0.01686799161922508,
+            "cumulative_return": 0.29343276887158587,
+            "annualized_return": 0.14650676911799962,
+            "annualized_vol": 0.18455680880178746,
+            "sharpe": 0.7938302036602005,
+            "sortino": 0.971602537631357,
+            "max_drawdown": -0.20315039695377604
+          },
+          "train_cvar": 0.047654276217407164,
+          "cvar_prediction_error": 0.40345144818117923
+        },
+        "Quantum CVaR": {
+          "weights": [
+            0.016005796883222092,
+            0.20433552449328204,
+            0.03763954951937949,
+            0.30063056045523195,
+            0.18764997857851703,
+            0.015717051780364713,
+            0.018348781419974335,
+            0.1774166133619137,
+            0.025801304515483958,
+            0.01645483899263058
+          ],
+          "oos_metrics": {
+            "cvar_loss": 0.02464220008524644,
+            "var_loss": 0.015689477308591993,
+            "cumulative_return": 0.26196626045763494,
+            "annualized_return": 0.13128571738158482,
+            "annualized_vol": 0.16869547985172567,
+            "sharpe": 0.7782408722330791,
+            "sortino": 0.9888034118720405,
+            "max_drawdown": -0.16415368671289937
+          },
+          "train_cvar": 0.04157323447228203,
+          "cvar_prediction_error": 0.4072580496069882
+        },
+        "Classical CVaR": {
+          "weights": [
+            1.255227185101836e-21,
+            1.1850115363010291e-21,
+            0.0,
+            0.300000003,
+            0.300000003,
+            4.213344567234416e-21,
+            0.06448293321501994,
+            0.300000003,
+            0.0,
+            0.03551705778497999
+          ],
+          "oos_metrics": {
+            "cvar_loss": 0.023822606697868697,
+            "var_loss": 0.014091374041561052,
+            "cumulative_return": 0.2141980369986094,
+            "annualized_return": 0.11097779531412541,
+            "annualized_vol": 0.1632620699659562,
+            "sharpe": 0.6797524699844045,
+            "sortino": 0.874535393455628,
+            "max_drawdown": -0.1465429032024936
+          },
+          "train_cvar": 0.03747701332843467,
+          "cvar_prediction_error": 0.3643408430363383
+        },
+        "Inverse Vol": {
+          "weights": [
+            0.08074283095371483,
+            0.08311610376562024,
+            0.0934711060213684,
+            0.15399218429165495,
+            0.12674438875036717,
+            0.07156593860259397,
+            0.10249240872608514,
+            0.10531085091097588,
+            0.08677743025066749,
+            0.09578675772695189
+          ],
+          "oos_metrics": {
+            "cvar_loss": 0.026938453560556293,
+            "var_loss": 0.01572062006247574,
+            "cumulative_return": 0.2849578274610909,
+            "annualized_return": 0.1418522105946143,
+            "annualized_vol": 0.17715744304052303,
+            "sharpe": 0.8007126777177914,
+            "sortino": 0.9838480264751317,
+            "max_drawdown": -0.18900260709238054
+          },
+          "train_cvar": 0.045367947907437,
+          "cvar_prediction_error": 0.4062227893684305
+        }
+      }
+    },
+    "errors": {
+      "computed": true,
+      "final_error_bound": 0.3299718435932327,
+      "estimated_cvar_error": 0.09389940690311127,
+      "dominant_source": "truncation",
+      "truncation_error": 0.008892748041070759,
+      "noise_error": 0.0,
+      "zne_enabled": false,
+      "zne_improvement_pct": 0.0,
+      "best_qae_method": "unknown"
+    },
+    "qae_validation": {
+      "computed": true,
+      "status": "error",
+      "all_passed": false
+    }
+  },
+  "timings": {
+    "optimization_s": 5566.737632989883,
+    "quantum_time_ms": 5566599.447250366,
+    "qae_estimation_s": 98.63272619247437,
+    "subgradient_s": 12.83426809310913
+  },
+  "weights": {
+    "initial": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "optimal": [
+      0.015972225370885648,
+      0.20390693898570944,
+      0.03756060208488139,
+      0.30209745960050494,
+      0.18725639032941302,
+      0.015684085899216358,
+      0.018310295592227445,
+      0.1770444891829287,
+      0.02574718732162241,
+      0.016420325632610727
+    ],
+    "by_asset": {
+      "AIG": 0.015972225370885648,
+      "AMP": 0.20390693898570944,
+      "BAC": 0.03756060208488139,
+      "BRK-B": 0.30209745960050494,
+      "ITW": 0.18725639032941302,
+      "IVZ": 0.015684085899216358,
+      "L": 0.018310295592227445,
+      "MCO": 0.1770444891829287,
+      "PRU": 0.02574718732162241,
+      "TROW": 0.016420325632610727
+    }
+  },
+  "convergence_history": {
+    "cvar_history": [
+      0.047654276217407164,
+      0.047654276217407164,
+      0.04734314332637474,
+      0.04701151625344706,
+      0.046683713654172045,
+      0.04637526587048873,
+      0.04608918247009851,
+      0.045824267988283755,
+      0.04556525926441081,
+      0.04530886964083233,
+      0.0450655436410685,
+      0.04482839763580491,
+      0.04460021126739192,
+      0.04438185731582018,
+      0.04417766212739046,
+      0.04399159955186358,
+      0.04381985612581207,
+      0.043663293653396176,
+      0.04352297264749984,
+      0.04339827679881447,
+      0.043280714719542486,
+      0.04316924092115937,
+      0.043065812148959895,
+      0.042984018892317157,
+      0.042905907437007805,
+      0.042841015274568996,
+      0.04279073450400128,
+      0.04273160401486496,
+      0.042662441923078546,
+      0.0425837222100735,
+      0.04249589032509214,
+      0.04240156801847334,
+      0.042289799159621604,
+      0.04216422067519281,
+      0.04205547094436581,
+      0.041958069282283,
+      0.04187050037889225,
+      0.04179146450333164,
+      0.041719836765497044,
+      0.04165463447025322,
+      0.0415949908461718,
+      0.041540133826819224,
+      0.041518966245775,
+      0.04154976367121799,
+      0.041600636740845354,
+      0.041661647327910514,
+      0.04172953979948951,
+      0.04180312555633435,
+      0.041881863049054856,
+      0.04196541705655901,
+      0.04205352041743856
+    ],
+    "gradient_norms": [
+      0.1130719071807702,
+      0.1155605319894221,
+      0.1155605319894221,
+      0.11454466368368586,
+      0.11057582046522754,
+      0.10546018118521855,
+      0.11056244542496103,
+      0.11056244542496103,
+      0.1120512568024719,
+      0.1120512568024719,
+      0.1120512568024719,
+      0.10984347941702649,
+      0.10984347941702649,
+      0.10268062600995248,
+      0.10438831713587894,
+      0.10438831713587894,
+      0.10765365482499958,
+      0.10765365482499958,
+      0.10298138725075277,
+      0.10298138725075277,
+      0.10298138725075277,
+      0.10077979902968726,
+      0.09751494324248726,
+      0.10406735203255038,
+      0.10406735203255038,
+      0.10742593359496044,
+      0.10742593359496044,
+      0.10742593359496044,
+      0.10742593359496044,
+      0.10742593359496044,
+      0.11066497818099456,
+      0.11066497818099456,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853,
+      0.10670659379129853
+    ]
+  }
+}

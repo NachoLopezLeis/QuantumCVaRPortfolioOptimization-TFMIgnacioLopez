@@ -1,0 +1,22 @@
+[11:50:02] ===== ========== SIMULATOR ZNE COMPARISON  (Sec. 7.2) ==========
+[11:50:31] OK    theta=0.2265  p_theory(m=1)=0.3949
+[11:51:01] INFO  base m=1 depth (opt_level=1) = 8
+[11:51:01] INFO  conditions=['raw', 'global_fold', 'gate_fold', 'iim_fiim']  scales=[1.0, 3.0, 5.0]  noise=['E1', 'E2', 'E3']  shots=4096  replicas=3
+[11:51:01] ===== ========== NOISE E1  p_2q=0.001  p_1q=0.00010 ==========
+[11:51:01] INFO    raw          p=0.3931+-0.0081  bias=0.0017  depth=9
+[11:51:02] INFO    global_fold  p(1,3,5)=[0.393,0.394,0.395]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.393(bias=0.0023)  raw_better=True
+[11:51:02] INFO    gate_fold    p(1,3,5)=[0.393,0.394,0.395]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.393(bias=0.0023)  raw_better=True
+[11:51:02] INFO    iim_fiim     p(1,3,5)=[0.393,0.394,0.395]  depth(1,3,5)=[9, 17, 25]  ZNE_rich=0.393(bias=0.0023)  raw_better=True
+[11:51:02] ===== ========== NOISE E2  p_2q=0.005  p_1q=0.00050 ==========
+[11:51:02] INFO    raw          p=0.3949+-0.0075  bias=0.0000  depth=9
+[11:51:03] INFO    global_fold  p(1,3,5)=[0.395,0.399,0.404]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.393(bias=0.0019)  raw_better=True
+[11:51:04] INFO    gate_fold    p(1,3,5)=[0.395,0.399,0.404]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.393(bias=0.0019)  raw_better=True
+[11:51:04] INFO    iim_fiim     p(1,3,5)=[0.395,0.398,0.402]  depth(1,3,5)=[9, 17, 25]  ZNE_rich=0.393(bias=0.0015)  raw_better=True
+[11:51:04] ===== ========== NOISE E3  p_2q=0.01  p_1q=0.00100 ==========
+[11:51:04] INFO    raw          p=0.3974+-0.0084  bias=0.0025  depth=9
+[11:51:05] INFO    global_fold  p(1,3,5)=[0.397,0.405,0.414]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.394(bias=0.0011)  raw_better=False
+[11:51:05] INFO    gate_fold    p(1,3,5)=[0.397,0.405,0.414]  depth(1,3,5)=[9, 25, 41]  ZNE_rich=0.394(bias=0.0011)  raw_better=False
+[11:51:06] INFO    iim_fiim     p(1,3,5)=[0.397,0.404,0.411]  depth(1,3,5)=[9, 17, 25]  ZNE_rich=0.394(bias=0.0012)  raw_better=False
+[11:51:06] ===== ========== DONE ==========
+[11:51:06] OK    written: C:\Users\nacho\Desktop\TFM\QuantumCVaRPortfolioOptimization-TFMIgnacioLopez-main\results\hardware_validation\sim_zne_compare_latest.json
+[11:51:06] OK    Finding: ZNE improves over raw in at least one (condition, noise).

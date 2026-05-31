@@ -1,0 +1,49 @@
+[01:47:32] ===== ============ IQAE ON IQM GARNET — direct Ry encoding ============
+[01:47:32] OK    IQM_TOKEN found.
+[01:47:32] OK    a_ideal=0.050442  theta=0.226525
+[01:47:32] INFO  Motivation: Garnet m=1 gave 39.77% (error 0.27pp vs theory 39.50%)
+[01:47:32] INFO  Emerald IQAE gave CI=[4.88%,5.86%], error 6.0% — Garnet may be tighter
+[01:47:32] INFO  Loaded Emerald IQAE results for comparison:
+[01:47:32] INFO    Emerald m=0: a_est=5.347%  CI=[4.880%,5.855%]
+[01:47:32] INFO    Emerald m=1: a_est=4.129%  CI=[3.987%,4.274%]
+[01:47:32] INFO    Emerald m=3: a_est=6.889%  CI=[6.812%,6.969%]
+[01:47:37] ===== ============ AER VALIDATION ============
+[01:47:37] INFO    m=0: 5.15%  theory=5.04%
+[01:47:37] INFO    m=1: 40.32%  theory=39.50%
+[01:47:37] INFO    m=3: 100.00%  theory=99.98%
+[01:47:37] OK    Connected: IQMBackend  20q
+[01:47:37] ===== ============ IQAE ON GARNET (m=0,1,3 — alias-safe) ============
+[01:47:37] INFO    [IQAE_GAR_R1_m0] depth=4 CZ=1 shots=8192
+[01:47:38] INFO    [IQAE_GAR_R1_m0] job_id=019d8417-fc21-7c12-95cd-e24e69da79ba
+[01:47:44] INFO    [IQAE_GAR_R1_m0] P_hw=6.714%
+[01:47:44] INFO    m=0: p_hw=6.714%  a_est=6.714%
+[01:47:44] INFO      CI_a=[6.192%,7.276%]  width=1.084%  captures=False  aliased=False
+[01:47:44] INFO    [IQAE_GAR_R2_m1] depth=10 CZ=4 shots=8192
+[01:47:44] INFO    [IQAE_GAR_R2_m1] job_id=019d8418-14ff-70d3-8886-c4413ad67cd9
+[01:47:50] INFO    [IQAE_GAR_R2_m1] P_hw=40.674%
+[01:47:50] INFO    m=1: p_hw=40.674%  a_est=5.221%
+[01:47:50] INFO      CI_a=[5.062%,5.383%]  width=0.321%  captures=False  aliased=False
+[01:47:50] INFO    [IQAE_GAR_R3_m3] depth=22 CZ=10 shots=8192
+[01:47:50] INFO    [IQAE_GAR_R3_m3] job_id=019d8418-2d49-7bd3-9d0b-1024594cb4a0
+[01:47:56] INFO    [IQAE_GAR_R3_m3] P_hw=92.053%
+[01:47:56] INFO    m=3: p_hw=92.053%  a_est=6.871%
+[01:47:56] INFO      CI_a=[6.794%,6.951%]  width=0.156%  captures=False  aliased=True
+[01:47:56] ===== ============ RESULTS — Garnet vs Emerald IQAE ============
+[01:47:56] INFO  a_ideal = 5.044%
+[01:47:56] INFO  
+[01:47:56] INFO  Garnet IQAE:
+[01:47:56] INFO    m=0: a_est=6.714%  CI=[6.192%,7.276%]  width=1.084%  captures=False
+[01:47:56] INFO    m=1: a_est=5.221%  CI=[5.062%,5.383%]  width=0.321%  captures=False
+[01:47:56] INFO    m=3: a_est=6.871%  CI=[6.794%,6.951%]  width=0.156%  captures=False
+[01:47:56] INFO  
+[01:47:56] INFO  Emerald IQAE (reference):
+[01:47:56] INFO    m=0: a_est=5.347%  CI=[4.880%,5.855%]  width=0.975%  captures=True
+[01:47:56] INFO    m=1: a_est=4.129%  CI=[3.987%,4.274%]  width=0.287%  captures=False
+[01:47:56] INFO    m=3: a_est=6.889%  CI=[6.812%,6.969%]  width=0.157%  captures=False
+[01:47:56] INFO  
+[01:47:56] INFO  Cross-device comparison (m=0, direct estimate):
+[01:47:56] INFO    Garnet : a_best=6.714%  point_error=33.1%  CI_width=1.084%  captures=False
+[01:47:56] INFO    Emerald: a_best=5.347%  point_error=6.0%  CI_width=0.975%  captures=True
+[01:47:56] INFO    CI width improvement  : -11.2% (Emerald better)
+[01:47:56] INFO    Point error improvement: -452.0% (Emerald better)
+[01:47:56] OK    Results: C:\Users\nacho\Desktop\v2_final\v2_final\results\hardware_validation\iqae_garnet_results_latest.json

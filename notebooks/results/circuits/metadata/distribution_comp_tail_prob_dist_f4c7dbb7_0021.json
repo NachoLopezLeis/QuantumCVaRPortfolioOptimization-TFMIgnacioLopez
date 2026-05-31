@@ -1,0 +1,13 @@
+{
+  "circuit_id": "f4c7dbb7_0021",
+  "name": "comp_tail_prob_dist",
+  "category": "distribution",
+  "num_qubits": 4,
+  "depth": 4,
+  "num_gates": 4,
+  "png_path": "results\\circuits\\png\\distribution_comp_tail_prob_dist_f4c7dbb7_0021.png",
+  "timestamp": "2026-05-30T14:21:09.206775",
+  "context": {
+    "num_levels": 16
+  }
+}

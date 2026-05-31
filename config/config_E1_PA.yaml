@@ -1,0 +1,280 @@
+global:
+  project_name: Quantum Portfolio Optimization with CVaR
+  project_version: '5.2'
+  author: Ignacio Lopez Leis
+  institution: Universidad Autonoma de Madrid
+  random_seed: 42
+  debug_mode: false
+  verbose: true
+  alpha: 0.05
+  constraints:
+    long_only: true
+    sum_to_one: true
+    max_weight: 0.3
+    min_weight: 0.0
+phase0:
+  data:
+    source: yahoo_finance
+    use_custom_tickers: true
+    tickers:
+    - AAL
+    - AAP
+    - CBOE
+    - CHRW
+    - CLX
+    - DXCM
+    - FMC
+    - NEM
+    - NFLX
+    - OXY
+    portfolio_name: exp_E1_PA
+    start_date: '2018-01-01'
+    end_date: '2025-12-31'
+    frequency: daily
+    handle_missing: ffill
+    min_observations: 250
+    csv_path: data/returns_sp500_full.csv
+  logging:
+    log_directory: logs
+    log_file: main_notebook.txt
+    log_level: INFO
+    overwrite_on_run: true
+  passport:
+    enabled: true
+    format: json
+    export_directory: results/passports
+  clustering:
+    enabled: false
+    auto_enable_threshold: 999
+    method: tail_dependence
+    algorithm: hierarchical
+    linkage_method: ward
+    n_clusters: null
+    min_clusters: 2
+    max_clusters: 10
+    min_cluster_size: 2
+    cluster_return_method: tail_weighted
+  recursive_clustering:
+    enabled: false
+    auto_enable_threshold: 999
+    max_cluster_size: 4
+    min_cluster_size: 2
+    clustering_method: correlation
+    linkage_method: ward
+    aggregation_method: variance_weight
+    use_sector_constraints: false
+    parallel_optimization: false
+    export_tree_structure: false
+phase1:
+  initial_weights:
+    method: equal
+  cvar:
+    method: historical
+    compute_confidence_interval: true
+  noise_models:
+    reference_backend: ibm_brisbane
+    single_qubit_gate_error: 0.0001
+    two_qubit_gate_error: 0.001
+    readout_error: 0.005
+phase2:
+  backend:
+    simulator: aer_simulator
+    default_shots: 4096
+    optimization_level: 1
+    noise_model:
+      enabled: true
+      single_qubit_gate_error: 0.0001
+      two_qubit_gate_error: 0.001
+      readout_error: 0.005
+    use_noise: true
+    type: aer_simulator
+    shots: 4096
+  qae:
+    num_distribution_qubits: 4
+    epsilon: 0.005
+    shots: 4096
+    methods:
+      iqae:
+        enabled: true
+        max_rounds: 7
+        confidence_level: 0.95
+      woerner:
+        enabled: true
+        num_eval_qubits: 8
+        max_eval_qubits: 10
+        safety_factor: 2.0
+        max_retries: 2
+        retry_error_threshold: 0.15
+      qsp:
+        enabled: false
+    circuit_export:
+      enabled: false
+      directory: results/circuits
+      export_png: false
+      export_qasm: false
+    apply_zne: true
+    compare_methods: true
+    allow_classical_fallback: false
+    timeout_seconds: 300
+    max_total_qubits: 16
+  zne:
+    enabled: true
+    scale_factors:
+    - 1.0
+    - 3.0
+    - 5.0
+    folding_method: global
+    extrapolation_method: polynomial
+    num_trials_per_scale: 1
+  error_mitigation:
+    readout_mitigation: true
+    zne_state_prep: true
+    zne_outer_cvar: true
+    zne_outer_scales:
+    - 1.0
+    - 3.0
+    - 5.0
+    zne_outer_extrapolation: linear
+  optimizer:
+    type: adam
+    max_iterations: 50
+    learning_rate: 0.05
+    learning_rate_decay: 0.995
+    convergence:
+      threshold: 1e-5
+    early_stopping:
+      patience: 20
+    bounds:
+      min_weight: 0.0
+      max_weight: 0.3
+  execution:
+    shots: 4096
+  subgradient:
+    use_zne: true
+    use_woerner: false
+  recursive_optimizer:
+    enabled: false
+    auto_enable_threshold: 999
+    node_optimization:
+      max_iterations: 20
+      learning_rate: 0.05
+      convergence_threshold: 1e-5
+      patience: 8
+    node_qae:
+      num_qubits: 4
+      epsilon: 0.08
+      use_iqae: true
+      use_woerner: false
+      use_qsp: false
+      use_zne: false
+      max_eval_qubits: 4
+    error_budget:
+      total_epsilon: 0.1
+      allocation: equal
+    classical_fallback: false
+    node_timeout_seconds: 60
+    total_timeout_seconds: 600
+  use_noise: true
+  backend_type: aer_simulator
+  shots: 4096
+phase3:
+  disaggregation:
+    method: tail_weighted
+    normalize_final_weights: true
+  method_comparison:
+    enabled: true
+    best_method_criterion: error_per_query
+  qae_validation:
+    enabled: true
+    max_relative_error: 0.15
+    min_zne_improvement: 0.05
+  risk_analysis:
+    compute_marginal_contributions: true
+    compute_component_contributions: true
+    compute_by_cluster: false
+  benchmarking:
+    enabled: true
+    methods:
+    - slsqp
+    - cobyla
+    - subgradient
+    - monte_carlo
+    - markowitz
+    - risk_parity
+    monte_carlo_samples: 10000
+    timeout_per_method_seconds: 60
+  out_of_sample:
+    enabled: true
+    optimization_end_date: '2024-01-01'
+  metrics:
+    portfolio:
+    - cvar
+    - var
+    - expected_return
+    - volatility
+    - sharpe_ratio
+    - sortino_ratio
+    - max_drawdown
+    optimization:
+    - total_iterations
+    - cvar_improvement_percent
+    - converged
+    quantum:
+    - total_queries_iqae
+    - total_queries_woerner
+    - best_method
+    - zne_improvement_avg
+    recursive:
+    - tree_depth
+    - total_nodes
+    - per_level_cvar
+    - total_recursive_time
+  oos_triple_comparison:
+    enabled: true
+    n_scenarios_mc: 100000
+    n_plot_points: 500
+    risk_free_rate: 0.02
+export:
+  base_directory: results
+  run_subdirectory: exp_E1_PA
+  add_timestamp: true
+  formats:
+    csv: true
+    json: true
+    excel: false
+  files:
+    optimal_weights: true
+    convergence_history: true
+    final_metrics: true
+    clustering_report: false
+    recursive_tree: false
+    per_level_weights: false
+    circuit_images: false
+  clustering:
+    export_cluster_mapping: false
+    export_tree_structure: false
+streamlit:
+  enabled: true
+  theme: light
+  page_title: Quantum Portfolio Optimizer
+  layout: wide
+  sections:
+    phase0: true
+    phase1: true
+    phase2: true
+    phase3: true
+    recursive_tree_view: false
+    per_level_metrics: false
+  recursive_settings:
+    show_tree_visualization: false
+    show_per_node_progress: false
+    sunburst_chart: false
+advanced:
+  float_precision: float64
+  epsilon_numerical: 1e-10
+  ensure_deterministic: true
+  validation_level: 2
+  caching:
+    enabled: true
+    cache_directory: results/cache
+    cache_cluster_trees: false

@@ -1,0 +1,17 @@
+{
+  "circuit_id": "99b299da_0005",
+  "name": "woerner_stateprep_tail_prob",
+  "category": "qae_circuit",
+  "num_qubits": 6,
+  "depth": 92,
+  "num_gates": 186,
+  "png_path": "results\\circuits\\png\\qae_circuit_woerner_stateprep_tail_prob_99b299da_0005.png",
+  "timestamp": "2026-05-31T11:07:42.568692",
+  "context": {
+    "method": "woerner_v69",
+    "num_eval": 6,
+    "M": 64,
+    "effective_epsilon": 0.02454369260617026,
+    "safety_factor": 1.0
+  }
+}

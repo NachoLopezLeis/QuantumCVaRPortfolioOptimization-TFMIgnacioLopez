@@ -1,0 +1,14 @@
+{
+  "circuit_id": "b8f9371c_0532",
+  "name": "iqae_stateprep_cond_exp_asset0",
+  "category": "qae_circuit",
+  "num_qubits": 5,
+  "depth": 47,
+  "num_gates": 84,
+  "png_path": "results\\circuits\\png\\qae_circuit_iqae_stateprep_cond_exp_asset0_b8f9371c_0532.png",
+  "timestamp": "2026-05-30T13:29:32.001818",
+  "context": {
+    "method": "iqae",
+    "num_qubits": 5
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "circuit_id": "110a1794_0002",
+  "name": "tail_prob_oracle",
+  "category": "oracle",
+  "num_qubits": 6,
+  "depth": 87,
+  "num_gates": 181,
+  "png_path": "results\\circuits\\png\\oracle_tail_prob_oracle_110a1794_0002.png",
+  "timestamp": "2026-05-31T10:59:10.936648",
+  "context": {
+    "threshold_level": 1,
+    "data_qubits": 5
+  }
+}

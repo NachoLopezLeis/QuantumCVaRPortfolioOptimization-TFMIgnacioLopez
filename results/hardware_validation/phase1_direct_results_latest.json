@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "device": "IQM Emerald (Crystal 54)",
+    "encoding": "direct Ry(2*arcsin(sqrt(a_ideal))) + CX",
+    "a_ideal": 0.050442,
+    "theta": 0.22652530994158068,
+    "theta_ry": 0.45305061988316137,
+    "reference_experiment": "A1_n3_PA",
+    "scientific_note": "Direct encoding validates Grover operator Q independently of M\u00f6tt\u00f6nen distribution encoding. a_ideal derived from noiseless IQAE simulation on S&P500 PA portfolio (A1_n3_PA experiment).",
+    "ts": "2026-04-13T01:22:12.273457"
+  },
+  "phase0": {
+    "p_state": 0.0458984375,
+    "a_ideal": 0.050442,
+    "grover": {
+      "0": {
+        "p_aer": 0.04931640625,
+        "p_theory": 0.050442,
+        "error": 0.0011255937500000007,
+        "pass": true
+      },
+      "1": {
+        "p_aer": 0.39111328125,
+        "p_theory": 0.39496602151921417,
+        "error": 0.003852740269214172,
+        "pass": true
+      },
+      "2": {
+        "p_aer": 0.82568359375,
+        "p_theory": 0.8199840586323293,
+        "error": 0.00569953511767074,
+        "pass": true
+      },
+      "3": {
+        "p_aer": 0.99951171875,
+        "p_theory": 0.9997785768623412,
+        "error": 0.00026685811234117285,
+        "pass": true
+      }
+    },
+    "monotone": true,
+    "range": 0.7763671875,
+    "pass": true
+  },
+  "phase1": {
+    "device": "IQM Emerald (Crystal 54)",
+    "encoding": "direct Ry: depth=2 pre-transpile, ~5 post-transpile",
+    "state_prep": {
+      "job_id": "019d8400-3119-70e1-8741-bd827e732646",
+      "shots": 4096,
+      "p_hw": 0.0537109375,
+      "a_ideal": 0.050442,
+      "error": 0.0032689374999999993,
+      "verdict": "PASS"
+    },
+    "grover": {
+      "m0": {
+        "job_id": "019d8400-4e8b-74a2-aa8c-d2294ea545e5",
+        "shots": 2048,
+        "p_hw": 0.0537109375,
+        "p_theory": 0.050442,
+        "error": 0.0032689374999999993,
+        "verdict": "PASS"
+      },
+      "m1": {
+        "job_id": "019d8400-6483-7ef3-8f5d-6806b6e9a29d",
+        "shots": 2048,
+        "p_hw": 0.32958984375,
+        "p_theory": 0.39496602151921417,
+        "error": 0.06537617776921417,
+        "verdict": "PASS"
+      },
+      "m2": {
+        "job_id": "019d8400-7d4e-7d30-9721-0706d383ffb2",
+        "shots": 2048,
+        "p_hw": 0.6787109375,
+        "p_theory": 0.8199840586323293,
+        "error": 0.14127312113232926,
+        "verdict": "PASS"
+      },
+      "m3": {
+        "job_id": "019d8400-9a89-7c23-abdb-91bc59c58164",
+        "shots": 2048,
+        "p_hw": 0.92138671875,
+        "p_theory": 0.9997785768623412,
+        "error": 0.07839185811234117,
+        "verdict": "PASS"
+      }
+    },
+    "monotone": true,
+    "range": 0.625,
+    "advance_phase2": true,
+    "advance_phase3": true
+  }
+}

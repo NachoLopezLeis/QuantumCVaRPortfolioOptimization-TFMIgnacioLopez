@@ -1,0 +1,82 @@
+[01:40:08] ===== ============ OLEADA 3 v2 — EXTENDED + SHOT STUDY + GARNET ============
+[01:40:08] INFO  Budget-aware: m=4,5,6 + 3 shot levels + Garnet m=0,1
+[01:40:08] OK    IQM_TOKEN found.
+[01:40:08] OK    a_ideal=0.050442  theta=0.226525
+[01:40:08] INFO  Theory values m=0..6:
+[01:40:08] INFO    m=0: 5.044%  
+[01:40:08] INFO    m=1: 39.497%  
+[01:40:08] INFO    m=2: 81.998%  
+[01:40:08] INFO    m=3: 99.978%  [ALIASED]
+[01:40:08] INFO    m=4: 79.656%  [ALIASED]
+[01:40:08] INFO    m=5: 36.607%  [ALIASED]
+[01:40:08] INFO    m=6: 3.822%  [ALIASED]
+[01:40:13] ===== ============ AER CHECK m=0..6 ============
+[01:40:13] INFO    m=0: 4.69%  theory=5.04%
+[01:40:13] INFO    m=1: 39.55%  theory=39.50%
+[01:40:13] INFO    m=2: 81.99%  theory=82.00%
+[01:40:13] INFO    m=3: 100.00%  theory=99.98%
+[01:40:13] INFO    m=4: 79.14%  theory=79.66%
+[01:40:13] INFO    m=5: 36.28%  theory=36.61%
+[01:40:13] INFO    m=6: 3.66%  theory=3.82%
+[01:40:14] OK    Emerald: IQMBackend  54q
+[01:40:14] OK    Garnet:  IQMBackend  20q
+[01:40:14] ===== ============ BLOCK E — Extended Grover m=4,5,6 ============
+[01:40:14] INFO  Expected: m=4->79.7%, m=5->48.6% (minimum), m=6->17.5%
+[01:40:14] INFO  With noise: oscillation may be attenuated but pattern should be visible
+[01:40:14] INFO    [EXT_m4|EME] depth=28 CZ=13 shots=4096
+[01:40:15] INFO    [EXT_m4|EME] job_id=019d8411-3723-7080-84a0-455e670792f4
+[01:40:21] INFO    [EXT_m4|EME] P_hw=92.261%  theory=79.66%
+[01:40:21] INFO    [EXT_m5|EME] depth=34 CZ=16 shots=4096
+[01:40:22] INFO    [EXT_m5|EME] job_id=019d8411-53aa-76f1-8c4a-b48d2f1b8e56
+[01:40:28] INFO    [EXT_m5|EME] P_hw=69.897%  theory=36.61%
+[01:40:28] INFO    [EXT_m6|EME] depth=40 CZ=19 shots=4096
+[01:40:28] INFO    [EXT_m6|EME] job_id=019d8411-6d7f-70c0-9325-4a4215e75188
+[01:40:34] INFO    [EXT_m6|EME] P_hw=34.863%  theory=3.82%
+[01:40:34] ===== ============ BLOCK E RESULTS ============
+[01:40:34] INFO  m=4: 92.26%  (theory 79.7%)
+[01:40:34] INFO  m=5: 69.90%  (theory 36.6%  ← minimum)
+[01:40:34] INFO  m=6: 34.86%  (theory 3.8%)
+[01:40:34] INFO  Oscillation minimum visible: True
+[01:40:34] OK    Block E saved.
+[01:40:34] ===== ============ BLOCK D — Shot study m=1 (levels=[1024, 4096, 8192]) ============
+[01:40:34] INFO    [SHOT_m1_n1024|EME] depth=10 CZ=4 shots=1024
+[01:40:34] INFO    [SHOT_m1_n1024|EME] job_id=019d8411-86d3-7901-aded-d04b156ef608
+[01:40:40] INFO    [SHOT_m1_n1024|EME] P_hw=32.617%  theory=39.50%
+[01:40:40] INFO    shots= 1024: P_hw=32.617%  ±1.465% (1σ shot noise)
+[01:40:40] INFO    [SHOT_m1_n4096|EME] depth=10 CZ=4 shots=4096
+[01:40:41] INFO    [SHOT_m1_n4096|EME] job_id=019d8411-9f5e-7852-adaf-189367cc7f83
+[01:40:47] INFO    [SHOT_m1_n4096|EME] P_hw=34.302%  theory=39.50%
+[01:40:47] INFO    shots= 4096: P_hw=34.302%  ±0.742% (1σ shot noise)
+[01:40:47] INFO    [SHOT_m1_n8192|EME] depth=10 CZ=4 shots=8192
+[01:40:47] INFO    [SHOT_m1_n8192|EME] job_id=019d8411-b8bd-7173-ae0c-026cb482d058
+[01:40:54] INFO    [SHOT_m1_n8192|EME] P_hw=32.825%  theory=39.50%
+[01:40:54] INFO    shots= 8192: P_hw=32.825%  ±0.519% (1σ shot noise)
+[01:40:54] ===== ============ BLOCK D RESULTS ============
+[01:40:54] INFO    shots= 1024: 32.62% ± 1.47%
+[01:40:54] INFO    shots= 4096: 34.30% ± 0.74%
+[01:40:54] INFO    shots= 8192: 32.82% ± 0.52%
+[01:40:54] OK    Block D saved.
+[01:40:54] ===== ============ BLOCK G — Garnet vs Emerald cross-platform (m=0,1) ============
+[01:40:54] INFO  Emerald m=0: 5.37% (existing)
+[01:40:54] INFO    [GAR_m0|GAR] depth=4 CZ=1 shots=4096
+[01:40:55] INFO    [GAR_m0|GAR] job_id=019d8411-d65b-7fc0-8a72-bcfa85c9b242
+[01:41:02] INFO    [GAR_m0|GAR] P_hw=8.984%  theory=5.04%
+[01:41:02] INFO  Garnet  m=0: 8.98%  (theory 5.04%)
+[01:41:02] INFO  Emerald m=1: 32.96% (existing)
+[01:41:02] INFO    [GAR_m1|GAR] depth=10 CZ=4 shots=4096
+[01:41:02] INFO    [GAR_m1|GAR] job_id=019d8411-f2e1-78c3-9b62-8414e316ce39
+[01:41:07] INFO    [GAR_m1|GAR] P_hw=39.771%  theory=39.50%
+[01:41:07] INFO  Garnet  m=1: 39.77%  (theory 39.50%)
+[01:41:07] ===== ============ BLOCK G — Comparison table ============
+[01:41:07] INFO  m      Emerald     Garnet     Theory    Δ (E-G)
+[01:41:07] INFO  -----------------------------------------------
+[01:41:07] INFO  m=0       5.37%       8.98%       5.04%      -3.61pp
+[01:41:07] INFO  m=1      32.96%      39.77%      39.50%      -6.81pp
+[01:41:07] ===== ============ WAVE 3 v2 SUMMARY ============
+[01:41:07] INFO    m=4: 92.26%  theory=79.66%
+[01:41:07] INFO    m=5: 69.90%  theory=36.61%
+[01:41:07] INFO    m=6: 34.86%  theory=3.82%
+[01:41:07] INFO  Shot study: 1024->32.6%  4096->34.3%  8192->32.8%
+[01:41:07] INFO    Cross-platform m=0: Emerald=5.4%  Garnet=9.0%
+[01:41:07] INFO    Cross-platform m=1: Emerald=33.0%  Garnet=39.8%
+[01:41:07] OK    Results: C:\Users\nacho\Desktop\v2_final\v2_final\results\hardware_validation\wave3_v2_results_latest.json

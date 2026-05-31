@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview | Quantum CVaR Portfolio Optimisation &middot; UAM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page"><nav>
+  <a class="nav-logo" href="index.html">QCV&alpha;R &middot; UAM 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Overview</a></li>
+    <li><a href="pipeline.html" id="nav-pipeline">Pipeline</a></li>
+    <li><a href="results.html" id="nav-results">Results</a></li>
+    <li><a href="hardware.html" id="nav-hardware">Hardware</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="literature.html" id="nav-lit">Literature</a></li>
+  </ul>
+  <a class="nav-cta" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+</nav>
+<script>
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const map = {'index.html':'nav-home','pipeline.html':'nav-pipeline','results.html':'nav-results','hardware.html':'nav-hardware','about.html':'nav-about','literature.html':'nav-lit'};
+  if(map[page]) document.getElementById(map[page])?.classList.add('active');
+</script>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);"></div>
+  <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(37,99,235,0.12);filter:blur(90px);top:5%;left:-10%;pointer-events:none;"></div>
+  <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(13,148,136,0.10);filter:blur(80px);bottom:5%;right:-5%;pointer-events:none;"></div>
+
+  <span class="label" style="animation:fadeIn .5s ease both">Master's Thesis &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026</span>
+  <h1 style="font-family:var(--font-h);font-size:clamp(2.6rem,6vw,5.2rem);font-weight:800;line-height:1.05;text-align:center;max-width:920px;margin-bottom:1.25rem;animation:fadeIn .6s .1s ease both">
+    Quantum-Hybrid <span class="accent">CVaR</span><br>Portfolio Optimisation
+  </h1>
+  <p style="font-size:1.05rem;color:var(--grey-l);text-align:center;max-width:600px;line-height:1.7;margin-bottom:2.5rem;animation:fadeIn .6s .2s ease both">
+    Hardware-validated hybrid pipeline on IQM superconducting processors.
+    D-Wave QUBO universe selection &rarr; IQAE gradient estimation &rarr; Adam optimisation &rarr; Basel&nbsp;IV backtesting.
+  </p>
+
+  <div style="display:flex;gap:1.5px;margin-bottom:2.5rem;animation:fadeIn .6s .3s ease both">
+    <div class="metric-cell" style="min-width:140px;border-radius:6px 0 0 6px;border:1px solid var(--border)">
+      <span class="metric-val">25.6%</span><span class="metric-label">CVaR Reduction</span><div class="metric-sub">N=10 assets</div>
+    </div>
+    <div class="metric-cell" style="min-width:130px;border:1px solid var(--border);border-left:none">
+      <span class="metric-val blue">4</span><span class="metric-label">Qubits</span><div class="metric-sub">fixed for any N</div>
+    </div>
+    <div class="metric-cell" style="min-width:120px;border:1px solid var(--border);border-left:none">
+      <span class="metric-val">46</span><span class="metric-label">Experiments</span><div class="metric-sub">systematic runs</div>
+    </div>
+    <div class="metric-cell" style="min-width:140px;border:1px solid var(--border);border-left:none">
+      <span class="metric-val">2.97%</span><span class="metric-label">HW Error</span><div class="metric-sub">IQM Garnet m=1</div>
+    </div>
+    <div class="metric-cell" style="min-width:120px;border-radius:0 6px 6px 0;border:1px solid var(--border);border-left:none">
+      <span class="metric-val green">PASS</span><span class="metric-label">Basel IV</span><div class="metric-sub">Acerbi-Székely</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:1rem;animation:fadeIn .6s .4s ease both">
+    <a class="btn btn-primary" href="pipeline.html">Explore Pipeline</a>
+    <a class="btn btn-ghost" href="results.html">View Results</a>
+    <a class="btn btn-ghost" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="container">
+    <span class="label reveal">What was built</span>
+    <div class="grid-3 reveal" style="gap:1.5rem">
+      <a href="pipeline.html" class="card card-hover" style="text-decoration:none;display:block">
+        <div style="font-family:var(--font-m);font-size:0.7rem;color:var(--purple);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">Stage 01 &rarr; 03</div>
+        <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Three-Stage Pipeline</div>
+        <p style="font-size:.87rem;color:var(--grey-l);line-height:1.6">D-Wave QUBO &rarr; IQM IQAE (4 qubits) &rarr; Adam optimiser. Click through 13 source modules with full mathematical detail.</p>
+      </a>
+      <a href="results.html" class="card card-hover" style="text-decoration:none;display:block">
+        <div style="font-family:var(--font-m);font-size:0.7rem;color:var(--teal-l);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">46 Experiments</div>
+        <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Systematic Results</div>
+        <p style="font-size:.87rem;color:var(--grey-l);line-height:1.6">Convergence, cosine similarity, Euler decomposition, OOS performance, scalability N&isin;{10,30,100}, and full Basel&nbsp;IV regulatory backtesting.</p>
+      </a>
+      <a href="hardware.html" class="card card-hover" style="text-decoration:none;display:block">
+        <div style="font-family:var(--font-m);font-size:0.7rem;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.75rem">IQM Real Hardware</div>
+        <div style="font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin-bottom:.5rem">Hardware Validation</div>
+        <p style="font-size:.87rem;color:var(--grey-l);line-height:1.6">First empirical characterisation of IQAE aliasing threshold on IQM Garnet and Emerald. depth(m)=4+6m confirmed on both devices.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Ignacio Lopez Leis &middot; Luis de Pedro S&aacute;nchez &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026
+  &nbsp;&middot;&nbsp; <a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub</a>
+  
+  &nbsp;&middot;&nbsp; <a href="https://orcid.org/0009-0007-2993-8333" target="_blank">ORCID</a></p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "device": "IQM Garnet (Star 20)",
+    "encoding": "direct Ry + CX",
+    "motivation": "Garnet m=1 gave 0.27pp error vs Emerald 6.01pp \u2014 test IQAE precision",
+    "a_ideal": 0.050442,
+    "theta": 0.22652530994158068,
+    "ts": "2026-04-13T01:47:56.512780"
+  },
+  "garnet_iqae": {
+    "rounds": [
+      {
+        "round": 1,
+        "m": 0,
+        "p_hw": 0.067138671875,
+        "theta_est": 0.26210197676534824,
+        "a_est": 0.06713867187500001,
+        "ci_a_lo": 0.061919670026724105,
+        "ci_a_hi": 0.07276344510756091,
+        "ci_a_width": 0.01084377508083681,
+        "ci_captures_a_ideal": false,
+        "aliased": false,
+        "job_id": "019d8417-fc21-7c12-95cd-e24e69da79ba",
+        "depth_iqm": 4
+      },
+      {
+        "round": 2,
+        "m": 1,
+        "p_hw": 0.40673828125,
+        "theta_est": 0.23052900690090372,
+        "a_est": 0.052208853564395905,
+        "ci_a_lo": 0.05061834723924146,
+        "ci_a_hi": 0.053829282791883246,
+        "ci_a_width": 0.0032109355526417846,
+        "ci_captures_a_ideal": false,
+        "aliased": false,
+        "job_id": "019d8418-14ff-70d3-8886-c4413ad67cd9",
+        "depth_iqm": 10
+      },
+      {
+        "round": 3,
+        "m": 3,
+        "p_hw": 0.9205322265625,
+        "theta_est": 0.265224353953799,
+        "a_est": 0.06870992657182148,
+        "ci_a_lo": 0.06794266844085832,
+        "ci_a_hi": 0.06950764298113757,
+        "ci_a_width": 0.0015649745402792486,
+        "ci_captures_a_ideal": false,
+        "aliased": true,
+        "job_id": "019d8418-2d49-7bd3-9d0b-1024594cb4a0",
+        "depth_iqm": 22
+      }
+    ],
+    "a_best_m0": 0.06713867187500001,
+    "best_ci_a": {
+      "lo": 0.061919670026724105,
+      "hi": 0.07276344510756091,
+      "width": 0.01084377508083681
+    },
+    "ci_captures_a_ideal": false,
+    "point_error_pct": 33.100733267911686
+  },
+  "emerald_iqae_reference": {
+    "0": {
+      "round": 1,
+      "m": 0,
+      "p_hw": 0.053466796875,
+      "theta_est": 0.2333406090401564,
+      "a_est": 0.053466796875,
+      "ci_a_lo": 0.048801232831720005,
+      "ci_a_hi": 0.05855094854482107,
+      "ci_a_width": 0.009749715713101063,
+      "ci_captures_a_ideal": true,
+      "aliased": false,
+      "job_id": "019d8407-bf71-7831-922a-ce6120635b9e"
+    },
+    "1": {
+      "round": 2,
+      "m": 1,
+      "p_hw": 0.331787109375,
+      "theta_est": 0.20461291183668529,
+      "a_est": 0.04128542907331243,
+      "ci_a_lo": 0.03986700505901607,
+      "ci_a_hi": 0.042738851615474936,
+      "ci_a_width": 0.0028718465564588694,
+      "ci_captures_a_ideal": false,
+      "aliased": false,
+      "job_id": "019d8407-e193-7ff3-8a03-25d0d6f350b4"
+    },
+    "3": {
+      "round": 3,
+      "m": 3,
+      "p_hw": 0.919189453125,
+      "theta_est": 0.2655776142795857,
+      "a_est": 0.06888875581977137,
+      "ci_a_lo": 0.06812042903393513,
+      "ci_a_hi": 0.06968728662721224,
+      "ci_a_width": 0.0015668575932771128,
+      "ci_captures_a_ideal": false,
+      "aliased": true,
+      "job_id": "019d8408-0898-7433-b0c1-24646c06bf71"
+    }
+  }
+}

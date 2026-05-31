@@ -1,0 +1,34 @@
+{
+  "timestamp": "20260410_131730",
+  "started": "2026-04-10T13:17:34.413825",
+  "total_planned": 20,
+  "total_completed": 2,
+  "total_ok": 2,
+  "total_failed": 0,
+  "total_elapsed": "16:15:54",
+  "status": "RUNNING",
+  "experiments": [
+    {
+      "experiment": "A1_n6_PA",
+      "config": "config_A1_n6_PA.yaml",
+      "status": "OK",
+      "elapsed": "8:13:26",
+      "elapsed_s": 29606,
+      "description": "noiseless eps=0.005 n=6 | PA peripheral K=10",
+      "return_code": 0,
+      "output_json_found": false,
+      "output_json_files": []
+    },
+    {
+      "experiment": "A1_n6_PB",
+      "config": "config_A1_n6_PB.yaml",
+      "status": "OK",
+      "elapsed": "8:02:22",
+      "elapsed_s": 28942,
+      "description": "noiseless eps=0.005 n=6 | PB central K=10",
+      "return_code": 0,
+      "output_json_found": false,
+      "output_json_files": []
+    }
+  ]
+}

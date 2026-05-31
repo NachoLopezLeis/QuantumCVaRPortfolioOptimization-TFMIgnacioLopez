@@ -1,0 +1,46 @@
+# =============================================================================
+# config_ZNE_compare.yaml — PROVENANCE for the Sec. 7.2 ZNE comparative analysis
+# =============================================================================
+# This file DOCUMENTS the parameters of the simulator ZNE experiment. The
+# experiment is run by the self-contained script:
+#
+#     python scripts/hw_sim_zne_compare.py
+#
+# The script embeds these constants directly (it does NOT read this file); the
+# file exists for the reproducibility appendix and the repository record.
+# =============================================================================
+experiment:
+  name: ZNE_compare_simulator
+  section: "7.2"
+  description: >
+    Comparative zero-noise-extrapolation analysis of the m=1 IQAE circuit under
+    the qiskit-aer depolarising noise model. No hardware, no mitiq.
+  circuit:
+    type: IQAE_m1
+    theta: 0.2265
+    p_theory_m1: 0.39491                # sin^2(3*theta)
+    base_depth_opt1: 8
+  conditions:
+    - raw                               # no mitigation (lambda = 1)
+    - global_fold                       # Giurgica-Tiron 2020, Eq. (1)/(3) [baseline]
+    - gate_fold                         # Giurgica-Tiron 2020, Eq. (5), local folding
+    - iim_fiim                          # He et al. PRA 102, 012426 (2020), FIIM
+  scale_factors: [1.0, 3.0, 5.0]        # lambda
+  noise_levels:                         # depolarising p_2q, mirrors E1/E2/E3
+    E1: 0.001
+    E2: 0.005
+    E3: 0.010
+  p1q_ratio: 0.1                        # p_1q = p_2q / 10
+  basis_gates: [cx, u, p, x, h, rx, ry, rz, sx, id]
+  optimization_level:
+    raw: 1
+    folded: 0                           # opt_level=0 preserves folds; opt=1 cancels them
+  shots: 4096
+  replicas: 3
+  seed: 42
+  extrapolation: [richardson, exponential, linear]
+  output: results/hardware_validation/sim_zne_compare_latest.json
+references:
+  giurgica2020: "Digital zero noise extrapolation for QEM, IEEE QCE 2020"
+  he2020: "ZNE with identity insertions, Phys. Rev. A 102, 012426 (2020)"
+  patil2023: "Folding-Free ZNE, IEEE QCE 2023 (cited as paradigm; not executed)"

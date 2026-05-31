@@ -1,0 +1,135 @@
+{
+  "computed": true,
+  "split_date": "2024-01-01",
+  "n_train": 1508,
+  "n_test": 501,
+  "classical_source": "cobyla",
+  "portfolios": {
+    "Equal Weight": {
+      "weights": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "oos_metrics": {
+        "cvar_loss": 0.02703170981041008,
+        "var_loss": 0.01718249884076083,
+        "cumulative_return": -0.05854623871924569,
+        "annualized_return": -0.013811073497085035,
+        "annualized_vol": 0.1819113910603055,
+        "sharpe": -0.07592198276635971,
+        "sortino": -0.09966499522844795,
+        "max_drawdown": -0.24878098066959087
+      },
+      "train_cvar": 0.03308693582389464,
+      "cvar_prediction_error": 0.18300957349793662
+    },
+    "Quantum CVaR": {
+      "weights": [
+        0.02219905605420359,
+        0.0203195285221834,
+        0.2711135497622586,
+        0.14856228013575537,
+        0.27070161546092986,
+        0.03622957677739707,
+        0.036525649400759815,
+        0.15344406896761242,
+        0.021782216047580228,
+        0.01912245887131973
+      ],
+      "oos_metrics": {
+        "cvar_loss": 0.018585541924781387,
+        "var_loss": 0.013269989286025212,
+        "cumulative_return": 0.19809348076702316,
+        "annualized_return": 0.10032237467257628,
+        "annualized_vol": 0.13715966193127185,
+        "sharpe": 0.7314276898906761,
+        "sortino": 1.0515704029362156,
+        "max_drawdown": -0.1504523045232451
+      },
+      "train_cvar": 0.025027634987289386,
+      "cvar_prediction_error": 0.25739919356262386
+    },
+    "Classical CVaR": {
+      "weights": [
+        0.005830073555840648,
+        7.53536828036267e-21,
+        0.27619695729337046,
+        0.18686792852001866,
+        0.26092039205047257,
+        0.059262011608669576,
+        0.06238518985879956,
+        0.14853744711282854,
+        0.0,
+        0.0
+      ],
+      "oos_metrics": {
+        "cvar_loss": 0.01984503398194889,
+        "var_loss": 0.014886518335651466,
+        "cumulative_return": 0.1642647347994446,
+        "annualized_return": 0.08680599124365608,
+        "annualized_vol": 0.14355116664256082,
+        "sharpe": 0.6047041850924211,
+        "sortino": 0.8722426200428145,
+        "max_drawdown": -0.15933497713796613
+      },
+      "train_cvar": 0.024588661118213846,
+      "cvar_prediction_error": 0.1929192937126274
+    },
+    "Inverse Vol": {
+      "weights": [
+        0.06475611248974322,
+        0.09403536833276646,
+        0.1334356955737699,
+        0.13261057949724633,
+        0.13922858398513024,
+        0.07771257564267293,
+        0.10849088677761817,
+        0.11107414396570868,
+        0.07846396608076615,
+        0.060192087654577925
+      ],
+      "oos_metrics": {
+        "cvar_loss": 0.024876323197539088,
+        "var_loss": 0.015665093045342245,
+        "cumulative_return": -0.022721006050978376,
+        "annualized_return": 0.0028501477318396474,
+        "annualized_vol": 0.16979469533666075,
+        "sharpe": 0.01678584673206964,
+        "sortino": 0.022477418170187377,
+        "max_drawdown": -0.2152326479238655
+      },
+      "train_cvar": 0.029727308127030866,
+      "cvar_prediction_error": 0.1631827849586154
+    }
+  },
+  "rankings": {
+    "by_cvar": [
+      "Quantum CVaR",
+      "Classical CVaR",
+      "Inverse Vol",
+      "Equal Weight"
+    ],
+    "by_sharpe": [
+      "Quantum CVaR",
+      "Classical CVaR",
+      "Inverse Vol",
+      "Equal Weight"
+    ]
+  },
+  "summary": {
+    "quantum_oos_cvar": 0.018585541924781387,
+    "quantum_cvar_rank": 1,
+    "quantum_sharpe_rank": 1,
+    "quantum_prediction_error_pct": 25.739919356262387,
+    "beats_equal_weight": true,
+    "beats_classical": true
+  }
+}

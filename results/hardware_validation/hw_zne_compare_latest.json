@@ -1,0 +1,298 @@
+{
+  "metadata": {
+    "script": "hw_zne_compare_resonance.py",
+    "generated": "2026-05-31T10:46:30",
+    "device": "IQMBackend",
+    "resonance_url": "https://cocos.resonance.meetiqm.com/emerald",
+    "theta": 0.2265,
+    "p_theory_m1": 0.39489178714422346,
+    "scales": [
+      1.0,
+      3.0,
+      5.0
+    ],
+    "shots": 2048,
+    "replicas": 2,
+    "n_jobs": 16,
+    "est_credits": 80.0
+  },
+  "comparison": {
+    "raw": {
+      "scale_results": {
+        "1.0": {
+          "p_hw": 0.33642578125,
+          "p_std": 0.005524271728019903,
+          "bias_raw": 0.05846600589422346,
+          "replicas": [
+            0.33251953125,
+            0.34033203125
+          ]
+        }
+      }
+    },
+    "global_fold": {
+      "scale_results": {
+        "1.0": {
+          "p_hw": 0.33837890625,
+          "p_std": 0.0,
+          "bias_raw": 0.05651288089422346,
+          "replicas": [
+            0.33837890625,
+            0.33837890625
+          ]
+        },
+        "3.0": {
+          "p_hw": 0.463623046875,
+          "p_std": 0.014846480269053488,
+          "bias_raw": 0.06873125973077654,
+          "replicas": [
+            0.47412109375,
+            0.453125
+          ]
+        },
+        "5.0": {
+          "p_hw": 0.32861328125,
+          "p_std": 0.0,
+          "bias_raw": 0.06627850589422346,
+          "replicas": [
+            0.32861328125,
+            0.32861328125
+          ]
+        }
+      },
+      "p_extrap_richardson": 0.17816162109375,
+      "bias_zne_richardson": 0.21673016605047346,
+      "raw_better_than_zne": true
+    },
+    "iim_fiim": {
+      "scale_results": {
+        "1.0": {
+          "p_hw": 0.3367513020833333,
+          "p_std": 0.00629737699288838,
+          "bias_raw": 0.058140485060890146,
+          "replicas": [
+            0.3349609375,
+            0.34375,
+            0.33154296875
+          ]
+        },
+        "3.0": {
+          "p_hw": 0.437255859375,
+          "p_std": 0.0024168688810087074,
+          "bias_raw": 0.04236407223077654,
+          "replicas": [
+            0.435546875,
+            0.43896484375
+          ]
+        },
+        "5.0": {
+          "p_hw": 0.2999674479166667,
+          "p_std": 0.008305566941518929,
+          "bias_raw": 0.09492433922755678,
+          "replicas": [
+            0.30029296875,
+            0.29150390625,
+            0.30810546875
+          ]
+        }
+      },
+      "p_extrap_richardson": 0.19732666015625,
+      "bias_zne_richardson": 0.19756512698797346,
+      "raw_better_than_zne": true
+    }
+  },
+  "jobs": [
+    {
+      "condition": "raw",
+      "scale": 1.0,
+      "replica": 0,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "raw_s1_r0",
+      "job_id": "019e7d35-8363-70b1-a1f5-c9462f88d38a",
+      "p_hw": 0.33251953125,
+      "depth_hw": 10,
+      "wall_s": 7.942738300000201
+    },
+    {
+      "condition": "raw",
+      "scale": 1.0,
+      "replica": 1,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "raw_s1_r1",
+      "job_id": "019e7d35-a246-78e0-b321-aeed0f7bfc81",
+      "p_hw": 0.34033203125,
+      "depth_hw": 10,
+      "wall_s": 4.251044599994202
+    },
+    {
+      "condition": "global_fold",
+      "scale": 1.0,
+      "replica": 0,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "global_fold_s1_r0",
+      "job_id": "019e7d35-b2d4-76e2-8cee-78bc59b8179d",
+      "p_hw": 0.33837890625,
+      "depth_hw": 10,
+      "wall_s": 4.262947499999427
+    },
+    {
+      "condition": "global_fold",
+      "scale": 1.0,
+      "replica": 1,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "global_fold_s1_r1",
+      "job_id": "019e7d35-c3bf-7761-b06a-591575e6a7fb",
+      "p_hw": 0.33837890625,
+      "depth_hw": 10,
+      "wall_s": 5.652483300000313
+    },
+    {
+      "condition": "global_fold",
+      "scale": 3.0,
+      "replica": 0,
+      "opt_level": 0,
+      "depth_local": 25,
+      "label": "global_fold_s3_r0",
+      "job_id": "019e7d35-d9d1-7270-9516-a8aa2a2a0e03",
+      "p_hw": 0.47412109375,
+      "depth_hw": 112,
+      "wall_s": 5.541791199997533
+    },
+    {
+      "condition": "global_fold",
+      "scale": 3.0,
+      "replica": 1,
+      "opt_level": 0,
+      "depth_local": 25,
+      "label": "global_fold_s3_r1",
+      "job_id": "019e7d35-ef3c-7ef0-81ee-68eddfe03290",
+      "p_hw": 0.453125,
+      "depth_hw": 112,
+      "wall_s": 5.377087200002279
+    },
+    {
+      "condition": "global_fold",
+      "scale": 5.0,
+      "replica": 0,
+      "opt_level": 0,
+      "depth_local": 41,
+      "label": "global_fold_s5_r0",
+      "job_id": "019e7d36-0484-7783-992c-607cc1e4e383",
+      "p_hw": 0.32861328125,
+      "depth_hw": 186,
+      "wall_s": 4.331129800004419
+    },
+    {
+      "condition": "global_fold",
+      "scale": 5.0,
+      "replica": 1,
+      "opt_level": 0,
+      "depth_local": 41,
+      "label": "global_fold_s5_r1",
+      "job_id": "019e7d36-158c-7dc0-bb72-af2e56d334f0",
+      "p_hw": 0.32861328125,
+      "depth_hw": 186,
+      "wall_s": 4.313561799994204
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 1.0,
+      "replica": 0,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "iim_fiim_s1_r0",
+      "job_id": "019e7d36-2648-7370-b06a-e15dc72f5e1d",
+      "p_hw": 0.3349609375,
+      "depth_hw": 10,
+      "wall_s": 3.058121800000663
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 1.0,
+      "replica": 1,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "iim_fiim_s1_r1",
+      "job_id": "019e7d36-3257-7042-9045-3c29d5377326",
+      "p_hw": 0.34375,
+      "depth_hw": 10,
+      "wall_s": 4.172560999999405
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 1.0,
+      "replica": 2,
+      "opt_level": 1,
+      "depth_local": 9,
+      "label": "iim_fiim_s1_r2",
+      "job_id": "019e7d36-42b9-7511-9fb4-e443066618be",
+      "p_hw": 0.33154296875,
+      "depth_hw": 10,
+      "wall_s": 3.2049185000068974
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 3.0,
+      "replica": 0,
+      "opt_level": 0,
+      "depth_local": 17,
+      "label": "iim_fiim_s3_r0",
+      "job_id": "019e7d36-4f3f-7a23-b41e-1e400e940061",
+      "p_hw": 0.435546875,
+      "depth_hw": 70,
+      "wall_s": 3.094548399996711
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 3.0,
+      "replica": 1,
+      "opt_level": 0,
+      "depth_local": 17,
+      "label": "iim_fiim_s3_r1",
+      "job_id": "019e7d36-5b52-7943-8fc4-b0aa8f7c2961",
+      "p_hw": 0.43896484375,
+      "depth_hw": 70,
+      "wall_s": 4.184237699999358
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 5.0,
+      "replica": 0,
+      "opt_level": 0,
+      "depth_local": 25,
+      "label": "iim_fiim_s5_r0",
+      "job_id": "019e7d36-6bc6-7f81-bfd7-cfe9cdb1bccf",
+      "p_hw": 0.30029296875,
+      "depth_hw": 102,
+      "wall_s": 4.2254632999975
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 5.0,
+      "replica": 1,
+      "opt_level": 0,
+      "depth_local": 25,
+      "label": "iim_fiim_s5_r1",
+      "job_id": "019e7d36-7c83-7e30-9dac-4da8c7f9bad2",
+      "p_hw": 0.29150390625,
+      "depth_hw": 102,
+      "wall_s": 4.195653699993272
+    },
+    {
+      "condition": "iim_fiim",
+      "scale": 5.0,
+      "replica": 2,
+      "opt_level": 0,
+      "depth_local": 25,
+      "label": "iim_fiim_s5_r2",
+      "job_id": "019e7d36-8cb9-7f03-bfb4-1a79795f6735",
+      "p_hw": 0.30810546875,
+      "depth_hw": 102,
+      "wall_s": 3.2554157999984454
+    }
+  ]
+}

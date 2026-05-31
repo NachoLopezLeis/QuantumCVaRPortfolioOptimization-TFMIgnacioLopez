@@ -1,0 +1,21 @@
+{
+  "circuit_id": "b8f9371c_0378",
+  "name": "tail_prob",
+  "category": "tail_probability",
+  "num_qubits": 5,
+  "depth": 44,
+  "num_gates": 75,
+  "png_path": "results\\circuits\\png\\tail_probability_tail_prob_b8f9371c_0378.png",
+  "timestamp": "2026-05-30T13:11:37.960346",
+  "context": {
+    "threshold": 0.016498478401373976,
+    "threshold_level": 1,
+    "num_levels": 16,
+    "l_min": -0.06481038832424085,
+    "l_max": 0.08337824327293133,
+    "classical_tail_prob": 0.050397877984084884,
+    "quantum_expected_prob": 0.050397877984084884,
+    "discretization_error": 0.0,
+    "threshold_on_edge": true
+  }
+}

@@ -1,0 +1,47 @@
+[10:45:08] ===== ======== HW ZNE COMPARISON on IQM Resonance (Sec. 7.2) ========
+[10:45:08] INFO  mode=EXECUTE  shots=2048  p_theory(m=1)=0.3949
+[10:45:17] ===== ======== AER SANITY (logical equivalence) ========
+[10:45:17] INFO    raw          lam=1 depth=  9 p_aer=0.3977 (theory 0.3949)
+[10:45:17] INFO    global_fold  lam=1 depth=  9 p_aer=0.3977 (theory 0.3949)
+[10:45:17] INFO    global_fold  lam=3 depth= 25 p_aer=0.3977 (theory 0.3949)
+[10:45:17] INFO    global_fold  lam=5 depth= 41 p_aer=0.3977 (theory 0.3949)
+[10:45:17] INFO    iim_fiim     lam=1 depth=  9 p_aer=0.3977 (theory 0.3949)
+[10:45:17] INFO    iim_fiim     lam=3 depth= 17 p_aer=0.3977 (theory 0.3949)
+[10:45:18] INFO    iim_fiim     lam=5 depth= 25 p_aer=0.3977 (theory 0.3949)
+[10:45:18] ===== ======== JOB PLAN + CREDIT ESTIMATE ========
+[10:45:18] INFO    raw_s1_r0          depth=  9 opt=1
+[10:45:18] INFO    raw_s1_r1          depth=  9 opt=1
+[10:45:18] INFO    global_fold_s1_r0  depth=  9 opt=1
+[10:45:18] INFO    global_fold_s1_r1  depth=  9 opt=1
+[10:45:18] INFO    global_fold_s3_r0  depth= 25 opt=0
+[10:45:18] INFO    global_fold_s3_r1  depth= 25 opt=0
+[10:45:18] INFO    global_fold_s5_r0  depth= 41 opt=0
+[10:45:18] INFO    global_fold_s5_r1  depth= 41 opt=0
+[10:45:18] INFO    iim_fiim_s1_r0     depth=  9 opt=1
+[10:45:18] INFO    iim_fiim_s1_r1     depth=  9 opt=1
+[10:45:18] INFO    iim_fiim_s1_r2     depth=  9 opt=1
+[10:45:18] INFO    iim_fiim_s3_r0     depth= 17 opt=0
+[10:45:18] INFO    iim_fiim_s3_r1     depth= 17 opt=0
+[10:45:18] INFO    iim_fiim_s5_r0     depth= 25 opt=0
+[10:45:18] INFO    iim_fiim_s5_r1     depth= 25 opt=0
+[10:45:18] INFO    iim_fiim_s5_r2     depth= 25 opt=0
+[10:45:18] INFO  TOTAL JOBS = 16  ->  EST. CREDITS = 80 (at 5/job)
+[10:45:19] OK    Connected: IQMBackend  54q
+[10:45:27] INFO    [raw_s1_r0] job=019e7d35-8363-70b1-a1f5-c9462f88d38a depth=10 p=0.3325
+[10:45:31] INFO    [raw_s1_r1] job=019e7d35-a246-78e0-b321-aeed0f7bfc81 depth=10 p=0.3403
+[10:45:35] INFO    [global_fold_s1_r0] job=019e7d35-b2d4-76e2-8cee-78bc59b8179d depth=10 p=0.3384
+[10:45:41] INFO    [global_fold_s1_r1] job=019e7d35-c3bf-7761-b06a-591575e6a7fb depth=10 p=0.3384
+[10:45:46] INFO    [global_fold_s3_r0] job=019e7d35-d9d1-7270-9516-a8aa2a2a0e03 depth=112 p=0.4741
+[10:45:52] INFO    [global_fold_s3_r1] job=019e7d35-ef3c-7ef0-81ee-68eddfe03290 depth=112 p=0.4531
+[10:45:56] INFO    [global_fold_s5_r0] job=019e7d36-0484-7783-992c-607cc1e4e383 depth=186 p=0.3286
+[10:46:00] INFO    [global_fold_s5_r1] job=019e7d36-158c-7dc0-bb72-af2e56d334f0 depth=186 p=0.3286
+[10:46:03] INFO    [iim_fiim_s1_r0] job=019e7d36-2648-7370-b06a-e15dc72f5e1d depth=10 p=0.3350
+[10:46:08] INFO    [iim_fiim_s1_r1] job=019e7d36-3257-7042-9045-3c29d5377326 depth=10 p=0.3438
+[10:46:11] INFO    [iim_fiim_s1_r2] job=019e7d36-42b9-7511-9fb4-e443066618be depth=10 p=0.3315
+[10:46:14] INFO    [iim_fiim_s3_r0] job=019e7d36-4f3f-7a23-b41e-1e400e940061 depth=70 p=0.4355
+[10:46:18] INFO    [iim_fiim_s3_r1] job=019e7d36-5b52-7943-8fc4-b0aa8f7c2961 depth=70 p=0.4390
+[10:46:22] INFO    [iim_fiim_s5_r0] job=019e7d36-6bc6-7f81-bfd7-cfe9cdb1bccf depth=102 p=0.3003
+[10:46:27] INFO    [iim_fiim_s5_r1] job=019e7d36-7c83-7e30-9dac-4da8c7f9bad2 depth=102 p=0.2915
+[10:46:30] INFO    [iim_fiim_s5_r2] job=019e7d36-8cb9-7f03-bfb4-1a79795f6735 depth=102 p=0.3081
+[10:46:30] ===== ======== DONE ========
+[10:46:30] OK    written: C:\Users\nacho\Desktop\TFM\QuantumCVaRPortfolioOptimization-TFMIgnacioLopez-main\results\hardware_validation\hw_zne_compare_latest.json

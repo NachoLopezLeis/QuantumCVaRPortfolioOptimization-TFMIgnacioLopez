@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline | Quantum CVaR Portfolio Optimisation &middot; UAM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+<style>
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+</style>
+<nav>
+  <a class="nav-logo" href="index.html">QCV&alpha;R &middot; UAM 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Overview</a></li>
+    <li><a href="pipeline.html" id="nav-pipeline">Pipeline</a></li>
+    <li><a href="results.html" id="nav-results">Results</a></li>
+    <li><a href="hardware.html" id="nav-hardware">Hardware</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="literature.html" id="nav-lit">Literature</a></li>
+  </ul>
+  <a class="nav-cta" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+</nav>
+<script>
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const map = {'index.html':'nav-home','pipeline.html':'nav-pipeline','results.html':'nav-results','hardware.html':'nav-hardware','about.html':'nav-about','literature.html':'nav-lit'};
+  if(map[page]) document.getElementById(map[page])?.classList.add('active');
+</script><section class="section">
+  <div class="container">
+    <span class="label reveal">Source code architecture</span>
+    <h1 class="title reveal">Three-Stage Hybrid Pipeline</h1>
+    <p class="subtitle reveal">
+      Click any stage to explore its Python modules. Click a module to see the full implementation detail, mathematical foundation, and quantum circuit where applicable.
+    </p>
+
+    <!-- BREADCRUMB -->
+    <div class="pl-breadcrumb reveal" id="pl-bc">
+      <span class="pl-bc-item active" id="bc0" onclick="goOverview()">Overview</span>
+      <span class="pl-bc-sep" id="bcs1" style="display:none"> / </span>
+      <span class="pl-bc-item"        id="bc1" style="display:none"></span>
+      <span class="pl-bc-sep"         id="bcs2" style="display:none"> / </span>
+      <span class="pl-bc-item"        id="bc2" style="display:none"></span>
+    </div>
+
+    <!-- LEVEL 1: Stage overview -->
+    <div id="lv1" class="pl-level reveal">
+      <div class="pl-stage-grid">
+
+        <div class="pl-stage-card s1 card-hover" onclick="openStage(1)">
+          <div class="pl-accent"></div>
+          <div class="pl-stage-inner">
+            <div class="pl-stage-num">01</div>
+            <span class="pl-stage-chip" style="background:rgba(124,58,237,0.12);color:#a78bfa;border-color:rgba(124,58,237,0.25)">D-Wave Hybrid</span>
+            <div class="pl-stage-name">Universe Selection</div>
+            <div class="pl-stage-tagline">374 S&amp;P 500 assets &rarr; N peripheral, low-correlation assets via peripherality-maximising QUBO on the correlation MST. Solved in 21 seconds.</div>
+            <div class="pl-mods-preview">
+              <span class="pl-dot"></span>network_portfolio_selector<br>
+              <span class="pl-dot"></span>portfolio_generator<br>
+              <span class="pl-dot"></span>network_analysis_report<br>
+              <span class="pl-dot"></span>portfolio_comparison
+            </div>
+            <div class="pl-stage-cta">Explore 4 modules &rarr;</div>
+          </div>
+        </div>
+
+        <div class="pl-stage-card s2 card-hover" onclick="openStage(2)">
+          <div class="pl-accent"></div>
+          <div class="pl-stage-inner">
+            <div class="pl-stage-num">02</div>
+            <span class="pl-stage-chip" style="background:rgba(37,99,235,0.12);color:#60a5fa;border-color:rgba(37,99,235,0.25)">IQM Hardware · IQAE</span>
+            <div class="pl-stage-name">Gradient Estimation</div>
+            <div class="pl-stage-tagline">4-qubit IQAE circuit estimates &nabla;CVaR(w) &isin; &Ropf;<sup>N</sup> for any portfolio size N. Circuit depth follows depth(m)=4+6m. Real quantum circuits shown below.</div>
+            <div class="pl-mods-preview">
+              <span class="pl-dot"></span>qae_circuits<br>
+              <span class="pl-dot"></span>quantumsubgradient<br>
+              <span class="pl-dot"></span>quantumbackends<br>
+              <span class="pl-dot"></span>noisemodels &nbsp; <span class="pl-dot"></span>errorpropagation &nbsp; <span class="pl-dot"></span>evar_estimation
+            </div>
+            <div class="pl-stage-cta">Explore 6 modules + circuits &rarr;</div>
+          </div>
+        </div>
+
+        <div class="pl-stage-card s3 card-hover" onclick="openStage(3)">
+          <div class="pl-accent"></div>
+          <div class="pl-stage-inner">
+            <div class="pl-stage-num">03</div>
+            <span class="pl-stage-chip" style="background:rgba(13,148,136,0.12);color:#2dd4bf;border-color:rgba(13,148,136,0.25)">Classical CPU &middot; Adam</span>
+            <div class="pl-stage-name">Weight Optimisation</div>
+            <div class="pl-stage-tagline">Projected gradient descent with Adam. Simplex projection at each step. Converges in &le;85 iterations across all 46 experiments. Six classical baselines computed.</div>
+            <div class="pl-mods-preview">
+              <span class="pl-dot"></span>hybridoptimizer<br>
+              <span class="pl-dot"></span>risk_contributions<br>
+              <span class="pl-dot"></span>classical_benchmark<br>
+              <span class="pl-dot"></span>bootstrap_ci
+            </div>
+            <div class="pl-stage-cta">Explore 4 modules &rarr;</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fig-wrap">
+        <img src="figures/fig01_pipeline.png" alt="Pipeline" loading="lazy">
+        <div class="fig-cap">Fig. 1 &mdash; Complete hybrid pipeline. Stage&nbsp;1 (purple): D-Wave QUBO universe selection from 374 S&amp;P&nbsp;500 assets. Stage&nbsp;2 (blue): IQAE gradient estimation on IQM hardware using 4 qubits for any N. Stage&nbsp;3 (green): Adam optimiser with simplex projection. Stage&nbsp;4 (orange): OOS validation and Basel&nbsp;IV regulatory backtesting.</div>
+      </div>
+    </div>
+
+    <!-- LEVEL 2: Module grid -->
+    <div id="lv2" class="pl-level" style="display:none">
+      <div id="lv2-header"></div>
+      <div class="pl-module-grid" id="lv2-grid"></div>
+    </div>
+
+    <!-- LEVEL 3: Module detail -->
+    <div id="lv3" class="pl-level" style="display:none">
+      <div id="lv3-detail"></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const STAGES = {
+  1:{
+    name:"Universe Selection",label:"Stage 01 &mdash; D-Wave Hybrid QUBO",
+    hw:"D-Wave Leap &middot; LeapHybridBQMSampler",hwColor:"rgba(124,58,237,0.12)",hwBorder:"rgba(124,58,237,0.3)",hwText:"#a78bfa",acc:"var(--purple)",
+    desc:"Builds the Minimum Spanning Tree (MST) of the S&amp;P&nbsp;500 correlation network, detects 11 market communities via greedy modularity maximisation, scores each asset by peripherality (Pozzi et&nbsp;al. X+Y index), and solves a peripherality-maximising QUBO on D-Wave hybrid hardware to select N structurally independent, community-diverse assets.",
+    modules:[
+      {file:"src/phase_0/network_portfolio_selector.py",name:"Network Portfolio Selector",role:"Core QUBO orchestrator",
+       brief:"Computes the 374-asset correlation matrix, builds the MST via Kruskal&rsquo;s algorithm, detects 11 communities, scores peripherality with the Pozzi et&nbsp;al. X+Y index, constructs the QUBO matrix Q, and submits the Binary Quadratic Model to the D-Wave hybrid BQM solver.",
+       params:["N_sel = 10, 30, or 100","&lambda;&sub1; = 500 (community coverage penalty)","&lambda;&sub2; = 1,000 (cardinality penalty)","D-Wave solver time limit: 60 s","QUBO energy achieved: &minus;54,998"],
+       io:{i:"returns_sp500_full.csv &middot; config.yaml",o:"selection_PA.json &middot; selection_PB.json"},
+       math:[{l:"MST distance",e:"d_ij = &radic;(2(1&minus;&rho;_ij))"},
+             {l:"QUBO objective",e:"max &Sigma;&pi;_i x_i &minus; &lambda;&sub1;&Sigma;(1&minus;&Sigma;_{i&isin;C_k}x_i)&sup2; &minus; &lambda;&sub2;(&Sigma;x_i&minus;N)&sup2;"},
+             {l:"Result PA",e:"10/11 communities &middot; mean &rho;=0.176 &middot; spread=5.70&times;"}]},
+      {file:"src/phase_0/portfolio_generator.py",name:"Portfolio Generator",role:"Universe post-processor",
+       brief:"Converts the D-Wave binary solution x* into portfolio weight vectors, applies greedy repair if cardinality or community coverage constraints are violated, and writes the final universe definition with ticker list, peripherality scores, and community assignments to JSON.",
+       params:["Greedy repair: add/remove by &pi;_i score","Coverage check: each of K communities represented","Feasibility: |S| = N_sel exactly","PA output: CLX, CBOE, CHRW, NEM, DXCM, FMC, OXY, AAL, NFLX, AAP"],
+       io:{i:"D-Wave BQM solution x* &middot; community assignments",o:"universe_PA/PB/PC.json"},
+       math:[{l:"Selection",e:"S = { i : x*_i = 1 }"},
+             {l:"Repair",e:"If |S| &ne; N_sel &rarr; greedy add/remove by &pi;_i"},
+             {l:"PA result",e:"avg peripherality = 0.980 &middot; QUBO energy = &minus;54,998"}]},
+      {file:"src/phase_0/network_analysis_report.py",name:"Network Analysis Report",role:"Topology diagnostics",
+       brief:"Generates the complete MST topology report: betweenness centrality distribution, community size histogram, inter-community correlation statistics, and all the universe quality metrics (mean &rho;, eigenvalue shares, subgradient spread) used to validate the QUBO selection before running experiments.",
+       params:["K = 11 communities detected","Community sizes: {57,49,44,39,36,33,33,28,23,16,16}","PA mean &rho; = 0.176 vs PB mean &rho; = 0.710","All-negative tail days: PA=25.5%, PB=84.3%"],
+       io:{i:"returns_sp500_full.csv",o:"selection_report_&lt;timestamp&gt;.json"},
+       math:[{l:"Community",e:"Greedy modularity maximisation on MST"},
+             {l:"Spread",e:"subgradient spread = max(g_i)/min(g_i) = 5.70&times; (PA)"},
+             {l:"Eff. dim.",e:"N_eff = 1/&Sigma;s_i&sup2; = 7.28 (PA) vs 1.78 (PB)"}]},
+      {file:"src/phase_0/portfolio_comparison.py",name:"Portfolio Comparison",role:"Universe quality validation",
+       brief:"Computes and compares pairwise correlation matrices, leading eigenvalue share, effective dimensionality, CVaR subgradient spread, and all-negative tail-day statistics for all three universes (PA, PB, PC) to quantitatively validate that the QUBO selection produces a superior starting point for CVaR optimisation.",
+       params:["PA: 0% pairs with &rho;&gt;0.5 &middot; eff_dim=7.28","PB: 100% pairs with &rho;&gt;0.5 &middot; eff_dim=1.78","Leading eigenvalue: PA=26.5%, PB=74.2%","CVaR subgradient spread: PA=5.70&times;, PB=1.94&times;"],
+       io:{i:"universe_PA/PB/PC.json &middot; return matrix",o:"Metrics embedded in tfm_comprehensive_metrics.json"},
+       math:[{l:"Eff. dim.",e:"N_eff = 1/&Sigma;s_i&sup2; where s_i = &lambda;_i/&Sigma;&lambda;_j"},
+             {l:"Subgrad.",e:"g_i = &minus;E[r_i | L &ge; VaR_&alpha;] (conditional expectation)"},
+             {l:"Tail days",e:"P(all r_i &lt;0 | L&isin;tail) = 25.5% PA vs 84.3% PB"}]}
+    ]
+  },
+  2:{
+    name:"Gradient Estimation",label:"Stage 02 &mdash; IQM Superconducting Hardware",
+    hw:"IQM Garnet &middot; IQM Emerald &middot; Qiskit Aer (simulation)",hwColor:"rgba(37,99,235,0.12)",hwBorder:"rgba(37,99,235,0.28)",hwText:"#60a5fa",acc:"var(--blue)",
+    desc:"Encodes the empirical portfolio loss distribution into a 4-qubit quantum state via a Möttonen state-preparation circuit, then applies the Grover operator Q iteratively (IQAE) to estimate the tail probability and per-asset conditional expectations. The subgradient g_i is recovered via ratio estimation. Circuit depth follows depth(m) = 4+6m; aliasing occurs at m&ge;3 on both IQM devices.",
+    circuits:[
+      {file:"circuit_1_state_prep.png",cap:"Circuit 1: State Preparation A|0&rang; &mdash; Möttonen uniformly-controlled R_y rotations load the empirical loss distribution into the 4-qubit register. Each computational basis state |&ell;&rang; has amplitude &radic;p_&ell;."},
+      {file:"circuit_2_threshold_oracle.png",cap:"Circuit 2: Threshold Oracle U_&tau; &mdash; Flips an ancilla qubit for all states |&ell;&rang; where the discretised loss exceeds the VaR threshold. Implemented as a multi-controlled-X on the loss register."},
+      {file:"circuit_3_full_A.png",cap:"Circuit 3: Full Operator A &mdash; State preparation followed by the threshold oracle. This is the operator whose amplitude IQAE estimates iteratively. A|0&rang; = sin&theta;|&psi;&sub1;&rang; + cos&theta;|&psi;&sub0;&rang;."},
+      {file:"circuit_4_grover.png",cap:"Circuit 4: Grover Operator Q = &minus;AS&sub0;A&sup;&dagger;S_&chi; &mdash; One IQAE amplitude amplification round. At round m, the circuit Q^mA|0&rang; has overlap sin((2m+1)&theta;) with the marked subspace."},
+      {file:"circuit_5_subgradient.png",cap:"Circuit 5: Subgradient Component A_0 &mdash; Conditional loading circuit for asset 0. Estimates E[r_0 &middot; 1_{L&ge;&tau;}] via IQAE. One such circuit per asset, giving N+1 IQAE calls per gradient evaluation."}
+    ],
+    modules:[
+      {file:"src/phase_2/qae_circuits.py",name:"QAE Circuits",role:"Quantum circuit construction",
+       brief:"Constructs all quantum circuits used in IQAE: the Möttonen state-preparation unitary A that encodes the loss distribution, the threshold oracle U_&tau;, the full operator A, the Grover operator Q, and the conditional loading circuits A_i for per-asset subgradient components. Implements TranspilingAerSamplerV2 for noise-aware simulation.",
+       params:["n_qubits = 4 (16 discretised loss levels)","depth(m) = 4 + 6m (empirical, IQM native CZ basis)","Aliasing threshold: m=3, depth=22, both devices","Shots per circuit: 4,096"],
+       io:{i:"Loss probabilities p_&ell; &middot; VaR threshold &tau;",o:"Qiskit QuantumCircuit objects &middot; IQAE amplitude estimates"},
+       math:[{l:"State prep",e:"A|0&rang;&sup;&otimes;n = &Sigma; &radic;p_&ell;|&ell;&rang;"},
+             {l:"Grover op",e:"Q = A(I&minus;2|0&rang;&lang;0|)A&dagger;(I&minus;2|&psi;&sub1;&rang;&lang;&psi;&sub1;|)"},
+             {l:"Amplitude",e:"&lang;&psi;&sub1;|Q^m|&psi;&rang; = sin((2m+1)&theta;)"}],
+       circuit:"circuit_1_state_prep.png"},
+      {file:"src/phase_2/quantumsubgradient.py",name:"Quantum Subgradient",role:"CVaR subgradient estimation",
+       brief:"Orchestrates the full IQAE procedure to estimate the CVaR subgradient vector. First estimates the tail probability &acirc;_&tau; = P(L&ge;VaR_&alpha;) with one IQAE call, then runs N additional IQAE calls with conditional loading circuits to estimate each E[r_i &middot; 1_{L&ge;&tau;}], recovering g_i via ratio estimation. Cosine similarity with exact subgradient exceeds 0.9999 in all 46 experiments.",
+       params:["N+1 IQAE calls per gradient evaluation","Target precision &epsilon; = 0.005 (standard) or 0.002","Confidence 1&minus;&delta; per call: 1&minus;0.05/(N+1)","Cosine similarity &gt;0.9999 across all 46 experiments"],
+       io:{i:"Weights w &middot; return matrix R &middot; precision &epsilon;",o:"g_hat &isin; &Ropf;^N (subgradient estimate)"},
+       math:[{l:"Subgradient",e:"g_i = &minus;E[r_i | L &ge; VaR_&alpha;]"},
+             {l:"Estimator",e:"g_hat_i = &minus;&ccirc;_i / &acirc;_&tau;  (ratio)"},
+             {l:"Complexity",e:"O((N+1)&middot;&epsilon;&sup;&minus;&sup;1) oracle queries per step"}],
+       circuit:"circuit_5_subgradient.png"},
+      {file:"src/phase_2/quantumbackends.py",name:"Quantum Backends",role:"Backend abstraction layer",
+       brief:"Abstracts the quantum execution interface so the optimiser can call the same subgradient API regardless of backend. Supported backends: Qiskit Aer statevector (ideal, no shots), Aer depolarising noise simulator, and IQM hardware via Amazon Braket. Handles transpilation to the IQM native gate set (CZ basis) at opt_level=1.",
+       params:["Aer statevector: ideal, no shot noise","Aer noise: depolarising at p_2q &isin; {0, 10^-3, 5&times;10^-3, 10^-2}","IQM native: CZ + single-qubit rotations, opt_level=1","ZNE folded circuits: opt_level=0 (causes 4.5&times; depth overhead)"],
+       io:{i:"QuantumCircuit &middot; backend config yaml",o:"Measurement counts / expectation values"},
+       math:[{l:"IQM Garnet",e:"m=1 error 2.97% &middot; star topology &middot; min SWAP overhead"},
+             {l:"IQM Emerald",e:"m=1 error 16.55% &middot; crystal topology &middot; cross-qubit routing"},
+             {l:"Advantage",e:"Garnet 5.6&times; better than Emerald at m=1 (same nominal fidelity)"}]},
+      {file:"src/phase_2/noisemodels.py",name:"Noise Models",role:"NISQ noise simulation",
+       brief:"Implements depolarising noise models for the five experimental noise configurations (A-series: ideal; E-series: p_2q &isin; {10^-3, 5&middot;10^-3, 10^-2}) matching the paper&rsquo;s experiment taxonomy. Single-qubit errors set to p_1q = p_2q/10 throughout. Used by the Aer backend.",
+       params:["A1: p_2q = 0 (noiseless baseline)","E1: p_2q = 10^-3 (low noise)","E2: p_2q = 5&times;10^-3 (medium noise)","E3: p_2q = 10^-2 (10&times; nominal IQM fidelity)"],
+       io:{i:"Gate error rate p_2q from config.yaml",o:"qiskit_aer.noise.NoiseModel object"},
+       math:[{l:"Depolarising",e:"&varepsilon;(&rho;) = (1&minus;p)&rho; + (p/3)(X&rho;X+Y&rho;Y+Z&rho;Z)"},
+             {l:"E3 result",e:"CVaR error 232.6% &middot; cosine similarity 0.999940"},
+             {l:"Key finding",e:"Direction noise-invariant; magnitude noise-sensitive"}]},
+      {file:"src/phase_2/errorpropagation.py",name:"Error Propagation",role:"Error budget analysis",
+       brief:"Derives the CVaR estimation error budget from the IQAE amplitude estimation error. Quantifies how amplitude errors propagate through the ratio estimator to the subgradient and final CVaR. Separates shot noise from systematic hardware bias using the Wave&nbsp;2 repeatability data (8 runs at m=1, z-score=&minus;20.9).",
+       params:["Shot noise at 4,096 shots: CI half-width &asymp; 0.007","Systematic bias Emerald m=1: &Delta;p = &minus;0.060","Bias/shot-noise ratio: 8.6&times; (systematic, not statistical)","Min inter-asset gap PA: &asymp;0.0026 (prevents direction flip)"],
+       io:{i:"IQAE estimates &middot; theoretical p_th values",o:"Error decomposition in tfm_comprehensive_metrics.json"},
+       math:[{l:"Error model",e:"g_hat_i = g_i(1+&delta;_i), |&delta;_i| &lesssim; &epsilon;_i"},
+             {l:"Dir. stability",e:"cos(&hat;g,g*) degrades only if asset ranking flips"},
+             {l:"Gap condition",e:"PA min gap 0.0026 &gt; 0.25&middot;max_k|g*_k| (never flips)"}]},
+      {file:"src/phase_2/evar_estimation.py",name:"EVaR Estimation",role:"Supplementary risk metric",
+       brief:"Estimates the Entropic Value-at-Risk (EVaR) as a coherent upper bound on CVaR using the Chernoff bound / cumulant generating function representation. Computed for all experiments to provide an additional risk metric for comparison with the CVaR-optimised portfolios in the Laudäge-Turkalj framework.",
+       params:["EVaR &ge; CVaR always (coherent upper bound property)","Computed for all 46 experiments","Compared against CVaR in Laudäge-Turkalj (2025) framework","Uses scipy.optimize for cumulant minimisation"],
+       io:{i:"Portfolio weights w &middot; return scenarios R",o:"EVaR estimate in tfm_comprehensive_metrics.json"},
+       math:[{l:"EVaR",e:"EVaR_&alpha;(L) = inf_{z&gt;0} z^{&minus;1} log(E[e^{zL}]/&alpha;)"},
+             {l:"Ordering",e:"VaR_&alpha; &le; CVaR_&alpha; &le; EVaR_&alpha;"},
+             {l:"Use",e:"Tighter risk bound for regulatory comparison beyond CVaR"}]}
+    ]
+  },
+  3:{
+    name:"Weight Optimisation",label:"Stage 03 &mdash; Classical Optimisation Layer",
+    hw:"CPU &middot; SciPy &middot; Custom Adam",hwColor:"rgba(13,148,136,0.12)",hwBorder:"rgba(13,148,136,0.28)",hwText:"#2dd4bf",acc:"var(--teal)",
+    desc:"Runs projected gradient descent using Adam with the quantum subgradient as the gradient oracle. At each step the gradient estimate is used to update Adam&rsquo;s first and second moment estimates, then the weight vector is projected onto the feasible simplex W = {w&ge;0, &Sigma;w_i=1, w_i&le;0.35} via the Duchi et&nbsp;al. algorithm. Six classical baselines are computed in parallel for comparison.",
+    modules:[
+      {file:"src/phase_2/hybridoptimizer.py",name:"Hybrid Optimiser",role:"Core optimisation loop",
+       brief:"Implements the complete Adam optimisation loop with quantum subgradient calls. At each iteration: (1) request the IQAE subgradient from quantumsubgradient.py, (2) update Adam&rsquo;s first and second moment estimates with bias correction, (3) compute the unconstrained step, (4) project onto the weight simplex with per-asset upper bound via Duchi et&nbsp;al. algorithm. Converges in &le;85 iterations in all 46 experiments.",
+       params:["Learning rate &eta; = 0.01","&beta;&sub1; = 0.9, &beta;&sub2; = 0.999, &epsilon;_Adam = 10^-8","Max weight per asset: u_i = 0.35","Convergence: &Vert;w_t&minus;w_{t-1}&Vert;_2 &lt; 10^-4 for 3 consecutive steps"],
+       io:{i:"Initial weights w_0 &middot; IQAE backend &middot; config.yaml",o:"Optimal weights w* &middot; convergence.csv"},
+       math:[{l:"Moment",e:"m_t = &beta;&sub1;m_{t-1} + (1&minus;&beta;&sub1;)g_hat_t"},
+             {l:"Update",e:"w_{t+1} = &Pi;_W(w_t &minus; &eta;&middot;m_hat_t / (&radic;v_hat_t + &epsilon;))"},
+             {l:"Key",e:"Adam&rsquo;s 2nd-moment norm absorbs noise &rarr; direction preserved"}]},
+      {file:"src/phase_2/risk_contributions.py",name:"Risk Contributions",role:"Euler CVaR decomposition",
+       brief:"Computes the Euler CVaR decomposition RC_i = w_i &middot; &part;CVaR/&part;w_i for every weight vector produced during or after optimisation, and verifies the exact additivity identity &Sigma;RC_i = CVaR to machine precision (&lt;10^-14). Computed for 414 weight sets across all 46 experiments. CLX+CBOE+CHRW absorb 74% of CVaR in the quantum and classical optima.",
+       params:["414 decompositions computed across 46 experiments","All 414 pass additivity check: |&Sigma;RC_i&minus;CVaR|/CVaR &lt; 10^-14","PA quantum: HHI=0.2102, eff_N=4.76","Top-3 share: CLX=30.52%, CBOE=27.62%, CHRW=16.73%"],
+       io:{i:"Weights w &middot; return matrix R &middot; confidence level &alpha;",o:"RC per asset &middot; HHI &middot; eff_N in metrics JSON"},
+       math:[{l:"Risk contrib.",e:"RC_i = w_i &middot; &part;CVaR/&part;w_i = w_i &middot; g_i"},
+             {l:"Additivity",e:"&Sigma;_i RC_i = CVaR_&alpha;(w)  [Euler homogeneity theorem]"},
+             {l:"HHI",e:"HHI = &Sigma;(RC_i/CVaR)&sup2; = 0.2102 (PA quantum)"}]},
+      {file:"src/phase_3/classical_benchmark.py",name:"Classical Benchmark",role:"Six classical baselines",
+       brief:"Runs six classical optimisers on the same universe and training data as the quantum method for direct comparison: SLSQP with exact CVaR gradient, COBYLA (derivative-free), classical subgradient descent, minimum-variance Markowitz (1952), Risk Parity (equal risk contribution), and Monte Carlo CVaR with 10,000 scenarios. All six results appear in every paper table.",
+       params:["SLSQP IS CVaR: 0.02717 (best classical, 1.93% gap from quantum)","Risk Parity: 18% higher CVaR but HHI=0.102 (eff_N=9.82)","Markowitz IS CVaR: 0.02790 (comparable to quantum)","Monte Carlo CVaR: 0.02891 (22.4% reduction)"],
+       io:{i:"Universe tickers &middot; return matrix &middot; config.yaml",o:"CVaR, weights, time per method in metrics JSON"},
+       math:[{l:"SLSQP",e:"min CVaR_&alpha;(w) s.t. &Sigma;w_i=1, w&ge;0, w_i&le;0.35"},
+             {l:"Risk Parity",e:"RC_i = RC_j &forall;i,j (equal risk contribution)"},
+             {l:"OOS result",e:"Quantum 0.01839 &lt; SLSQP 0.01887 (p=0.043)"}]},
+      {file:"src/phase_3/bootstrap_ci.py",name:"Bootstrap CI",role:"Statistical significance testing",
+       brief:"Computes 95% confidence intervals for the quantum vs classical CVaR difference using circular block bootstrap (B=5,000 resamples, block size 21 trading days) to account for autocorrelation in the daily return series. Implements the Politis-Romano circular resampling scheme.",
+       params:["B = 5,000 bootstrap resamples","Block size = 21 days (monthly, preserves autocorrelation)","Circular block bootstrap: Politis &amp; Romano (1992)","PA OOS result: &Delta;CVaR=&minus;0.00134, CI=[&minus;0.00266,+0.00024], p=0.043"],
+       io:{i:"OOS return series &middot; optimised weight vectors",o:"95% CI and p-value per experiment in bootstrap_ci.json"},
+       math:[{l:"Bootstrap",e:"B=5,000 resamples of block-circulant returns"},
+             {l:"CI",e:"95% CI = [&minus;0.00266, +0.00024]"},
+             {l:"p-value",e:"p = 0.043 (one-sided, quantum CVaR lower)"}]}
+    ]
+  }
+};
+
+let curStage=null;
+
+function goOverview(){
+  document.getElementById('lv1').style.display='block';
+  document.getElementById('lv2').style.display='none';
+  document.getElementById('lv3').style.display='none';
+  bc(null,null); curStage=null;
+}
+
+function openStage(n){
+  curStage=n; const st=STAGES[n];
+  document.getElementById('lv1').style.display='none';
+  document.getElementById('lv3').style.display='none';
+
+  let circuits='';
+  if(st.circuits){
+    circuits=`<div style="margin-bottom:2rem">
+      <h3 style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--white)">Generated Quantum Circuits</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:1rem">
+        ${st.circuits.map(c=>`
+          <div class="circuit-fig">
+            <img src="circuits/${c.file}" alt="${c.cap}" loading="lazy">
+            <div class="circuit-cap">${c.cap}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('lv2-header').innerHTML=`
+    <button class="pl-back" onclick="goOverview()">&#8592; Back to overview</button>
+    <div class="callout blue" style="margin-bottom:2rem">
+      <strong>${st.label}</strong><br>
+      <span style="font-size:.82rem">${st.hw}</span><br>
+      <span style="font-size:.88rem;margin-top:.5rem;display:block">${st.desc}</span>
+    </div>
+    ${circuits}
+    <h3 style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--white)">Source Modules</h3>`;
+
+  document.getElementById('lv2-grid').innerHTML=st.modules.map((m,i)=>`
+    <div class="pl-mod-card card-hover" onclick="openModule(${n},${i})">
+      <div class="pl-mod-file">${m.file}</div>
+      <div class="pl-mod-name">${m.name}</div>
+      <div class="pl-mod-brief">${m.brief.substring(0,130)}&hellip;</div>
+      <span class="badge badge-teal" style="margin-top:.5rem">${m.role}</span>
+      ${m.circuit?`<div style="margin-top:.75rem"><img src="circuits/${m.circuit}" style="width:100%;border-radius:4px;border:1px solid #e2e8f0" loading="lazy"></div>`:''}
+    </div>`).join('');
+
+  document.getElementById('lv2').style.display='block';
+  bc(n,null);
+}
+
+function openModule(sn,mi){
+  const m=STAGES[sn].modules[mi];
+  document.getElementById('lv2').style.display='none';
+
+  const mathRows=m.math.map(x=>`
+    <div class="pl-row"><span class="pl-key">${x.l}</span><span class="pl-val code">${x.e}</span></div>`).join('');
+  const paramRows=m.params.map(p=>`
+    <div class="pl-row"><span class="pl-key" style="min-width:12px">&mdash;</span><span class="pl-val">${p}</span></div>`).join('');
+
+  const circ=m.circuit?`
+    <div class="pl-block">
+      <div class="pl-block-label">Quantum circuit</div>
+      <div class="circuit-fig">
+        <img src="circuits/${m.circuit}" alt="${m.name} circuit" loading="lazy">
+        <div class="circuit-cap">${m.name} &mdash; generated by export_tfm_circuitsEng.py using the real src/phase_2/qae_circuits.py implementation</div>
+      </div>
+    </div>`:'';
+
+  document.getElementById('lv3-detail').innerHTML=`
+    <button class="pl-back" onclick="openStage(${sn})">&#8592; Back to ${STAGES[sn].name}</button>
+    <div class="pl-detail">
+      <div>
+        <div class="pl-detail-file">${m.file}</div>
+        <div class="pl-detail-name">${m.name}</div>
+        <div class="pl-detail-desc">${m.brief}</div>
+        <div class="pl-block">
+          <div class="pl-block-label">Key parameters</div>${paramRows}
+        </div>
+        <div class="pl-block">
+          <div class="pl-block-label">Input / Output</div>
+          <div class="pl-row"><span class="pl-key">Inputs</span><span class="pl-val">${m.io.i}</span></div>
+          <div class="pl-row"><span class="pl-key">Outputs</span><span class="pl-val">${m.io.o}</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="pl-block">
+          <div class="pl-block-label">Mathematical foundation</div>
+          <div class="pl-math">${mathRows}</div>
+        </div>
+        ${circ}
+        <div class="pl-block" style="margin-top:1.5rem">
+          <div class="pl-block-label">Role in pipeline</div>
+          <div class="callout" style="margin:0"><strong>${m.role}</strong><br>Part of Stage ${sn}: ${STAGES[sn].name}</div>
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById('lv3').style.display='block';
+  bc(sn,m.name);
+}
+
+function bc(sn,mn){
+  const b0=document.getElementById('bc0');
+  const b1=document.getElementById('bc1');
+  const b2=document.getElementById('bc2');
+  const s1=document.getElementById('bcs1');
+  const s2=document.getElementById('bcs2');
+  b0.className='pl-bc-item'+(sn===null?' active':'');
+  if(sn!==null){
+    b1.textContent=`Stage 0${sn}`;
+    b1.className='pl-bc-item'+(mn===null?' active':'');
+    b1.onclick=()=>openStage(sn);
+    b1.style.display='inline'; s1.style.display='inline';
+  } else { b1.style.display='none'; s1.style.display='none'; }
+  if(mn!==null){
+    b2.textContent=mn; b2.className='pl-bc-item active';
+    b2.style.display='inline'; s2.style.display='inline';
+  } else { b2.style.display='none'; s2.style.display='none'; }
+}
+</script>
+<footer>
+  <p>Ignacio Lopez Leis &middot; Luis de Pedro S&aacute;nchez &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026
+  &nbsp;&middot;&nbsp; <a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub</a>
+  
+  &nbsp;&middot;&nbsp; <a href="https://orcid.org/0009-0007-2993-8333" target="_blank">ORCID</a></p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

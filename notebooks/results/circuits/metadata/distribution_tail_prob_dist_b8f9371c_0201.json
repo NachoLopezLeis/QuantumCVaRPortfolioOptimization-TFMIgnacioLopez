@@ -1,0 +1,13 @@
+{
+  "circuit_id": "b8f9371c_0201",
+  "name": "tail_prob_dist",
+  "category": "distribution",
+  "num_qubits": 4,
+  "depth": 4,
+  "num_gates": 4,
+  "png_path": "results\\circuits\\png\\distribution_tail_prob_dist_b8f9371c_0201.png",
+  "timestamp": "2026-05-30T12:46:50.591290",
+  "context": {
+    "num_levels": 16
+  }
+}

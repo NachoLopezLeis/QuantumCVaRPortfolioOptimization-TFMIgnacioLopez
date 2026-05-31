@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Quantum CVaR Portfolio Optimisation &middot; UAM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page"><nav>
+  <a class="nav-logo" href="index.html">QCV&alpha;R &middot; UAM 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Overview</a></li>
+    <li><a href="pipeline.html" id="nav-pipeline">Pipeline</a></li>
+    <li><a href="results.html" id="nav-results">Results</a></li>
+    <li><a href="hardware.html" id="nav-hardware">Hardware</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="literature.html" id="nav-lit">Literature</a></li>
+  </ul>
+  <a class="nav-cta" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+</nav>
+<script>
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const map = {'index.html':'nav-home','pipeline.html':'nav-pipeline','results.html':'nav-results','hardware.html':'nav-hardware','about.html':'nav-about','literature.html':'nav-lit'};
+  if(map[page]) document.getElementById(map[page])?.classList.add('active');
+</script><section class="section">
+  <div class="container">
+    <span class="label reveal">Research project</span>
+    <h1 class="title reveal">About This Work</h1>
+
+    <div class="grid-2 reveal" style="align-items:start;margin-bottom:3rem">
+      <div>
+        <h2 style="font-family:var(--font-h);font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--white)">Project Information</h2>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Authors</span>
+          <span style="color:var(--grey-l);line-height:1.55">Ignacio Lopez Leis &amp; Luis de Pedro S&aacute;nchez</span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Institution</span>
+          <span style="color:var(--grey-l);line-height:1.55">Departamento de Tecnolog&iacute;a Electr&oacute;nica y de las Comunicaciones, Escuela Polit&eacute;cnica Superior &mdash; Universidad Aut&oacute;noma de Madrid (UAM)</span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Programme</span>
+          <span style="color:var(--grey-l);line-height:1.55">Master in Quantum Computing, UAM (2025&ndash;2026)</span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Code</span>
+          <span style="color:var(--grey-l);line-height:1.55"><a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub repository &nearr;</a></span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Hardware</span>
+          <span style="color:var(--grey-l);line-height:1.55">IQM Garnet (20-qubit) + IQM Emerald (54-qubit) via Amazon Braket &middot; D-Wave Leap hybrid BQM</span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">Data</span>
+          <span style="color:var(--grey-l);line-height:1.55">374 S&amp;P 500 constituents &middot; 2020-01-02 to 2025-12-30 &middot; Yahoo Finance &middot; log-returns</span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">ORCID (author)</span>
+          <span style="color:var(--grey-l);line-height:1.55"><a href="https://orcid.org/0009-0007-2993-8333" target="_blank">0009-0007-2993-8333 &nearr;</a></span>
+        </div>
+        <div style="display:flex;gap:1rem;margin-bottom:.75rem;font-size:.88rem">
+          <span style="font-family:var(--font-m);font-size:.7rem;color:var(--grey);min-width:110px;text-transform:uppercase;letter-spacing:.06em;padding-top:.15rem;flex-shrink:0">ORCID (supervisor)</span>
+          <span style="color:var(--grey-l);line-height:1.55"><a href="https://orcid.org/0000-0002-4595-7370" target="_blank">0000-0002-4595-7370 &nearr;</a></span>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-family:var(--font-h);font-size:1.2rem;font-weight:700;margin-bottom:1rem;color:var(--white)">BibTeX Citation</h2>
+        <pre style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:1.25rem;font-family:var(--font-m);font-size:.72rem;color:var(--grey-l);line-height:1.8;white-space:pre-wrap;word-break:break-all">@article{lopezleis2026qst,
+  author  = {Lopez Leis, Ignacio and
+             de Pedro S{\'{a}}nchez, Luis},
+  title   = {Quantum-Hybrid {CVaR} Portfolio
+             Optimisation with Network-Driven
+             Universe Selection: Hardware
+             Validation on {IQM}
+             Superconducting Processors},
+  year    = {2026},
+  url     = {https://github.com/NachoLopezLeis/
+QuantumCVaRPortfolioOptimization-TFMIgnacioLopez}
+}</pre>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <div class="reveal" style="margin-top:2.5rem">
+      <h2 style="font-family:var(--font-h);font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--white)">Key Results Summary</h2>
+      <div class="metric-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:1.5rem">
+        <div class="metric-cell"><span class="metric-val">25.6%</span><span class="metric-label">IS CVaR reduction</span><div class="metric-sub">N=10, PA portfolio</div></div>
+        <div class="metric-cell"><span class="metric-val">37.9%</span><span class="metric-label">IS CVaR reduction</span><div class="metric-sub">N=100, PA portfolio</div></div>
+        <div class="metric-cell"><span class="metric-val blue">4</span><span class="metric-label">Qubits fixed</span><div class="metric-sub">for any N</div></div>
+        <div class="metric-cell"><span class="metric-val">46</span><span class="metric-label">Experiments</span><div class="metric-sub">all converged</div></div>
+      </div>
+      <div class="metric-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="metric-cell"><span class="metric-val">0.01839</span><span class="metric-label">OOS CVaR quantum</span><div class="metric-sub">best of all methods</div></div>
+        <div class="metric-cell"><span class="metric-val">p=0.043</span><span class="metric-label">Bootstrap p-value</span><div class="metric-sub">vs classical SLSQP</div></div>
+        <div class="metric-cell"><span class="metric-val">2.97%</span><span class="metric-label">HW error Garnet m=1</span><div class="metric-sub">5.6&times; better than Emerald</div></div>
+        <div class="metric-cell"><span class="metric-val green">PASS</span><span class="metric-label">Acerbi-S&eacute;kely</span><div class="metric-sub">all &alpha; levels Basel IV</div></div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:2.5rem 0"></div>
+
+    <div class="reveal">
+      <h2 style="font-family:var(--font-h);font-size:1.2rem;font-weight:700;margin-bottom:1rem;color:var(--white)">Acknowledgements</h2>
+      <p style="font-size:.92rem;color:var(--grey-l);line-height:1.75;max-width:720px">
+        IQM Quantum Computers provided hardware access through the Amazon Braket quantum computing service. D-Wave Systems provided hybrid solver access through the D-Wave Leap cloud platform. No external research funding was received for this work.
+      </p>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>Ignacio Lopez Leis &middot; Luis de Pedro S&aacute;nchez &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026
+  &nbsp;&middot;&nbsp; <a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub</a>
+  
+  &nbsp;&middot;&nbsp; <a href="https://orcid.org/0009-0007-2993-8333" target="_blank">ORCID</a></p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

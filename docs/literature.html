@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literature | Quantum CVaR Portfolio Optimisation &middot; UAM 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+<nav>
+  <a class="nav-logo" href="index.html">QCV&alpha;R &middot; UAM 2026</a>
+  <ul class="nav-links">
+    <li><a href="index.html" id="nav-home">Overview</a></li>
+    <li><a href="pipeline.html" id="nav-pipeline">Pipeline</a></li>
+    <li><a href="results.html" id="nav-results">Results</a></li>
+    <li><a href="hardware.html" id="nav-hardware">Hardware</a></li>
+    <li><a href="about.html" id="nav-about">About</a></li>
+    <li><a href="literature.html" id="nav-lit">Literature</a></li>
+  </ul>
+  <a class="nav-cta" href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub &nearr;</a>
+</nav>
+<script>
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const map = {'index.html':'nav-home','pipeline.html':'nav-pipeline','results.html':'nav-results','hardware.html':'nav-hardware','about.html':'nav-about','literature.html':'nav-lit'};
+  if(map[page]) document.getElementById(map[page])?.classList.add('active');
+</script>
+
+<!-- HERO -->
+<section class="section">
+  <div class="container">
+    <span class="label reveal">Positioning in the field</span>
+    <h1 class="title reveal">Comparison with Prior Work</h1>
+    <p class="subtitle reveal">
+      This work builds on five years of quantum portfolio optimisation research.
+      The table below positions it against the most closely related publications
+      across five dimensions. All data from cited papers and this work.
+    </p>
+
+    <!-- MAIN COMPARISON TABLE -->
+    <div class="reveal" style="overflow-x:auto;margin-bottom:3rem">
+      <table class="tbl" style="min-width:820px">
+        <thead>
+          <tr>
+            <th style="min-width:200px">Work</th>
+            <th>Year</th>
+            <th>Real HW</th>
+            <th>N assets</th>
+            <th>Circuit width</th>
+            <th>Network select.</th>
+            <th>Regulatory backtest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--white)">Egger et al.</td>
+            <td>2020</td>
+            <td><span class="badge badge-teal">Yes &mdash; IBMQ</span></td>
+            <td>5</td>
+            <td>5-qubit</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--white)">Stamatopoulos et al.</td>
+            <td>2020</td>
+            <td><span class="badge badge-teal">Yes &mdash; IBMQ</span></td>
+            <td>&le;7</td>
+            <td>&le;7-qubit</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--white)">IBM &ndash; Vanguard</td>
+            <td>2023</td>
+            <td><span class="badge badge-teal">Yes &mdash; IBMQ</span></td>
+            <td>40+</td>
+            <td>Scales with N</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--white)">Laud&auml;ge-Turkalj</td>
+            <td>2025</td>
+            <td><span class="badge badge-red">No (theory)</span></td>
+            <td>Any</td>
+            <td>Any</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--white)">Skarlatos</td>
+            <td>2025</td>
+            <td><span class="badge badge-red">No (theory)</span></td>
+            <td>Any</td>
+            <td>4-qubit</td>
+            <td><span class="badge badge-red">No</span></td>
+            <td><span class="badge badge-red">No</span></td>
+          </tr>
+          <tr style="background:rgba(13,148,136,0.08);border-top:2px solid var(--teal-l)">
+            <td style="color:var(--teal-l);font-weight:700">This work</td>
+            <td style="color:var(--teal-l);font-weight:700">2026</td>
+            <td><span class="badge badge-teal">Yes &mdash; IQM</span></td>
+            <td style="color:var(--teal-l);font-weight:700">Up to 100</td>
+            <td style="color:var(--teal-l);font-weight:700">4-qubit fixed</td>
+            <td><span class="badge badge-teal">Yes &mdash; QUBO</span></td>
+            <td><span class="badge badge-teal">Yes &mdash; Basel IV</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout reveal" style="margin-bottom:3rem">
+      <strong>Key differentiator:</strong> this is the first work combining network-driven universe selection,
+      real-hardware IQAE validation on IQM superconducting processors, and full Basel&nbsp;IV
+      regulatory backtesting in a single end-to-end pipeline. Each individual component
+      appears in prior work; no prior work assembles all three.
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <!-- PAPER BY PAPER ANALYSIS -->
+    <span class="label reveal" style="margin-top:2rem;display:block">Paper-by-paper analysis</span>
+    <h2 class="title reveal" style="font-size:1.9rem">What each paper contributes and where this work goes further</h2>
+
+    <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem" class="reveal">
+
+      <!-- Egger -->
+      <div class="card" style="border-left:3px solid var(--purple)">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span style="font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--white)">Egger et al. (2020)</span>
+          <span class="badge badge-purple">IBM Quantum Experience</span>
+          <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Credit risk &middot; 5 assets &middot; 5 qubits</span>
+        </div>
+        <p style="font-size:.9rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">
+          First demonstration of quantum amplitude estimation for financial risk on real hardware.
+          Estimated credit-risk loss distributions for a 5-asset portfolio on IBMQ, achieving
+          a proof-of-concept with a 5-qubit circuit. Circuit width scales linearly with N,
+          making this approach impractical for realistic portfolio sizes.
+        </p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Their contribution</div>
+            <div style="font-size:.84rem;color:var(--grey-l)">First real-HW QAE for credit risk. Established IBMQ as viable platform for finance experiments.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">This work adds</div>
+            <div style="font-size:.84rem;color:var(--teal-l)">Fixed 4-qubit width for any N via ratio estimator. QUBO universe selection. Basel IV validation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stamatopoulos -->
+      <div class="card" style="border-left:3px solid var(--blue)">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span style="font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--white)">Stamatopoulos et al. (2020)</span>
+          <span class="badge badge-blue">IBM Quantum Experience</span>
+          <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Option pricing &middot; &le;7 assets &middot; depth &lt;20</span>
+        </div>
+        <p style="font-size:.9rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">
+          Demonstrated quantum amplitude estimation for option pricing on IBMQ hardware,
+          achieving circuit depth below 20 for up to 7 assets. Established the shallow-circuit
+          regime as the practical target for near-term quantum finance applications.
+          No portfolio optimisation loop — only risk estimation, not CVaR minimisation.
+        </p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Their contribution</div>
+            <div style="font-size:.84rem;color:var(--grey-l)">Shallow QAE circuits (depth &lt;20) on real hardware. Demonstrated amplitude estimation accuracy.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">This work adds</div>
+            <div style="font-size:.84rem;color:var(--teal-l)">Full hybrid optimisation loop. Explicit aliasing characterisation depth(m)=4+6m. IQM hardware (not IBMQ). Scales to N=100.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IBM-Vanguard -->
+      <div class="card" style="border-left:3px solid var(--orange)">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span style="font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--white)">IBM &ndash; Vanguard (2023)</span>
+          <span class="badge badge-teal">Real hardware</span>
+          <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">Portfolio risk &middot; 40+ assets &middot; Circuit scales with N</span>
+        </div>
+        <p style="font-size:.9rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">
+          Industry collaboration demonstrating quantum portfolio risk analysis for 40+ assets
+          on IBMQ hardware. Largest N demonstrated on real quantum hardware at time of publication.
+          However, circuit width grows with N, requires many qubits for large portfolios, and
+          no integration with classical optimisation or regulatory validation was reported.
+        </p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Their contribution</div>
+            <div style="font-size:.84rem;color:var(--grey-l)">Largest real-HW portfolio (40+ assets). Industry validation of quantum risk analysis at scale.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">This work adds</div>
+            <div style="font-size:.84rem;color:var(--teal-l)">Fixed 4-qubit width — does NOT grow with N. End-to-end CVaR optimisation. Basel IV ES backtesting. QUBO universe selection.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Laudäge-Turkalj -->
+      <div class="card" style="border-left:3px solid #a78bfa">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span style="font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--white)">Laud&auml;ge-Turkalj (2025)</span>
+          <span class="badge badge-purple">Theory only</span>
+          <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">CVaR vs EVaR &middot; No hardware &middot; Any N</span>
+        </div>
+        <p style="font-size:.9rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">
+          Theoretical comparison of CVaR and Entropic VaR (EVaR) estimation under quantum amplitude
+          estimation. Derives tight complexity bounds for both risk measures and shows EVaR
+          provides a coherent upper bound on CVaR. No hardware experiments; no optimisation loop.
+          Provides the theoretical framework used in this work&rsquo;s EVaR estimation module.
+        </p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Their contribution</div>
+            <div style="font-size:.84rem;color:var(--grey-l)">Rigorous complexity analysis of CVaR and EVaR under QAE. Establishes EVaR&nbsp;&ge;&nbsp;CVaR coherence hierarchy.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">This work adds</div>
+            <div style="font-size:.84rem;color:var(--teal-l)">Hardware validation of those bounds. IQAE aliasing threshold characterisation. CVaR optimisation loop with regulatory backtesting.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skarlatos -->
+      <div class="card" style="border-left:3px solid var(--teal-l)">
+        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap">
+          <span style="font-family:var(--font-h);font-size:1rem;font-weight:700;color:var(--white)">Skarlatos (2025)</span>
+          <span class="badge badge-purple">Theory only</span>
+          <span style="font-family:var(--font-m);font-size:.72rem;color:var(--grey)">CVaR subgradient &middot; O(N&epsilon;<sup>&minus;1</sup>) &middot; 4-qubit</span>
+        </div>
+        <p style="font-size:.9rem;color:var(--grey-l);line-height:1.7;margin-bottom:1rem">
+          Closest concurrent theoretical work. Proves the O(N&epsilon;<sup>&minus;1</sup>) subgradient complexity using a fixed-width IQAE circuit — the same 4-qubit framework implemented here. Shows theoretically that the circuit width is independent of N via ratio estimation. No hardware validation, no noise characterisation, no optimisation loop, no real data.
+        </p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap">
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">Their contribution</div>
+            <div style="font-size:.84rem;color:var(--grey-l)">Proves O(N&epsilon;<sup>&minus;1</sup>) complexity. Fixed 4-qubit width theory. Establishes the theoretical framework this work implements.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-m);font-size:.68rem;color:var(--grey);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem">This work adds</div>
+            <div style="font-size:.84rem;color:var(--teal-l)">First hardware validation of Skarlatos&rsquo; framework on IQM. Empirical aliasing threshold. QUBO universe selection. Basel&nbsp;IV. 46 systematic experiments.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider" style="margin:2rem 0"></div>
+
+    <!-- WHEN DOES QUANTUM HELP -->
+    <span class="label reveal" style="margin-top:2rem;display:block">Assessment</span>
+    <h2 class="title reveal" style="font-size:1.9rem">When does the quantum approach actually help?</h2>
+    <p style="font-size:.95rem;color:var(--grey-l);line-height:1.7;max-width:720px;margin-bottom:2rem" class="reveal">
+      The results of this paper allow a concrete answer rather than a theoretical one.
+      Three conditions must hold simultaneously.
+    </p>
+
+    <div class="grid-3 reveal" style="margin-bottom:2rem">
+      <div class="card">
+        <div style="font-family:var(--font-m);font-size:2rem;font-weight:700;color:var(--teal-l);margin-bottom:.5rem">(i)</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">Sufficient portfolio size</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6">
+          O(N&epsilon;<sup>&minus;1</sup>) oracle calls must be fewer than the
+          O(N&epsilon;<sup>&minus;2</sup>) classical Monte Carlo cost.
+          This activates at <strong style="color:var(--white)">&epsilon; &lt; 0.05</strong> for any N.
+          At the &epsilon;=0.005 target: quantum requires 200&times; fewer oracle calls per asset.
+        </p>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--font-m);font-size:2rem;font-weight:700;color:var(--teal-l);margin-bottom:.5rem">(ii)</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">Sufficient gradient spread</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6">
+          The selected asset universe must have meaningful marginal CVaR spread.
+          Empirically: <strong style="color:var(--white)">&ge;3&times;</strong> spread between max and min gradient components.
+          PA achieves 5.70&times;; PB only 1.94&times; — the QUBO selection is decisive.
+        </p>
+      </div>
+      <div class="card">
+        <div style="font-family:var(--font-m);font-size:2rem;font-weight:700;color:var(--teal-l);margin-bottom:.5rem">(iii)</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">Hardware fidelity below aliasing</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6">
+          Gate fidelity must be sufficient to avoid IQAE aliasing within the required round count.
+          Currently limits hardware IQAE to <strong style="color:var(--white)">&epsilon;<sub>hw</sub> &asymp; 0.20</strong>.
+          Conditions (i)&ndash;(ii) are met; condition (iii) constrains practical advantage to simulation today.
+        </p>
+      </div>
+    </div>
+
+    <div class="callout orange reveal">
+      <strong>Current status:</strong> conditions (i) and (ii) are satisfied. Condition (iii) is not yet met on current NISQ hardware (&epsilon;<sub>hw</sub> &asymp; 0.20 vs target &epsilon; = 0.005). The pipeline is <em>correct and regulatory-compliant</em> today; the classical speed advantage requires hardware gate fidelity improvements estimated at 2028&ndash;2030 on industry roadmaps. Cosine similarity &gt;0.9999 in all 46 experiments confirms the gradient <em>direction</em> is already reliable.
+    </div>
+
+    <div class="divider" style="margin:2.5rem 0"></div>
+
+    <!-- KNOWLEDGE GAPS ADDRESSED -->
+    <span class="label reveal" style="margin-top:2rem;display:block">Gaps in the literature</span>
+    <h2 class="title reveal" style="font-size:1.9rem">Three gaps this work addresses</h2>
+
+    <div class="grid-3 reveal" style="margin-bottom:2rem">
+      <div class="card" style="border-top:2px solid var(--purple)">
+        <div style="font-family:var(--font-m);font-size:.68rem;color:var(--purple);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Gap G1</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">No aliasing characterisation</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6;margin-bottom:.75rem">
+          No prior work identified or characterised the IQAE aliasing threshold — the circuit depth beyond which measurements become unreliable on IQM superconducting processors.
+        </p>
+        <div style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l)">
+          Addressed: depth(m)=4+6m &middot; aliasing at m=3 confirmed on Garnet and Emerald
+        </div>
+      </div>
+      <div class="card" style="border-top:2px solid var(--blue)">
+        <div style="font-family:var(--font-m);font-size:.68rem;color:var(--blue-l);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Gap G2</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">No integrated universe selection</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6;margin-bottom:.75rem">
+          Quantum CVaR estimators were applied to arbitrarily chosen universes. No work integrated market-network-based asset selection (QUBO) with quantum gradient estimation in a single pipeline.
+        </p>
+        <div style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l)">
+          Addressed: QUBO peripherality selection on S&P 500 MST &middot; D-Wave &middot; 10/11 communities
+        </div>
+      </div>
+      <div class="card" style="border-top:2px solid var(--teal)">
+        <div style="font-family:var(--font-m);font-size:.68rem;color:var(--teal-l);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem">Gap G3</div>
+        <div style="font-family:var(--font-h);font-size:1rem;font-weight:700;margin-bottom:.5rem">No regulatory validation</div>
+        <p style="font-size:.85rem;color:var(--grey-l);line-height:1.6;margin-bottom:.75rem">
+          Basel IV ES backtesting of quantum-optimised portfolios — particularly the Acerbi-Székely test — had not been reported in any prior work.
+        </p>
+        <div style="font-family:var(--font-m);font-size:.78rem;color:var(--teal-l)">
+          Addressed: Acerbi-Székely PASS at all &alpha; &middot; capital buffer 50% vs 75% classical
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>Ignacio Lopez Leis &middot; Luis de Pedro S&aacute;nchez &middot; Universidad Aut&oacute;noma de Madrid &middot; 2026
+  &nbsp;&middot;&nbsp; <a href="https://github.com/NachoLopezLeis/QuantumCVaRPortfolioOptimization-TFMIgnacioLopez" target="_blank">GitHub</a>
+  &nbsp;&middot;&nbsp; <a href="https://orcid.org/0009-0007-2993-8333" target="_blank">ORCID</a></p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')}),{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+================================================================================
+MetricsComputation Initialized
+================================================================================
+Risk-free rate: 2.00%
+Passport System: ENABLED
+OK: Computed returns: 3.35%
+OK: Computed volatility: 21.59%
+OK: Computed Sharpe ratio: 0.0625
+OK: Computed Sortino ratio: 0.0831
+OK: Computed max drawdown: -39.76% (duration: 22 days)
+OK: Computed all metrics (n=9)
